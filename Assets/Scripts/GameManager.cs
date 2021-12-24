@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
                     if (hit.collider != null)
                     { //if not null i hit sth
-                        if (hit.collider.tag == "Enemy") ;
+                        if (hit.collider.CompareTag("thyEnemy"))
                         {
-                            player.MyTarget = hit.transform; //αν πετύχω κάτι τότε set τον στόχο MyTarget 
+                            player.MyTarget = hit.transform.GetChild(0); //αν πετύχω κάτι τότε set τον στόχο MyTarget 
                         }
                     }
                     else

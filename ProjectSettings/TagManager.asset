@@ -23,7 +23,8 @@ TagManager:
   - Pet
   - QuestLocation
   - NpcReviveSlot
-  - Enemy
+  - thyEnemy
+  - Hitbox
   layers:
   - Default
   - TransparentFX

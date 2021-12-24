@@ -87,8 +87,8 @@ public class Player : Character
             isAttacking = true;
             myAnimator.SetBool("attack", isAttacking);
 
-            yield return new WaitForSeconds(0.3f); //hardcoded cast time DEBUGGING ONLY
-            Debug.Log("ATTACK DONE");
+            yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
+        Debug.Log("ATTACK DONE");
 
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
         spell.MyTarget = MyTarget;

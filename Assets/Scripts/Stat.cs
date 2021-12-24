@@ -46,7 +46,7 @@ public class Stat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(MyCurrentValue);
+        //Debug.Log(MyCurrentValue);
 
         if (currentFill != content.fillAmount) //smoother
         {
