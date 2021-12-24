@@ -83,15 +83,19 @@ public class Player : Character
 
     private IEnumerator Attack(int spellIndex)
     {
-       
+        Transform currentTarget = MyTarget;
             isAttacking = true;
-            myAnimator.SetBool("attack", isAttacking);
+            myAnimator.SetBool("attack", isAttacking); //start attack animation
 
             yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
-        Debug.Log("ATTACK DONE");
-
+             Debug.Log("ATTACK DONE");
+            
+        if (currentTarget != null && InLineOfSight()) //πρέπει να ελέγξω αν ο εχθρός έιναι πίσω από εμπόδια κλπ
+        {
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
-        spell.MyTarget = MyTarget;
+             spell.MyTarget = currentTarget;
+        }
+            
         StopAttack();
         
     }
