@@ -16,22 +16,28 @@ public class Stat : MonoBehaviour
 
     public float MyCurrentValue {
         get { return currentValue; }
-        set { 
+        set
+        {
             if (value > MyMaxValue) // current value never exceeds max
             {
                 currentValue = MyMaxValue;
-            }else if (value < 0)  //i dont allow negative health values
+            }
+            else if (value < 0)  //i dont allow negative health values
             {
                 currentValue = 0;
-            }else
+            }
+            else
             {
                 currentValue = value;
             }
-            
+
             currentFill = currentValue / MyMaxValue; //result will be a value between 0-1
 
-            statValue.text = currentValue + "/" + MyMaxValue; //text in bar
-        } 
+            if (statValue != null) // necessary because enemy healthbar has no script so i get nullreference exception
+            {
+                statValue.text = currentValue + "/" + MyMaxValue; //text in bar
+            }
+        }
     }
 
      

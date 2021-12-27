@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : Character
 {
-    [SerializeField]
-    private Stat health;
+    //[SerializeField]
+    //private Stat health; removed this cause i get "Same field nam serialized multiple times" exception. I have a health field in parent Character as well
     [SerializeField]
     private Stat mana;
 
-    private float initHealth = 100;
+
     private float initMana = 50;
 
     [SerializeField]
@@ -22,12 +22,12 @@ public class Player : Character
 
     private Transform target;
 
+    private int spellDamage = 10;
     public Transform MyTarget { get; set; }
 
     /////// Start is called before the first frame update///////
     protected override void Start()
     {
-        health.Initialize(initHealth, initHealth);
         mana.Initialize(initMana, initMana);
 
         base.Start();
@@ -93,7 +93,8 @@ public class Player : Character
         if (currentTarget != null && InLineOfSight()) //πρέπει να ελέγξω αν ο εχθρός έιναι πίσω από εμπόδια κλπ
         {
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
-             spell.MyTarget = currentTarget;
+            //spell.MyTarget = currentTarget;
+            spell.Initialize(currentTarget, spellDamage); //this is hardcoded spell damage
         }
             
         StopAttack();
@@ -114,11 +115,15 @@ public class Player : Character
 
     private bool InLineOfSight()
     {
-        Vector3 targetDirection = (MyTarget.transform.position - transform.position).normalized;
-        //Debug.DrawRay(transform.position, targetDirection, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, MyTarget.position),256); //from player to target 
-        if (hit.collider == null) { //if dont hit anything
-            return true;
+        if (MyTarget != null) //necessary check. else if i click enemy, attack him and instantlly click somewhere to deselect enemy, i get null reference exception. With this it plays animation but doesnt attack
+        {
+            Vector3 targetDirection = (MyTarget.transform.position - transform.position).normalized;
+            //Debug.DrawRay(transform.position, targetDirection, Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, MyTarget.position), 256); //from player to target 
+            if (hit.collider == null)
+            { //if dont hit anything
+                return true;
+            }
         }
         
         return false;

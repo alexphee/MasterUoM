@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +15,16 @@ public abstract class Character : MonoBehaviour
 
     protected bool isAttacking = false;
     protected Coroutine attackRoutine;
+
+    [SerializeField]
+    protected Transform hitBox;
+    [SerializeField]
+    protected Stat health;//////////////θέλω access σε αυτό το health από το UIManager, όμως είναι protected. ’ρα κάνω ένα getter
+
+    public Stat MyHealth { get { return health; } }
+
+    [SerializeField]
+    private float initHealth; // = 100; character's initial health //moved this from player, all players would start with 100 hp but i serialize it
     public bool isMoving
     {
         get { return direction.x != 0 || direction.y != 0; } // returns a boolean to isMoving based on the outcome of the condition
@@ -20,6 +32,9 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        //moved this from player so everything initializes uptop
+        health.Initialize(initHealth, initHealth);
+
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
     }
@@ -71,12 +86,22 @@ public abstract class Character : MonoBehaviour
 
     public void StopAttack()
     {
+        isAttacking = false; //make sure i dont attack
+        myAnimator.SetBool("attack", isAttacking); //stop attack animation
         // Debug.Log("ATTACK STOP");
         if (attackRoutine != null)
         {
             StopCoroutine(attackRoutine);
-            isAttacking = false;
-            myAnimator.SetBool("attack", isAttacking);
+            
+        }
+    }
+
+    public virtual void TakeDamage(float damage)
+    {
+        health.MyCurrentValue -= damage;
+        if (health.MyCurrentValue <= 0)
+        {
+            myAnimator.SetTrigger("die");
         }
     }
 }

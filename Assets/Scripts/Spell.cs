@@ -9,8 +9,9 @@ public class Spell : MonoBehaviour
     [SerializeField]
     private float speed; 
 
-    public Transform MyTarget { get; set; }
+    public Transform MyTarget { get; private set; }
 
+    private int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,11 @@ public class Spell : MonoBehaviour
         //target = GameObject.Find("Target").transform; //DEBUGGING ONLY
     }
 
+    public void Initialize(Transform target, int damage)
+    {
+        this.MyTarget = target; //the target i putt in to initialize will be equal to mytarget
+        this.damage = damage;
+    }
     private void FixedUpdate()
     {
         if (MyTarget != null)
@@ -36,11 +42,14 @@ public class Spell : MonoBehaviour
         Debug.Log("RUN in OnTriggerEnter2D");
         if (coll.CompareTag("Hitbox") && coll.transform == MyTarget) //δεν μπορω με gameobject γιατι μπερδευεται με το hitbox (που είναι επίσης gameobject) - επίσης θέλω να πετυχαίνω τον στόχο που έχω επιλέξει και όχι κάποιον ίδιου είδους που θα μπει ανάμεσα 
         {
-            Debug.Log("RUN in if statement");
+            speed = 0;// set projectile speed to zero so it doesnt fly around while playing death animation
+            coll.GetComponentInParent<Enemy>().TakeDamage(damage);
+            
             GetComponent<Animator>().SetTrigger("impact");
             
             myRigidBody.velocity = Vector2.zero; //reset velocity when hit sth
             MyTarget = null;
+            Debug.Log("RUN in OnTriggerEnter2D");
         }
     }
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private Player player;
+    private NPC currentTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,32 @@ public class GameManager : MonoBehaviour
             {
                 {
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
-                    if (hit.collider != null)
-                    { //if not null i hit sth
+                    if (hit.collider != null) //Logic: IF i click sth, i check IF i already have target and if yes i deselect current and pick new
+                    {
+                        if (currentTarget != null) //check if currentTarget is not null, if i already have a target i need to deselect this target. eg i have 2 enemies and i select no1, if i want to select no2 i first need to deselect no1
+                        {
+                            currentTarget.Deselect(); //deselect current target
+                        }
+                        currentTarget = hit.collider.GetComponent<NPC>(); //select new target
+
+                        player.MyTarget = currentTarget.Select(); //i can do this because the actual select function in NPC script returns a Transform, so it returns hitBox. So i can set it equal to hitBox and then it throws this to MyTarget in GameManager (where i call it)
+
+
+                        UIManager.MyInstance.ShowTargetFrame(currentTarget);
+                    
+                    }
+                    else //if i dont click sth
+                    {
+                        UIManager.MyInstance.HideTargetframe(); //if i deselect, also hide target frame
+                        if (currentTarget != null)
+                        {
+                            currentTarget.Deselect();
+                        }
+
+                        currentTarget = null;
+                        player.MyTarget = null;
+                    }
+                    /*{ //if not null i hit sth
                         if (hit.collider.CompareTag("thyEnemy"))
                         {
                             player.MyTarget = hit.transform.GetChild(0); //αν πετύχω κάτι τότε set τον στόχο MyTarget 
@@ -37,7 +62,7 @@ public class GameManager : MonoBehaviour
                     else
                     { //leave target
                         player.MyTarget = null;
-                    }
+                    }*/
                 }
             }
        
