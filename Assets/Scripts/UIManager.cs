@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
 
 
     private Stat healthStat; //health stat for the Unit Frame // already got one on Player and Enemy but i also need on Unit Frame
+    [SerializeField]
+    private Image thePortraitFrame;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,10 +60,18 @@ public class UIManager : MonoBehaviour
     {
         targetFrame.SetActive(true);
         healthStat.Initialize(target.MyHealth.MyCurrentValue, target.MyHealth.MyMaxValue);
+        thePortraitFrame.sprite = target.ThePortraitFace;
+        target.healthChanged += new HealthChanged(UpdateTargetFrame); //i have an event on my target called healthChanged and i'd like to listen to this event by using the UpdateTargetFrame. So this function listens to target's healthChanged event when its triggerd by taking dmg (in Enemy script)
+        target.npcRemoved += new NPCRemoved(HideTargetframe); // when removed also hode the target frame (if i dont do this, i have to deselect it to disappear, or click somewhere else)
     }
 
     public void HideTargetframe()
     {
         targetFrame.SetActive(false);
+    }
+
+    public void UpdateTargetFrame(float hpvalue)
+    {
+        healthStat.MyCurrentValue = hpvalue;
     }
 }

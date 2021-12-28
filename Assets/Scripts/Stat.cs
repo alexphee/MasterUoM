@@ -63,7 +63,9 @@ public class Stat : MonoBehaviour
     //initialize stats
     public void Initialize (float currentValue, float maxValue) 
     {
+        if (content == null) { content = GetComponent<Image>(); } //if content doesn't exist i get it here, else i get NullRef exception
         MyMaxValue = maxValue;
         MyCurrentValue = currentValue;
+        content.fillAmount = MyCurrentValue / MyMaxValue; //this is so the healthbar is already filled to max when i chose target, else it slowly fills from zero
     }
 }

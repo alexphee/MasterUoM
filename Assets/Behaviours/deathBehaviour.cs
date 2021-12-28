@@ -15,7 +15,7 @@ public class deathBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         time += Time.deltaTime;
-        if(time >= 5){ Destroy(animator.gameObject); }
+        if(time >= 5){ animator.GetComponent<NPC>().OnNPCRemoved(); }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
