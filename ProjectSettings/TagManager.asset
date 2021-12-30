@@ -25,6 +25,7 @@ TagManager:
   - NpcReviveSlot
   - thyEnemy
   - Hitbox
+  - Obstacle
   layers:
   - Default
   - TransparentFX
