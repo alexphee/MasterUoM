@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3746019747740987207}
   - component: {fileID: 8328275020254653307}
+  - component: {fileID: -2603292956007974152}
   m_Layer: 0
   m_Name: Tree_02
   m_TagString: Obstacle
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 268422a08cfec2b42941ed4766727ef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2603292956007974152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551379416857827408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b749c87d9e7f674cbd59f48c31041c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
