@@ -23,6 +23,8 @@ public class Player : Character
     private Transform target;
 
     private int spellDamage = 10;
+
+    private Vector3 min, max;
     public Transform MyTarget { get; set; }
 
     /////// Start is called before the first frame update///////
@@ -37,8 +39,10 @@ public class Player : Character
     protected override void Update()
     {
         GetInput();
-       // Debug.Log(LayerMask.GetMask("Block"));  //για να βρω το layer που έβαλα τα blocks
+        // Debug.Log(LayerMask.GetMask("Block"));  //για να βρω το layer που έβαλα τα blocks
         //health.MyCurrentValue = 100; //initial health
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x), Mathf.Clamp(transform.position.y, min.y, max.y), transform.position.z);
+
 
         base.Update();
     }
@@ -81,6 +85,11 @@ public class Player : Character
        
     }
 
+    public void SetLimits(Vector3 min, Vector3 max)
+    {
+        this.min = min;
+        this.max = max;
+    }
     private IEnumerator Attack(int spellIndex)
     {
         Transform currentTarget = MyTarget;
