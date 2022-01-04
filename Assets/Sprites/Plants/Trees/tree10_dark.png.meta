@@ -44,7 +44,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
+  alignment: 0
   spritePivot: {x: 0.61, y: -0.12}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -116,17 +116,18 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -35, y: -31}
-      - {x: -47, y: -20}
-      - {x: -48, y: 21}
-      - {x: -32, y: 40}
-      - {x: -4, y: 47}
-      - {x: 23, y: 49}
+    - - {x: -35, y: -22}
+      - {x: -44, y: -18}
+      - {x: -46, y: 21}
+      - {x: -35, y: 38}
+      - {x: -19, y: 42}
+      - {x: 1, y: 45}
+      - {x: 23, y: 44}
       - {x: 36, y: 33}
-      - {x: 48, y: 9}
-      - {x: 36, y: -29}
-      - {x: 9, y: -17}
-      - {x: -18, y: -18}
+      - {x: 45, y: 9}
+      - {x: 36, y: -25}
+      - {x: 13, y: -20}
+      - {x: -22, y: -21}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
