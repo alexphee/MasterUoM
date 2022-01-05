@@ -7,9 +7,9 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]
-    protected float speed;
+    private float speed;
     protected Animator myAnimator;
-    protected Vector2 direction;
+    private Vector2 direction;
 
     private Rigidbody2D myRigidBody;
 
@@ -27,8 +27,12 @@ public abstract class Character : MonoBehaviour
     private float initHealth; // = 100; character's initial health //moved this from player, all players would start with 100 hp but i serialize it
     public bool isMoving
     {
-        get { return direction.x != 0 || direction.y != 0; } // returns a boolean to isMoving based on the outcome of the condition
+        get { return Direction.x != 0 || Direction.y != 0; } // returns a boolean to isMoving based on the outcome of the condition
     }
+
+    public Vector2 Direction { get => direction; set => direction = value; }
+    public float Speed { get => speed; set => speed = value; }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -51,7 +55,7 @@ public abstract class Character : MonoBehaviour
     }
     public void Move()
     {
-        myRigidBody.velocity = direction.normalized * speed; //is player moving?
+        myRigidBody.velocity = Direction.normalized * Speed; //is player moving?
 
     }
 
@@ -61,8 +65,8 @@ public abstract class Character : MonoBehaviour
         { //if player is moving, pley movement animation
             
             ActivateLayer("WalkLayer"); //set Layer to 1 whenever the function starts
-            myAnimator.SetFloat("x", direction.x);
-            myAnimator.SetFloat("y", direction.y);
+            myAnimator.SetFloat("x", Direction.x);
+            myAnimator.SetFloat("y", Direction.y);
 
             StopAttack(); //stop attack if moving
         }
