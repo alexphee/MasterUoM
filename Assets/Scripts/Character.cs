@@ -8,12 +8,16 @@ public abstract class Character : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    protected Animator myAnimator;
+    //protected Animator MyAnimator; //replaced with property bellow
+    public Animator MyAnimator{ get; set; }
     private Vector2 direction;
 
     private Rigidbody2D myRigidBody;
 
-    protected bool isAttacking = false;
+    //protected bool IsAttacking = false; //replaced with property bellow
+    public bool IsAttacking { get; set; }
+
+
     protected Coroutine attackRoutine;
 
     [SerializeField]
@@ -40,7 +44,7 @@ public abstract class Character : MonoBehaviour
         health.Initialize(initHealth, initHealth);
 
         myRigidBody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        MyAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,12 +69,12 @@ public abstract class Character : MonoBehaviour
         { //if player is moving, pley movement animation
             
             ActivateLayer("WalkLayer"); //set Layer to 1 whenever the function starts
-            myAnimator.SetFloat("x", Direction.x);
-            myAnimator.SetFloat("y", Direction.y);
+            MyAnimator.SetFloat("x", Direction.x);
+            MyAnimator.SetFloat("y", Direction.y);
 
             
         }
-        else if (isAttacking) //if player is attacking activate attack layer
+        else if (IsAttacking) //if player is attacking activate attack layer
         {
             ActivateLayer("AttackLayer");
         }else
@@ -81,11 +85,11 @@ public abstract class Character : MonoBehaviour
 
       public void ActivateLayer(string layerName)
     {
-        for (int i = 0; i < myAnimator.layerCount; i++)
+        for (int i = 0; i < MyAnimator.layerCount; i++)
         {
-            myAnimator.SetLayerWeight(i, 0); //disable all layers
+            MyAnimator.SetLayerWeight(i, 0); //disable all layers
         }
-        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
+        MyAnimator.SetLayerWeight(MyAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
     }
 
     
@@ -95,7 +99,7 @@ public abstract class Character : MonoBehaviour
         health.MyCurrentValue -= damage;
         if (health.MyCurrentValue <= 0)
         {
-            myAnimator.SetTrigger("die");
+            MyAnimator.SetTrigger("die");
         }
     }
 }

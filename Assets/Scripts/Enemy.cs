@@ -7,6 +7,7 @@ public class Enemy : NPC
     private IState currentState;
 
     public float MyAttackRange { get; set; }
+    public  float MyAttackTime { get; set; }
 
     [SerializeField]
     private CanvasGroup healthGroup;
@@ -22,6 +23,11 @@ public class Enemy : NPC
     }
     protected override void Update()
     {
+        if (!IsAttacking) //as long as im not attacking, im counting how long since last attack
+        {
+            MyAttackTime += Time.deltaTime; //the reason of this if statement is if i have attack interval like 3sec and my attack takes 1 sec i need to exclude this from the actual cooldown of 3sec. This ensures the time i put as cooldown time for attack is correct 
+        }
+
         currentState.Update();
         //FollowTarget();  removed
         base.Update();

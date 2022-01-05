@@ -97,8 +97,8 @@ public class Player : Character
     private IEnumerator Attack(int spellIndex)
     {
         Transform currentTarget = MyTarget;
-            isAttacking = true;
-            myAnimator.SetBool("attack", isAttacking); //start attack animation
+            IsAttacking = true;
+            MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
             yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
              Debug.Log("ATTACK DONE");
@@ -118,7 +118,7 @@ public class Player : Character
         Block();
         if (MyTarget != null) //πριν συνεχίσω, έχω target?
         {
-            if (!isAttacking && !isMoving && InLineOfSight()) //μπορώ να βάλω και το lineofsight γιατί επιστρέφει bool τιμή
+            if (!IsAttacking && !isMoving && InLineOfSight()) //μπορώ να βάλω και το lineofsight γιατί επιστρέφει bool τιμή
             {
                 attackRoutine = StartCoroutine(Attack(spellIndex));
             }
@@ -152,8 +152,8 @@ public class Player : Character
 
     public void StopAttack()
     {
-        isAttacking = false; //make sure i dont attack
-        myAnimator.SetBool("attack", isAttacking); //stop attack animation
+        IsAttacking = false; //make sure i dont attack
+        MyAnimator.SetBool("attack", IsAttacking); //stop attack animation
         // Debug.Log("ATTACK STOP");
         if (attackRoutine != null)
         {
