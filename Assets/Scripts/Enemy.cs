@@ -6,6 +6,7 @@ public class Enemy : NPC
 {
     private IState currentState;
 
+    public float MyAttackRange { get; set; }
 
     [SerializeField]
     private CanvasGroup healthGroup;
@@ -16,6 +17,7 @@ public class Enemy : NPC
 
     protected void Awake()
     {
+        MyAttackRange = 1;
         ChangeState(new IdleState());
     }
     protected override void Update()

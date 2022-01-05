@@ -68,7 +68,7 @@ public abstract class Character : MonoBehaviour
             myAnimator.SetFloat("x", Direction.x);
             myAnimator.SetFloat("y", Direction.y);
 
-            StopAttack(); //stop attack if moving
+            
         }
         else if (isAttacking) //if player is attacking activate attack layer
         {
@@ -88,17 +88,7 @@ public abstract class Character : MonoBehaviour
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
     }
 
-    public void StopAttack()
-    {
-        isAttacking = false; //make sure i dont attack
-        myAnimator.SetBool("attack", isAttacking); //stop attack animation
-        // Debug.Log("ATTACK STOP");
-        if (attackRoutine != null)
-        {
-            StopCoroutine(attackRoutine);
-            
-        }
-    }
+    
 
     public virtual void TakeDamage(float damage)
     {

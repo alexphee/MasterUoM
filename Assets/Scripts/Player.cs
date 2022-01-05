@@ -83,6 +83,10 @@ public class Player : Character
             Direction += Vector2.right;
         }
        
+        if (isMoving)
+        {
+            StopAttack(); //if moving stop casting
+        }
     }
 
     public void SetLimits(Vector3 min, Vector3 max)
@@ -144,5 +148,17 @@ public class Player : Character
             b.Deactivate();
 
         blocks[exitIndex].Activate();
+    }
+
+    public void StopAttack()
+    {
+        isAttacking = false; //make sure i dont attack
+        myAnimator.SetBool("attack", isAttacking); //stop attack animation
+        // Debug.Log("ATTACK STOP");
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+
+        }
     }
 }

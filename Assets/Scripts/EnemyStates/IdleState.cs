@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 class IdleState : IState
 {
@@ -18,6 +19,8 @@ class IdleState : IState
 
     public void Update()
     {
+        //Debug.Log("Enemy Idles");
+
         if (parent.Target != null) //if i have target then follow //i can do this bc of the getter in Enemy script
         {
             parent.ChangeState(new FollowState());

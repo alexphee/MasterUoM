@@ -20,10 +20,18 @@ class FollowState : IState
 
     public void Update()
     {
+        //Debug.Log("Enemy Follows");
+
         if (parent.Target != null) //necessary check bc when i outrun enemy he keeps walking to the direction i was
         {
             parent.Direction = (parent.Target.transform.position - parent.transform.position).normalized; //find targets direction
             parent.transform.position = Vector2.MoveTowards(parent.transform.position, parent.Target.position, parent.Speed * Time.deltaTime); //start moving enemy to targets direction
+
+            float distance = Vector2.Distance(parent.Target.position, parent.transform.position);
+            if(distance <= parent.MyAttackRange) //if close enough to attack then change state to attack state
+            {
+                parent.ChangeState(new AttackState());
+            }
         }
         else { parent.ChangeState(new IdleState()); } //if enemy has no target, then go back to idle --Exit() vector2.zero
     }
