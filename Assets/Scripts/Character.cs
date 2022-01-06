@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
+    public Transform MyTarget { get; set; }
+
+
     [SerializeField]
     private float speed;
     //protected Animator MyAnimator; //replaced with property bellow
@@ -37,6 +40,9 @@ public abstract class Character : MonoBehaviour
     public Vector2 Direction { get => direction; set => direction = value; }
     public float Speed { get => speed; set => speed = value; }
 
+    public bool IsAlive { get { return health.MyCurrentValue > 0; }} //this is going to return true if the health current value is larger than zero and false if less than zero (dead)
+
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -59,27 +65,37 @@ public abstract class Character : MonoBehaviour
     }
     public void Move()
     {
-        myRigidBody.velocity = Direction.normalized * Speed; //is player moving?
-
+        if (IsAlive)
+        {
+            myRigidBody.velocity = Direction.normalized * Speed; //is player moving?
+        }
     }
 
     public void HandleLayers()
     {
-        if (isMoving)
-        { //if player is moving, pley movement animation
-            
-            ActivateLayer("WalkLayer"); //set Layer to 1 whenever the function starts
-            MyAnimator.SetFloat("x", Direction.x);
-            MyAnimator.SetFloat("y", Direction.y);
+        if(IsAlive)
+        {
+            if (isMoving)
+            { //if player is moving, pley movement animation
 
-            
+                ActivateLayer("WalkLayer"); //set Layer to 1 whenever the function starts
+                MyAnimator.SetFloat("x", Direction.x);
+                MyAnimator.SetFloat("y", Direction.y);
+
+
+            }
+            else if (IsAttacking) //if player is attacking activate attack layer
+            {
+                ActivateLayer("AttackLayer");
+            }
+            else
+            {
+                ActivateLayer("IdleLayer"); //if no keys pressed go back to idle animations
+            }
         }
-        else if (IsAttacking) //if player is attacking activate attack layer
+        else
         {
-            ActivateLayer("AttackLayer");
-        }else
-        {
-            ActivateLayer("IdleLayer"); //if no keys pressed go back to idle animations
+            ActivateLayer("DeathLayer");
         }
     }
 
@@ -94,11 +110,17 @@ public abstract class Character : MonoBehaviour
 
     
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, Transform source)
     {
+       /* if(MyTarget == null)
+        {
+            MyTarget = source;
+        }*/
         health.MyCurrentValue -= damage;
         if (health.MyCurrentValue <= 0)
         {
+            Direction = Vector2.zero; //prevents enemy to continue to move after death while chasing
+            myRigidBody.velocity = Direction; //change velocity to zero
             MyAnimator.SetTrigger("die");
         }
     }

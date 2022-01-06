@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     private Rigidbody2D myRigidBody;
+    private Transform source;
 
     [SerializeField]
     private float speed; 
@@ -19,10 +20,11 @@ public class Spell : MonoBehaviour
         //target = GameObject.Find("Target").transform; //DEBUGGING ONLY
     }
 
-    public void Initialize(Transform target, int damage)
+    public void Initialize(Transform target, int damage, Transform source)
     {
         this.MyTarget = target; //the target i putt in to initialize will be equal to mytarget
         this.damage = damage;
+        this.source = source;
     }
     private void FixedUpdate()
     {
@@ -42,9 +44,10 @@ public class Spell : MonoBehaviour
         Debug.Log("RUN in OnTriggerEnter2D");
         if (coll.CompareTag("Hitbox") && coll.transform == MyTarget) //δεν μπορω με gameobject γιατι μπερδευεται με το hitbox (που είναι επίσης gameobject) - επίσης θέλω να πετυχαίνω τον στόχο που έχω επιλέξει και όχι κάποιον ίδιου είδους που θα μπει ανάμεσα 
         {
+            Character cha = coll.GetComponentInParent<Character>();
             speed = 0;// set projectile speed to zero so it doesnt fly around while playing death animation
-            coll.GetComponentInParent<Enemy>().TakeDamage(damage);
-            
+            //coll.GetComponentInParent<Enemy>().TakeDamage(damage); //removed line
+            cha.TakeDamage(damage, source); //source is the parent of the spell
             GetComponent<Animator>().SetTrigger("impact");
             
             myRigidBody.velocity = Vector2.zero; //reset velocity when hit sth

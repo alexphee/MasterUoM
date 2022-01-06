@@ -15,11 +15,11 @@ D:/Unity Projects/MasterUoM
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51283
+50397
 Successfully changed project path to: D:/Unity Projects/MasterUoM
 D:/Unity Projects/MasterUoM
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 61.83 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 56.80 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -35,199 +35,2387 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002474 seconds.
+Registered in 0.002039 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 68.51 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 71.05 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.809 seconds
+- Completed reload, in  2.090 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003558 seconds.
+Registered in 0.003844 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 58.95 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 58.90 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.204 seconds
+- Completed reload, in  1.292 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1874 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1877 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 87.0 MB.
-System memory in use after: 86.9 MB.
+System memory in use after: 87.0 MB.
 
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2317.
-Total: 3.067800 ms (FindLiveObjects: 0.261500 ms CreateObjectMapping: 0.062900 ms MarkObjects: 2.522100 ms  DeleteObjects: 0.218700 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/EnemyStates
-  artifactKey: Guid(1df17a7ebb3bf5540bcb9077807c7396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/EnemyStates using Guid(1df17a7ebb3bf5540bcb9077807c7396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a36108556a23eee6583481b57a6a780') in 0.005969 seconds
-  Import took 0.009392 seconds .
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2320.
+Total: 3.395700 ms (FindLiveObjects: 0.297500 ms CreateObjectMapping: 0.058200 ms MarkObjects: 2.850300 ms  DeleteObjects: 0.187200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 141.554010 seconds.
-  path: Assets/Scripts/EnemyStates/IState.cs
-  artifactKey: Guid(db8b5fb3e58fcba4daaf4941f41baaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/EnemyStates/IState.cs using Guid(db8b5fb3e58fcba4daaf4941f41baaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eb3f6287cc46377a81825028eae0f38') in 0.024858 seconds
-  Import took 0.252408 seconds .
+  path: Assets/uMMORPG/Sprites/SpriteAtlas.spriteatlas
+  artifactKey: Guid(3fbc08c1b7f1041d6adb398ce7e692f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Sprites/SpriteAtlas.spriteatlas using Guid(3fbc08c1b7f1041d6adb398ce7e692f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a10015f91418a98b9fb08e3c2d5958ad') in 0.064734 seconds
+  Import took 0.069081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.034359 seconds.
+  path: Assets/uMMORPG/Sprites/(Public Domain) Zelda-like Tilesets and Sprites/saplingBabyAnimations/attack.anim
+  artifactKey: Guid(f9a3f8d81b15e42f0b4fd8b0cae340f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Sprites/(Public Domain) Zelda-like Tilesets and Sprites/saplingBabyAnimations/attack.anim using Guid(f9a3f8d81b15e42f0b4fd8b0cae340f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62ef0972dfba9d9f4ca9f6c3fc8d031f') in 0.005860 seconds
+  Import took 0.019098 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 41.586887 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon
+  artifactKey: Guid(f26c458e5112347268daf598861b321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon using Guid(f26c458e5112347268daf598861b321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ee0002c99c825ff6899775df44af83') in 0.014544 seconds
+  Import took 0.019858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001339 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon
+  artifactKey: Guid(f26c458e5112347268daf598861b321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon using Guid(f26c458e5112347268daf598861b321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ee0002c99c825ff6899775df44af83') in 0.002172 seconds
+  Import took 0.005884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.321019 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_ground_water_topleft.asset
+  artifactKey: Guid(5c5db786762fd41bf966c65e11bc2344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_ground_water_topleft.asset using Guid(5c5db786762fd41bf966c65e11bc2344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c599354ae1c72323d7c28a77dbc8b3b2') in 0.139398 seconds
+  Import took 0.143118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_top.asset
+  artifactKey: Guid(0f28511c1b39a48188010a9abc760c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_top.asset using Guid(0f28511c1b39a48188010a9abc760c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fca12d7a5a04e70068213ace98a16fe') in 0.008444 seconds
+  Import took 0.013060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_diagonal.asset
+  artifactKey: Guid(818dd57d5674e43f9bc33cff59efde55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_diagonal.asset using Guid(818dd57d5674e43f9bc33cff59efde55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d50710bd8dcadac028f04236d59b6e') in 0.006907 seconds
+  Import took 0.015024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_lamp.asset
+  artifactKey: Guid(a40c4f21d00f446e3abc302daeedc390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_lamp.asset using Guid(a40c4f21d00f446e3abc302daeedc390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a11d4713edc946e4a18b4e0f2defa5') in 0.008080 seconds
+  Import took 0.012491 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_hole.asset
+  artifactKey: Guid(45ef92316888e4ababdc0cde7e3f2124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_hole.asset using Guid(45ef92316888e4ababdc0cde7e3f2124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '696a629b2cc4fd469596c05abf2f7800') in 0.008106 seconds
+  Import took 0.013747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottomright.asset
+  artifactKey: Guid(c88d3cd1458184ab7b731637d770adb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottomright.asset using Guid(c88d3cd1458184ab7b731637d770adb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af34167cf79ab9107b118a72e124583') in 0.008187 seconds
+  Import took 0.019024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_left.asset
+  artifactKey: Guid(1c8766e7d92ee4ae795d0ea24389ea15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_left.asset using Guid(1c8766e7d92ee4ae795d0ea24389ea15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee526b6be139bba29acbabb633db7dc2') in 0.008462 seconds
+  Import took 0.012365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall.asset
+  artifactKey: Guid(2831f59d134bb430ea63386973c86c46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall.asset using Guid(2831f59d134bb430ea63386973c86c46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f286c89725cae2cd7adeec455a68fd') in 0.012530 seconds
+  Import took 0.017721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit.asset
+  artifactKey: Guid(e4969c8c864c14df88fd9424ddc67d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit.asset using Guid(e4969c8c864c14df88fd9424ddc67d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66135e501ce90fcd781f38002d9c6a23') in 0.007872 seconds
+  Import took 0.012571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright.asset
+  artifactKey: Guid(7f9931192401e46509cd0e92f60ccb72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright.asset using Guid(7f9931192401e46509cd0e92f60ccb72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb73722cf06f5cd7c3964eda2b89ddb') in 0.008410 seconds
+  Import took 0.012975 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottomleft.asset
+  artifactKey: Guid(24207021f64934b58902c565ce17e144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottomleft.asset using Guid(24207021f64934b58902c565ce17e144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2516d993d4afef93f0f3102e369c351f') in 0.008654 seconds
+  Import took 0.014552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_right.asset
+  artifactKey: Guid(4db35ff0ce99c48168d1a4943a6976fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_right.asset using Guid(4db35ff0ce99c48168d1a4943a6976fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351fa5e77cdd32147bfe4ea7a133dbf9') in 0.008864 seconds
+  Import took 0.013221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000399 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottom.asset
+  artifactKey: Guid(4de6269f3007a4cca983f427d94b7d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_bottom.asset using Guid(4de6269f3007a4cca983f427d94b7d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fadcc2afac70e9940daa8d0a6da10ac') in 0.006586 seconds
+  Import took 0.014384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_right.asset
+  artifactKey: Guid(db7c7d8334da14836867d64fcab3530e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_right.asset using Guid(db7c7d8334da14836867d64fcab3530e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a54451c53612620bc882d2c4600337') in 0.010025 seconds
+  Import took 0.015045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_right.asset
+  artifactKey: Guid(f11f3f4f7dc6a46528f26925b8e84739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_right.asset using Guid(f11f3f4f7dc6a46528f26925b8e84739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1e39fdcb625737ba6046b70a1d79038') in 0.008559 seconds
+  Import took 0.013426 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_ground_water_topright.asset
+  artifactKey: Guid(c24b9a602e3a045fba44794e51f55a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_ground_water_topright.asset using Guid(c24b9a602e3a045fba44794e51f55a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efc0593610bd5fd578321029e871bf94') in 0.007169 seconds
+  Import took 0.010690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottom.asset
+  artifactKey: Guid(b5bac17e5ee9840c8b06e7e32bd58edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottom.asset using Guid(b5bac17e5ee9840c8b06e7e32bd58edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '221cdc8316f2c6160365eae3325f77e6') in 0.008876 seconds
+  Import took 0.014708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000492 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomleft_shadow.asset
+  artifactKey: Guid(6afb8fba6ae484f96bcd1fa21b1d9e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomleft_shadow.asset using Guid(6afb8fba6ae484f96bcd1fa21b1d9e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7be96cf597f734caf70d17c63d61a402') in 0.007282 seconds
+  Import took 0.011915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright.asset
+  artifactKey: Guid(d23686f17334a4113920b9872910f726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright.asset using Guid(d23686f17334a4113920b9872910f726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6fb75f9496373638df0349292445fc5') in 0.007999 seconds
+  Import took 0.012710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_left.asset
+  artifactKey: Guid(3e20dbd2b9ed64358a1c219175288511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_left.asset using Guid(3e20dbd2b9ed64358a1c219175288511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd05123073ac2605b022685aedefcae0f') in 0.007911 seconds
+  Import took 0.012033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomleft.asset
+  artifactKey: Guid(5849ef9e8dddf42c1ac86918caeed7f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomleft.asset using Guid(5849ef9e8dddf42c1ac86918caeed7f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66225126ad81a7d43759018c3963e1e2') in 0.006494 seconds
+  Import took 0.010217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topleft.asset
+  artifactKey: Guid(eda6fc51b42a04983a378f4bdeef5bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topleft.asset using Guid(eda6fc51b42a04983a378f4bdeef5bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3afaef68838d1fff1071250997948670') in 0.008179 seconds
+  Import took 0.012491 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_top.asset
+  artifactKey: Guid(6a3ff6e3ae65c45869162f562372118a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_top.asset using Guid(6a3ff6e3ae65c45869162f562372118a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c51611f5f67b15f6b88c2ffd5d2027bd') in 0.008549 seconds
+  Import took 0.024823 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_bottom.asset
+  artifactKey: Guid(552386e2cad63407ab6cf587cdc19182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottomright_shadow_bottom.asset using Guid(552386e2cad63407ab6cf587cdc19182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa5639dc028eab33c865a7e025f18a9d') in 0.008961 seconds
+  Import took 0.014493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_topright.asset
+  artifactKey: Guid(321945ae48bf3427cb2af83255bc1c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_topright.asset using Guid(321945ae48bf3427cb2af83255bc1c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2162a2941de4116b4bd869272974795') in 0.010169 seconds
+  Import took 0.015285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_topleft.asset
+  artifactKey: Guid(fc010eebd6741461796e67f3b5a5fecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_pit_topleft.asset using Guid(fc010eebd6741461796e67f3b5a5fecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68eff2297110e7c208ddc076e0ee22fb') in 0.008301 seconds
+  Import took 0.013108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_right_shadow.asset
+  artifactKey: Guid(f4acd6e7b11f841809b71aea058fa6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_right_shadow.asset using Guid(f4acd6e7b11f841809b71aea058fa6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757c2b7988c9e74dbeebf07f1bf92c03') in 0.008003 seconds
+  Import took 0.013795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottom_shadow.asset
+  artifactKey: Guid(1c6b8a726a9df4cb089a80ffc4f83af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_bottom_shadow.asset using Guid(1c6b8a726a9df4cb089a80ffc4f83af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '245bbe3c3ba8504e42307a2a4276a8d9') in 0.007194 seconds
+  Import took 0.020909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.723116 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright_shadow.asset
+  artifactKey: Guid(8b267035858504d8a89fe99b6fd88f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright_shadow.asset using Guid(8b267035858504d8a89fe99b6fd88f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4787e34fd4346db78ce83e70b998cf9a') in 0.008416 seconds
+  Import took 0.013845 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_water.asset
+  artifactKey: Guid(e4f1870e1ba074145b13f4b0853c9379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_water.asset using Guid(e4f1870e1ba074145b13f4b0853c9379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b62c338f187839a01acabc8f3dfabea') in 0.008121 seconds
+  Import took 0.012559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright_shadow.asset
+  artifactKey: Guid(8b267035858504d8a89fe99b6fd88f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_wall_topright_shadow.asset using Guid(8b267035858504d8a89fe99b6fd88f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4787e34fd4346db78ce83e70b998cf9a') in 0.009660 seconds
+  Import took 0.014581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001824 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_water.asset
+  artifactKey: Guid(e4f1870e1ba074145b13f4b0853c9379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Dungeon/cave_water.asset using Guid(e4f1870e1ba074145b13f4b0853c9379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b62c338f187839a01acabc8f3dfabea') in 0.006901 seconds
+  Import took 0.010745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.290060 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_grass_topright.asset
+  artifactKey: Guid(746e16df8dce1443991b4a5b1d43f88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_grass_topright.asset using Guid(746e16df8dce1443991b4a5b1d43f88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '016acabb04dac45d9997fe90e15c6cef') in 0.020850 seconds
+  Import took 0.024698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottomright.asset
+  artifactKey: Guid(7243fd20e9719405795d1e4124edec80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottomright.asset using Guid(7243fd20e9719405795d1e4124edec80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b88008bf4b923a4ab8a261907d33f9') in 0.008986 seconds
+  Import took 0.013615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_left.asset
+  artifactKey: Guid(7f5db67d171f641f092d23ded91f240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_left.asset using Guid(7f5db67d171f641f092d23ded91f240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421cc7a662b1846c0a0f45cec0ffd1f8') in 0.011088 seconds
+  Import took 0.016944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_topright.asset
+  artifactKey: Guid(7b8cd16e446924d97b40cbde4386f43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_topright.asset using Guid(7b8cd16e446924d97b40cbde4386f43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b74d6fd1bbd8207d25e8f3c49177d689') in 0.008866 seconds
+  Import took 0.013703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/sign.asset
+  artifactKey: Guid(aa0d6b40a8f1c4b1baed54849e8b8d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/sign.asset using Guid(aa0d6b40a8f1c4b1baed54849e8b8d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f420f6edf38ae0f4fccad4d02f49ffc') in 0.006446 seconds
+  Import took 0.010644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_multi_small.asset
+  artifactKey: Guid(2455dcdd7ecb141fd847c331835941a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_multi_small.asset using Guid(2455dcdd7ecb141fd847c331835941a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a829e75539d8823b306c861b6b0b006') in 0.008924 seconds
+  Import took 0.064725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_topleft.asset
+  artifactKey: Guid(a8661ba3bea3849da8a62775c02895eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_topleft.asset using Guid(a8661ba3bea3849da8a62775c02895eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfb2b39195cad6315bb8eafa732f7fcf') in 0.007196 seconds
+  Import took 0.010601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_top.asset
+  artifactKey: Guid(f80d3aca77a234d26a3b7ff037ed4861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_top.asset using Guid(f80d3aca77a234d26a3b7ff037ed4861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ecd171b48211ab88af1ffa8e68ec9a9') in 0.010927 seconds
+  Import took 0.015479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/sign_grassy.asset
+  artifactKey: Guid(86a35460b5f644fc686490d3807f01ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/sign_grassy.asset using Guid(86a35460b5f644fc686490d3807f01ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdc75262d96a2275939f288b556f57bd') in 0.008205 seconds
+  Import took 0.013154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_right.asset
+  artifactKey: Guid(f11007c4cd498412c9b539896a5accda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_right.asset using Guid(f11007c4cd498412c9b539896a5accda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '336865f5bcdebf8a04b49fd318fc6b5d') in 0.007774 seconds
+  Import took 0.012218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_small.asset
+  artifactKey: Guid(76b2d5011a0f84136abab1e19360ebe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_small.asset using Guid(76b2d5011a0f84136abab1e19360ebe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e889f02ac305018037a28fb4d366b93') in 0.006774 seconds
+  Import took 0.010423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottom.asset
+  artifactKey: Guid(e6e02f7d0fba947e4b3ad0e9adf8939a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottom.asset using Guid(e6e02f7d0fba947e4b3ad0e9adf8939a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a264d43d549b84da51424386df57308') in 0.009020 seconds
+  Import took 0.014009 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_multi_big.asset
+  artifactKey: Guid(ba37c0935915642dbaa30cbb9315a578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_multi_big.asset using Guid(ba37c0935915642dbaa30cbb9315a578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3277cbddc175750f3a4dacad577a4fb0') in 0.007065 seconds
+  Import took 0.011184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_big.asset
+  artifactKey: Guid(1241435a075af464ab1b89b2a52ae2f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/reed_big.asset using Guid(1241435a075af464ab1b89b2a52ae2f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29e8bb5cdf199269ac745438a9e760c0') in 0.009192 seconds
+  Import took 0.014444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/sack.asset
+  artifactKey: Guid(8273711cd593c43fda2fcdd0ed82a8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/sack.asset using Guid(8273711cd593c43fda2fcdd0ed82a8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5691387465347573a87129c8c822a65') in 0.007670 seconds
+  Import took 0.012521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/skull.asset
+  artifactKey: Guid(636a25328701b487fa3a3f9b2eb0c1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/skull.asset using Guid(636a25328701b487fa3a3f9b2eb0c1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '464876046d011b646ec37b14e4c981f9') in 0.007541 seconds
+  Import took 0.011451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stone_in_water_b.asset
+  artifactKey: Guid(efdf9675ac1fd468cb934d52a238451c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stone_in_water_b.asset using Guid(efdf9675ac1fd468cb934d52a238451c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d46e5c1eda5ae26974579987c7daf8') in 0.007473 seconds
+  Import took 0.011735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_2.asset
+  artifactKey: Guid(3e3c92457f1db452180c38930ae29e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_2.asset using Guid(3e3c92457f1db452180c38930ae29e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb2e85aa4a8ee9fcd716c2b467f990') in 0.007554 seconds
+  Import took 0.010956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000468 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottom.asset
+  artifactKey: Guid(89966e53506c747ca81f6918a40121af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottom.asset using Guid(89966e53506c747ca81f6918a40121af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9e157374e694b70b4d9bf84210c605') in 0.009956 seconds
+  Import took 0.028496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/smallchest_open.asset
+  artifactKey: Guid(2202e6e724b3343539b08fb5a2b1a703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/smallchest_open.asset using Guid(2202e6e724b3343539b08fb5a2b1a703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06235d53cdf1b78c56bae6c923c8e8c') in 0.005677 seconds
+  Import took 0.010692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottomleft.asset
+  artifactKey: Guid(da1b0b3b87bbb4178b50cd511ff91afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottomleft.asset using Guid(da1b0b3b87bbb4178b50cd511ff91afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6373b96ef1237864f9faeabe6ffeb3') in 0.007045 seconds
+  Import took 0.011042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_bottomleft.asset
+  artifactKey: Guid(eafe691f6ef4a4db887a774f053debda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_bottomleft.asset using Guid(eafe691f6ef4a4db887a774f053debda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd13035c2e8faa09093ed5998363fdcf6') in 0.007395 seconds
+  Import took 0.012240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_bottomleft.asset
+  artifactKey: Guid(9a2487c660ce44ad28d6e421ef4e2bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_bottomleft.asset using Guid(9a2487c660ce44ad28d6e421ef4e2bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee9d7a21e82a611889f6cfb5ccbfb6d7') in 0.006592 seconds
+  Import took 0.009976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_right.asset
+  artifactKey: Guid(f7ed7742591fd4dfd859fe882ec02587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_right.asset using Guid(f7ed7742591fd4dfd859fe882ec02587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2405ead681d2835b65479d8a5700f45') in 0.006950 seconds
+  Import took 0.011078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_topleft.asset
+  artifactKey: Guid(3f34648cb164046559810be4e222cd8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_topleft.asset using Guid(3f34648cb164046559810be4e222cd8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff1ed9e7a4492ea9278eda35724f95e5') in 0.007721 seconds
+  Import took 0.011519 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/waterfall_bottom_animated.asset
+  artifactKey: Guid(34072b0b7e9634c91aa44b0ef4dea950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/waterfall_bottom_animated.asset using Guid(34072b0b7e9634c91aa44b0ef4dea950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '528fe2eab727b83ee0c9b926bc61c1a3') in 0.003631 seconds
+  Import took 0.008799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_left.asset
+  artifactKey: Guid(676ee773633214ed5a6da61ceb8c6920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_left.asset using Guid(676ee773633214ed5a6da61ceb8c6920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ec4f5808b2c2dc3c2bedb5d88a94e7') in 0.008412 seconds
+  Import took 0.013001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_bottomright.asset
+  artifactKey: Guid(d5962fac473394a6690fde0264b2a5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_bottomright.asset using Guid(d5962fac473394a6690fde0264b2a5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6486e18e21ee64efb07d655b4827ecc8') in 0.008858 seconds
+  Import took 0.013285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_bottomleft.asset
+  artifactKey: Guid(a41dc94c6f2184370bb804ae43677617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_bottomleft.asset using Guid(a41dc94c6f2184370bb804ae43677617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7c0e8393cdaea70a94888b92b8455c1') in 0.008335 seconds
+  Import took 0.013277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water.asset
+  artifactKey: Guid(65744ef4cd448484ab137d6701547b42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water.asset using Guid(65744ef4cd448484ab137d6701547b42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5f4366409fae9c80fdf93422e80f1e9') in 0.008097 seconds
+  Import took 0.012664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_left.asset
+  artifactKey: Guid(9785a059f4581413596834b8240287a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_left.asset using Guid(9785a059f4581413596834b8240287a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fbb8c82a5450857d417e3a1fd88d960') in 0.009263 seconds
+  Import took 0.015084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_vs_grass_topleft.asset
+  artifactKey: Guid(cc679e75043a64ec4b5fd846a2450ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_vs_grass_topleft.asset using Guid(cc679e75043a64ec4b5fd846a2450ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a6b5d97415ce5b4f4826663fc632a0d') in 0.008094 seconds
+  Import took 0.020855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_topright.asset
+  artifactKey: Guid(48ff955901f5e47818e72c1f84a694cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_topright.asset using Guid(48ff955901f5e47818e72c1f84a694cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3618a6cc3123d72b9457e561d6cae0') in 0.006853 seconds
+  Import took 0.010873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottomright.asset
+  artifactKey: Guid(27171f28fe21649a681bdebc8c6ce877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottomright.asset using Guid(27171f28fe21649a681bdebc8c6ce877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43613bb274928671efce3e8a1f2e4985') in 0.010069 seconds
+  Import took 0.015720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/waterfall_animated.asset
+  artifactKey: Guid(f3ed584fda8d74b92a276d7a69c026fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/waterfall_animated.asset using Guid(f3ed584fda8d74b92a276d7a69c026fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df21c32dd26121083a682312beb70e0') in 0.003801 seconds
+  Import took 0.008389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_center.asset
+  artifactKey: Guid(1d4171cad9b99408886dab1e6883ac4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_center.asset using Guid(1d4171cad9b99408886dab1e6883ac4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d623243811786bbea6cd2833a36c546') in 0.009039 seconds
+  Import took 0.012785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_right.asset
+  artifactKey: Guid(b938a7d506b3b4f75a4df213fab28c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_right.asset using Guid(b938a7d506b3b4f75a4df213fab28c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45647de29bd236aab1be6acec98765ab') in 0.007618 seconds
+  Import took 0.011335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottomleft.asset
+  artifactKey: Guid(749656175ea904fd28cf5ccca3ebac9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottomleft.asset using Guid(749656175ea904fd28cf5ccca3ebac9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903a4c2f00b736b65d2fd85f54f073ab') in 0.009163 seconds
+  Import took 0.013483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_left.asset
+  artifactKey: Guid(e0580bc0edc984882948c571d2579227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_left.asset using Guid(e0580bc0edc984882948c571d2579227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51c4d721cd7820e97dbb16c25a256b2d') in 0.008479 seconds
+  Import took 0.013273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_topleft.asset
+  artifactKey: Guid(a230a6071083348c99cc8da7cfa60f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_topleft.asset using Guid(a230a6071083348c99cc8da7cfa60f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bc9debae61c8718f0906312e120cb24') in 0.008701 seconds
+  Import took 0.013994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stone_in_water_a.asset
+  artifactKey: Guid(e53a80d1f750b41e1a9cf953ad0c9eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stone_in_water_a.asset using Guid(e53a80d1f750b41e1a9cf953ad0c9eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f9fecb34cca7f81e02d2e7328813c16') in 0.007056 seconds
+  Import took 0.011964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottomright.asset
+  artifactKey: Guid(a00d2df894a734872b72008c43416c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottomright.asset using Guid(a00d2df894a734872b72008c43416c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f340cff048526702e2e195bcd4694e71') in 0.008284 seconds
+  Import took 0.013114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/waves_e-h_animated.asset
+  artifactKey: Guid(7f5a2cac4dcf84d4ea5d958a0fec028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/waves_e-h_animated.asset using Guid(7f5a2cac4dcf84d4ea5d958a0fec028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13191e33ded7b83d799b8fd4ebb42a20') in 0.003350 seconds
+  Import took 0.008545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_bottomright.asset
+  artifactKey: Guid(4283d161e5ac343a3ba486e2b0c86b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_bottomright.asset using Guid(4283d161e5ac343a3ba486e2b0c86b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede449e6caf7246e3211a077d4b29e30') in 0.007494 seconds
+  Import took 0.013066 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottomleft.asset
+  artifactKey: Guid(51c0a501c258c457da86f4fe5122db75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/path_vs_water_bottomleft.asset using Guid(51c0a501c258c457da86f4fe5122db75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912b440e9854454bebb8d345f3291381') in 0.008153 seconds
+  Import took 0.012898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/waves_a-d_animated.asset
+  artifactKey: Guid(9fa1eb44aef494ecc8aecdf745346a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/waves_a-d_animated.asset using Guid(9fa1eb44aef494ecc8aecdf745346a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4511f93d056733fe53f6608b7d51b866') in 0.003520 seconds
+  Import took 0.008861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_center_bottom.asset
+  artifactKey: Guid(54d5e4eef51034fa798c506841aacf94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_center_bottom.asset using Guid(54d5e4eef51034fa798c506841aacf94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6679be5440eb9f769d0ab52c2dcb7bb1') in 0.008771 seconds
+  Import took 0.013385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_topright.asset
+  artifactKey: Guid(aa643f53a78c946b180698accf0e730b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/tree_topright.asset using Guid(aa643f53a78c946b180698accf0e730b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35f4b991a77814c94b377cc31798c478') in 0.008397 seconds
+  Import took 0.013858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottom.asset
+  artifactKey: Guid(467f84b87f2cb4e9cbe8f98bb8974eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottom.asset using Guid(467f84b87f2cb4e9cbe8f98bb8974eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15c86ee82267459f2bd1fea7127110c2') in 0.008487 seconds
+  Import took 0.013365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_vs_grass_topright.asset
+  artifactKey: Guid(f98d3214df52a43a9be1cb48f258921b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_vs_grass_topright.asset using Guid(f98d3214df52a43a9be1cb48f258921b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd27f184aac998bbfd73f60ede9778c4f') in 0.006675 seconds
+  Import took 0.010467 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_bottomleft.asset
+  artifactKey: Guid(6a96292c1d2004f86adc0a316b381f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_bottomleft.asset using Guid(6a96292c1d2004f86adc0a316b381f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1feb379c3c9bd35e6649e101a8c8281c') in 0.007454 seconds
+  Import took 0.012130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_bottomleft.asset
+  artifactKey: Guid(d70a81d9b644c4267be8fb77eb0c6933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_bottomleft.asset using Guid(d70a81d9b644c4267be8fb77eb0c6933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6bd51e1f7820c67666219264dcf3cde') in 0.009524 seconds
+  Import took 0.015219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_center_top.asset
+  artifactKey: Guid(ee4eabe8e0ac745bc81686d6da4cd8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_center_top.asset using Guid(ee4eabe8e0ac745bc81686d6da4cd8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a55ea04fc2f217d6a541f9410579716b') in 0.008271 seconds
+  Import took 0.012423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_center_bottom.asset
+  artifactKey: Guid(18e4c5d7fe0f44522a8c6d8c93350e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_center_bottom.asset using Guid(18e4c5d7fe0f44522a8c6d8c93350e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f8057dbc5a00be6cd6e2e6ffd816af') in 0.007147 seconds
+  Import took 0.011336 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_left.asset
+  artifactKey: Guid(91d039a441d97439b97303ab0d9f9bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_left.asset using Guid(91d039a441d97439b97303ab0d9f9bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3609d33ae4bcd401e9e6440f8a25e41') in 0.008026 seconds
+  Import took 0.025751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_center_bottom.asset
+  artifactKey: Guid(67a9d9681f02b4681863eb4b1a58c74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_center_bottom.asset using Guid(67a9d9681f02b4681863eb4b1a58c74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6a65a163a5a2ddc8e4bd14bb2d7605d') in 0.007302 seconds
+  Import took 0.012054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_topleft.asset
+  artifactKey: Guid(9d68b3480e13245df9a4e72bb4a01bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_topleft.asset using Guid(9d68b3480e13245df9a4e72bb4a01bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386067f96efcebdffe709a4e3e9c76a7') in 0.010521 seconds
+  Import took 0.015564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_right.asset
+  artifactKey: Guid(1ce136ac387d74048a0919eb2dd64578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_right.asset using Guid(1ce136ac387d74048a0919eb2dd64578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922eff697c7a677070aea3cfa9a30349') in 0.008466 seconds
+  Import took 0.013195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_topleft.asset
+  artifactKey: Guid(04f0dc789b8de4a309ec3f2450e263ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_topleft.asset using Guid(04f0dc789b8de4a309ec3f2450e263ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2608f047fb3b8fe6984dc64de4484b') in 0.007641 seconds
+  Import took 0.012589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_bottomright.asset
+  artifactKey: Guid(baebae50d186847c490b832b07cc6ed5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_bottomright.asset using Guid(baebae50d186847c490b832b07cc6ed5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a748766e51472fdb420cdd16af15a0f') in 0.008083 seconds
+  Import took 0.012702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_center.asset
+  artifactKey: Guid(e79607c4e9ea44b4b9f84385b14db242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_center.asset using Guid(e79607c4e9ea44b4b9f84385b14db242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bacace61943f2fd88f66c33ce052ebf') in 0.014086 seconds
+  Import took 0.018987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_top.asset
+  artifactKey: Guid(649ff967286fe411ea9d48b0664c1118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_top.asset using Guid(649ff967286fe411ea9d48b0664c1118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f99b971be8c63b0d1843232d5f445b01') in 0.008503 seconds
+  Import took 0.013543 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_bottomright.asset
+  artifactKey: Guid(fc5f8407d25f34045ad9a35db8f90ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_bottomright.asset using Guid(fc5f8407d25f34045ad9a35db8f90ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890269dd9dc0ff9dfbea990d23d368f1') in 0.008502 seconds
+  Import took 0.014356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_right.asset
+  artifactKey: Guid(6d799f5995209402c965f1f9b7f6c50f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_right.asset using Guid(6d799f5995209402c965f1f9b7f6c50f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '346e9c744e51196e386be36b4a0faa76') in 0.009089 seconds
+  Import took 0.013155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_center.asset
+  artifactKey: Guid(5e21a02109e7c4fe49bf8d06b940c6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_center.asset using Guid(5e21a02109e7c4fe49bf8d06b940c6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d3e455f9d969dc4d2672a88038ca59') in 0.008707 seconds
+  Import took 0.018214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_bottomleft.asset
+  artifactKey: Guid(5438acdf6f6a34dc4a2106cc548f99ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_bottomleft.asset using Guid(5438acdf6f6a34dc4a2106cc548f99ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb46729ca7fc1c70e707190eda9b613e') in 0.009576 seconds
+  Import took 0.014247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_bottom.asset
+  artifactKey: Guid(4dd26fc6a610f43ba84491be22634f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_center_bottom.asset using Guid(4dd26fc6a610f43ba84491be22634f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f21dd5ea49c7992111600c45c34ec0c') in 0.006535 seconds
+  Import took 0.009949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_topright.asset
+  artifactKey: Guid(9fdb875f36f4b4a5ea221d3bb0174956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_topright.asset using Guid(9fdb875f36f4b4a5ea221d3bb0174956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82f5dddc9f755b9359bd6d4e4f85a1b6') in 0.008706 seconds
+  Import took 0.013579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_bottom.asset
+  artifactKey: Guid(e181e7187a65c405da2e6e2b87a54788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_bottom.asset using Guid(e181e7187a65c405da2e6e2b87a54788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13ff656d3ca97fa299973cbc2f781468') in 0.008700 seconds
+  Import took 0.013462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_topleft.asset
+  artifactKey: Guid(db300a4f68c5e4cbc87da67ecf8d8d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_topleft.asset using Guid(db300a4f68c5e4cbc87da67ecf8d8d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5438982786071d1e076232758adb59f') in 0.008103 seconds
+  Import took 0.012707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_topright.asset
+  artifactKey: Guid(aac75f2f15b314af4a3680da4a96105c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_topright.asset using Guid(aac75f2f15b314af4a3680da4a96105c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a15d27d9799111577713eafc336184d6') in 0.008782 seconds
+  Import took 0.014399 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_bottomright.asset
+  artifactKey: Guid(5aeccb0fe2e8148e79fe1c0374e12f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_bottomright.asset using Guid(5aeccb0fe2e8148e79fe1c0374e12f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4add6907180927c09c0c286a7596f35') in 0.009033 seconds
+  Import took 0.014723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_topright.asset
+  artifactKey: Guid(65fc40a87f5fa4d1f8e6a27410dd7115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_topright.asset using Guid(65fc40a87f5fa4d1f8e6a27410dd7115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b978028c8013c65c15ab2a4802d94d70') in 0.007824 seconds
+  Import took 0.012571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_bottomleft.asset
+  artifactKey: Guid(f86a5b58cea744ea29970916aada23ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_bottomleft.asset using Guid(f86a5b58cea744ea29970916aada23ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd325eaa4c736bee8daf13241dd45dce1') in 0.009838 seconds
+  Import took 0.015463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_bottomleft.asset
+  artifactKey: Guid(a0e676d5f8d2f44d98a5222800332abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_bottomleft.asset using Guid(a0e676d5f8d2f44d98a5222800332abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aa8b72d83972e1af74a6e4f9000a972') in 0.009821 seconds
+  Import took 0.015496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_topright.asset
+  artifactKey: Guid(6f3d1c232e7154e38b443faeb84cf120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_righthalf_topright.asset using Guid(6f3d1c232e7154e38b443faeb84cf120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '745b32d5d17aeff7932e6f13e95a5b99') in 0.009349 seconds
+  Import took 0.015412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_bottomleft.asset
+  artifactKey: Guid(578dc6d34f38c49ae98dd150b14004d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_bottomleft.asset using Guid(578dc6d34f38c49ae98dd150b14004d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4f742faa823e6f4657e5b72fbca9854') in 0.008468 seconds
+  Import took 0.013313 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_right.asset
+  artifactKey: Guid(e39da831ea0094278b53c7e25eebe6c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_right.asset using Guid(e39da831ea0094278b53c7e25eebe6c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7f9d6d4181f6906d7d3e5bb6d6c0838') in 0.008921 seconds
+  Import took 0.013436 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000395 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_bottom.asset
+  artifactKey: Guid(207f3766af5344ec99c13dc96489d9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_bottom.asset using Guid(207f3766af5344ec99c13dc96489d9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881483c129fe8c0c57be84e65abde3a8') in 0.007028 seconds
+  Import took 0.011682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_topright.asset
+  artifactKey: Guid(4b0b27ab85df24c21a09952f83717e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_topright.asset using Guid(4b0b27ab85df24c21a09952f83717e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04a30e4df10ff74d2fcf118e6f2b562e') in 0.012461 seconds
+  Import took 0.018037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottom.asset
+  artifactKey: Guid(2e9ddf79af2e941daae4078024e3efde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_bottom.asset using Guid(2e9ddf79af2e941daae4078024e3efde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1671a3f74f409a6c3595a06c3319236d') in 0.007593 seconds
+  Import took 0.012429 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/skull_rotated.asset
+  artifactKey: Guid(83240ec7ed67849d2afb7d8594231ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/skull_rotated.asset using Guid(83240ec7ed67849d2afb7d8594231ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd63a523453488fabbd369fcc5b27d7ee') in 0.008627 seconds
+  Import took 0.013576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_bottomright.asset
+  artifactKey: Guid(28e137f9bce3f4ad78f442736c32e3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chimneyroof_lefthalf_bottomright.asset using Guid(28e137f9bce3f4ad78f442736c32e3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9dde219fd004f1eef08f32a076f6e6') in 0.007136 seconds
+  Import took 0.015248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_topleft.asset
+  artifactKey: Guid(e4418f99e75eb45729fe57696872dd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_topleft.asset using Guid(e4418f99e75eb45729fe57696872dd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dcafc7b0cd134d156ef7774319f444f') in 0.008454 seconds
+  Import took 0.013084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/smallchest_closed.asset
+  artifactKey: Guid(384c67a9d542848fd994c6014c0a7649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/smallchest_closed.asset using Guid(384c67a9d542848fd994c6014c0a7649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c42e43116fd40eb0a3f15553c8e66744') in 0.005698 seconds
+  Import took 0.011460 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_right.asset
+  artifactKey: Guid(358ee02a86c2c4c20949f8d3db2606c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_right.asset using Guid(358ee02a86c2c4c20949f8d3db2606c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e62631e53199779e8bed4534801cd0d') in 0.008079 seconds
+  Import took 0.012599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_topright.asset
+  artifactKey: Guid(71582402e6a3b4fb0b1d11805525d80d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_path_topright.asset using Guid(71582402e6a3b4fb0b1d11805525d80d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3281262fc2a76d2c1bf7e4f5442241fa') in 0.007748 seconds
+  Import took 0.012149 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_bottomright.asset
+  artifactKey: Guid(57fd22ade03fd466389846580f98f317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_bottomright.asset using Guid(57fd22ade03fd466389846580f98f317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71d33c5b4978d6dc3bb13eedfd2e37c7') in 0.009660 seconds
+  Import took 0.015669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_topright.asset
+  artifactKey: Guid(8459a39ee86754dfe99a46e6f27392b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_topright.asset using Guid(8459a39ee86754dfe99a46e6f27392b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '266bac1502e4fb2c147ffef6a6ce18bf') in 0.007975 seconds
+  Import took 0.012688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_center_top.asset
+  artifactKey: Guid(80b9c5df5549445fd9e871a817fe092c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_center_top.asset using Guid(80b9c5df5549445fd9e871a817fe092c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b28bcaa35e629b1c7206f4ae09324f3') in 0.008359 seconds
+  Import took 0.013772 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall.asset
+  artifactKey: Guid(d09094bb9df2043b7b7eb76308298aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall.asset using Guid(d09094bb9df2043b7b7eb76308298aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73cc1839a1f90ab5cb55bdf5001cef91') in 0.009279 seconds
+  Import took 0.014638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_left.asset
+  artifactKey: Guid(5ec6b23184b3a4988b52d4f9deeea608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_lefthalf_left.asset using Guid(5ec6b23184b3a4988b52d4f9deeea608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd17c6bf111664a2cee9d1e47d338b47c') in 0.006958 seconds
+  Import took 0.011698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottomright.asset
+  artifactKey: Guid(ac936b44cb61c48b490c88e89cc164b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_water_bottomright.asset using Guid(ac936b44cb61c48b490c88e89cc164b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59f2b84751e0c9ecfc4dc425ad86ea16') in 0.007331 seconds
+  Import took 0.016164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_topleft.asset
+  artifactKey: Guid(ae3a0e6b185fa44fd83ced2a4a5ccf51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_vs_grass_topleft.asset using Guid(ae3a0e6b185fa44fd83ced2a4a5ccf51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '242156eb96c3f86a58ec2fafd80f74ed') in 0.010116 seconds
+  Import took 0.014221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_topleft.asset
+  artifactKey: Guid(04211dd9a904141c7866b27e8ee0fa05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_topleft.asset using Guid(04211dd9a904141c7866b27e8ee0fa05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e27458a27605f88b5cb203022907b7d2') in 0.008025 seconds
+  Import took 0.017257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_bottomright.asset
+  artifactKey: Guid(6346abaa1727c46b09a7a714413703dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_chrimneyroof_righthalf_bottomright.asset using Guid(6346abaa1727c46b09a7a714413703dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa75adb2d6467cbbc668e5ea5a615d53') in 0.008108 seconds
+  Import took 0.013400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottomleft.asset
+  artifactKey: Guid(74d3b0cc05e254d2c94efae0277e3259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stonewall_bottomleft.asset using Guid(74d3b0cc05e254d2c94efae0277e3259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5f64dc089fa013cc6964cc7815cd80') in 0.007511 seconds
+  Import took 0.011462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_top.asset
+  artifactKey: Guid(d4688c7630fce436ebf43a84b1ba5b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_center_top.asset using Guid(d4688c7630fce436ebf43a84b1ba5b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3aff27dd0bf0181d172a31038f2597d') in 0.007705 seconds
+  Import took 0.012202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_topleft.asset
+  artifactKey: Guid(e4cf305184a4e4560b200e68a2c092bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_back_righthalf_topleft.asset using Guid(e4cf305184a4e4560b200e68a2c092bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a10b660a7ffe17ddf7a6eb1ea7653f') in 0.008146 seconds
+  Import took 0.013508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_2_small.asset
+  artifactKey: Guid(e7a37b1d26e324e3381ae8170afa1ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_2_small.asset using Guid(e7a37b1d26e324e3381ae8170afa1ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e5fee153f193e233a0351e083a090e8') in 0.008441 seconds
+  Import took 0.013959 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_3.asset
+  artifactKey: Guid(962dc1e0feaff4b5daf6c25ebd8ef4ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/stones_in_water_3.asset using Guid(962dc1e0feaff4b5daf6c25ebd8ef4ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92217189a6094251ac5fbe01de39af33') in 0.008589 seconds
+  Import took 0.013072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_top.asset
+  artifactKey: Guid(dc079edd1454147f0a34363ce4b95d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_top.asset using Guid(dc079edd1454147f0a34363ce4b95d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f2506d6d0e64d3dd48c140e518da1b2') in 0.008342 seconds
+  Import took 0.013322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_bottomright.asset
+  artifactKey: Guid(71e818fa69b874d1db5323907924c1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/water_vs_grass_bottomright.asset using Guid(71e818fa69b874d1db5323907924c1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08412c0a9fdad12b1e16d2650e730742') in 0.008488 seconds
+  Import took 0.013164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_topleft.asset
+  artifactKey: Guid(d86234dc6212e414aa5b895634a967d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_emptyroof_lefthalf_topleft.asset using Guid(d86234dc6212e414aa5b895634a967d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb848eaddadc438c1041ef6b0648c29a') in 0.007784 seconds
+  Import took 0.012606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.128940 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_topleft.asset
+  artifactKey: Guid(6c13bc8d3c5764bfcb540ca2a2e3f3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_topleft.asset using Guid(6c13bc8d3c5764bfcb540ca2a2e3f3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b99205cac8ea85da234728d0464561c') in 0.006977 seconds
+  Import took 0.010649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_right.asset
+  artifactKey: Guid(27bec44b3119044e58316543ab987430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_right.asset using Guid(27bec44b3119044e58316543ab987430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a47fece8a6cbec86a45d648425e4d312') in 0.009792 seconds
+  Import took 0.015400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_topleft.asset
+  artifactKey: Guid(744c574b4d73443b7a6524cc698d6b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_topleft.asset using Guid(744c574b4d73443b7a6524cc698d6b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0a5a906f9e89643213e86b5cd201864') in 0.009037 seconds
+  Import took 0.014400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_bottom.asset
+  artifactKey: Guid(27937dac57bff47479eda457373bc43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_bottom.asset using Guid(27937dac57bff47479eda457373bc43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a376d4935eb3baa480c7cb67c9126df') in 0.010119 seconds
+  Import took 0.015597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_topright.asset
+  artifactKey: Guid(10acd9d9e0216419d975099caee00a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_lefthalf_topright.asset using Guid(10acd9d9e0216419d975099caee00a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '178d57b3509d5f2b0111d18fa9374a51') in 0.008958 seconds
+  Import took 0.014799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_left.asset
+  artifactKey: Guid(fd97123bc564243a49917aa33b14fb2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_left.asset using Guid(fd97123bc564243a49917aa33b14fb2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee6c6d3a25751c2ea6cef2011fbde068') in 0.010290 seconds
+  Import took 0.015354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_topright.asset
+  artifactKey: Guid(08be39acc86774e5dab0fe3f9f26615d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_topright.asset using Guid(08be39acc86774e5dab0fe3f9f26615d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e54c4550ef18085aec1d64a2adfaa419') in 0.010290 seconds
+  Import took 0.015461 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_bottomright.asset
+  artifactKey: Guid(45aaa5a6a74c14d9380924e3497dfbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uMMORPG/Tilemaps/Tiles - Main World/woodhouse_front_righthalf_bottomright.asset using Guid(45aaa5a6a74c14d9380924e3497dfbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7280955ef4143b596ca3b878d3514dfa') in 0.007364 seconds
+  Import took 0.012141 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003391 seconds.
+Registered in 0.004828 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.031 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2331.
+Total: 3.304200 ms (FindLiveObjects: 0.259100 ms CreateObjectMapping: 0.056700 ms MarkObjects: 2.833700 ms  DeleteObjects: 0.152700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1866.880411 seconds.
+  path: Assets/Animations/Controllers/EnemyController.controller
+  artifactKey: Guid(fceaabf3b0a450546bac1ebf816a7283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Controllers/EnemyController.controller using Guid(fceaabf3b0a450546bac1ebf816a7283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52cce2d6e8eaa70da1da2fae9436199a') in 0.023872 seconds
+  Import took 0.028376 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005603 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.072 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.5 MB.
+System memory in use after: 90.5 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2335.
+Total: 2.804100 ms (FindLiveObjects: 0.252600 ms CreateObjectMapping: 0.048200 ms MarkObjects: 2.337600 ms  DeleteObjects: 0.163500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003408 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.4 MB.
+System memory in use after: 90.4 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2339.
+Total: 3.053500 ms (FindLiveObjects: 0.263100 ms CreateObjectMapping: 0.049600 ms MarkObjects: 2.580100 ms  DeleteObjects: 0.156500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 159.194742 seconds.
+  path: Assets/Scripts/Character.cs
+  artifactKey: Guid(f919418f0cc981f48afa45226b7c0726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character.cs using Guid(f919418f0cc981f48afa45226b7c0726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61fe2af0d3db62e196c52290ce7d56f') in 0.010525 seconds
+  Import took 0.014858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.155010 seconds.
+  path: Assets/Scripts/Character.cs
+  artifactKey: Guid(f919418f0cc981f48afa45226b7c0726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character.cs using Guid(f919418f0cc981f48afa45226b7c0726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61fe2af0d3db62e196c52290ce7d56f') in 0.002374 seconds
+  Import took 0.007497 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003373 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.203 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2343.
+Total: 2.672100 ms (FindLiveObjects: 0.249600 ms CreateObjectMapping: 0.051000 ms MarkObjects: 2.205800 ms  DeleteObjects: 0.163600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 106.855197 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a74b23a6121b4a7089698cff35ac2588') in 0.006803 seconds
+  Import took 0.010795 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003919 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.138 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2347.
+Total: 2.674900 ms (FindLiveObjects: 0.269700 ms CreateObjectMapping: 0.049700 ms MarkObjects: 2.205700 ms  DeleteObjects: 0.147600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 80.636944 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfa770381038a94b74cbdfb4ad46f5b1') in 0.005376 seconds
+  Import took 0.008703 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004714 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.207 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2351.
+Total: 3.138400 ms (FindLiveObjects: 0.438000 ms CreateObjectMapping: 0.119200 ms MarkObjects: 2.420100 ms  DeleteObjects: 0.158800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.355398 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(2a2cf351088b1ae4fb8114909dee937e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aaa1e4ac36aee1293a0a76fa64b8754') in 0.007309 seconds
+  Import took 0.027654 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003801 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.017 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2355.
+Total: 2.867000 ms (FindLiveObjects: 0.259000 ms CreateObjectMapping: 0.057700 ms MarkObjects: 2.381700 ms  DeleteObjects: 0.166400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.956856 seconds.
+  path: Assets/Scripts/EnemyStates/AttackState.cs
+  artifactKey: Guid(4dca8f675dbee3249828b2416b9ab3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyStates/AttackState.cs using Guid(4dca8f675dbee3249828b2416b9ab3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f37fefcd6b4031f93c79956c70a9b1') in 0.008381 seconds
+  Import took 0.013954 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003335 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.317 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2360.
+Total: 2.807200 ms (FindLiveObjects: 0.261800 ms CreateObjectMapping: 0.049700 ms MarkObjects: 2.352800 ms  DeleteObjects: 0.140500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005378 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.133 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2364.
+Total: 2.903500 ms (FindLiveObjects: 0.236400 ms CreateObjectMapping: 0.045500 ms MarkObjects: 2.471400 ms  DeleteObjects: 0.147900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 697.189084 seconds.
+  path: Assets/Scripts/EnemyStates/AttackState.cs
+  artifactKey: Guid(4dca8f675dbee3249828b2416b9ab3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyStates/AttackState.cs using Guid(4dca8f675dbee3249828b2416b9ab3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9d3bc51b181354eb28c0035a3d02342') in 0.007465 seconds
+  Import took 0.011671 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003812 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.184 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2368.
+Total: 3.152100 ms (FindLiveObjects: 0.308400 ms CreateObjectMapping: 0.061600 ms MarkObjects: 2.609200 ms  DeleteObjects: 0.170300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004218 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.120 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.5 MB.
+System memory in use after: 90.5 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2372.
+Total: 3.190700 ms (FindLiveObjects: 0.266200 ms CreateObjectMapping: 0.052400 ms MarkObjects: 2.719400 ms  DeleteObjects: 0.150300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003753 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.063 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.23 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.5 MB.
+System memory in use after: 90.5 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2376.
+Total: 3.218500 ms (FindLiveObjects: 0.273600 ms CreateObjectMapping: 0.049200 ms MarkObjects: 2.718800 ms  DeleteObjects: 0.174400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003632 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.183 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2380.
+Total: 2.712700 ms (FindLiveObjects: 0.271200 ms CreateObjectMapping: 0.048200 ms MarkObjects: 2.237200 ms  DeleteObjects: 0.154200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003984 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.046 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2384.
+Total: 3.299200 ms (FindLiveObjects: 0.348000 ms CreateObjectMapping: 0.075500 ms MarkObjects: 2.718300 ms  DeleteObjects: 0.155700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005565 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.193 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2388.
+Total: 4.072100 ms (FindLiveObjects: 0.323900 ms CreateObjectMapping: 0.749800 ms MarkObjects: 2.821000 ms  DeleteObjects: 0.174100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005614 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.140 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2392.
+Total: 3.334300 ms (FindLiveObjects: 0.265500 ms CreateObjectMapping: 0.080300 ms MarkObjects: 2.805500 ms  DeleteObjects: 0.181200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003513 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.121 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2396.
+Total: 2.696900 ms (FindLiveObjects: 0.239200 ms CreateObjectMapping: 0.051800 ms MarkObjects: 2.227600 ms  DeleteObjects: 0.176100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003756 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.113 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2400.
+Total: 3.541400 ms (FindLiveObjects: 0.353600 ms CreateObjectMapping: 0.064600 ms MarkObjects: 2.949800 ms  DeleteObjects: 0.171300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003453 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.128 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.25 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2404.
+Total: 3.947700 ms (FindLiveObjects: 0.278600 ms CreateObjectMapping: 0.068000 ms MarkObjects: 3.381100 ms  DeleteObjects: 0.217100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005170 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2408.
+Total: 2.755500 ms (FindLiveObjects: 0.304800 ms CreateObjectMapping: 0.087600 ms MarkObjects: 2.200400 ms  DeleteObjects: 0.160300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005386 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.050 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.8 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2412.
+Total: 2.855000 ms (FindLiveObjects: 0.288400 ms CreateObjectMapping: 0.099300 ms MarkObjects: 2.309600 ms  DeleteObjects: 0.156000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003417 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.201 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2416.
+Total: 2.941000 ms (FindLiveObjects: 0.284000 ms CreateObjectMapping: 0.054000 ms MarkObjects: 2.445600 ms  DeleteObjects: 0.154500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005102 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.224 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2420.
+Total: 2.766600 ms (FindLiveObjects: 0.252600 ms CreateObjectMapping: 0.048500 ms MarkObjects: 2.310200 ms  DeleteObjects: 0.153200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003584 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2424.
+Total: 3.212500 ms (FindLiveObjects: 0.280500 ms CreateObjectMapping: 0.063200 ms MarkObjects: 2.686400 ms  DeleteObjects: 0.180100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003926 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.106 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2428.
+Total: 3.651800 ms (FindLiveObjects: 0.334500 ms CreateObjectMapping: 0.066300 ms MarkObjects: 3.072700 ms  DeleteObjects: 0.176000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004053 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.034 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.8 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2432.
+Total: 2.707300 ms (FindLiveObjects: 0.273700 ms CreateObjectMapping: 0.050700 ms MarkObjects: 2.206100 ms  DeleteObjects: 0.175100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3463.596515 seconds.
+  path: Assets/Sprites/sapling.png
+  artifactKey: Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/sapling.png using Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b399ef6ec70989bf6f5906ca8d805bec') in 0.206321 seconds
+  Import took 0.211002 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003665 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.081 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.9 MB.
+System memory in use after: 90.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2466.
+Total: 2.734900 ms (FindLiveObjects: 0.310500 ms CreateObjectMapping: 0.054700 ms MarkObjects: 2.219200 ms  DeleteObjects: 0.147500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003558 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.126 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2470.
+Total: 2.927500 ms (FindLiveObjects: 0.277000 ms CreateObjectMapping: 0.054700 ms MarkObjects: 2.432300 ms  DeleteObjects: 0.161200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003822 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.104 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.9 MB.
+System memory in use after: 90.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2474.
+Total: 2.750800 ms (FindLiveObjects: 0.260200 ms CreateObjectMapping: 0.048500 ms MarkObjects: 2.298100 ms  DeleteObjects: 0.142000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007135 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  1.165 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1869 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 86.9 MB.
-System memory in use after: 86.9 MB.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 90.9 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2322.
-Total: 2.717700 ms (FindLiveObjects: 0.247600 ms CreateObjectMapping: 0.048700 ms MarkObjects: 2.281100 ms  DeleteObjects: 0.138600 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2478.
+Total: 3.000600 ms (FindLiveObjects: 0.285600 ms CreateObjectMapping: 0.082300 ms MarkObjects: 2.467100 ms  DeleteObjects: 0.163600 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005290 seconds.
+Registered in 0.003818 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.86 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.167 seconds
+- Completed reload, in  1.166 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1869 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.0 MB.
-System memory in use after: 87.0 MB.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.8 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2326.
-Total: 2.860900 ms (FindLiveObjects: 0.254200 ms CreateObjectMapping: 0.056400 ms MarkObjects: 2.412900 ms  DeleteObjects: 0.135600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 2138.442170 seconds.
-  path: Assets/Scripts/EnemyStates/IState.cs
-  artifactKey: Guid(db8b5fb3e58fcba4daaf4941f41baaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/EnemyStates/IState.cs using Guid(db8b5fb3e58fcba4daaf4941f41baaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2260f334cdeaf4083012567cf8c26d4f') in 0.007220 seconds
-  Import took 0.011992 seconds .
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2482.
+Total: 3.021400 ms (FindLiveObjects: 0.281500 ms CreateObjectMapping: 0.053700 ms MarkObjects: 2.519900 ms  DeleteObjects: 0.164000 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005692 seconds.
+Registered in 0.003439 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.474 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.0 MB.
-System memory in use after: 87.0 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2332.
-Total: 3.452600 ms (FindLiveObjects: 0.273700 ms CreateObjectMapping: 0.054500 ms MarkObjects: 2.977800 ms  DeleteObjects: 0.144600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003877 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.205 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.1 MB.
-System memory in use after: 87.0 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2336.
-Total: 2.656600 ms (FindLiveObjects: 0.242800 ms CreateObjectMapping: 0.048100 ms MarkObjects: 2.221500 ms  DeleteObjects: 0.142200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003750 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  1.153 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.1 MB.
-System memory in use after: 87.0 MB.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.8 MB.
+System memory in use after: 90.8 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2340.
-Total: 2.950900 ms (FindLiveObjects: 0.261600 ms CreateObjectMapping: 0.056300 ms MarkObjects: 2.468100 ms  DeleteObjects: 0.163100 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2486.
+Total: 3.998900 ms (FindLiveObjects: 0.360100 ms CreateObjectMapping: 0.082100 ms MarkObjects: 3.290300 ms  DeleteObjects: 0.263700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006871 seconds.
+Registered in 0.003628 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.159 seconds
+- Completed reload, in  1.053 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.1 MB.
-System memory in use after: 87.1 MB.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 91.0 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2344.
-Total: 3.511000 ms (FindLiveObjects: 0.375900 ms CreateObjectMapping: 0.133700 ms MarkObjects: 2.832200 ms  DeleteObjects: 0.166600 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2490.
+Total: 2.768200 ms (FindLiveObjects: 0.255000 ms CreateObjectMapping: 0.047900 ms MarkObjects: 2.265600 ms  DeleteObjects: 0.197900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 523.673918 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(d4a045d9150b6e146978b74d481419a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(d4a045d9150b6e146978b74d481419a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '776930e05951b138f6ce1bdecf8aff76') in 0.102312 seconds
+  Import took 0.107328 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005233 seconds.
+Registered in 0.003487 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.241 seconds
+- Completed reload, in  1.138 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2498.
+Total: 3.600800 ms (FindLiveObjects: 0.334300 ms CreateObjectMapping: 0.065900 ms MarkObjects: 3.046100 ms  DeleteObjects: 0.152200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 124.658456 seconds.
+  path: Assets/Animations/Controllers/EnemyController.controller
+  artifactKey: Guid(fceaabf3b0a450546bac1ebf816a7283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Controllers/EnemyController.controller using Guid(fceaabf3b0a450546bac1ebf816a7283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c82ec9f9d375a9c23f006f246cb9bde5') in 0.027237 seconds
+  Import took 0.032072 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003560 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.186 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 91.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2502.
+Total: 2.804600 ms (FindLiveObjects: 0.295200 ms CreateObjectMapping: 0.069600 ms MarkObjects: 2.287000 ms  DeleteObjects: 0.151000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005854 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.220 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.9 MB.
+System memory in use after: 90.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2506.
+Total: 3.247700 ms (FindLiveObjects: 0.305200 ms CreateObjectMapping: 0.069400 ms MarkObjects: 2.634000 ms  DeleteObjects: 0.236100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003278 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.141 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 91.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2510.
+Total: 3.298600 ms (FindLiveObjects: 0.293100 ms CreateObjectMapping: 0.070600 ms MarkObjects: 2.766700 ms  DeleteObjects: 0.165600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004364 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.041 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2514.
+Total: 3.317900 ms (FindLiveObjects: 0.282200 ms CreateObjectMapping: 0.073800 ms MarkObjects: 2.781200 ms  DeleteObjects: 0.178800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 536.870999 seconds.
+  path: Assets/Animations/Enemy_A/idle_down.anim
+  artifactKey: Guid(7a63c9392eb5c1548a02f84f31b7f1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Enemy_A/idle_down.anim using Guid(7a63c9392eb5c1548a02f84f31b7f1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e701a89dbf99b785b4389e93a3759852') in 0.023254 seconds
+  Import took 0.029261 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003608 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.169 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.9 MB.
+System memory in use after: 90.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2518.
+Total: 3.052400 ms (FindLiveObjects: 0.330200 ms CreateObjectMapping: 0.103600 ms MarkObjects: 2.436100 ms  DeleteObjects: 0.180600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003926 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.097 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2522.
+Total: 2.819300 ms (FindLiveObjects: 0.293900 ms CreateObjectMapping: 0.105000 ms MarkObjects: 2.250900 ms  DeleteObjects: 0.167800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 187.746166 seconds.
+  path: Assets/Sprites/sapling.png
+  artifactKey: Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/sapling.png using Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '336e04fbec0101274a4dcab597d310b6') in 0.144258 seconds
+  Import took 0.147928 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003779 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.071 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 3.035400 ms (FindLiveObjects: 0.299400 ms CreateObjectMapping: 0.071700 ms MarkObjects: 2.493600 ms  DeleteObjects: 0.168400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006323 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.228 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.9 MB.
+System memory in use after: 90.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2531.
+Total: 3.246000 ms (FindLiveObjects: 0.291400 ms CreateObjectMapping: 0.061400 ms MarkObjects: 2.737900 ms  DeleteObjects: 0.153300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005105 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.169 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.07 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2535.
+Total: 3.383900 ms (FindLiveObjects: 0.299800 ms CreateObjectMapping: 0.085600 ms MarkObjects: 2.829400 ms  DeleteObjects: 0.167100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005535 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.045 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2539.
+Total: 2.891400 ms (FindLiveObjects: 0.270200 ms CreateObjectMapping: 0.053700 ms MarkObjects: 2.376000 ms  DeleteObjects: 0.188900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003925 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.072 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2543.
+Total: 2.940400 ms (FindLiveObjects: 0.305500 ms CreateObjectMapping: 0.058400 ms MarkObjects: 2.432400 ms  DeleteObjects: 0.142400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003560 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.101 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2547.
+Total: 2.766800 ms (FindLiveObjects: 0.280600 ms CreateObjectMapping: 0.050100 ms MarkObjects: 2.293100 ms  DeleteObjects: 0.141400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005612 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.139 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 91.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2551.
+Total: 4.676000 ms (FindLiveObjects: 0.473200 ms CreateObjectMapping: 0.216000 ms MarkObjects: 3.758400 ms  DeleteObjects: 0.225500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005596 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.150 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1871 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.1 MB.
-System memory in use after: 87.1 MB.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2348.
-Total: 3.151200 ms (FindLiveObjects: 0.275900 ms CreateObjectMapping: 0.078100 ms MarkObjects: 2.617800 ms  DeleteObjects: 0.177400 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2555.
+Total: 2.883100 ms (FindLiveObjects: 0.287000 ms CreateObjectMapping: 0.052800 ms MarkObjects: 2.359100 ms  DeleteObjects: 0.182100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004754 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.121 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.2 MB.
+System memory in use after: 91.2 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2559.
+Total: 2.991200 ms (FindLiveObjects: 0.293700 ms CreateObjectMapping: 0.061500 ms MarkObjects: 2.488500 ms  DeleteObjects: 0.145400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 571.018212 seconds.
+  path: Assets/Prefabs/Enemy Variant.prefab
+  artifactKey: Guid(ab0ef99e57897024c980e29d1c9264b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy Variant.prefab using Guid(ab0ef99e57897024c980e29d1c9264b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2182b6cf09eddcd3e7e3ff5ff1282c32') in 0.087867 seconds
+  Import took 0.092073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.670467 seconds.
+  path: Assets/Prefabs/EnemyBACKUP.prefab
+  artifactKey: Guid(ab0ef99e57897024c980e29d1c9264b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EnemyBACKUP.prefab using Guid(ab0ef99e57897024c980e29d1c9264b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64812fe84876f97501c8a0f2e741a9c5') in 0.024564 seconds
+  Import took 0.031218 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005810 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.372 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.3 MB.
+System memory in use after: 91.3 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2564.
+Total: 4.193400 ms (FindLiveObjects: 0.334200 ms CreateObjectMapping: 0.078800 ms MarkObjects: 3.573200 ms  DeleteObjects: 0.204900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003619 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.051 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.2 MB.
+System memory in use after: 91.2 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2568.
+Total: 3.097400 ms (FindLiveObjects: 0.327100 ms CreateObjectMapping: 0.111500 ms MarkObjects: 2.512600 ms  DeleteObjects: 0.144200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 184.599810 seconds.
+  path: Assets/Sprites/sapling.png
+  artifactKey: Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/sapling.png using Guid(95c761711a8cb474f994fc95680c9325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b5676ef4a1c8e3e785428022128a8e') in 0.151759 seconds
+  Import took 0.157382 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003616 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.200 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1872 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.2 MB.
+System memory in use after: 91.2 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2574.
+Total: 2.797600 ms (FindLiveObjects: 0.272800 ms CreateObjectMapping: 0.051000 ms MarkObjects: 2.297400 ms  DeleteObjects: 0.174200 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

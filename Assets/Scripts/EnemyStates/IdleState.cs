@@ -11,6 +11,7 @@ class IdleState : IState
     public void Enter(Enemy parent)
     {
         this.parent = parent;
+        this.parent.Reset();
     }
 
     public void Exit()
@@ -21,7 +22,7 @@ class IdleState : IState
     {
         //Debug.Log("Enemy Idles");
 
-        if (parent.Target != null) //if i have target then follow //i can do this bc of the getter in Enemy script
+        if (parent.MyTarget != null) //if i have target then follow //i can do this bc of the getter in Enemy script
         {
             parent.ChangeState(new FollowState());
         }

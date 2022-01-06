@@ -27,9 +27,9 @@ public class AttackState : IState
             parent.StartCoroutine(Attack()); //i need the parent to start a coroutine bc in unity you need a monobehaviour to start a coroutine, the parent is enemy which is a monobehaviour and i can use this for the coroutine
         }
 
-        if (parent.Target != null)
+        if (parent.MyTarget != null)
         {
-            float distance = Vector2.Distance(parent.Target.position, parent.transform.position);
+            float distance = Vector2.Distance(parent.MyTarget.position, parent.transform.position);
             if(distance >= parent.MyAttackRange + moreRange && !parent.IsAttacking) //if player gets out of range enemy cant attack and only follows
             {
                 parent.ChangeState(new FollowState());

@@ -25,7 +25,7 @@ public class Player : Character
     private int spellDamage = 10;
 
     private Vector3 min, max;
-    public Transform MyTarget { get; set; }
+    //public Transform MyTarget { get; set; } //removed. MyTarget property is now added in Character script
 
     /////// Start is called before the first frame update///////
     protected override void Start()
@@ -107,7 +107,7 @@ public class Player : Character
         {
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
             //spell.MyTarget = currentTarget;
-            spell.Initialize(currentTarget, spellDamage); //this is hardcoded spell damage
+            spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
         }
             
         StopAttack();
@@ -120,7 +120,10 @@ public class Player : Character
         {
             if (!IsAttacking && !isMoving && InLineOfSight()) //μπορώ να βάλω και το lineofsight γιατί επιστρέφει bool τιμή
             {
-                attackRoutine = StartCoroutine(Attack(spellIndex));
+                if (MyTarget.GetComponentInParent<Character>().IsAlive) //this is added later, it prevents casting spells on a dead target
+                {
+                    attackRoutine = StartCoroutine(Attack(spellIndex));
+                }
             }
         }
        
