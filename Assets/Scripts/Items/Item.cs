@@ -13,9 +13,10 @@ public abstract class Item : ScriptableObject
     public int StackSize { get => stackSize; } //no need for setters here, this will not change
 
     //need ref to the slot the item is on. An item only exists in the game if it is placed in the inventory - if i drag it outside the inv on the ground i want it to get destroyed
-    protected Slot Slot
+    
+    protected SlotScr slot ///////////////IS THIS CORRECT ???
     {
-        get { return Slot; } 
-        set { Slot = value; } //this needs a setter, i need to be able to move items from slot to slot
+        get { return slot; }
+        set { slot = value; } //this needs a setter, i need to be able to move items from slot to slot
     }
 }
