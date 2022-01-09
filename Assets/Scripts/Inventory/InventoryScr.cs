@@ -19,8 +19,23 @@ public class InventoryScr : MonoBehaviour
             return instance;
         }
     }
+
+    private SlotScr fromSlot; //need ref to whatever i carry around. This is going to be used whenever i click on sth to move it somewhere else, the fromSlot is the slot the item is coming from, when we place it somewhere else in inv
     private List<Bag> bags = new List<Bag>();
     public bool CanAddBag { get { return bags.Count < 3; } }
+
+    public SlotScr FromSlot
+    {
+        get => fromSlot;
+        set {
+            fromSlot = value;
+            if(value != null)
+            {
+                fromSlot.MyIcon.color = Color.gray; //if i click on any item in my inv this code is going to set the fromSlot equal to whatever i click on and thenm im graying it out
+            }
+        }
+    }
+
     [SerializeField]
     private BagButton[] bagbuttons;
 

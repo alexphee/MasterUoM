@@ -18,6 +18,19 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         get { return items.Count == 0; } //no items in, empty slot
     }
 
+    public bool IsFull//has it maxed out? or there is more room to fill on top of the stack
+    {
+        get
+        { 
+            if (IsEmpty || MyCount < MyItem.MyStackSize)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+            
+           
     public Item MyItem
     {
         get
@@ -61,6 +74,21 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         return true;
     }
 
+    public bool AddItems(ObservableStack<Item> newItems) //take item and place it in empty spot in inventory, also take item of same type ant stack it
+    {
+        if (IsEmpty || newItems.Peek().GetType() == MyItem.GetType()) { //check if slot is empty or the item on the slot has the same type
+            int count = newItems.Count; //if i pop the loop doesnt run
+            for (int i = 0; i < count; i++) //run through all items based on count
+            {
+                if (IsFull) 
+                {
+                    return false;
+                }
+                AddItem(newItems.Pop()); 
+            }return true; //if i runned whole loop and add all items return true
+        }return false; //else false
+    }
+
     public void RemoveItem(Item item)
     {
         if (!IsEmpty)
@@ -71,6 +99,22 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (eventData.button == PointerEventData.InputButton.Left)//on left click
+        {
+            if (InventoryScr.MyInstance.FromSlot == null && !IsEmpty)//if i dont hold anything to move AND the slot is non empty then i can pick up sth // empty slot throws NullRefExc
+            {
+                HandScr.MyInstance.TakeMoveable(MyItem as IMoveable); //the item sitting on the actual slot
+                InventoryScr.MyInstance.FromSlot = this;
+            }
+            else if (InventoryScr.MyInstance != null)//if i hold sth to move
+            {
+                if (PutItemBack() || SwapItems(InventoryScr.MyInstance.FromSlot) || AddItems(InventoryScr.MyInstance.FromSlot.items)) //order is important
+                {
+                    HandScr.MyInstance.Drop();
+                    InventoryScr.MyInstance.FromSlot = null; //reset so i can do this again
+                }
+            }
+            }
         if (eventData.button == PointerEventData.InputButton.Right) //on right click
         {
             UseItem();
@@ -96,6 +140,31 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         return false;
     }
 
+    private bool PutItemBack()
+    {
+        if (InventoryScr.MyInstance.FromSlot == this) { //if this is true, im trying to put it back on the same slot //fromSlot==this
+            InventoryScr.MyInstance.FromSlot.MyIcon.color = Color.white; //set color back to normal
+            return true;
+        } 
+        return false;
+    }
+
+    private bool SwapItems(SlotScr from)
+    {
+        if (IsEmpty)
+        {
+            return false; //if empty no reasson to swap anything
+        }
+        if(from.MyItem.GetType() != MyItem.GetType() || from.MyCount+MyCount > MyItem.MyStackSize) //the first condition checks if the item i move is different than the item im clicking on, then swap. The second checks if fromSlots count plus the count on the slot im clicking on is larger than the total slot size of the items, swap.
+        {
+            ObservableStack<Item> tmpFrom = new ObservableStack<Item>(from.items); //make a copy of all the items i need to swap from slotA
+            from.items.Clear(); //clear slotA so there is room there
+            from.AddItems(items); //take all items from other slotB and copy to slotA
+            items.Clear(); //Clear slotB
+            AddItems(tmpFrom); //move items from copy A to B
+            return true;
+        }return false;
+    }
     private void UpdateSlot() //gonna called everytime something changes items (Stack<Items> items)
     {
         UIManager.MyInstance.UpdateStackSize(this);
