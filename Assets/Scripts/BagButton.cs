@@ -1,24 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class BagButton : MonoBehaviour
+public class BagButton : MonoBehaviour, IPointerClickHandler
 {
     private Bag bag;
     [SerializeField]
-    private Sprite full;
+    private Sprite full, empty;
 
-    public Bag Bag { get => bag; set => bag = value; }
-
-    // Start is called before the first frame update
-    void Start()
+    public Bag MyBag
     {
-        
+        get { return bag; }
+        set
+        {
+            if (value != null)
+            {
+                GetComponent<Image>().sprite = full;
+            }
+            else
+            {
+                GetComponent<Image>().sprite = empty;
+            }
+            bag = value;
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
+        if(bag != null) //if i have a bag attached to this bag button
+        {
+            bag.MyBagScr.OpenClose();
+        }
     }
 }
+
+   
+

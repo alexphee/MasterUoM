@@ -52,16 +52,18 @@ public class Player : Character
     private void GetInput()
     {
         Direction = Vector2.zero; //after every loop reset direction
-        ///debugging start
-        /*if (Input.GetKeyDown(KeyCode.I)){
+        ///debugging
+        if (Input.GetKeyDown(KeyCode.I))
+        {
             Debug.Log("RUN I");
-            health.MyCurrentValue -= 10; 
+            health.MyCurrentValue -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.O)){
+        if (Input.GetKeyDown(KeyCode.O))
+        {
             Debug.Log("RUN O");
 
-            health.MyCurrentValue += 10; 
-        }*/
+            health.MyCurrentValue += 10;
+        }
 
         if (Input.GetKey(KeyCode.W)) {
             exitIndex = 0;
@@ -162,6 +164,20 @@ public class Player : Character
         {
             StopCoroutine(attackRoutine);
 
+        }
+    }
+
+    ////singleton test
+    private static Player instance;
+    public static Player MyInstance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<Player>();
+            }
+            return instance;
         }
     }
 }

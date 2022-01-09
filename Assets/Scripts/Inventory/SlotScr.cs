@@ -1,18 +1,103 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class SlotScr : MonoBehaviour
+public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
 {
-    // Start is called before the first frame update
-    void Start()
+    private ObservableStack<Item> items = new ObservableStack<Item>();
+
+    [SerializeField]
+    private Image icon;
+
+    [SerializeField]
+    private Text stackSize;
+    public bool IsEmpty
     {
-        
+        get { return items.Count == 0; } //no items in, empty slot
     }
 
-    // Update is called once per frame
-    void Update()
+    public Item MyItem
     {
-        
+        get
+        {
+            if (!IsEmpty)
+            {
+                return items.Peek();
+            }
+            return null;
+        }
+    }
+
+    public Image MyIcon { get => icon; set => icon = value; }
+
+    public int MyCount
+    {
+        get
+        {
+            return items.Count;
+        }
+    }
+
+    public Text MyStackText
+    {
+        get { return stackSize; }
+    }
+
+    private void Awake()
+    {
+        items.OnPop += new UpdateStackEvent(UpdateSlot); //everytime i remove sth, the function will listen to that and called
+        items.OnPush += new UpdateStackEvent(UpdateSlot);
+        items.OnClear += new UpdateStackEvent(UpdateSlot); 
+    }
+
+    public bool AddItem(Item item)
+    {
+        items.Push(item);
+        icon.sprite = item.MyIcon; //take sprite on icon and assign it to the icon on the item im adding
+        icon.color = Color.white;
+        item.MySlot = this;
+        return true;
+    }
+
+    public void RemoveItem(Item item)
+    {
+        if (!IsEmpty)
+        {
+            items.Pop(); //if used, remove
+            //UIManager.MyInstance.UpdateStackSize(this);
+        }
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right) //on right click
+        {
+            UseItem();
+        }
+    }
+
+    public void UseItem()
+    {
+        if(MyItem is IUseable)
+        {
+            (MyItem as IUseable).Use();
+        }
+    }
+
+    public bool StackItem(Item item)
+    {
+        if (!IsEmpty && item.name == MyItem.name && items.Count < MyItem.MyStackSize)
+        {
+            items.Push(item);
+            item.MySlot = this;
+            return true;
+        }
+        return false;
+    }
+
+    private void UpdateSlot() //gonna called everytime something changes items (Stack<Items> items)
+    {
+        UIManager.MyInstance.UpdateStackSize(this);
     }
 }

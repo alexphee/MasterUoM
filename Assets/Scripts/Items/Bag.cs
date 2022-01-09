@@ -17,7 +17,13 @@ public class Bag : Item, IUseable
 
     public void Use()
     {
-        MyBagScr = Instantiate(bagPrefab, InventoryScr.MyInstance.transform).GetComponent<BagScr>(); //when i right click on bag it creates the bag with 0 slots
-        MyBagScr.AddSlots(slots);
+        if (InventoryScr.MyInstance.CanAddBag) //use can be executed only if CanAddBag is true, if i only have les than 3 bags
+        {
+            Remove();
+            MyBagScr = Instantiate(bagPrefab, InventoryScr.MyInstance.transform).GetComponent<BagScr>(); //when i right click on bag it creates the bag with 0 slots
+            MyBagScr.AddSlots(slots);
+
+            InventoryScr.MyInstance.AddBag(this);//whenever i use the bag i have to call inv
+        }
     }
 }

@@ -49,6 +49,10 @@ public class UIManager : MonoBehaviour
         {
             ActionBtnOnClick(1);
         }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            InventoryScr.MyInstance.OpenClose();
+        }
     }
 
     private void ActionBtnOnClick(int buttonIndex)
@@ -73,5 +77,24 @@ public class UIManager : MonoBehaviour
     public void UpdateTargetFrame(float hpvalue)
     {
         healthStat.MyCurrentValue = hpvalue;
+    }
+
+    public void UpdateStackSize(IClickable clickable)
+    {
+        if(clickable.MyCount > 1)
+        {
+            clickable.MyStackText.text = clickable.MyCount.ToString();
+            clickable.MyStackText.color = Color.white;
+            clickable.MyIcon.color = Color.white;
+        }
+        else
+        {
+            clickable.MyStackText.color = new Color(0, 0, 0, 0); //if count is 1 remove text (not icon, just text)
+        }
+        if(clickable.MyCount == 0)
+        {
+            clickable.MyIcon.color = new Color(0, 0, 0, 0); //hide icon from it when empty
+            clickable.MyStackText.color = new Color(0, 0, 0, 0);
+        }
     }
 }
