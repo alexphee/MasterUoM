@@ -28,4 +28,8 @@ public class Bag : Item, IUseable
             InventoryScr.MyInstance.AddBag(this);//whenever i use the bag i have to call inv
         }
     }
+    public override string GetDescription()
+    {
+        return base.GetDescription() + string.Format("\n<color=#00ff00ff>Contains 8 slots</color>"); //this is a better way to display health --easier to keep up with changes
+    }
 }

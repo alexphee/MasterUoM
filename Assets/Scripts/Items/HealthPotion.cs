@@ -16,4 +16,10 @@ public class HealthPotion : Item, IUseable
         }
         
     }
+
+    public override string GetDescription()
+    {
+        // return base.GetDescription() + "\nUse: Restores 10 HP";
+        return base.GetDescription() + string.Format("\n<color=#00ff00ff>Use: Restores {0} health</color>", health); //this is a better way to display health --easier to keep up with changes
+    }
 }

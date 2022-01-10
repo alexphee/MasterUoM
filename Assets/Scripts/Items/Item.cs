@@ -24,7 +24,7 @@ public abstract class Item : ScriptableObject, IMoveable, IText
         set { slot = value; } //this needs a setter, i need to be able to move items from slot to slot
     }
 
-    public string GetDescription()
+    public virtual string GetDescription() //return description of specific item //virtual bc i will need to override it
     {
         return title;
     }

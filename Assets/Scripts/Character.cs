@@ -122,6 +122,8 @@ public abstract class Character : MonoBehaviour
             Direction = Vector2.zero; //prevents enemy to continue to move after death while chasing
             myRigidBody.velocity = Direction; //change velocity to zero
             MyAnimator.SetTrigger("die");
+            //////TEST -- without this i can push around the enemy after death
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
