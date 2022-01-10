@@ -24,6 +24,17 @@ public class InventoryScr : MonoBehaviour
     private List<Bag> bags = new List<Bag>();
     public bool CanAddBag { get { return bags.Count < 3; } }
 
+    public int MyEmptySlotCount { //everytime i look at a bag i look at all slots and count them together and return them
+        get
+        {
+            int count = 0;
+            foreach (Bag bag in bags)
+            {
+                count += bag.MyBagScr.MyEmptySlotCount;
+            }
+            return count;
+        }
+    }
     public SlotScr FromSlot
     {
         get => fromSlot;
@@ -81,9 +92,16 @@ public class InventoryScr : MonoBehaviour
             {
                 bagButton.MyBag = bag; //then assign a bag
                 bags.Add(bag); //keep track of bag counter so it doesnt overfloat
+                bag.MyBagButton = bagButton; //the bag itself has a ref to the button its sitting on, by creating that ref im able to use it whenever i remove the bag
                 break; //dont do this for every bag, just one
             }
         }
+    }
+
+    public void RemoveBag(Bag bag)
+    {
+        bags.Remove(bag); //take the specific bag from bags list uptop 
+        Destroy(bag.MyBagScr.gameObject);
     }
 
     public void AddItem(Item item)

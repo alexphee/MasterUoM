@@ -10,6 +10,8 @@ public class Bag : Item, IUseable
     private GameObject bagPrefab; //this prefab is going to instantiate in game, so i can see the bag on screen and click slots etc
 
     public BagScr MyBagScr { get; set; }
+    public BagButton MyBagButton { get; set; }
+
     public int Slots { get => slots; }
     public void Initialize(int slots) { 
         this.slots = slots;

@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
         else
         {
             clickable.MyStackText.color = new Color(0, 0, 0, 0); //if count is 1 remove text (not icon, just text)
+            clickable.MyIcon.color = Color.white; //show again
         }
         if(clickable.MyCount == 0)
         {

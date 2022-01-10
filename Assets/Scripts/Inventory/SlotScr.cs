@@ -6,16 +6,18 @@ using UnityEngine.EventSystems;
 
 public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
 {
-    private ObservableStack<Item> items = new ObservableStack<Item>();
+    private ObservableStack<Item> items = new ObservableStack<Item>(); //this is a tack for every item in this slot
 
     [SerializeField]
-    private Image icon;
+    private Image icon; //ref to slot's icon
 
     [SerializeField]
     private Text stackSize;
+    public BagScr MyBag { get; set; } //ref to the bag this slot belongs to
+
     public bool IsEmpty
     {
-        get { return items.Count == 0; } //no items in, empty slot
+        get { return MyItems.Count == 0; } //no items in, empty slot
     }
 
     public bool IsFull//has it maxed out? or there is more room to fill on top of the stack
@@ -37,7 +39,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         {
             if (!IsEmpty)
             {
-                return items.Peek();
+                return MyItems.Peek();
             }
             return null;
         }
@@ -49,7 +51,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
     {
         get
         {
-            return items.Count;
+            return MyItems.Count;
         }
     }
 
@@ -58,16 +60,18 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         get { return stackSize; }
     }
 
+    public ObservableStack<Item> MyItems { get => items; } //i had to encapsulate so i can access this from BagScript to get items
+
     private void Awake()
     {
-        items.OnPop += new UpdateStackEvent(UpdateSlot); //everytime i remove sth, the function will listen to that and called
-        items.OnPush += new UpdateStackEvent(UpdateSlot);
-        items.OnClear += new UpdateStackEvent(UpdateSlot); 
+        MyItems.OnPop += new UpdateStackEvent(UpdateSlot); //everytime i remove sth, the function will listen to that and called
+        MyItems.OnPush += new UpdateStackEvent(UpdateSlot);
+        MyItems.OnClear += new UpdateStackEvent(UpdateSlot); 
     }
 
     public bool AddItem(Item item)
     {
-        items.Push(item);
+        MyItems.Push(item);
         icon.sprite = item.MyIcon; //take sprite on icon and assign it to the icon on the item im adding
         icon.color = Color.white;
         item.MySlot = this;
@@ -93,8 +97,16 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
     {
         if (!IsEmpty)
         {
-            items.Pop(); //if used, remove
+            MyItems.Pop(); //if used, remove
             //UIManager.MyInstance.UpdateStackSize(this);
+        }
+    }
+
+    public void Clear()
+    {
+        if(MyItems.Count > 0)
+        {
+            MyItems.Clear();
         }
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -106,9 +118,24 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
                 HandScr.MyInstance.TakeMoveable(MyItem as IMoveable); //the item sitting on the actual slot
                 InventoryScr.MyInstance.FromSlot = this;
             }
+            else if (InventoryScr.MyInstance.FromSlot == null && IsEmpty && (HandScr.MyInstance.MyMoveable is Bag)) //added later //if i click a bag holding shift im holding sth without setting fromslot to anything // if i click on this slot and the fromslot is null, this slot is empty and my handscr is carring a bag // normally when the fromslot is null the handscr wouldnt carry anything
+            {
+                Bag bag = (Bag)HandScr.MyInstance.MyMoveable; //casting bc of NullRefExc
+                if (bag.MyBagScr != MyBag)//make sure i cant dequip bag inside itself
+                {
+                    if (InventoryScr.MyInstance.MyEmptySlotCount - bag.Slots > 0) //make sure myemptyslotcount - the amount of slots there are in the bag im trying to dequip is greater than 0 then there is enough space to put bag away. //If i do >=0 one item is missing// Logic:The amount of slot left when dequipping the bag is greater than zero, then ok
+                    {
+                        AddItem(bag); //add item to inv
+                        bag.MyBagButton.RemoveBag(); //remove from inv
+                        HandScr.MyInstance.Drop(); //remove icon on hand
+                    }
+                    
+                }
+                
+            }
             else if (InventoryScr.MyInstance != null)//if i hold sth to move
             {
-                if (PutItemBack() || SwapItems(InventoryScr.MyInstance.FromSlot) || AddItems(InventoryScr.MyInstance.FromSlot.items)) //order is important
+                if (PutItemBack() || MergeItems(InventoryScr.MyInstance.FromSlot) || SwapItems(InventoryScr.MyInstance.FromSlot) || AddItems(InventoryScr.MyInstance.FromSlot.MyItems)) //order is important
                 {
                     HandScr.MyInstance.Drop();
                     InventoryScr.MyInstance.FromSlot = null; //reset so i can do this again
@@ -131,9 +158,9 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
 
     public bool StackItem(Item item)
     {
-        if (!IsEmpty && item.name == MyItem.name && items.Count < MyItem.MyStackSize)
+        if (!IsEmpty && item.name == MyItem.name && MyItems.Count < MyItem.MyStackSize)
         {
-            items.Push(item);
+            MyItems.Push(item);
             item.MySlot = this;
             return true;
         }
@@ -157,12 +184,31 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
         }
         if(from.MyItem.GetType() != MyItem.GetType() || from.MyCount+MyCount > MyItem.MyStackSize) //the first condition checks if the item i move is different than the item im clicking on, then swap. The second checks if fromSlots count plus the count on the slot im clicking on is larger than the total slot size of the items, swap.
         {
-            ObservableStack<Item> tmpFrom = new ObservableStack<Item>(from.items); //make a copy of all the items i need to swap from slotA
-            from.items.Clear(); //clear slotA so there is room there
-            from.AddItems(items); //take all items from other slotB and copy to slotA
-            items.Clear(); //Clear slotB
+            ObservableStack<Item> tmpFrom = new ObservableStack<Item>(from.MyItems); //make a copy of all the items i need to swap from slotA
+            from.MyItems.Clear(); //clear slotA so there is room there
+            from.AddItems(MyItems); //take all items from other slotB and copy to slotA
+            MyItems.Clear(); //Clear slotB
             AddItems(tmpFrom); //move items from copy A to B
             return true;
+        }return false;
+    }
+
+    public bool MergeItems(SlotScr from)
+    {
+        if (IsEmpty)
+        {
+            return false; //if empty, no reason for merge
+        }
+        if (from.MyItem.GetType() == MyItem.GetType()) //checks if the type of the item im holding is of the same type as the item im trying to merge
+        {
+            if (!IsFull) //check if slot is full
+            {
+                int free = MyItem.MyStackSize - MyCount; //calculate items left on slot to be full
+                for (int i = 0; i < free; i++)
+                {
+                    AddItem(from.MyItems.Pop()); //add items to the slot by poping them from the holding item
+                }
+            }return true;
         }return false;
     }
     private void UpdateSlot() //gonna called everytime something changes items (Stack<Items> items)

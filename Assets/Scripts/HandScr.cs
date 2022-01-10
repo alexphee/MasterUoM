@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class HandScr : MonoBehaviour    //when im carruing sth i have an IMoveable. Im going to make a IMOveable property
@@ -31,6 +32,7 @@ public class HandScr : MonoBehaviour    //when im carruing sth i have an IMoveab
     void Update()
     {
         icon.transform.position = Input.mousePosition+offset;
+        DeleteItem();
     }
 
     public void TakeMoveable(IMoveable moveable)
@@ -44,5 +46,18 @@ public class HandScr : MonoBehaviour    //when im carruing sth i have an IMoveab
     {
         MyMoveable = null;
         icon.color = new Color(0, 0, 0, 0);
+    }
+
+    private void DeleteItem()
+    {
+        if(Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject() && MyInstance.MyMoveable != null) //if i press the first mouse button and im not hovering over any UI elements and i have sth in my hand
+        {
+            if(MyMoveable is Item && InventoryScr.MyInstance.FromSlot != null) //checks if i carry sth that is an item with a ref to the inv
+            {
+                (MyMoveable as Item).MySlot.Clear();
+            }
+            Drop(); 
+            InventoryScr.MyInstance.FromSlot = null; //i dont need a ref to that slot anymore. Resets fromslot
+        }
     }
 }
