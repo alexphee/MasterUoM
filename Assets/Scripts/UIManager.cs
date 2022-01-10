@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    private Text tooltipText;
     private static UIManager instance;
     public static UIManager MyInstance
     {
@@ -29,12 +30,15 @@ public class UIManager : MonoBehaviour
     private Stat healthStat; //health stat for the Unit Frame // already got one on Player and Enemy but i also need on Unit Frame
     [SerializeField]
     private Image thePortraitFrame;
+    [SerializeField]
+    private GameObject tooltip;
     // Start is called before the first frame update
     void Start()
     {
         healthStat = targetFrame.GetComponentInChildren<Stat>();//healthstat is what is going to update the healthbar in game, i want to take the children and reference it in the script. I go in targetFrame i look through all children and find bar
         action1 = KeyCode.Alpha1; //numeric key 1 keybind
         action2 = KeyCode.Alpha2; //numeric key 2 keybind
+        tooltipText = tooltip.GetComponentInChildren<Text>(); //keeps a ref to the text all the time
     }
     [SerializeField]
     private GameObject targetFrame;
@@ -97,5 +101,17 @@ public class UIManager : MonoBehaviour
             clickable.MyIcon.color = new Color(0, 0, 0, 0); //hide icon from it when empty
             clickable.MyStackText.color = new Color(0, 0, 0, 0);
         }
+    }
+
+    public void ShowTooltip(Vector3 pos, IText description)
+    {
+        tooltip.SetActive(true);
+        tooltip.transform.position = pos;
+        tooltipText.text = description.GetDescription(); //access tooltip, get child with text in it, get ref to the actuall text in textbox and assign it to the description
+    }
+
+    public void HideTooltip()
+    {
+        tooltip.SetActive(false);
     }
 }

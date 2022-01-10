@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item : ScriptableObject, IMoveable
+public abstract class Item : ScriptableObject, IMoveable, IText
 {
+    [SerializeField]
+    private string title;
+
     [SerializeField]
     private Sprite icon; //the icon that is going to shown on the slot
     [SerializeField]
@@ -19,6 +22,11 @@ public abstract class Item : ScriptableObject, IMoveable
     {
         get { return slot; }
         set { slot = value; } //this needs a setter, i need to be able to move items from slot to slot
+    }
+
+    public string GetDescription()
+    {
+        return title;
     }
 
     public void Remove()

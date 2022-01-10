@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d92dec79aec2144583395fc9d80c7ce, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
+  title: Health Potion - Restores 10 HP
   icon: {fileID: 21300000, guid: 1a7928361b7544ff387a406824f639b0, type: 3}
   stackSize: 10
   health: 10

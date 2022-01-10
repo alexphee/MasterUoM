@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
+public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointerEnterHandler, IPointerExitHandler
 {
     private ObservableStack<Item> items = new ObservableStack<Item>(); //this is a tack for every item in this slot
 
@@ -214,5 +214,22 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable
     private void UpdateSlot() //gonna called everytime something changes items (Stack<Items> items)
     {
         UIManager.MyInstance.UpdateStackSize(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData) //show tooltip here
+    {
+        
+        if (!IsEmpty)
+        {
+            // Debug.Log("Show tooltip");
+            UIManager.MyInstance.ShowTooltip(transform.position, MyItem); //i can write MyItem since Item inherits from IText
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData) //hide tooltip here
+    {
+        // Debug.Log("Exit");
+        UIManager.MyInstance.HideTooltip();
+
     }
 }
