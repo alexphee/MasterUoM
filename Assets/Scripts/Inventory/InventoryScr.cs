@@ -82,6 +82,12 @@ public class InventoryScr : MonoBehaviour
             HealthPotion potion = (HealthPotion)Instantiate(items[1]);
             AddItem(potion);
         }
+       if (Input.GetKeyDown(KeyCode.M))
+        {
+            Element carbon = (Element)Instantiate(items[2]);
+            AddItem(carbon);
+        }
+       
     }
 
     public void AddBag(Bag bag) //takes the bag we are equiping
@@ -104,15 +110,16 @@ public class InventoryScr : MonoBehaviour
         Destroy(bag.MyBagScr.gameObject);
     }
 
-    public void AddItem(Item item)
+    public bool AddItem(Item item)
     {
         if(item.MyStackSize > 0)
         {
             if (PlaceInStack(item)){
-                return;
+                return true;
             }
         }
-        PlaceInEmpty(item); //if you cant place it anywhere, place it empty
+        return PlaceInEmpty(item); //if you cant place it anywhere, place it empty
+        
         //old code
         /*foreach (Bag bag in bags) //checks all bags
         {
@@ -123,15 +130,15 @@ public class InventoryScr : MonoBehaviour
         }*/
     }
 
-    private void PlaceInEmpty(Item item) //place item in empty slot
+    private bool PlaceInEmpty(Item item) //place item in empty slot
     {
         foreach (Bag bag in bags)
         {
             if (bag.MyBagScr.AddItem(item))
             {
-                return;
+                return true;
             }
-        }
+        }return false;
     }
     private bool PlaceInStack(Item item)
     {

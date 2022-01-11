@@ -30,6 +30,6 @@ public class Bag : Item, IUseable
     }
     public override string GetDescription()
     {
-        return base.GetDescription() + string.Format("\n<color=#00ff00ff>Contains 8 slots</color>"); //this is a better way to display health --easier to keep up with changes
+        return base.GetDescription() + string.Format("\nContains 8 slots"); //this is a better way to display health --easier to keep up with changes
     }
 }

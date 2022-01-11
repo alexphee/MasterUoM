@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Type { Element, Common}
 public abstract class Item : ScriptableObject, IMoveable, IText
 {
     [SerializeField]
+    private Type type;
+    public Type MyType { get => type; }
+
+    [SerializeField]
     private string title;
+    public string Mytitle { get => title; }
+
 
     [SerializeField]
     private Sprite icon; //the icon that is going to shown on the slot
@@ -17,17 +24,30 @@ public abstract class Item : ScriptableObject, IMoveable, IText
     public int MyStackSize { get => stackSize; } //no need for setters here, this will not change
 
     //need ref to the slot the item is on. An item only exists in the game if it is placed in the inventory - if i drag it outside the inv on the ground i want it to get destroyed
-    
+
     public SlotScr MySlot ///////////////IS THIS CORRECT ???
     {
         get { return slot; }
         set { slot = value; } //this needs a setter, i need to be able to move items from slot to slot
     }
 
+    
+
     public virtual string GetDescription() //return description of specific item //virtual bc i will need to override it
     {
-        return title;
+       /* string color = string.Empty;
+        switch (MyType)
+        {
+            case Type.Element:
+                color = "#05d500";    ////moved to separate class TypeColor for reuseability
+                break;
+            case Type.Common:
+                color = "#FFE6A5";
+                break;
+        }*/
+        return string.Format("<color={0}>{1}</color>", TypeColor.MyTypeColors[type], Mytitle); //zero is going to be replaced with color and 1 with title
     }
+
 
     public void Remove()
     {
@@ -37,3 +57,4 @@ public abstract class Item : ScriptableObject, IMoveable, IText
         }
     }
 }
+

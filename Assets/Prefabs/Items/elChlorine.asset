@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d92dec79aec2144583395fc9d80c7ce, type: 3}
-  m_Name: HealthPotion
+  m_Script: {fileID: 11500000, guid: ffc64f6b3f2f49647957116d8675de7d, type: 3}
+  m_Name: elChlorine
   m_EditorClassIdentifier: 
-  type: 1
-  title: Health Potion
-  icon: {fileID: 21300000, guid: 1a7928361b7544ff387a406824f639b0, type: 3}
-  stackSize: 10
-  health: 10
+  type: 0
+  title: Chlorine
+  icon: {fileID: 21300000, guid: b745cfeed3e432c499e176d8086e78cf, type: 3}
+  stackSize: 5
+  symbol: Cl
+  atomicNo: 17
+  phase: gas
