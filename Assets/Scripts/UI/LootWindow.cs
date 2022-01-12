@@ -5,10 +5,28 @@ using UnityEngine.UI;
 
 public class LootWindow : MonoBehaviour
 {
+    private CanvasGroup canvasGroup;
+
+    private static LootWindow instance;
+    public static LootWindow MyInstance {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<LootWindow>();
+                instance = GameObject.FindObjectOfType<LootWindow>();
+            }return instance;
+        }
+    }
+
+
     [SerializeField]
     private LootButton[] lootButtons;
 
     private List<List<Item>> pages = new List<List<Item>>();
+
+    private List<Item> alreadyDroppedLoot = new List<Item>();
+
     ////THIS IS FOR DEBUG PURPOSE
     [SerializeField]
     private Item[] items;
@@ -20,36 +38,46 @@ public class LootWindow : MonoBehaviour
     [SerializeField]
     private GameObject nextButton, previousButton; //ref to the buttons
 
+
+    public bool IsOpen
+    {
+        get { return canvasGroup.alpha > 0; }
+    }
+    private void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        List<Item> temp = new List<Item>();
+        /*List<Item> temp = new List<Item>();
         for (int i = 0; i < items.Length; i++)//debugging
         {
             temp.Add(items[i]);
         }
-        CreatePages(temp);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CreatePages(temp);*/
     }
 
     public void CreatePages(List<Item> items)
     {
-        List<Item> page = new List<Item>();
-        for (int i = 0; i < items.Count; i++)
+        if (!IsOpen)
         {
-            page.Add(items[i]); //run through each item and add it to the current page
-            if (page.Count == 4 || i == items.Count -1) //if current page is full // the OR is required bc it just stops at 4, eg. if i have 6 it doesnt add the last 2 and also doesnt add when items are less than 4
+            List<Item> page = new List<Item>();
+            alreadyDroppedLoot = items; //a list is an object that is a reference type. with this line i create a ref to items, so if i make any changes to droppedloot i do to items
+            for (int i = 0; i < items.Count; i++)
             {
-                pages.Add(page); //add new page to the list
-                page = new List<Item>(); //create the new page
+                page.Add(items[i]); //run through each item and add it to the current page
+                if (page.Count == 4 || i == items.Count - 1) //if current page is full // the OR is required bc it just stops at 4, eg. if i have 6 it doesnt add the last 2 and also doesnt add when items are less than 4
+                {
+                    pages.Add(page); //add new page to the list
+                    page = new List<Item>(); //create the new page
+                }
             }
+            AddLoot();
+            Open(); //when everything is generated and set then show loottable
         }
-        AddLoot();
+        
     }
 
     private void AddLoot()
@@ -108,6 +136,8 @@ public class LootWindow : MonoBehaviour
     {
         pages[pageIndex].Remove(loot);
 
+        alreadyDroppedLoot.Remove(loot);
+
         if (pages[pageIndex].Count == 0) //if the page is empty
         {
             pages.Remove(pages[pageIndex]); //remove the specific empty page
@@ -117,5 +147,19 @@ public class LootWindow : MonoBehaviour
             }
             AddLoot(); //the loot needs to be recaclulated here so the lootwindow is updated after taking sth
         }
+    }
+
+    public void Close()
+    {
+        pages.Clear(); //make sure that the loot i removed will be removed forever, if i dont do this the loot shows up again and can transfer from enemy's lootpage to another enemy's lootpage
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+        ClearButtons(); //clear buttons
+    }
+
+    public void Open()
+    {
+        canvasGroup.alpha = 1;
+        canvasGroup.blocksRaycasts = true;
     }
 }

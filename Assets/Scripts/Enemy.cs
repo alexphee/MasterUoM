@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : NPC
 {
+    [SerializeField]
+    private LootTable loottable;
+
     private IState currentState;
 
     public float MyAttackRange { get; set; }
@@ -107,7 +110,7 @@ public class Enemy : NPC
     {
         if (!IsAlive)
         {
-            Debug.Log("LOOTING THY ENEMY");
+            loottable.ShowLoot();       
         }
     }
 }

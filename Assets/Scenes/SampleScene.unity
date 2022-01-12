@@ -920,7 +920,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -930,7 +930,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -990,7 +990,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1080,7 +1080,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1140,7 +1140,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1230,7 +1230,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1323,13 +1323,13 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 641eee273524dc740a78c54cbb89479b, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 44a5e0be1b914d94bb94ddd949bcc92c, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: b0ee4f0a3c356154e8f4f254292aa943, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: ec7d14c25e0249943a9b507b7fd6247f, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: 23b68dc153ad4234aa88fa10af17aca7, type: 3}
-  - m_RefCount: 8
+  - m_RefCount: 3
+    m_Data: {fileID: 21300000, guid: b0ee4f0a3c356154e8f4f254292aa943, type: 3}
+  - m_RefCount: 9
     m_Data: {fileID: 21300000, guid: 3e6465e9b811fb048954197b52399b78, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 5dc3b6bb044cafd48b3d6cf1464b61f7, type: 3}
@@ -1789,6 +1789,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316378384}
   m_CullTransparentMesh: 1
+--- !u!114 &380284892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5343492177515751305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6e6c65d2f8af646a795cb7ca42c33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409642799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,7 +4080,7 @@ GameObject:
   - component: {fileID: 1083677440}
   - component: {fileID: 1083677439}
   m_Layer: 5
-  m_Name: Xbutton
+  m_Name: Closebutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4136,7 +4148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083677440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2135089605}
+        m_TargetAssemblyTypeName: LootWindow, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1083677440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104154,13 +104178,14 @@ GameObject:
   - component: {fileID: 2135089604}
   - component: {fileID: 2135089603}
   - component: {fileID: 2135089605}
+  - component: {fileID: 2135089606}
   m_Layer: 5
   m_Name: LootWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2135089602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -104250,6 +104275,18 @@ MonoBehaviour:
   pageNumber: {fileID: 1695618795}
   nextButton: {fileID: 996755851}
   previousButton: {fileID: 416627483}
+--- !u!225 &2135089606
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135089601}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2142457127
 GameObject:
   m_ObjectHideFlags: 0
@@ -104348,25 +104385,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6793502607115391971, guid: ab0ef99e57897024c980e29d1c9264b2,
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.28686965
+      propertyPath: loot.Array.size
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6793502607115391971, guid: ab0ef99e57897024c980e29d1c9264b2,
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.22595626
+      propertyPath: loot.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: aaf8dc70b95b0164ab66623a7e175b9d,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: a9680f5ddedfbc64496860628fdee31e,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[2].item
+      value: 
+      objectReference: {fileID: 11400000, guid: e58abd21735449f44afc6a7bd66fc428,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[3].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 58d9359a6d1574646b7b5fb899844f46,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[4].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e3f3c979b47ec84298a37a0e4f91c5e,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[5].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 9aeded584dd86fa4c99178a1fcbccb80,
+        type: 2}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[0].dropChance
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 6793502607115391971, guid: ab0ef99e57897024c980e29d1c9264b2,
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0071314
+      propertyPath: loot.Array.data[1].dropChance
+      value: 40
       objectReference: {fileID: 0}
-    - target: {fileID: 6793502607115391971, guid: ab0ef99e57897024c980e29d1c9264b2,
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.069664
+      propertyPath: loot.Array.data[2].dropChance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[3].dropChance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[4].dropChance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651776852695913632, guid: ab0ef99e57897024c980e29d1c9264b2,
+        type: 3}
+      propertyPath: loot.Array.data[5].dropChance
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6793502607262185545, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
@@ -104428,21 +104516,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 6793502607262185556, guid: ab0ef99e57897024c980e29d1c9264b2,
+    - target: {fileID: 6793502607262185557, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: m_Simulated
-      value: 1
+      propertyPath: speed
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6793502607262185557, guid: ab0ef99e57897024c980e29d1c9264b2,
         type: 3}
-      propertyPath: initialAggroRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6793502607635312376, guid: ab0ef99e57897024c980e29d1c9264b2,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 284867527
-      objectReference: {fileID: 0}
+      propertyPath: loottable
+      value: 
+      objectReference: {fileID: 380284892}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab0ef99e57897024c980e29d1c9264b2, type: 3}
 --- !u!1001 &6329020103049033662

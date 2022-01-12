@@ -4,25 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Monster
-  - MinimapCamera
-  - Fire
-  - InventorySlot
-  - EquipmentSlot
-  - TrashSlot
-  - SkillsSlot
-  - SkillbarSlot
-  - DragAndDropHandler
-  - LootSlot
-  - NpcSellSlot
-  - TradingSlot
-  - Npc
-  - CraftingIngredientSlot
-  - CraftingResultSlot
-  - ItemMallSlot
-  - Pet
-  - QuestLocation
-  - NpcReviveSlot
   - thyEnemy
   - Hitbox
   - Obstacle
