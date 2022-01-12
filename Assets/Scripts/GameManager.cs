@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
     private void ClickTarget()
     {
         if (Input.GetMouseButtonDown(0))
+        {
             if (!EventSystem.current.IsPointerOverGameObject()) //check if mouse is hovering a UI element. The code bellow will execute only if my mouse is NOT over a UI element 
             {
-                {
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
                     if (hit.collider != null) //Logic: IF i click sth, i check IF i already have target and if yes i deselect current and pick new
                     {
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
 
                         UIManager.MyInstance.ShowTargetFrame(currentTarget);
-                    
+
                     }
                     else //if i dont click sth
                     {
@@ -53,7 +53,27 @@ public class GameManager : MonoBehaviour
                         currentTarget = null;
                         player.MyTarget = null;
                     }
-                    /*{ //if not null i hit sth
+                
+            }
+            
+        }
+        else if (Input.GetMouseButtonDown(1)) //right click on enemy to loot
+        {
+            if (!EventSystem.current.IsPointerOverGameObject()) //same as above, dont hover UI
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
+                if (hit.collider != null && hit.collider.CompareTag("thyEnemy"))
+                {
+                    hit.collider.GetComponent<NPC>().Interact();
+                }
+            }
+
+        }
+    }
+}
+
+
+/*{ //if not null i hit sth
                         if (hit.collider.CompareTag("thyEnemy"))
                         {
                             player.MyTarget = hit.transform.GetChild(0); //αν πετύχω κάτι τότε set τον στόχο MyTarget 
@@ -63,8 +83,3 @@ public class GameManager : MonoBehaviour
                     { //leave target
                         player.MyTarget = null;
                     }*/
-                }
-            }
-       
-    }
-}

@@ -103,4 +103,19 @@ public class LootWindow : MonoBehaviour
             AddLoot();
         }
     }
+
+    public void TakeLoot(Item loot) //takes the item im going to loot and remove it from loot window
+    {
+        pages[pageIndex].Remove(loot);
+
+        if (pages[pageIndex].Count == 0) //if the page is empty
+        {
+            pages.Remove(pages[pageIndex]); //remove the specific empty page
+            if (pageIndex == pages.Count && pageIndex > 0) //if im at the last page AND index is not zero //am i at the last page and do i have more pages before the page i removed?
+            {
+                pageIndex--; //go to previous pages
+            }
+            AddLoot(); //the loot needs to be recaclulated here so the lootwindow is updated after taking sth
+        }
+    }
 }

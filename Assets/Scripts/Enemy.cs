@@ -102,4 +102,12 @@ public class Enemy : NPC
         this.MyHealth.MyCurrentValue = this.MyHealth.MyMaxValue; //resets actuall health
         OnHealthChanged(health.MyCurrentValue); //reset health on unit frame
     }
+
+    public override void Interact()
+    {
+        if (!IsAlive)
+        {
+            Debug.Log("LOOTING THY ENEMY");
+        }
+    }
 }

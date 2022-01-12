@@ -12,16 +12,23 @@ public class LootButton : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Text title;
 
+    private LootWindow lootWindow;
     public Image MyIcon { get => icon; }
     public Text MyTitle { get => title; }
 
 
     public Item MyLoot { get; set; }
+
+    private void Awake()
+    {
+        lootWindow = GetComponentInParent<LootWindow>();
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (InventoryScr.MyInstance.AddItem(MyLoot)) //this statement return a bool
         {
             gameObject.SetActive(false); //disable game object
+            lootWindow.TakeLoot(MyLoot); //take loot attached to the specific btn
         }
     }
 }

@@ -38,4 +38,9 @@ public class NPC : Character
         }
         Destroy(gameObject);
     }
+
+    public virtual void Interact()
+    {
+        Debug.Log("LOOT");
+    }
 }
