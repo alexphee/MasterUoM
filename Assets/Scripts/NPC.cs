@@ -4,7 +4,7 @@ using UnityEngine;
 
 public delegate void HealthChanged(float health);
 public delegate void NPCRemoved();
-public class NPC : Character
+public class NPC : Character, IInteractable
 {
     public event HealthChanged healthChanged;
     public event NPCRemoved npcRemoved;
@@ -42,5 +42,10 @@ public class NPC : Character
     public virtual void Interact()
     {
         Debug.Log("LOOT");
+    }
+
+    public virtual void StopInteraction()
+    {
+        
     }
 }

@@ -27,6 +27,8 @@ public class Player : Character
     private Vector3 min, max;
     //public Transform MyTarget { get; set; } //removed. MyTarget property is now added in Character script
 
+
+    private IInteractable interactable; //a ref to what the player can interact with
     /////// Start is called before the first frame update///////
     protected override void Start()
     {
@@ -178,6 +180,35 @@ public class Player : Character
                 instance = FindObjectOfType<Player>();
             }
             return instance;
+        }
+    }
+
+    public void Interact()
+    {
+        if (interactable != null)
+        {
+            interactable.Interact(); //this calls the given interact function eg Enemy's or chest's
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("thyEnemy")) //if collide with enemy then its interactable
+        {
+            interactable = collision.GetComponent<IInteractable>();
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "thyEnemy") //if collide with enemy then its interactable
+        {
+            if (interactable != null) //saves me from NullRefExc
+            {
+                interactable.StopInteraction(); //if it is a chest, close it // if enemy close lootwindow
+                interactable = null;
+            }
+           
         }
     }
 }

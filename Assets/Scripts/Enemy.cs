@@ -113,4 +113,10 @@ public class Enemy : NPC
             loottable.ShowLoot();       
         }
     }
+
+    public override void StopInteraction()
+    {
+        LootWindow.MyInstance.Close(); //when i stop interacting with the enemy i have to close the loot window
+        //base.StopInteraction();
+    }
 }
