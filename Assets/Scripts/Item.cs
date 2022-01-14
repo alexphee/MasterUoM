@@ -11,7 +11,7 @@ public abstract class Item : ScriptableObject, IMoveable, IText
 
     [SerializeField]
     private string title;
-    public string Mytitle { get => title; }
+    public string MyTitle { get => title; }
 
 
     [SerializeField]
@@ -33,6 +33,10 @@ public abstract class Item : ScriptableObject, IMoveable, IText
 
     
 
+    [SerializeField]
+    private int price;
+    public int MyPrice { get => price; }
+
     public virtual string GetDescription() //return description of specific item //virtual bc i will need to override it
     {
        /* string color = string.Empty;
@@ -45,7 +49,7 @@ public abstract class Item : ScriptableObject, IMoveable, IText
                 color = "#FFE6A5";
                 break;
         }*/
-        return string.Format("<color={0}>{1}</color>", TypeColor.MyTypeColors[type], Mytitle); //zero is going to be replaced with color and 1 with title
+        return string.Format("<color={0}>{1}</color>", TypeColor.MyTypeColors[type], MyTitle); //zero is going to be replaced with color and 1 with title
     }
 
 

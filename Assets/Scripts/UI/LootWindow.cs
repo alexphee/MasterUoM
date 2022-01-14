@@ -94,7 +94,7 @@ public class LootWindow : MonoBehaviour
             {
                 if (pages[pageIndex][i] != null) //to avoid NullRefExc if an item is looted already or deleted
                 {
-                    string title = string.Format("<color={0}>{1}</color>", TypeColor.MyTypeColors[pages[pageIndex][i].MyType], pages[pageIndex][i].Mytitle);
+                    string title = string.Format("<color={0}>{1}</color>", TypeColor.MyTypeColors[pages[pageIndex][i].MyType], pages[pageIndex][i].MyTitle);
                     lootButtons[i].MyIcon.sprite = pages[pageIndex][i].MyIcon; //take loot button and set the icon as the items icon
                     lootButtons[i].MyLoot = pages[pageIndex][i];
                     lootButtons[i].gameObject.SetActive(true);    //make sure loot button is visible

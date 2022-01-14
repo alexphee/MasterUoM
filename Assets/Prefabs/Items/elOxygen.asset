@@ -16,6 +16,7 @@ MonoBehaviour:
   title: Oxygen
   icon: {fileID: 21300000, guid: 08652d602c8559840b31b8250d2d0b49, type: 3}
   stackSize: 5
+  price: 5
   symbol: O
   atomicNo: 8
   phase: gas
