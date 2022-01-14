@@ -49,7 +49,7 @@ public class Player : Character
         base.Update();
     }
 
-   
+
 
     private void GetInput()
     {
@@ -86,7 +86,7 @@ public class Player : Character
             exitIndex = 1;
             Direction += Vector2.right;
         }
-       
+
         if (isMoving)
         {
             StopAttack(); //if moving stop casting
@@ -101,21 +101,21 @@ public class Player : Character
     private IEnumerator Attack(int spellIndex)
     {
         Transform currentTarget = MyTarget;
-            IsAttacking = true;
-            MyAnimator.SetBool("attack", IsAttacking); //start attack animation
+        IsAttacking = true;
+        MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
-            yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
-             Debug.Log("ATTACK DONE");
-            
+        yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
+        Debug.Log("ATTACK DONE");
+
         if (currentTarget != null && InLineOfSight()) //πρέπει να ελέγξω αν ο εχθρός έιναι πίσω από εμπόδια κλπ
         {
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
             //spell.MyTarget = currentTarget;
             spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
         }
-            
+
         StopAttack();
-        
+
     }
 
     public void CastSpell(int spellIndex) {
@@ -130,7 +130,7 @@ public class Player : Character
                 }
             }
         }
-       
+
     }
 
     private bool InLineOfSight()
@@ -145,7 +145,7 @@ public class Player : Character
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -175,7 +175,7 @@ public class Player : Character
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<Player>();
             }
@@ -193,7 +193,7 @@ public class Player : Character
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("thyEnemy")) //if collide with enemy then its interactable
+        if (collision.CompareTag("thyEnemy") || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest
         {
             interactable = collision.GetComponent<IInteractable>();
         }
@@ -201,7 +201,7 @@ public class Player : Character
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "thyEnemy") //if collide with enemy then its interactable
+        if (collision.tag == "thyEnemy" || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest
         {
             if (interactable != null) //saves me from NullRefExc
             {

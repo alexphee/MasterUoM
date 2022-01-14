@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointerEnterHandler, IPointerExitHandler
 {
-    private ObservableStack<Item> items = new ObservableStack<Item>(); //this is a tack for every item in this slot
+    private ObservableStack<Item> items = new ObservableStack<Item>(); //this is a stack for every item in this slot
 
     [SerializeField]
     private Image icon; //ref to slot's icon

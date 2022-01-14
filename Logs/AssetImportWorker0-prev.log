@@ -15,11 +15,11 @@ D:/Unity Projects/MasterUoM
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54612
+56829
 Successfully changed project path to: D:/Unity Projects/MasterUoM
 D:/Unity Projects/MasterUoM
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 72.22 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 59.77 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.8f1 (507919d4fff5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -35,54 +35,75 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56484
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003688 seconds.
+Registered in 0.003568 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 74.35 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 58.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.031 seconds
+- Completed reload, in  2.405 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005791 seconds.
+Registered in 0.004438 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 86.11 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 90.54 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.790 seconds
+- Completed reload, in  1.345 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.25 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1898 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.4 MB.
-System memory in use after: 87.3 MB.
+Unloading 1899 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.6 MB.
+System memory in use after: 87.5 MB.
 
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2341.
-Total: 4.699100 ms (FindLiveObjects: 0.414700 ms CreateObjectMapping: 0.187900 ms MarkObjects: 3.808900 ms  DeleteObjects: 0.284300 ms)
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2342.
+Total: 3.149800 ms (FindLiveObjects: 0.255800 ms CreateObjectMapping: 0.052400 ms MarkObjects: 2.658500 ms  DeleteObjects: 0.180900 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/Inventory/LootTable.cs
-  artifactKey: Guid(fc6e6c65d2f8af646a795cb7ca42c33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Inventory/LootTable.cs using Guid(fc6e6c65d2f8af646a795cb7ca42c33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d257fbcabee765849ca2a804084735c') in 0.026365 seconds
-  Import took 0.031583 seconds .
+  path: Assets/Sprites/ChestClosed.png
+  artifactKey: Guid(57c2bd21ea754ef47bedd3f5ecc87fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ChestClosed.png using Guid(57c2bd21ea754ef47bedd3f5ecc87fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fafe0034d0c21842f57ba7be00d9109') in 0.130206 seconds
+  Import took 0.134238 seconds .
 
 ========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 3.92 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 50.2 MB.
-System memory in use after: 50.2 MB.
+Received Import Request.
+  Time since last request: 4.973300 seconds.
+  path: Assets/Sprites/ChestOpen.png
+  artifactKey: Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ChestOpen.png using Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212204ce7d3d9d916b58c3b754e6a3e9') in 0.025463 seconds
+  Import took 0.031160 seconds .
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2341.
-Total: 6.115900 ms (FindLiveObjects: 0.259100 ms CreateObjectMapping: 0.052200 ms MarkObjects: 5.657100 ms  DeleteObjects: 0.145700 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.001660 seconds.
+  path: Assets/Sprites/ChestOpen.png
+  artifactKey: Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ChestOpen.png using Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212204ce7d3d9d916b58c3b754e6a3e9') in 0.009863 seconds
+  Import took 0.014248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.238931 seconds.
+  path: Assets/Sprites/ChestOpen.png
+  artifactKey: Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ChestOpen.png using Guid(45149aff804266a4a85939db69b8a696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c353908aa264c3e652668069bef7d3f') in 0.009154 seconds
+  Import took 0.013524 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.217027 seconds.
+  path: Assets/Sprites/ChestClosed.png
+  artifactKey: Guid(57c2bd21ea754ef47bedd3f5ecc87fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ChestClosed.png using Guid(57c2bd21ea754ef47bedd3f5ecc87fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2c7c999dc54e9798c40d9b49ea93340') in 0.010058 seconds
+  Import took 0.014360 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

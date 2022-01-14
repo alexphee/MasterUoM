@@ -21,6 +21,7 @@ public class BagScr : MonoBehaviour
             int count = 0;
             foreach (SlotScr slot in MySlots)
             {
+                
                 if (slot.IsEmpty)
                 {
                     count++;
@@ -51,6 +52,7 @@ public class BagScr : MonoBehaviour
             if (slot.IsEmpty)
             {
                 slot.AddItem(item);
+                // TEST TEST if(item.name == "elCarbon") { Debug.Log("THIS GONNA BE GREAT FOR OPENING DOORS"); }
                 return true;
             }
         }return false;
