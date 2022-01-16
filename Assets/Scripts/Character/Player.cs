@@ -29,9 +29,12 @@ public class Player : Character
 
 
     private IInteractable interactable; //a ref to what the player can interact with
+
+    public int MyGold { get; set; }
     /////// Start is called before the first frame update///////
     protected override void Start()
     {
+        MyGold = 20;
         mana.Initialize(initMana, initMana);
 
         base.Start();
@@ -201,7 +204,7 @@ public class Player : Character
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "thyEnemy" || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest
+        if (collision.CompareTag("thyEnemy") || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest
         {
             if (interactable != null) //saves me from NullRefExc
             {

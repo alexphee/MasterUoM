@@ -16,6 +16,7 @@ MonoBehaviour:
   title: Sodium
   icon: {fileID: 21300000, guid: 1891d8253b7b3eb46bea2c93fa6d733e, type: 3}
   stackSize: 5
+  price: 99999
   symbol: Na
   atomicNo: 11
   phase: solid

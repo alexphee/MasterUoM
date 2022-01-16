@@ -8,16 +8,27 @@ public class Vendor : MonoBehaviour, IInteractable
     private VendorItem[] items;
     [SerializeField]
     private VendorWindow vendorWindow;
+
+    public bool IsOpen { get; set; }
     public void Interact()
     {
-        //Debug.Log("Interact with vendor");
-        vendorWindow.CreatePages(items);
-        vendorWindow.Open();
+        if (!IsOpen)
+        {
+            //Debug.Log("Interact with vendor");
+            IsOpen = true;
+           vendorWindow.CreatePages(items);
+           vendorWindow.Open(this);
+        }
     }
 
     public void StopInteraction()
     {
-        //Debug.Log("End interaction with vendor");
-        vendorWindow.Close();
+        if (IsOpen)
+        {
+            //Debug.Log("End interaction with vendor");
+            IsOpen = false;
+            vendorWindow.Close();
+        }
+       
     }
 }

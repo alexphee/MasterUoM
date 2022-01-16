@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Carbon
   icon: {fileID: 21300000, guid: eb5d525a1dfea314eb894295d81c01f0, type: 3}
   stackSize: 5
-  price: 5
+  price: 2
   symbol: C
   atomicNo: 6
   phase: solid

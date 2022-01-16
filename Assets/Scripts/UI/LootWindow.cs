@@ -31,13 +31,12 @@ public class LootWindow : MonoBehaviour
     [SerializeField]
     private Item[] items;
 
-    private int pageIndex = 0; //keep track the page number
+    public int pageIndex = 0; //keep track the page number
 
     [SerializeField]
     private Text pageNumber; //ref to the page text, 1/1 etc
     [SerializeField]
     private GameObject nextButton, previousButton; //ref to the buttons
-
 
     public bool IsOpen
     {
@@ -148,6 +147,7 @@ public class LootWindow : MonoBehaviour
             AddLoot(); //the loot needs to be recaclulated here so the lootwindow is updated after taking sth
         }
     }
+        
 
     public void Close()
     {
