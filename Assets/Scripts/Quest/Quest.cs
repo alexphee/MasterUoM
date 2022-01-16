@@ -9,9 +9,13 @@ public class Quest
     private string title;
     [SerializeField]
     private string description;
+
+    [SerializeField]
+    private CollectObj[] collectObjectives; //array of collection quests
     public QuestScr MyQuestScr { get; set; }
     public string MyTitle { get => title; set => title = value; }
     public string MyDescription { get => description; }
+    public CollectObj[] MyCollectObjectives { get => collectObjectives; }
 
 
     // Start is called before the first frame update
@@ -46,5 +50,12 @@ public abstract class Objective
 [System.Serializable]
 public class CollectObj : Objective
 {
-
+    public void UpdateItemCount(Item item)
+    {
+        if (MyType.ToLower() == item.MyTitle.ToLower())
+        {
+            MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle);
+            Debug.Log("Current amount" + MyCurrentAmount);
+        }
+    }
 }

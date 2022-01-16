@@ -42,6 +42,10 @@ public class QuestLog : MonoBehaviour
     }
     public void AcceptQuest(Quest quest)
     {
+        foreach (CollectObj obj in quest.MyCollectObjectives)
+        {
+            
+        }
         GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
 
         QuestScr questScr = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
@@ -58,9 +62,14 @@ public class QuestLog : MonoBehaviour
         {
             selected.MyQuestScr.Deselect(); //deselect
         }
+        string objectives = "\n\nObjectives\n";
         selected = quest; //assign quest
 
         string title = quest.MyTitle;
-        questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>", title, quest.MyDescription);
+        foreach (Objective obj in quest.MyCollectObjectives)
+        {
+            objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
+        }
+        questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}", title, quest.MyDescription, objectives);
     }
 }

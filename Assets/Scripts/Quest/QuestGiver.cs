@@ -14,7 +14,6 @@ public class QuestGiver : MonoBehaviour
     {
         //Debbugging only
         temp.AcceptQuest(quests[0]);
-        temp.AcceptQuest(quests[1]);
     }
 
 }

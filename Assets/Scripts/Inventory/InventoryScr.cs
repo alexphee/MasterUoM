@@ -167,4 +167,25 @@ public class InventoryScr : MonoBehaviour
             }
         }
     }
+
+    public int GetItemCount(string type)
+    {
+        int itemCount = 0;
+        foreach (Bag bag in bags) //run through all bags
+        {
+            foreach (SlotScr slot in bag.MyBagScr.MySlots)//run through all slots in the bag
+            {
+                if (!slot.IsEmpty && slot.MyItem.MyTitle == type) //if the specific slot is not empty and the item that has on it is the same type im looking for
+                {
+                    itemCount += slot.MyItems.Count; //add to the item count how many items i have
+                }
+            }
+        }
+        return itemCount;
+    }
+
+    public void OnItemCountChanged()
+    {
+
+    }
 }
