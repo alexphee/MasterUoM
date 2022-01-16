@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void ItemCountChanged(Item item); //TEST TEST
 public class InventoryScr : MonoBehaviour
 {
+    public event ItemCountChanged itemCountChangedEvent; //TES TEST each time i pick an item
     private static InventoryScr instance;
     public static InventoryScr MyInstance
     {
@@ -136,6 +138,7 @@ public class InventoryScr : MonoBehaviour
         {
             if (bag.MyBagScr.AddItem(item))
             {
+                OnItemCountChanged(item); //TEST TEST
                 return true;
             }
         }return false;
@@ -147,7 +150,8 @@ public class InventoryScr : MonoBehaviour
             foreach (SlotScr slotScr in bag.MyBagScr.MySlots) //check all slots in bag
             {
                 if (slotScr.StackItem(item)) //check if i can stack the item on some slot
-                { 
+                {
+                    OnItemCountChanged(item); //TEST TEST
                     return true;
                 }
             }
@@ -184,8 +188,11 @@ public class InventoryScr : MonoBehaviour
         return itemCount;
     }
 
-    public void OnItemCountChanged()
+    public void OnItemCountChanged(Item item) //made it into a function so i can check if null to avoid NullRefExc
     {
-
+        if (itemCountChangedEvent != null) //if sth is listening this
+        {
+            itemCountChangedEvent.Invoke(item);
+        }
     }
 }

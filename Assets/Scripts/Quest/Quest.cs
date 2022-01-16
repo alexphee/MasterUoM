@@ -55,6 +55,7 @@ public class CollectObj : Objective
         if (MyType.ToLower() == item.MyTitle.ToLower())
         {
             MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle);
+            QuestLog.MyInstance.UpdateSelected();
             Debug.Log("Current amount" + MyCurrentAmount);
         }
     }

@@ -40,11 +40,11 @@ public class QuestLog : MonoBehaviour
     {
         
     }
-    public void AcceptQuest(Quest quest)
+    public void AcceptQuest(Quest quest) 
     {
         foreach (CollectObj obj in quest.MyCollectObjectives)
         {
-            
+            InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(obj.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
         }
         GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
 
@@ -54,6 +54,10 @@ public class QuestLog : MonoBehaviour
 
         gameObject.GetComponent<Text>().text = quest.MyTitle;
     
+    }
+    public void UpdateSelected()
+    {
+        ShowDescription(selected);
     }
 
     public void ShowDescription(Quest quest) //shows a ques's description
