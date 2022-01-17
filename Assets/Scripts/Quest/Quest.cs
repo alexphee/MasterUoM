@@ -11,23 +11,25 @@ public class Quest
     private string description;
 
     [SerializeField]
-    private CollectObj[] collectObjectives; //array of collection quests
+    private CollectObjective[] collectObjectives; //array of collection quests
     public QuestScr MyQuestScr { get; set; }
     public string MyTitle { get => title; set => title = value; }
-    public string MyDescription { get => description; }
-    public CollectObj[] MyCollectObjectives { get => collectObjectives; }
+    public string MyDescription { get => description; set => description = value; }
+    public CollectObjective[] MyCollectObjectives { get => collectObjectives; }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public bool IsComplete
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        get
+        {
+            foreach (Objective objective in collectObjectives)
+            {
+                if (!objective.IsComplete) //if not completed
+                {
+                    return false;
+                }
+            }
+            return true; //if nothing is NOT completed then true
+        }
     }
 }
 
@@ -45,17 +47,26 @@ public abstract class Objective
     public int MyAmount { get => amount; }
     public int MyCurrentAmount { get => currentAmount; set => currentAmount = value; }
     public string MyType { get => type; }
+
+        public bool IsComplete {  //checks current amount compared to the goal amount
+            get
+            {
+                return MyCurrentAmount >= MyAmount; //is the objective completed?
+            }
+        }
 }
 
 [System.Serializable]
-public class CollectObj : Objective
+public class CollectObjective : Objective
 {
-    public void UpdateItemCount(Item item)
+    public void UpdateItemCount(Item item) 
     {
-        if (MyType.ToLower() == item.MyTitle.ToLower())
+        Debug.Log("UPDATEITEM CALLED");
+        if (MyType.ToLower() == item.MyTitle.ToLower()) //if the item i picked up (fed to this function) is the same as the objective's item
         {
-            MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle);
+            MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle); 
             QuestLog.MyInstance.UpdateSelected();
+            //QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
             Debug.Log("Current amount" + MyCurrentAmount);
         }
     }

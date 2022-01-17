@@ -41,7 +41,7 @@ public class Spell : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("RUN in OnTriggerEnter2D");
+        //Debug.Log("RUN in OnTriggerEnter2D");
         if (coll.CompareTag("Hitbox") && coll.transform == MyTarget) //δεν μπορω με gameobject γιατι μπερδευεται με το hitbox (που είναι επίσης gameobject) - επίσης θέλω να πετυχαίνω τον στόχο που έχω επιλέξει και όχι κάποιον ίδιου είδους που θα μπει ανάμεσα 
         {
             Character cha = coll.GetComponentInParent<Character>();
@@ -52,7 +52,7 @@ public class Spell : MonoBehaviour
             
             myRigidBody.velocity = Vector2.zero; //reset velocity when hit sth
             MyTarget = null;
-            Debug.Log("RUN in OnTriggerEnter2D");
+            //Debug.Log("RUN in OnTriggerEnter2D");
         }
     }
 }

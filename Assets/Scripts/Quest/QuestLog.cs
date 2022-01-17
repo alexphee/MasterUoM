@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class QuestLog : MonoBehaviour
 {
+    private List<QuestScr> questScripts = new List<QuestScr>(); //TEST
     [SerializeField]
     private GameObject questPrefab;
     [SerializeField]
-    private Transform questParent;
+    private Transform questParent; //need the parent so the actual quest goes under that, to be shown properly
 
     private Quest selected;
 
     [SerializeField]
     private Text questDescription;
+   
+    //SINGLETON 
     private static QuestLog instance;
 
     public static QuestLog MyInstance
@@ -22,35 +25,28 @@ public class QuestLog : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<QuestLog>(); //i only have 1 questlog so i can do this
+                instance = FindObjectOfType<QuestLog>(); //i only have 1 questlog so i can do this
 
             }
             return instance;
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void AcceptQuest(Quest quest) //the AcceptQuest asks the questgiver what quest am i accepting and the questgiver feeds this exact quest in this function
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void AcceptQuest(Quest quest) 
-    {
-        foreach (CollectObj obj in quest.MyCollectObjectives)
+        foreach (CollectObjective obj in quest.MyCollectObjectives)
         {
             InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(obj.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
         }
-        GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
 
-        QuestScr questScr = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
-        questScr.MyQuest = quest; //when i accept the quest from questgiver, i can take the quest and assign it to the questscript. The questscript has a ref to the original quest
-        quest.MyQuestScr = questScr; //both ways ref
+        GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
+        QuestScr qs = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
+        quest.MyQuestScr = qs; //both ways ref
+        qs.MyQuest = quest; //when i accept the quest from questgiver, i can take the quest and assign it to the questscript. The questscript has a ref to the original quest
+       
+
+        //questScripts.Add(qs); //TEST
+
 
         gameObject.GetComponent<Text>().text = quest.MyTitle;
     
@@ -60,20 +56,33 @@ public class QuestLog : MonoBehaviour
         ShowDescription(selected);
     }
 
-    public void ShowDescription(Quest quest) //shows a ques's description
+    public void ShowDescription(Quest quest) //shows this specific quest's description
     {
-        if (selected != null) //if sth is selected
+        if (quest != null) //saves me from NullRefExc
         {
-            selected.MyQuestScr.Deselect(); //deselect
-        }
-        string objectives = "\n\nObjectives\n";
-        selected = quest; //assign quest
+            if (selected != null && selected!=quest) //if sth is selected AND the one i have already selected is different from the new one im selecting and trying to show description from
+            {
+                selected.MyQuestScr.Deselect(); //deselect
+            }
+            string objectives = "\n\nObjectives\n";
+            selected = quest; //assign quest
 
-        string title = quest.MyTitle;
-        foreach (Objective obj in quest.MyCollectObjectives)
-        {
-            objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
+            string title = quest.MyTitle;
+            foreach (Objective obj in quest.MyCollectObjectives)
+            {
+                objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
+            }
+            questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}", title, quest.MyDescription, objectives);
         }
-        questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}", title, quest.MyDescription, objectives);
+    }
+
+    public void CheckCompletion()
+    {
+        Debug.Log("RUN FROM CHECK COMPLETION");
+        foreach (QuestScr qs in questScripts)
+        {
+            Debug.Log("RUN FROM FOREACH");
+            qs.IsComplete();
+        }
     }
 }

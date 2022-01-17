@@ -6,6 +6,7 @@ public delegate void ItemCountChanged(Item item); //TEST TEST
 public class InventoryScr : MonoBehaviour
 {
     public event ItemCountChanged itemCountChangedEvent; //TES TEST each time i pick an item
+
     private static InventoryScr instance;
     public static InventoryScr MyInstance
     {
