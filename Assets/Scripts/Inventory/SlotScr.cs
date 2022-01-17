@@ -104,9 +104,15 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
 
     public void Clear()
     {
-        if(MyItems.Count > 0)
+        int initCount = MyItems.Count;
+
+        if(initCount > 0)
         {
-            MyItems.Clear();
+            for (int i = 0; i < initCount; i++)
+            {
+                InventoryScr.MyInstance.OnItemCountChanged(MyItems.Pop());
+            }
+            //MyItems.Clear();
         }
     }
     public void OnPointerClick(PointerEventData eventData)

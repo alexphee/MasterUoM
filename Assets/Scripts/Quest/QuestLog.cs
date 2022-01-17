@@ -43,9 +43,8 @@ public class QuestLog : MonoBehaviour
         QuestScr qs = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
         quest.MyQuestScr = qs; //both ways ref
         qs.MyQuest = quest; //when i accept the quest from questgiver, i can take the quest and assign it to the questscript. The questscript has a ref to the original quest
-       
 
-        //questScripts.Add(qs); //TEST
+        questScripts.Add(qs); //TEST
 
 
         gameObject.GetComponent<Text>().text = quest.MyTitle;
@@ -82,7 +81,7 @@ public class QuestLog : MonoBehaviour
         foreach (QuestScr qs in questScripts)
         {
             Debug.Log("RUN FROM FOREACH");
-            qs.IsComplete();
+            qs.IsComplete(); //checks if any quest is complete
         }
     }
 }

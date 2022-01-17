@@ -7,6 +7,7 @@ public class QuestScr : MonoBehaviour
 {
 
     public Quest MyQuest { get; set; }
+    private bool markedComplete = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,15 @@ public class QuestScr : MonoBehaviour
 
     public void IsComplete()
     {
-        if (MyQuest.IsComplete)
+        if (MyQuest.IsComplete && !markedComplete)
         {
-            GetComponent<Text>().text += " (Completed)";
+            markedComplete = true;
+            GetComponent<Text>().text += " <color=red><size=8>DONE</size></color>";
+        }
+        else if(!MyQuest.IsComplete)
+        {
+            markedComplete = false;
+            GetComponent<Text>().text = MyQuest.MyTitle; //reset title to normal
         }
     }
 }

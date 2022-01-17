@@ -124,9 +124,9 @@ public abstract class Character : MonoBehaviour
             ///
             ///
             //////TEST -- without this i can push around the enemy after death but if i add it i can't loot :(
-            //////Stupid solution --> Inspector --> RigidBody2D --> Mass = 99999
-            ///
             //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            ///
+            //////Stupid solution --> Inspector --> RigidBody2D --> Mass = 99999
         }
     }
 }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private Player player;
-    private NPC currentTarget;
+    private Enemy currentTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
                         {
                             currentTarget.Deselect(); //deselect current target
                         }
-                        currentTarget = hit.collider.GetComponent<NPC>(); //select new target
+                        currentTarget = hit.collider.GetComponent<Enemy>(); //select new target
 
                         player.MyTarget = currentTarget.Select(); //i can do this because the actual select function in NPC script returns a Transform, so it returns hitBox. So i can set it equal to hitBox and then it throws this to MyTarget in GameManager (where i call it)
 

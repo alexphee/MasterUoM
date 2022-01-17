@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Test Quest
+  m_Text: 
 --- !u!114 &6752021153290945958
 MonoBehaviour:
   m_ObjectHideFlags: 0

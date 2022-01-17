@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
         actionButtons[buttonIndex].onClick.Invoke(); //execute action like i press it with mouse
     }
 
-    public void ShowTargetFrame(NPC target)
+    public void ShowTargetFrame(Enemy target)
     {
         targetFrame.SetActive(true);
         healthStat.Initialize(target.MyHealth.MyCurrentValue, target.MyHealth.MyMaxValue);

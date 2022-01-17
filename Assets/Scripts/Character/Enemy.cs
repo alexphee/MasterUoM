@@ -2,8 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : NPC
+public delegate void HealthChanged(float health);
+public delegate void NPCRemoved();
+public class Enemy : Character, IInteractable
 {
+    public event HealthChanged healthChanged;
+    public event NPCRemoved npcRemoved;
+    [SerializeField]
+    private Sprite portraitFace;
+    public Sprite ThePortraitFace { get { return portraitFace; } }
+
+
+
     [SerializeField]
     private LootTable loottable;
 
@@ -51,18 +61,20 @@ public class Enemy : NPC
 
 
 
-    public override Transform Select()
+    public  Transform Select()
     {
         healthGroup.alpha = 1; //makes sure i can see the healthbar when i select the target
 
-        return base.Select();
+        return hitBox;
     }
 
-    public override void Deselect()
+    public void Deselect()
     {
         healthGroup.alpha = 0; //hide healthbar
-        base.Deselect();
+        healthChanged -= new HealthChanged(UIManager.MyInstance.UpdateTargetFrame);
+        npcRemoved -= new NPCRemoved(UIManager.MyInstance.HideTargetframe);
     }
+
 
     public override void TakeDamage(float damage, Transform source) //this overrides Character's TakeDamage function //source is later added, as the source of incoming damage
     {
@@ -106,7 +118,7 @@ public class Enemy : NPC
         OnHealthChanged(health.MyCurrentValue); //reset health on unit frame
     }
 
-    public override void Interact()
+    public void Interact()
     {
         if (!IsAlive)
         {
@@ -114,9 +126,26 @@ public class Enemy : NPC
         }
     }
 
-    public override void StopInteraction()
+    public void StopInteraction()
     {
         LootWindow.MyInstance.Close(); //when i stop interacting with the enemy i have to close the loot window
         //base.StopInteraction();
+    }
+
+    public void OnHealthChanged(float health)
+    {
+        if (healthChanged != null) //good practice in events. Always check if something is actually "listening", else i get NullRef exception
+        {
+            healthChanged(health);
+        }
+    }
+
+    public void OnNPCRemoved()
+    {
+        if (npcRemoved != null) //maybe this is better, instead of if statement:  npcRemoved?.Invoke();
+        {
+            npcRemoved();
+        }
+        Destroy(gameObject);
     }
 }

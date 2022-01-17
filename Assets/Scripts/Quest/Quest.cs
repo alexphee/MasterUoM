@@ -61,12 +61,12 @@ public class CollectObjective : Objective
 {
     public void UpdateItemCount(Item item) 
     {
-        Debug.Log("UPDATEITEM CALLED");
+        //Debug.Log("UPDATEITEM CALLED");
         if (MyType.ToLower() == item.MyTitle.ToLower()) //if the item i picked up (fed to this function) is the same as the objective's item
         {
             MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle); 
             QuestLog.MyInstance.UpdateSelected();
-            //QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
+            QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
             Debug.Log("Current amount" + MyCurrentAmount);
         }
     }

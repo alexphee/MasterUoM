@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestGiver : MonoBehaviour
+public class QuestGiver : NPC
 {
     [SerializeField]
     private Quest[] quests; //array of all quests the NPC has

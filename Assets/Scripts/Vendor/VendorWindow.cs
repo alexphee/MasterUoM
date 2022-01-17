@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VendorWindow : MonoBehaviour
+public class VendorWindow : Window
 {
-    [SerializeField]
-    private CanvasGroup canvasGroup;
+    
     [SerializeField]
     private VendorButton[] vendorButtons;
 
@@ -46,19 +45,7 @@ public class VendorWindow : MonoBehaviour
             }
         }
     }
-    public void Open(Vendor vendor)
-    {
-        this.vendor = vendor; //so that the window knows what vendor is using to show the items //without this i cant reopen the vendorwindow if i press X, i have to walk outside range and step back in
-        canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true;
-    }
-    public void Close()
-    {
-        vendor.IsOpen = false;
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
-        vendor = null;
-    }
+    
 
     public void NextPage()
     {
@@ -85,5 +72,11 @@ public class VendorWindow : MonoBehaviour
         {
             vb.gameObject.SetActive(false);
         }
+    }
+
+    public override void Open(NPC npc)
+    {
+        CreatePages((npc as Vendor).MyItems);
+        base.Open(npc);
     }
 }
