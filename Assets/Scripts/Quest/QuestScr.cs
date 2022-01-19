@@ -8,17 +8,6 @@ public class QuestScr : MonoBehaviour
 
     public Quest MyQuest { get; set; }
     private bool markedComplete = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Select() //this going to be called whenever i click on a quest
     {
@@ -38,6 +27,7 @@ public class QuestScr : MonoBehaviour
         {
             markedComplete = true;
             GetComponent<Text>().text += " <color=red><size=8>DONE</size></color>";
+            MessageFeedManager.MyInstance.WriteMessage(string.Format("{0} (Completed)", MyQuest.MyTitle));
         }
         else if(!MyQuest.IsComplete)
         {

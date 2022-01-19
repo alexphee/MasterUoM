@@ -46,10 +46,14 @@ public class QuestLog : MonoBehaviour
     }
     public void AcceptQuest(Quest quest) //the AcceptQuest asks the questgiver what quest am i accepting and the questgiver feeds this exact quest in this function
     {
-        foreach (CollectObjective obj in quest.MyCollectObjectives)
+        foreach (CollectObjective objC in quest.MyCollectObjectives)
         {
-            InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(obj.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
-            obj.UpdateItemCount(); //this had to be added later because when i already had 10 potions and THEN i clicked a quest that required 3 potions, it showed 0/10
+            InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(objC.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
+            objC.UpdateItemCount(); //this had to be added later because when i already had 10 potions and THEN i clicked a quest that required 3 potions, it showed 0/10
+        }
+        foreach (KillObjective objK in quest.MyKillObjectives)
+        {
+            GameManager.MyInstance.killConfirmEvent += new KillConfirm(objK.UpdateKillCount);
         }
         quests.Add(quest); //add the quest i accepted on the list, so i check if i already have it or not
         GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
@@ -82,6 +86,10 @@ public class QuestLog : MonoBehaviour
 
             string title = quest.MyTitle;
             foreach (Objective obj in quest.MyCollectObjectives)
+            {
+                objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
+            }
+            foreach (Objective obj in quest.MyKillObjectives)
             {
                 objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
             }

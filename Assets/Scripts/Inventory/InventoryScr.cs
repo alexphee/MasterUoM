@@ -189,6 +189,28 @@ public class InventoryScr : MonoBehaviour
         return itemCount;
     }
 
+    public Stack<Item> GetItems(string type, int count) // returns a stack of items based on a number e.g. 5 Carbon //if i have 10 i only gonna need the 5 
+    {
+        Stack<Item> items = new Stack<Item>(); //create stack of items
+        foreach (Bag bag in bags) //run through all bags
+        {
+            foreach (SlotScr slot in bag.MyBagScr.MySlots) //run through all slots of a bag
+            {
+                if (!slot.IsEmpty && slot.MyItem.MyTitle == type) //if a slot contains the item im looking for
+                {
+                    foreach (Item item in slot.MyItems) 
+                    {
+                        items.Push(item);   //add item in the stack
+                        if (items.Count == count) //if i reach the count i need then i dont need to look the rest of the inventory
+                        {
+                            return items;
+                        }
+                    }
+                }
+            }
+        }
+        return items;
+    }
     public void OnItemCountChanged(Item item) //made it into a function so i can check if null to avoid NullRefExc
     {
         if (itemCountChangedEvent != null) //if sth is listening this

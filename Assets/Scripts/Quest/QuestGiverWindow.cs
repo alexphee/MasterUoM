@@ -135,7 +135,17 @@ public class QuestGiverWindow : Window
                     questGiver.MyQuests[i] = null; //apparently i cant use .Remove() on an array // this is the next best thing i guess
                 }
             }
+            foreach (CollectObjective objC in selectedQuest.MyCollectObjectives)
+            {
+                InventoryScr.MyInstance.itemCountChangedEvent -= new ItemCountChanged(objC.UpdateItemCount); //unassign event
+                objC.Complete();
+            }
+            foreach (KillObjective objK in selectedQuest.MyKillObjectives)
+            {
+                GameManager.MyInstance.killConfirmEvent -= new KillConfirm(objK.UpdateKillCount); //unassign event
+            }
+            Back();//go back to first page
         }
-        Back();//go back to first page
+       
     }
 }

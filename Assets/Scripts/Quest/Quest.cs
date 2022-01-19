@@ -12,16 +12,25 @@ public class Quest
 
     [SerializeField]
     private CollectObjective[] collectObjectives; //array of collection quests
+    [SerializeField]
+    private KillObjective[] killObjectives; //array of kill quests
     public QuestScr MyQuestScr { get; set; }
     public string MyTitle { get => title; set => title = value; }
     public string MyDescription { get => description; set => description = value; }
     public CollectObjective[] MyCollectObjectives { get => collectObjectives; }
-
+    public KillObjective[] MyKillObjectives { get => killObjectives; }
     public bool IsComplete
     {
         get
         {
             foreach (Objective objective in collectObjectives)
+            {
+                if (!objective.IsComplete) //if not completed
+                {
+                    return false;
+                }
+            }
+            foreach (Objective objective in killObjectives)
             {
                 if (!objective.IsComplete) //if not completed
                 {
@@ -65,10 +74,13 @@ public class CollectObjective : Objective
         if (MyType.ToLower() == item.MyTitle.ToLower()) //if the item i picked up (fed to this function) is the same as the objective's item
         {
             MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(item.MyTitle);
+            if (MyCurrentAmount <= MyAmount) //this should stop messageFeed from showing progress after quest goal is completed //shows only till e.g. 3/3 and if i get 4/3 it doesnt show it
+            {
+                MessageFeedManager.MyInstance.WriteMessage(string.Format("{0}: {1}/{2}", item.MyTitle, MyCurrentAmount, MyAmount));
+            }
             QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
             QuestLog.MyInstance.UpdateSelected();
-            
-            Debug.Log("Current amount" + MyCurrentAmount);
+            //Debug.Log("Current amount" + MyCurrentAmount);
         }
     }
 
@@ -78,4 +90,31 @@ public class CollectObjective : Objective
             QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
             QuestLog.MyInstance.UpdateSelected();
     }
+
+    public void Complete()
+    {
+        Stack<Item> items = InventoryScr.MyInstance.GetItems(MyType, MyAmount);
+
+        foreach (Item item in items)
+        {
+            item.Remove();
+        }
+    }
+}
+
+[System.Serializable]
+public class KillObjective : Objective
+{
+  public void UpdateKillCount(Character character) //self explanatory
+    {
+        if (MyType == character.type)
+        {
+            MyCurrentAmount++;
+            MessageFeedManager.MyInstance.WriteMessage(string.Format("{0}: {1}/{2}", character.MyType, MyCurrentAmount, MyAmount));
+            QuestLog.MyInstance.CheckCompletion();
+            QuestLog.MyInstance.UpdateSelected();
+        }
+    }
+
+    
 }

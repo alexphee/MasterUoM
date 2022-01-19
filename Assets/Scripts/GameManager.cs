@@ -3,8 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public delegate void KillConfirm(Character character);
 public class GameManager : MonoBehaviour
 {
+    public event KillConfirm killConfirmEvent; //will trigger anytime i kill sth (anything)
+
+    private static GameManager instance;
+    public static GameManager MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<GameManager>();
+            }
+            return instance;
+        }
+    }
     [SerializeField]
     private Player player;
     private Enemy currentTarget;
@@ -69,6 +84,14 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    public void OnKillConfirmed(Character character)
+    {
+        if (killConfirmEvent != null)
+        {
+            killConfirmEvent(character);
         }
     }
 }

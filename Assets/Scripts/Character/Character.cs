@@ -7,7 +7,10 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     public Transform MyTarget { get; set; }
-
+    
+    [SerializeField]
+    public string type;
+    public string MyType { get => type; }
 
     [SerializeField]
     private float speed;
@@ -120,6 +123,7 @@ public abstract class Character : MonoBehaviour
         {
             Direction = Vector2.zero; //prevents enemy to continue to move after death while chasing
             myRigidBody.velocity = Direction; //change velocity to zero
+            GameManager.MyInstance.OnKillConfirmed(this);
             MyAnimator.SetTrigger("die");
             ///
             ///
