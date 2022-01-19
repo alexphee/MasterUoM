@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class QuestLog : MonoBehaviour
 {
     [SerializeField]
+    private Text questCountTxt;
+    [SerializeField]
+    private int maxCount;
+    private int currentCount;
+    [SerializeField]
     private CanvasGroup canvasGroup;
 
     private List<QuestScr> questScripts = new List<QuestScr>(); //TEST
@@ -36,7 +41,10 @@ public class QuestLog : MonoBehaviour
             return instance;
         }
     }
-
+    public void Start()
+    {
+        questCountTxt.text = currentCount + "/" + maxCount;
+    }
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -46,26 +54,33 @@ public class QuestLog : MonoBehaviour
     }
     public void AcceptQuest(Quest quest) //the AcceptQuest asks the questgiver what quest am i accepting and the questgiver feeds this exact quest in this function
     {
-        foreach (CollectObjective objC in quest.MyCollectObjectives)
+        if (currentCount < maxCount)
         {
-            InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(objC.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
-            objC.UpdateItemCount(); //this had to be added later because when i already had 10 potions and THEN i clicked a quest that required 3 potions, it showed 0/10
+            currentCount++;
+            questCountTxt.text = currentCount + "/" + maxCount;
+
+            foreach (CollectObjective objC in quest.MyCollectObjectives)
+            {
+                InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(objC.UpdateItemCount); //when i accept a quest i check all collectobjectives from that quest and io trigger this every time itemcount changes
+                objC.UpdateItemCount(); //this had to be added later because when i already had 10 potions and THEN i clicked a quest that required 3 potions, it showed 0/10
+            }
+            foreach (KillObjective objK in quest.MyKillObjectives)
+            {
+                GameManager.MyInstance.killConfirmEvent += new KillConfirm(objK.UpdateKillCount);
+            }
+            quests.Add(quest); //add the quest i accepted on the list, so i check if i already have it or not
+            GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
+            QuestScr qs = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
+            quest.MyQuestScr = qs; //both ways ref
+            qs.MyQuest = quest; //when i accept the quest from questgiver, i can take the quest and assign it to the questscript. The questscript has a ref to the original quest
+
+            questScripts.Add(qs); //TEST
+
+
+            gameObject.GetComponent<Text>().text = quest.MyTitle;
+            CheckCompletion();
         }
-        foreach (KillObjective objK in quest.MyKillObjectives)
-        {
-            GameManager.MyInstance.killConfirmEvent += new KillConfirm(objK.UpdateKillCount);
-        }
-        quests.Add(quest); //add the quest i accepted on the list, so i check if i already have it or not
-        GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
-        QuestScr qs = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
-        quest.MyQuestScr = qs; //both ways ref
-        qs.MyQuest = quest; //when i accept the quest from questgiver, i can take the quest and assign it to the questscript. The questscript has a ref to the original quest
-
-        questScripts.Add(qs); //TEST
-
-
-        gameObject.GetComponent<Text>().text = quest.MyTitle;
-        CheckCompletion();
+        
     
     }
     public void UpdateSelected()
@@ -99,10 +114,11 @@ public class QuestLog : MonoBehaviour
 
     public void CheckCompletion()
     {
-        Debug.Log("RUN FROM CHECK COMPLETION");
+        //Debug.Log("RUN FROM CHECK COMPLETION");
         foreach (QuestScr qs in questScripts)
         {
-            Debug.Log("RUN FROM FOREACH");
+            //Debug.Log("RUN FROM FOREACH");
+            qs.MyQuest.MyQuestGiver.UpdateQuestStatus();
             qs.IsComplete(); //checks if any quest is complete
         }
     }
@@ -125,9 +141,30 @@ public class QuestLog : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;
     }
-    public void AbandonQuest()
+    public void DropQuest() //unassign  the events
     {
-        //removes the quest from the quest log 
+        foreach (CollectObjective objC in selected.MyCollectObjectives)
+        {
+            InventoryScr.MyInstance.itemCountChangedEvent -= new ItemCountChanged(objC.UpdateItemCount); //unassign event
+        }
+        foreach (KillObjective objK in selected.MyKillObjectives)
+        {
+            GameManager.MyInstance.killConfirmEvent -= new KillConfirm(objK.UpdateKillCount); //unassign event
+        }
+        RemoveQuest(selected.MyQuestScr); //remove this from the questlog
+    }
+
+    public void RemoveQuest(QuestScr questScr) //takes the qusetscript i have in log and i need to remove it uppon completion
+    {
+        questScripts.Remove(questScr); //remove it from the list of quests
+        Destroy(questScr.gameObject); //so i cant see it in the questlog
+        quests.Remove(questScr.MyQuest); //remove quest from the list of quests
+        questDescription.text = string.Empty; //clear description of the quest
+        selected = null; //deselecting the quest
+        currentCount--; //minus one quest
+        questCountTxt.text = currentCount + "/" + maxCount; //update the count
+        questScr.MyQuest.MyQuestGiver.UpdateQuestStatus();
+        questScr = null; //drop ref
     }
     public bool AlreadyHaveTheQuest(Quest quest) //returns true if i already have a quest
     {

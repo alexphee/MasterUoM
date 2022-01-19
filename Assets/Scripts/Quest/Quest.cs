@@ -15,6 +15,7 @@ public class Quest
     [SerializeField]
     private KillObjective[] killObjectives; //array of kill quests
     public QuestScr MyQuestScr { get; set; }
+    public QuestGiver MyQuestGiver { get; set; } //this ref is needed bc each quest has to know which questgiver it comes from so it can notify the questgiver when its completed
     public string MyTitle { get => title; set => title = value; }
     public string MyDescription { get => description; set => description = value; }
     public CollectObjective[] MyCollectObjectives { get => collectObjectives; }

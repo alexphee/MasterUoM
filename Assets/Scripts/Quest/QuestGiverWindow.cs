@@ -144,6 +144,7 @@ public class QuestGiverWindow : Window
             {
                 GameManager.MyInstance.killConfirmEvent -= new KillConfirm(objK.UpdateKillCount); //unassign event
             }
+            QuestLog.MyInstance.RemoveQuest(selectedQuest.MyQuestScr); //remove the completed quest from the questlog
             Back();//go back to first page
         }
        
