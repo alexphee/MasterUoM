@@ -119,6 +119,8 @@ public abstract class Character : MonoBehaviour
             MyTarget = source;
         }*/
         health.MyCurrentValue -= damage;
+        CombatTextManager.MyInstance.CreateText(transform.position, damage.ToString(), cType.DAMAGE); //write out health
+
         if (health.MyCurrentValue <= 0)
         {
             Direction = Vector2.zero; //prevents enemy to continue to move after death while chasing
@@ -132,5 +134,11 @@ public abstract class Character : MonoBehaviour
             ///
             //////Stupid solution --> Inspector --> RigidBody2D --> Mass = 99999
         }
+    }
+
+    public void GetHealth(int health)
+    {
+        MyHealth.MyCurrentValue += health;
+        CombatTextManager.MyInstance.CreateText(transform.position, health.ToString(), cType.HEAL); //write out health
     }
 }

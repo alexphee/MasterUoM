@@ -12,7 +12,8 @@ public class HealthPotion : Item, IUseable
         if(Player.MyInstance.MyHealth.MyCurrentValue < Player.MyInstance.MyHealth.MyMaxValue)//if max health dont waste potion
         {
             Remove();
-            Player.MyInstance.MyHealth.MyCurrentValue += health;
+            //Player.MyInstance.MyHealth.MyCurrentValue += health; //REFACTORED
+            Player.MyInstance.GetHealth(health); //use the function instead of the property
         }
         
     }

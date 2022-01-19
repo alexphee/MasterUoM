@@ -23,6 +23,7 @@ public class QuestGiver : NPC
 
     public void UpdateQuestStatus() //shows ! or ? based on the quest status
     {
+        int count = 0;
         foreach (Quest quest in quests) //i need to check for every quest, if all are null then i dont have to show a symbol, else i need to check if completed or the player has it (hence 2 ? symbols)
         {
             if (quest != null)
@@ -40,6 +41,14 @@ public class QuestGiver : NPC
                 else if (!quest.IsComplete && QuestLog.MyInstance.AlreadyHaveTheQuest(quest)) //if the quest isn't complete BUT i already have it 
                 {
                     statusRenderer.sprite = questionTemp;
+                }
+            }
+            else //this part of code will hide any symbol above questgiver after completing all quests
+            {
+                count++;
+                if (count == quests.Length)
+                {
+                    statusRenderer.enabled = false;
                 }
             }
         }

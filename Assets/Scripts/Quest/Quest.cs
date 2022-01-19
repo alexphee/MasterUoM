@@ -110,10 +110,14 @@ public class KillObjective : Objective
     {
         if (MyType == character.type)
         {
-            MyCurrentAmount++;
-            MessageFeedManager.MyInstance.WriteMessage(string.Format("{0}: {1}/{2}", character.MyType, MyCurrentAmount, MyAmount));
-            QuestLog.MyInstance.CheckCompletion();
-            QuestLog.MyInstance.UpdateSelected();
+            if(MyCurrentAmount < MyAmount) // this is to stop counting kills when a kill quest is completed
+            {
+                MyCurrentAmount++;
+                MessageFeedManager.MyInstance.WriteMessage(string.Format("{0}: {1}/{2}", character.MyType, MyCurrentAmount, MyAmount));
+                QuestLog.MyInstance.CheckCompletion();
+                QuestLog.MyInstance.UpdateSelected();
+            }
+            
         }
     }
 
