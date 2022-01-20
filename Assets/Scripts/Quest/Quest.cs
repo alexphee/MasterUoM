@@ -41,6 +41,15 @@ public class Quest
             return true; //if nothing is NOT completed then true
         }
     }
+
+
+    [SerializeField]
+    private int level;
+    [SerializeField]
+    private int experience;
+    public int MyLevel { get => level; }
+    public int MyExperience { get => experience; }
+
 }
 
 [System.Serializable]
@@ -64,7 +73,10 @@ public abstract class Objective
                 return MyCurrentAmount >= MyAmount; //is the objective completed?
             }
         }
+
+
 }
+
 
 [System.Serializable]
 public class CollectObjective : Objective

@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     private Image thePortraitFrame;
     [SerializeField]
     private GameObject tooltip;
+    [SerializeField]
+    private Text levelTxt;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,8 +71,31 @@ public class UIManager : MonoBehaviour
         targetFrame.SetActive(true);
         healthStat.Initialize(target.MyHealth.MyCurrentValue, target.MyHealth.MyMaxValue);
         thePortraitFrame.sprite = target.ThePortraitFace;
+        levelTxt.text = target.MyLevel.ToString(); //shows level
         target.healthChanged += new HealthChanged(UpdateTargetFrame); //i have an event on my target called healthChanged and i'd like to listen to this event by using the UpdateTargetFrame. So this function listens to target's healthChanged event when its triggerd by taking dmg (in Enemy script)
         target.npcRemoved += new NPCRemoved(HideTargetframe); // when removed also hode the target frame (if i dont do this, i have to deselect it to disappear, or click somewhere else)
+        //level text color implementation starts here
+        if (target.MyLevel >= Player.MyInstance.MyLevel + 5) //purple -- very hard
+        {
+            levelTxt.color = Color.magenta;
+        }
+        else if (target.MyLevel == Player.MyInstance.MyLevel + 3 || target.MyLevel == Player.MyInstance.MyLevel + 4) //red -- hard
+        {
+            levelTxt.color = Color.red;
+        }
+        else if (target.MyLevel >= Player.MyInstance.MyLevel - 2 && target.MyLevel <= Player.MyInstance.MyLevel + 2) //yelow - normal
+        {
+            levelTxt.color = Color.yellow;
+        }
+        else if (target.MyLevel <= Player.MyInstance.MyLevel - 3 && target.MyLevel > XPManager.CalculateGrayLevel()) //green -- easy
+        {
+            levelTxt.color = Color.green;
+        }
+        else //gray -- too easy, no XP
+        {
+            levelTxt.color = Color.gray;
+        }
+    
     }
 
     public void HideTargetframe()

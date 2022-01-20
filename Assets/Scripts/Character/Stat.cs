@@ -14,12 +14,23 @@ public class Stat : MonoBehaviour
     public float MyMaxValue { get; set; }
     private float currentValue;
 
+    private float overflow;
+    public float MyOverflow
+    {
+        get
+        {
+            float tempOverflow = overflow;
+            overflow = 0;
+            return tempOverflow;
+        }
+    }
     public float MyCurrentValue {
         get { return currentValue; }
         set
         {
             if (value > MyMaxValue) // current value never exceeds max
             {
+                overflow = value - MyMaxValue; //save the excess xp so i assign it to the xp bar at the new level, after reset
                 currentValue = MyMaxValue;
             }
             else if (value < 0)  //i dont allow negative health values
@@ -39,8 +50,14 @@ public class Stat : MonoBehaviour
             }
         }
     }
+    public bool IsXPFull
+    {
+        get
+        {
+            return content.fillAmount == 1; //if 1 the bar is full
+        }
+    }
 
-     
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +73,7 @@ public class Stat : MonoBehaviour
 
         if (currentFill != content.fillAmount) //smoother
         {
-            content.fillAmount = Mathf.Lerp(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed); //move equaly in every device (deltaTime)
+            content.fillAmount = Mathf.MoveTowards(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed); //move equaly in every device (deltaTime) //Replaced Lerp with MoveTowards bc of the constant speed
         }
         //content.fillAmount = currentFill;
     }
@@ -67,5 +84,10 @@ public class Stat : MonoBehaviour
         MyMaxValue = maxValue;
         MyCurrentValue = currentValue;
         content.fillAmount = MyCurrentValue / MyMaxValue; //this is so the healthbar is already filled to max when i chose target, else it slowly fills from zero
+    }
+
+    public void Reset()
+    {
+        content.fillAmount = 0;
     }
 }

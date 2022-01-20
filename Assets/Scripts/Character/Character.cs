@@ -44,7 +44,11 @@ public abstract class Character : MonoBehaviour
     public float Speed { get => speed; set => speed = value; }
 
     public bool IsAlive { get { return health.MyCurrentValue > 0; }} //this is going to return true if the health current value is larger than zero and false if less than zero (dead)
+    [SerializeField]
+    private int level;
+    public int MyLevel { get => level; set => level = value; }
 
+    
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -127,6 +131,14 @@ public abstract class Character : MonoBehaviour
             myRigidBody.velocity = Direction; //change velocity to zero
             GameManager.MyInstance.OnKillConfirmed(this);
             MyAnimator.SetTrigger("die");
+
+            if (this is Enemy)
+            {
+                Player.MyInstance.GainExperience(XPManager.CalculateXP(this as Enemy)); //if whatever died was an enemy then player needs to gain XP // this prevents gaining XP from player deaths
+            }
+
+
+
             ///
             ///
             //////TEST -- without this i can push around the enemy after death but if i add it i can't loot :(

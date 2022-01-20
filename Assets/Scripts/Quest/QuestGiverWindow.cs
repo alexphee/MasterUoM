@@ -47,7 +47,7 @@ public class QuestGiverWindow : Window
             if (quest != null) //this was added later // i need this because after i remove a quest from the list (after pressing Complete), i get a NullRefExc due to the implementation: questGiver.MyQuests[i] = null;
             {
                 GameObject go = Instantiate(questPrefab, questArea);//instantiate the quest
-                go.GetComponent<Text>().text = quest.MyTitle; //set the title
+                go.GetComponent<Text>().text = "["+quest.MyLevel+"]"+quest.MyTitle; //set the title
 
                 go.GetComponent<QGQuestScr>().MyQuest = quest; //assign this quest to QGQScr  so i can use this quest to show sth in the Questgiver's window
 
@@ -144,6 +144,8 @@ public class QuestGiverWindow : Window
             {
                 GameManager.MyInstance.killConfirmEvent -= new KillConfirm(objK.UpdateKillCount); //unassign event
             }
+            Player.MyInstance.GainExperience(XPManager.CalculateXP(selectedQuest)); //calculate the xp based on the quest
+
             QuestLog.MyInstance.RemoveQuest(selectedQuest.MyQuestScr); //remove the completed quest from the questlog
             Back();//go back to first page
         }

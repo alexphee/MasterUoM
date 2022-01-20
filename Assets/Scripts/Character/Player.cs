@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -8,8 +9,10 @@ public class Player : Character
     //private Stat health; removed this cause i get "Same field nam serialized multiple times" exception. I have a health field in parent Character as well
     [SerializeField]
     private Stat mana;
-
-
+    [SerializeField]
+    private Stat xpStat;
+    [SerializeField]
+    private Text levelText;
     private float initMana = 50;
 
     [SerializeField]
@@ -31,12 +34,17 @@ public class Player : Character
     private IInteractable interactable; //a ref to what the player can interact with
 
     public int MyGold { get; set; }
+
+    [SerializeField]
+    private Animator levelUp;
+
     /////// Start is called before the first frame update///////
     protected override void Start()
     {
         MyGold = 20;
         mana.Initialize(initMana, initMana);
-
+        xpStat.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+        levelText.text = MyLevel.ToString();
         base.Start();
     }
 
@@ -60,14 +68,18 @@ public class Player : Character
         ///debugging
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("RUN I");
+            //Debug.Log("RUN I");
             health.MyCurrentValue -= 10;
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
-            Debug.Log("RUN O");
+            //Debug.Log("RUN O");
 
             health.MyCurrentValue += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            GainExperience(1000);
         }
 
         if (Input.GetKey(KeyCode.W)) {
@@ -191,6 +203,39 @@ public class Player : Character
         if (interactable != null)
         {
             interactable.Interact(); //this calls the given interact function eg Enemy's or chest's
+        }
+    }
+
+    public void GainExperience(int xp)
+    {
+        xpStat.MyCurrentValue += xp; //add xp to currentvalue
+        CombatTextManager.MyInstance.CreateText(transform.position, xp.ToString(), cType.XP) ;
+
+        if (xpStat.MyCurrentValue >= xpStat.MyMaxValue)
+        {
+            StartCoroutine(LevelUP());
+        }
+    }
+
+    public IEnumerator LevelUP()
+    {
+        while (!xpStat.IsXPFull) //checks if the bar is full. In case of slow fill speed it will wait longer
+        {
+            yield return null;
+        }
+        MyLevel++; //add 1 to level
+        levelUp.SetTrigger("levelUp");
+        levelText.text = MyLevel.ToString();
+        xpStat.MyMaxValue = 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f); //mylevel is used in this equation so it returns sth else for every level, hence the maxvalue will be different everytime
+        xpStat.MyMaxValue = Mathf.Floor(xpStat.MyMaxValue); //round this down so i dont get decimal
+        xpStat.MyCurrentValue = xpStat.MyOverflow; //when reseting for the new level i need to pass to the bar the ammount of extra xp i had e.g i have 95/100 and gain 10 xp, i should be able to carry the extra 5xp to the new level and not lose it
+        xpStat.Reset();
+
+        //this is for bug fixxing. When you gain enough XP to go e.g. from 1 to 4
+        //i only stops at the second level. Here i check every time if i need to go further
+        if (xpStat.MyCurrentValue >= xpStat.MyMaxValue)
+        {
+            StartCoroutine(LevelUP());
         }
     }
 
