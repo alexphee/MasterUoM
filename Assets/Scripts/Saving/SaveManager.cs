@@ -21,7 +21,7 @@ public class SaveManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Save();
+            Load();
         }
     }
 
@@ -30,7 +30,7 @@ public class SaveManager : MonoBehaviour
         try
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.OpenOrCreate); //creates the file in hard drive. if exist open it, if doesnt then create it //THIS LINE DOESNT SAVE
+            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Create); //creates the file in hard drive //THIS LINE DOESNT SAVE //there is also OpenOrCreate but it appends on old files
 
             SaveData data = new SaveData();
             SavePlayer(data);
@@ -46,7 +46,9 @@ public class SaveManager : MonoBehaviour
 
     private void SavePlayer(SaveData data)
     {
-        data.MyPlayerData = new PlayerData(Player.MyInstance.MyLevel);
+        data.MyPlayerData = new PlayerData(Player.MyInstance.MyLevel, Player.MyInstance.MyXP.MyCurrentValue, Player.MyInstance.MyXP.MyMaxValue,
+                                            Player.MyInstance.MyHealth.MyCurrentValue, Player.MyInstance.MyHealth.MyMaxValue, Player.MyInstance.MyMana.MyCurrentValue,
+                                            Player.MyInstance.MyMana.MyMaxValue, Player.MyInstance.transform.position);
     }
 
     private void Load()
@@ -73,5 +75,9 @@ public class SaveManager : MonoBehaviour
     {
         Player.MyInstance.MyLevel = data.MyPlayerData.MyLevel;
         Player.MyInstance.UpdateLevel();
+        Player.MyInstance.MyHealth.Initialize(data.MyPlayerData.MyHealth, data.MyPlayerData.MyMaxHealth);
+        Player.MyInstance.MyMana.Initialize(data.MyPlayerData.MyMana, data.MyPlayerData.MyMaxMana);
+        Player.MyInstance.MyXP.Initialize(data.MyPlayerData.MyXP, data.MyPlayerData.MyMaxXP);
+        Player.MyInstance.transform.position = new Vector2(data.MyPlayerData.MyX, data.MyPlayerData.MyY);
     }
 }

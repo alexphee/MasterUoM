@@ -38,12 +38,14 @@ public class Player : Character
     [SerializeField]
     private Animator levelUp;
 
+    public Stat MyXP { get => xpStat; set => xpStat = value; }
+    public Stat MyMana { get => mana; set => mana = value; }
     /////// Start is called before the first frame update///////
     protected override void Start()
     {
         MyGold = 20;
-        mana.Initialize(initMana, initMana);
-        xpStat.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+        MyMana.Initialize(initMana, initMana);
+        MyXP.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
         levelText.text = MyLevel.ToString();
         base.Start();
     }
@@ -70,12 +72,14 @@ public class Player : Character
         {
             //Debug.Log("RUN I");
             health.MyCurrentValue -= 10;
+            mana.MyCurrentValue -= 5;
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
             //Debug.Log("RUN O");
 
             health.MyCurrentValue += 10;
+            mana.MyCurrentValue += 5;
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -198,6 +202,7 @@ public class Player : Character
         }
     }
 
+
     public void Interact()
     {
         if (interactable != null)
@@ -208,10 +213,10 @@ public class Player : Character
 
     public void GainExperience(int xp)
     {
-        xpStat.MyCurrentValue += xp; //add xp to currentvalue
+        MyXP.MyCurrentValue += xp; //add xp to currentvalue
         CombatTextManager.MyInstance.CreateText(transform.position, xp.ToString(), cType.XP) ;
 
-        if (xpStat.MyCurrentValue >= xpStat.MyMaxValue)
+        if (MyXP.MyCurrentValue >= MyXP.MyMaxValue)
         {
             StartCoroutine(LevelUP());
         }
@@ -219,21 +224,21 @@ public class Player : Character
 
     public IEnumerator LevelUP()
     {
-        while (!xpStat.IsXPFull) //checks if the bar is full. In case of slow fill speed it will wait longer
+        while (!MyXP.IsXPFull) //checks if the bar is full. In case of slow fill speed it will wait longer
         {
             yield return null;
         }
         MyLevel++; //add 1 to level
         levelUp.SetTrigger("levelUp");
         levelText.text = MyLevel.ToString();
-        xpStat.MyMaxValue = 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f); //mylevel is used in this equation so it returns sth else for every level, hence the maxvalue will be different everytime
-        xpStat.MyMaxValue = Mathf.Floor(xpStat.MyMaxValue); //round this down so i dont get decimal
-        xpStat.MyCurrentValue = xpStat.MyOverflow; //when reseting for the new level i need to pass to the bar the ammount of extra xp i had e.g i have 95/100 and gain 10 xp, i should be able to carry the extra 5xp to the new level and not lose it
-        xpStat.Reset();
+        MyXP.MyMaxValue = 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f); //mylevel is used in this equation so it returns sth else for every level, hence the maxvalue will be different everytime
+        MyXP.MyMaxValue = Mathf.Floor(MyXP.MyMaxValue); //round this down so i dont get decimal
+        MyXP.MyCurrentValue = MyXP.MyOverflow; //when reseting for the new level i need to pass to the bar the ammount of extra xp i had e.g i have 95/100 and gain 10 xp, i should be able to carry the extra 5xp to the new level and not lose it
+        MyXP.Reset();
 
         //this is for bug fixxing. When you gain enough XP to go e.g. from 1 to 4
         //i only stops at the second level. Here i check every time if i need to go further
-        if (xpStat.MyCurrentValue >= xpStat.MyMaxValue)
+        if (MyXP.MyCurrentValue >= MyXP.MyMaxValue)
         {
             StartCoroutine(LevelUP());
         }
