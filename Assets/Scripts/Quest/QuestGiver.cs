@@ -35,7 +35,7 @@ public class QuestGiver : NPC
                 }
                 else if (!QuestLog.MyInstance.AlreadyHaveTheQuest(quest)) //if i dont have completed quests and the questgiver has a quest that the player hasn't
                 {
-                    statusRenderer.sprite = exclamation; //shoq exclamation
+                    statusRenderer.sprite = exclamation; //show exclamation
                     break;
                 }
                 else if (!quest.IsComplete && QuestLog.MyInstance.AlreadyHaveTheQuest(quest)) //if the quest isn't complete BUT i already have it 

@@ -239,6 +239,11 @@ public class Player : Character
         }
     }
 
+    public void UpdateLevel()
+    {
+        levelText.text = MyLevel.ToString();
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("thyEnemy") || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest
