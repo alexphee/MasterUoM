@@ -27,6 +27,8 @@ public class Bag : Item, IUseable
             MyBagScr.AddSlots(slots);
 
             InventoryScr.MyInstance.AddBag(this);//whenever i use the bag i have to call inv
+
+            MyBagScr.MyBagIndex = MyBagButton.MyBagindex; //TEST FOR SAVING INV
         }
     }
     public override string GetDescription()

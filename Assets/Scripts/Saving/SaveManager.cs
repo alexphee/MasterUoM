@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ public class SaveManager : MonoBehaviour
 {
     [SerializeField] //this need to be serialized so i can populate it from the inspector
     private Item[] items;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,9 @@ public class SaveManager : MonoBehaviour
 
             SaveData data = new SaveData();
             SaveBags(data);
+            SaveInventory(data);
             SavePlayer(data);
+            SaveQuests(data);
             bf.Serialize(file, data); //this line actually saves the game by serializing the data
             file.Close();
         }
@@ -63,6 +67,23 @@ public class SaveManager : MonoBehaviour
             data.MyInventoryData.MyBags.Add(new BagData(InventoryScr.MyInstance.MyBags[i].MySlotCount, InventoryScr.MyInstance.MyBags[i].MyBagButton.MyBagindex)); //check in the inventory the bag im looking atm, how many slots that bag has? i store that amount and the index
         }
     }
+
+    private void SaveInventory(SaveData data)
+    {
+        List<SlotScr> slots = InventoryScr.MyInstance.GetAllItems();
+        foreach (SlotScr slot in slots)
+        {
+            data.MyInventoryData.MyItems.Add(new ItemData(slot.MyItem.MyTitle, slot.MyItems.Count, slot.MyIndex, slot.MyBag.MyBagIndex));
+        }
+    }
+
+    private void SaveQuests(SaveData data)
+    {
+        foreach (Quest quest in QuestLog.MyInstance.MyQuests)
+        {
+            data.MyQuestdata.Add(new QuestData(quest.MyTitle, quest.MyDescription, quest.MyCollectObjectives, quest.MyKillObjectives, quest.MyQuestGiver.MyQuestGiverID)); //saving the quests
+        }
+    }
     private void Load()
     {
         try
@@ -74,7 +95,9 @@ public class SaveManager : MonoBehaviour
             
             file.Close();
             LoadBags(data);
+            LoadInventory(data);
             LoadPlayer(data);
+            LoadQuests(data);
         }
         catch (System.Exception)
         {
@@ -100,6 +123,30 @@ public class SaveManager : MonoBehaviour
             Bag newBag = (Bag)Instantiate(items[0]); //hierarchy-->SaveManager i know i have set the bag at 0
             newBag.Initialize(bagData.MySlotCount);
             InventoryScr.MyInstance.AddBag(newBag, bagData.MyBagIndex);
+        }
+    }
+
+    private void LoadInventory(SaveData data)
+    {
+        foreach (ItemData itemData in data.MyInventoryData.MyItems) //look thorugh all items saved in savedata
+        {
+            Item item = Array.Find(items, x => x.MyTitle == itemData.MyTitle); //this will take the item
+            for (int i = 0; i < itemData.MyStackCount; i++) //run thorugh all items i have
+            {
+                InventoryScr.MyInstance.PlaceInCorrectPosition(item, itemData.MySlotIndex, itemData.MyBagIndex);
+            }
+        }
+    }
+
+    private void LoadQuests(SaveData data)
+    {
+        QuestGiver[] questGivers = FindObjectsOfType<QuestGiver>(); //find all questgivers
+        foreach (QuestData questData in data.MyQuestdata)
+        {
+            QuestGiver qGiv = Array.Find(questGivers, x => x.MyQuestGiverID == questData.MyQuestGiverID); //run through all questgivers check ids, if the ids match any quest i heve then i store ref to questgiver
+            Quest q = Array.Find(qGiv.MyQuests, x => x.MyTitle == questData.MyTitle);//run thorugh all quests inside questgivers and if i find sth with the same title as the questdata then make ref to that quest
+            q.MyQuestGiver = qGiv; //the quest im going to add to the questlog needs ref toquestgiver so i know if its completed later on
+            QuestLog.MyInstance.AcceptQuest(q);
         }
     }
 }

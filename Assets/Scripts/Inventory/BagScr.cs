@@ -15,6 +15,7 @@ public class BagScr : MonoBehaviour
 
     public List<SlotScr> MySlots { get => slots; }
 
+    public int MyBagIndex { get; set; }
     public int MyEmptySlotCount { //counts how many empty slots a bag has
         get
         {

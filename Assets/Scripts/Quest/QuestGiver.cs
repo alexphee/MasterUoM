@@ -10,9 +10,13 @@ public class QuestGiver : NPC
     private Sprite question, questionTemp, exclamation;
     public Quest[] MyQuests { get => quests; }
 
+
     [SerializeField]
     private SpriteRenderer statusRenderer;
 
+    [SerializeField]
+    private int questGiverID;//for loading
+    public int MyQuestGiverID { get => questGiverID; } //for loading
     private void Start()
     {
         foreach (Quest quest in quests)

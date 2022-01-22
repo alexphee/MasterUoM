@@ -41,6 +41,9 @@ public class QuestLog : MonoBehaviour
             return instance;
         }
     }
+
+    public List<Quest> MyQuests { get => quests; set => quests = value; }
+
     public void Start()
     {
         questCountTxt.text = currentCount + "/" + maxCount;
@@ -68,7 +71,7 @@ public class QuestLog : MonoBehaviour
             {
                 GameManager.MyInstance.killConfirmEvent += new KillConfirm(objK.UpdateKillCount);
             }
-            quests.Add(quest); //add the quest i accepted on the list, so i check if i already have it or not
+            MyQuests.Add(quest); //add the quest i accepted on the list, so i check if i already have it or not
             GameObject gameObject = Instantiate(questPrefab, questParent); //instantiate the quest prefab from the folder into the gameworld
             QuestScr qs = gameObject.GetComponent<QuestScr>();//take the quest script from above gameobject and create ref
             quest.MyQuestScr = qs; //both ways ref
@@ -158,7 +161,7 @@ public class QuestLog : MonoBehaviour
     {
         questScripts.Remove(questScr); //remove it from the list of quests
         Destroy(questScr.gameObject); //so i cant see it in the questlog
-        quests.Remove(questScr.MyQuest); //remove quest from the list of quests
+        MyQuests.Remove(questScr.MyQuest); //remove quest from the list of quests
         questDescription.text = string.Empty; //clear description of the quest
         selected = null; //deselecting the quest
         currentCount--; //minus one quest
@@ -169,6 +172,6 @@ public class QuestLog : MonoBehaviour
     public bool AlreadyHaveTheQuest(Quest quest) //returns true if i already have a quest
     {
         Debug.Log("ALREADY HAVE QUEST");
-        return quests.Exists(q => q.MyTitle == quest.MyTitle);
+        return MyQuests.Exists(q => q.MyTitle == quest.MyTitle);
     }
 }

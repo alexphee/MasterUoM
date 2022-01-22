@@ -111,7 +111,7 @@ public class InventoryScr : MonoBehaviour
             }
         }
     }
-
+    //overload method
     public void AddBag(Bag bag, int bagIndex)
     {
         bag.SetupScript();
@@ -232,5 +232,28 @@ public class InventoryScr : MonoBehaviour
         {
             itemCountChangedEvent.Invoke(item);
         }
+    }
+
+    public List<SlotScr> GetAllItems() //get all slots with items, for saving
+    {
+        List<SlotScr> slots = new List<SlotScr>();
+        foreach (Bag bag in MyBags)
+        {
+            foreach (SlotScr slot in bag.MyBagScr.MySlots)
+            {
+                if (!slot.IsEmpty)
+                {
+                    slots.Add(slot); //look through all inventory, every time i find a slot with an item on it, add the slot to the list and return the list at the end
+                }
+            }
+        }
+        return slots;
+    }
+
+
+    //for loading game TEST
+    public void PlaceInCorrectPosition(Item item, int slotIndex, int bagIndex)
+    {
+        bags[bagIndex].MyBagScr.MySlots[slotIndex].AddItem(item);//first find the right bag, then the right slot and then place the item there
     }
 }

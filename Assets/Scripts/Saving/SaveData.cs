@@ -8,9 +8,11 @@ public class SaveData
 {
     public PlayerData MyPlayerData { get; set; }
     public InventoryData MyInventoryData { get; set; }
+    public List<QuestData> MyQuestdata { get; set; }
     public SaveData() //constructor to instantiate everything
     {
         MyInventoryData = new InventoryData();
+        MyQuestdata = new List<QuestData>();
     }
 }
 
@@ -49,11 +51,13 @@ public class ItemData
     public string MyTitle { get; set; }
     public int MyStackCount { get; set; }
     public int MySlotIndex { get; set; }
-    public ItemData(string title, int stackCount = 0, int slotIndex = 0)
+    public int MyBagIndex { get; set; }
+    public ItemData(string title, int stackCount = 0, int slotIndex = 0, int bagIndex = 0)
     {
         MyTitle = title;
         MyStackCount = stackCount;
         MySlotIndex = slotIndex;
+        MyBagIndex = bagIndex;
     }
 }
 
@@ -61,9 +65,11 @@ public class ItemData
 public class InventoryData
 {
     public List<BagData> MyBags { get; set; }
+    public List<ItemData> MyItems { get; set; }
     public InventoryData()
     {
         MyBags = new List<BagData>();
+        MyItems = new List<ItemData>();
     }
 }
 [Serializable]
@@ -77,3 +83,22 @@ public class BagData
         MyBagIndex = index;
     }
 }
+
+[Serializable]
+public class QuestData
+{
+    public string MyTitle { get; set; }
+    public string MyDerscription { get; set; }
+    public CollectObjective[] MyCollectObjectives { get; set; }
+    public KillObjective[] MyKillObjectives { get; set; }
+    public int MyQuestGiverID { get; set; }
+    public QuestData(string title, string description, CollectObjective[] collectObjectives, KillObjective[] killObjectives, int questGiverID)
+    {
+        MyTitle = title;
+        MyDerscription = description;
+        MyCollectObjectives = collectObjectives;
+        MyKillObjectives = killObjectives;
+        MyQuestGiverID = questGiverID;
+    }
+}
+
