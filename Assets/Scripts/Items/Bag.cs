@@ -13,7 +13,7 @@ public class Bag : Item, IUseable
     public BagScr MyBagScr { get; set; }
     public BagButton MyBagButton { get; set; }
 
-    public int Slots { get => slots; }
+    public int MySlotCount { get => slots; }
     public void Initialize(int slots) { 
         this.slots = slots;
     }
@@ -32,5 +32,11 @@ public class Bag : Item, IUseable
     public override string GetDescription()
     {
         return base.GetDescription() + string.Format("\nContains 8 slots"); //this is a better way to display health --easier to keep up with changes
+    }
+
+    public void SetupScript()
+    {
+        MyBagScr = Instantiate(bagPrefab, InventoryScr.MyInstance.transform).GetComponent<BagScr>();
+        MyBagScr.AddSlots(slots);
     }
 }

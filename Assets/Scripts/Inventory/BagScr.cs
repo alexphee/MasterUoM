@@ -40,6 +40,7 @@ public class BagScr : MonoBehaviour
         for (int i = 0; i < slotCount; i++) 
         {
             SlotScr slot = Instantiate(slotPrefab, transform).GetComponent<SlotScr>(); //here i instantiate the slot prefab and with transform im putting it as child object of bagscript so the slots will be childs of the bag
+            slot.MyIndex = i; //TEST TEST 
             slot.MyBag = this; //the slot has to "know" what bag it belongs to
             MySlots.Add(slot);
         }

@@ -7,10 +7,10 @@ using UnityEngine;
 public class SaveData
 {
     public PlayerData MyPlayerData { get; set; }
-
+    public InventoryData MyInventoryData { get; set; }
     public SaveData() //constructor to instantiate everything
     {
-        
+        MyInventoryData = new InventoryData();
     }
 }
 
@@ -40,5 +40,40 @@ public class PlayerData
         this.MyY = position.y;
         this.MyX = position.x;
 
+    }
+}
+
+[Serializable]
+public class ItemData
+{ //for saving inventory
+    public string MyTitle { get; set; }
+    public int MyStackCount { get; set; }
+    public int MySlotIndex { get; set; }
+    public ItemData(string title, int stackCount = 0, int slotIndex = 0)
+    {
+        MyTitle = title;
+        MyStackCount = stackCount;
+        MySlotIndex = slotIndex;
+    }
+}
+
+[Serializable]
+public class InventoryData
+{
+    public List<BagData> MyBags { get; set; }
+    public InventoryData()
+    {
+        MyBags = new List<BagData>();
+    }
+}
+[Serializable]
+public class BagData
+{
+    public int MySlotCount { get; set; }
+    public int MyBagIndex { get; set; } //so it loads into the correct slot
+    public BagData(int count, int index)
+    {
+        MySlotCount = count;
+        MyBagIndex = index;
     }
 }

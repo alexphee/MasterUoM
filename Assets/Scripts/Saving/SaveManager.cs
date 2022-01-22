@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    [SerializeField] //this need to be serialized so i can populate it from the inspector
+    private Item[] items;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,12 @@ public class SaveManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            Debug.Log("Game Saved !");
             Save();
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
+            Debug.Log("Game Loaded!");
             Load();
         }
     }
@@ -33,6 +37,7 @@ public class SaveManager : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Create); //creates the file in hard drive //THIS LINE DOESNT SAVE //there is also OpenOrCreate but it appends on old files
 
             SaveData data = new SaveData();
+            SaveBags(data);
             SavePlayer(data);
             bf.Serialize(file, data); //this line actually saves the game by serializing the data
             file.Close();
@@ -40,7 +45,7 @@ public class SaveManager : MonoBehaviour
         catch (System.Exception)
         {
 
-            //this is for handling errors
+            throw;
         }
     }
 
@@ -51,6 +56,13 @@ public class SaveManager : MonoBehaviour
                                             Player.MyInstance.MyMana.MyMaxValue, Player.MyInstance.transform.position);
     }
 
+    private void SaveBags(SaveData data)
+    {
+        for (int i = 1; i < InventoryScr.MyInstance.MyBags.Count; i++) //start from 1 since i by default have at least 1 bag in inventory
+        {
+            data.MyInventoryData.MyBags.Add(new BagData(InventoryScr.MyInstance.MyBags[i].MySlotCount, InventoryScr.MyInstance.MyBags[i].MyBagButton.MyBagindex)); //check in the inventory the bag im looking atm, how many slots that bag has? i store that amount and the index
+        }
+    }
     private void Load()
     {
         try
@@ -61,7 +73,7 @@ public class SaveManager : MonoBehaviour
             SaveData data = (SaveData)bf.Deserialize(file); //deserializes data and casts it as SaveData so i can load it
             
             file.Close();
-
+            LoadBags(data);
             LoadPlayer(data);
         }
         catch (System.Exception)
@@ -79,5 +91,15 @@ public class SaveManager : MonoBehaviour
         Player.MyInstance.MyMana.Initialize(data.MyPlayerData.MyMana, data.MyPlayerData.MyMaxMana);
         Player.MyInstance.MyXP.Initialize(data.MyPlayerData.MyXP, data.MyPlayerData.MyMaxXP);
         Player.MyInstance.transform.position = new Vector2(data.MyPlayerData.MyX, data.MyPlayerData.MyY);
+    }
+
+    public void LoadBags(SaveData data)
+    {
+        foreach (BagData bagData in data.MyInventoryData.MyBags)
+        {
+            Bag newBag = (Bag)Instantiate(items[0]); //hierarchy-->SaveManager i know i have set the bag at 0
+            newBag.Initialize(bagData.MySlotCount);
+            InventoryScr.MyInstance.AddBag(newBag, bagData.MyBagIndex);
+        }
     }
 }

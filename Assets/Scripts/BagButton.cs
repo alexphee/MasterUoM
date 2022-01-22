@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class BagButton : MonoBehaviour, IPointerClickHandler
 {
+   
+
+
     private Bag bag;
     [SerializeField]
     private Sprite full, empty;
@@ -27,6 +30,19 @@ public class BagButton : MonoBehaviour, IPointerClickHandler
 
         }
     }
+    private int bagIndex;
+    public int MyBagindex
+    {
+        get
+        {
+            return bagIndex;
+        }
+        set
+        {
+            bagIndex = value;
+        }
+    }
+
 
     public void OnPointerClick(PointerEventData eventData)
     {

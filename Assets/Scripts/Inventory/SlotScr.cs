@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointerEnterHandler, IPointerExitHandler
 {
+    public int MyIndex { get; set; }//this is a test
+
+
     private ObservableStack<Item> items = new ObservableStack<Item>(); //this is a stack for every item in this slot
 
     [SerializeField]
@@ -129,7 +132,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
                 Bag bag = (Bag)HandScr.MyInstance.MyMoveable; //casting bc of NullRefExc
                 if (bag.MyBagScr != MyBag)//make sure i cant dequip bag inside itself
                 {
-                    if (InventoryScr.MyInstance.MyEmptySlotCount - bag.Slots > 0) //make sure myemptyslotcount - the amount of slots there are in the bag im trying to dequip is greater than 0 then there is enough space to put bag away. //If i do >=0 one item is missing// Logic:The amount of slot left when dequipping the bag is greater than zero, then ok
+                    if (InventoryScr.MyInstance.MyEmptySlotCount - bag.MySlotCount > 0) //make sure myemptyslotcount - the amount of slots there are in the bag im trying to dequip is greater than 0 then there is enough space to put bag away. //If i do >=0 one item is missing// Logic:The amount of slot left when dequipping the bag is greater than zero, then ok
                     {
                         AddItem(bag); //add item to inv
                         bag.MyBagButton.RemoveBag(); //remove from inv
