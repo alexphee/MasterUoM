@@ -9,10 +9,12 @@ public class SaveData
     public PlayerData MyPlayerData { get; set; }
     public InventoryData MyInventoryData { get; set; }
     public List<QuestData> MyQuestdata { get; set; }
+    public List<QuestGiverData> MyQuestGiverData { get; set; }
     public SaveData() //constructor to instantiate everything
     {
         MyInventoryData = new InventoryData();
         MyQuestdata = new List<QuestData>();
+        MyQuestGiverData = new List<QuestGiverData>();
     }
 }
 
@@ -99,6 +101,17 @@ public class QuestData
         MyCollectObjectives = collectObjectives;
         MyKillObjectives = killObjectives;
         MyQuestGiverID = questGiverID;
+    }
+}
+[Serializable]
+public class QuestGiverData
+{
+    public List<string> MyCompletedQuests { get; set; }
+    public int MyquestGiverID { get; set; } //so i know which giver is
+    public QuestGiverData(int questGiverID, List<string> completedQuests)
+    {
+        this.MyquestGiverID = questGiverID;
+        MyCompletedQuests = completedQuests;
     }
 }
 

@@ -19,7 +19,7 @@ public class Quest
     public string MyTitle { get => title; set => title = value; }
     public string MyDescription { get => description; set => description = value; }
     public CollectObjective[] MyCollectObjectives { get => collectObjectives; }
-    public KillObjective[] MyKillObjectives { get => killObjectives; }
+    public KillObjective[] MyKillObjectives { get => killObjectives; set => killObjectives = value; }
     public bool IsComplete
     {
         get

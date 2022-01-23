@@ -10,7 +10,27 @@ public class QuestGiver : NPC
     private Sprite question, questionTemp, exclamation;
     public Quest[] MyQuests { get => quests; }
 
-
+    private List<string> completedQuests = new List<string>();
+    public List<string> MyCompletedQuests {
+        get
+        {
+            return completedQuests;
+        }
+        set
+        {
+            completedQuests = value;
+            foreach (string title in completedQuests) //run through every quest i have tha are already complete
+            {
+                for (int i = 0; i < quests.Length; i++)
+                {
+                    if (quests[i] != null && quests[i].MyTitle == title)//needs the check for null for the finel quest, it returns NullRefExc otherwise
+                    {
+                        quests[i] = null; //and remove quest
+                    }
+                }
+            }
+        }
+    }
     [SerializeField]
     private SpriteRenderer statusRenderer;
 

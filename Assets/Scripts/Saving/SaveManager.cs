@@ -43,6 +43,7 @@ public class SaveManager : MonoBehaviour
             SaveInventory(data);
             SavePlayer(data);
             SaveQuests(data);
+            SaveQuestGivers(data);
             bf.Serialize(file, data); //this line actually saves the game by serializing the data
             file.Close();
         }
@@ -84,6 +85,15 @@ public class SaveManager : MonoBehaviour
             data.MyQuestdata.Add(new QuestData(quest.MyTitle, quest.MyDescription, quest.MyCollectObjectives, quest.MyKillObjectives, quest.MyQuestGiver.MyQuestGiverID)); //saving the quests
         }
     }
+    private void SaveQuestGivers(SaveData data)
+    {
+        QuestGiver[] questGivers = FindObjectsOfType<QuestGiver>();
+        foreach (QuestGiver questGiver in questGivers)
+        {
+            data.MyQuestGiverData.Add(new QuestGiverData(questGiver.MyQuestGiverID, questGiver.MyCompletedQuests));
+        }
+    }
+
     private void Load()
     {
         try
@@ -98,6 +108,7 @@ public class SaveManager : MonoBehaviour
             LoadInventory(data);
             LoadPlayer(data);
             LoadQuests(data);
+            LoadQuestGiver(data);
         }
         catch (System.Exception)
         {
@@ -146,7 +157,18 @@ public class SaveManager : MonoBehaviour
             QuestGiver qGiv = Array.Find(questGivers, x => x.MyQuestGiverID == questData.MyQuestGiverID); //run through all questgivers check ids, if the ids match any quest i heve then i store ref to questgiver
             Quest q = Array.Find(qGiv.MyQuests, x => x.MyTitle == questData.MyTitle);//run thorugh all quests inside questgivers and if i find sth with the same title as the questdata then make ref to that quest
             q.MyQuestGiver = qGiv; //the quest im going to add to the questlog needs ref toquestgiver so i know if its completed later on
+            q.MyKillObjectives = questData.MyKillObjectives;//bug fix so the questlog saves killing progress
             QuestLog.MyInstance.AcceptQuest(q);
+        }
+    }
+    private void LoadQuestGiver(SaveData data)
+    {
+        QuestGiver[] questGivers = FindObjectsOfType<QuestGiver>();
+        foreach (QuestGiverData questGiverData in data.MyQuestGiverData)
+        {
+            QuestGiver questGiver = Array.Find(questGivers, x => x.MyQuestGiverID == questGiverData.MyquestGiverID);
+            questGiver.MyCompletedQuests = questGiverData.MyCompletedQuests; //check for completed quests
+            questGiver.UpdateQuestStatus();
         }
     }
 }

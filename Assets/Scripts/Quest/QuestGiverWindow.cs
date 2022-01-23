@@ -132,7 +132,9 @@ public class QuestGiverWindow : Window
             {
                 if (selectedQuest == questGiver.MyQuests[i])//if i reach a quest that is the same as the one i selected i need to remove it
                 {
+                    questGiver.MyCompletedQuests.Add(selectedQuest.MyTitle); //BUGFIC whenever i complete a quest the questgiver need to be informed that the quest is done, so i can save and load correctly //it will prevent the questgiver to give the same quest everytime i load a saved game
                     questGiver.MyQuests[i] = null; //apparently i cant use .Remove() on an array // this is the next best thing i guess
+                    selectedQuest.MyQuestGiver.UpdateQuestStatus();
                 }
             }
             foreach (CollectObjective objC in selectedQuest.MyCollectObjectives)
