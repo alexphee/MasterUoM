@@ -10,11 +10,15 @@ public class SaveData
     public InventoryData MyInventoryData { get; set; }
     public List<QuestData> MyQuestdata { get; set; }
     public List<QuestGiverData> MyQuestGiverData { get; set; }
+
+    public DateTime MyDateTime { get; set; }
+    public string MyScene { get; set; }
     public SaveData() //constructor to instantiate everything
     {
         MyInventoryData = new InventoryData();
         MyQuestdata = new List<QuestData>();
         MyQuestGiverData = new List<QuestGiverData>();
+        MyDateTime = DateTime.Now; //when i hit save, save current timestamp
     }
 }
 

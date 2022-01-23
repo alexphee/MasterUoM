@@ -4,41 +4,84 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
     [SerializeField] //this need to be serialized so i can populate it from the inspector
     private Item[] items;
+    [SerializeField]
+    private SavedGame[] savedGameSlots;
 
-    // Start is called before the first frame update
-    void Start()
+    private string action;
+
+    private void Awake()
     {
-        //Debug.Log(Application.persistentDataPath);
+        foreach (SavedGame saved in savedGameSlots)
+        {
+            //run through all saved games
+            ShowSavedFiles(saved);
+        }
+        //sets default values if there is no saved game found
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        //DEBUG
+        /*if (Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("Game Saved !");
             Save();
-        }
-        if (Input.GetKeyDown(KeyCode.X))
+        }*/
+        /*if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("Game Loaded!");
             Load();
-        }
+        }*/
     }
 
-    private void Save()
+    public void ShowDialogue(GameObject clickBtn) //the name of the buttons on the prefab will decide what this function will do
+    {
+        action = clickBtn.name;
+        switch (action)
+        {
+            case "Load":
+                Load(clickBtn.GetComponentInParent<SavedGame>());
+                break;
+            case "Save":
+                Save(clickBtn.GetComponentInParent<SavedGame>());
+                break;
+            case "Delete":
+                Delete(clickBtn.GetComponentInParent<SavedGame>());
+                break;
+        }
+    }
+    private void Delete(SavedGame savedGame)
+    {
+        File.Delete(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat");//delete the actual game from the filepath
+        savedGame.HideVisuals(); //hide the game save from the save menu
+    }
+    private void ShowSavedFiles(SavedGame savedgame)
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + savedgame.gameObject.name + ".dat")) //here i check if a game with that name already exists
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/" + savedgame.gameObject.name + ".dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            savedgame.ShowInfo(data);
+        }
+    }
+    public void Save(SavedGame savedGame)
     {
         try
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Create); //creates the file in hard drive //THIS LINE DOESNT SAVE //there is also OpenOrCreate but it appends on old files
+            FileStream file = File.Open(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat", FileMode.Create); //creates the file in hard drive //THIS LINE DOESNT SAVE //there is also OpenOrCreate but it appends on old files
 
             SaveData data = new SaveData();
+            data.MyScene = SceneManager.GetActiveScene().name;
             SaveBags(data);
             SaveInventory(data);
             SavePlayer(data);
@@ -46,6 +89,7 @@ public class SaveManager : MonoBehaviour
             SaveQuestGivers(data);
             bf.Serialize(file, data); //this line actually saves the game by serializing the data
             file.Close();
+            ShowSavedFiles(savedGame);
         }
         catch (System.Exception)
         {
@@ -94,12 +138,12 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    private void Load()
+    private void Load(SavedGame savedGame)
     {
         try
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Open); //finds teh saved file and opens it
+            FileStream file = File.Open(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat", FileMode.Open); //finds teh saved file and opens it
 
             SaveData data = (SaveData)bf.Deserialize(file); //deserializes data and casts it as SaveData so i can load it
             

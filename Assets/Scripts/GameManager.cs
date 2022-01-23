@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public delegate void KillConfirm(Character character);
 public class GameManager : MonoBehaviour
 {
+    private Camera mainCamera;
     public event KillConfirm killConfirmEvent; //will trigger anytime i kill sth (anything)
 
     private static GameManager instance;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) //check if mouse is hovering a UI element. The code bellow will execute only if my mouse is NOT over a UI element 
             {
-                    RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
+                    RaycastHit2D hit = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
                     if (hit.collider != null) //Logic: IF i click sth, i check IF i already have target and if yes i deselect current and pick new
                     {
                         if (currentTarget != null) //check if currentTarget is not null, if i already have a target i need to deselect this target. eg i have 2 enemies and i select no1, if i want to select no2 i first need to deselect no1
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) //same as above, dont hover UI
             {
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
+                RaycastHit2D hit = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
                 if (hit.collider != null && (hit.collider.CompareTag("thyEnemy") || hit.collider.CompareTag("Interactable")))
                 {
                     //hit.collider.GetComponent<NPC>().Interact();
