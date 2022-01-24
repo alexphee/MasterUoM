@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class BagButton : MonoBehaviour, IPointerClickHandler
 {
-   
+
 
 
     private Bag bag;
@@ -50,14 +50,14 @@ public class BagButton : MonoBehaviour, IPointerClickHandler
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                 HandScr.MyInstance.TakeMoveable(MyBag); //if i hold shift and click, take the bag equipped to the button and hold it in the hand
+                HandScr.MyInstance.TakeMoveable(MyBag); //if i hold shift and click, take the bag equipped to the button and hold it in the hand
             }
-            else if(bag != null) //if i dont hold shift while clicking just open close
+            else if (bag != null) //if i dont hold shift while clicking just open close
             {
-            bag.MyBagScr.OpenClose(); //open-close bag
+                bag.MyBagScr.OpenClose(); //open-close bag
             }
         }
-        
+
     }
 
     public void RemoveBag()
@@ -68,10 +68,7 @@ public class BagButton : MonoBehaviour, IPointerClickHandler
         {
             InventoryScr.MyInstance.AddItem(item); //put them back to inv, after the dequipping
         }
-        
+
         MyBag = null; //make sure this bag button doesnt have a ref to a bag anymore so i cant click the bagbutton to open-close////if i remove this line im not able to eqquip the next bag after deletion
     }
 }
-
-   
-

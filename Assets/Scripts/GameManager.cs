@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,35 +43,35 @@ public class GameManager : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) //check if mouse is hovering a UI element. The code bellow will execute only if my mouse is NOT over a UI element 
             {
-                    RaycastHit2D hit = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
-                    if (hit.collider != null) //Logic: IF i click sth, i check IF i already have target and if yes i deselect current and pick new
+                RaycastHit2D hit = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
+                if (hit.collider != null) //Logic: IF i click sth, i check IF i already have target and if yes i deselect current and pick new
+                {
+                    if (currentTarget != null) //check if currentTarget is not null, if i already have a target i need to deselect this target. eg i have 2 enemies and i select no1, if i want to select no2 i first need to deselect no1
                     {
-                        if (currentTarget != null) //check if currentTarget is not null, if i already have a target i need to deselect this target. eg i have 2 enemies and i select no1, if i want to select no2 i first need to deselect no1
-                        {
-                            currentTarget.Deselect(); //deselect current target
-                        }
-                        currentTarget = hit.collider.GetComponent<Enemy>(); //select new target
-
-                        player.MyTarget = currentTarget.Select(); //i can do this because the actual select function in NPC script returns a Transform, so it returns hitBox. So i can set it equal to hitBox and then it throws this to MyTarget in GameManager (where i call it)
-
-
-                        UIManager.MyInstance.ShowTargetFrame(currentTarget);
-
+                        currentTarget.Deselect(); //deselect current target
                     }
-                    else //if i dont click sth
+                    currentTarget = hit.collider.GetComponent<Enemy>(); //select new target
+
+                    player.MyTarget = currentTarget.Select(); //i can do this because the actual select function in NPC script returns a Transform, so it returns hitBox. So i can set it equal to hitBox and then it throws this to MyTarget in GameManager (where i call it)
+
+
+                    UIManager.MyInstance.ShowTargetFrame(currentTarget);
+
+                }
+                else //if i dont click sth
+                {
+                    UIManager.MyInstance.HideTargetframe(); //if i deselect, also hide target frame
+                    if (currentTarget != null)
                     {
-                        UIManager.MyInstance.HideTargetframe(); //if i deselect, also hide target frame
-                        if (currentTarget != null)
-                        {
-                            currentTarget.Deselect();
-                        }
-
-                        currentTarget = null;
-                        player.MyTarget = null;
+                        currentTarget.Deselect();
                     }
-                
+
+                    currentTarget = null;
+                    player.MyTarget = null;
+                }
+
             }
-            
+
         }
         else if (Input.GetMouseButtonDown(1)) //right click on enemy to loot
         {
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 /*{ //if not null i hit sth
                         if (hit.collider.CompareTag("thyEnemy"))
                         {
-                            player.MyTarget = hit.transform.GetChild(0); //áí ðåôý÷ù êÜôé ôüôå set ôïí óôü÷ï MyTarget 
+                            player.MyTarget = hit.transform.GetChild(0); //Ã¡Ã­ Ã°Ã¥Ã´Ã½Ã·Ã¹ ÃªÃœÃ´Ã© Ã´Ã¼Ã´Ã¥ set Ã´Ã¯Ã­ Ã³Ã´Ã¼Ã·Ã¯ MyTarget 
                         }
                     }
                     else

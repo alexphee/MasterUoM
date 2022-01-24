@@ -95,7 +95,7 @@ public class UIManager : MonoBehaviour
         {
             levelTxt.color = Color.gray;
         }
-    
+
     }
 
     public void HideTargetframe()
@@ -110,7 +110,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateStackSize(IClickable clickable)
     {
-        if(clickable.MyCount > 1)
+        if (clickable.MyCount > 1)
         {
             clickable.MyStackText.text = clickable.MyCount.ToString();
             clickable.MyStackText.color = Color.white;
@@ -121,7 +121,7 @@ public class UIManager : MonoBehaviour
             clickable.MyStackText.color = new Color(0, 0, 0, 0); //if count is 1 remove text (not icon, just text)
             clickable.MyIcon.color = Color.white; //show again
         }
-        if(clickable.MyCount == 0)
+        if (clickable.MyCount == 0)
         {
             clickable.MyIcon.color = new Color(0, 0, 0, 0); //hide icon from it when empty
             clickable.MyStackText.color = new Color(0, 0, 0, 0);

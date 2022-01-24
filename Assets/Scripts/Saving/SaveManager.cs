@@ -22,23 +22,13 @@ public class SaveManager : MonoBehaviour
             //run through all saved games
             ShowSavedFiles(saved);
         }
-        //sets default values if there is no saved game found
+        //set default values if there is no saved game found
     }
 
     // Update is called once per frame
     void Update()
     {
-        //DEBUG
-        /*if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("Game Saved !");
-            Save();
-        }*/
-        /*if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("Game Loaded!");
-            Load();
-        }*/
+ 
     }
 
     public void ShowDialogue(GameObject clickBtn) //the name of the buttons on the prefab will decide what this function will do
@@ -62,15 +52,15 @@ public class SaveManager : MonoBehaviour
         File.Delete(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat");//delete the actual game from the filepath
         savedGame.HideVisuals(); //hide the game save from the save menu
     }
-    private void ShowSavedFiles(SavedGame savedgame)
+    private void ShowSavedFiles(SavedGame savedGame)
     {
-        if (File.Exists(Application.persistentDataPath + "/" + savedgame.gameObject.name + ".dat")) //here i check if a game with that name already exists
+        if (File.Exists(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat")) //here i check if a game with that name already exists //it uses the names in Hierarchy (SaveGame1, SaveGame2, SaveGame3)
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + savedgame.gameObject.name + ".dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat", FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
-            savedgame.ShowInfo(data);
+            savedGame.ShowInfo(data);
         }
     }
     public void Save(SavedGame savedGame)
@@ -89,7 +79,7 @@ public class SaveManager : MonoBehaviour
             SaveQuestGivers(data);
             bf.Serialize(file, data); //this line actually saves the game by serializing the data
             file.Close();
-            ShowSavedFiles(savedGame);
+            ShowSavedFiles(savedGame); //when done saving i have to show the saved file
         }
         catch (System.Exception)
         {

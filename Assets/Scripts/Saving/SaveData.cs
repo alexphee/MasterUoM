@@ -12,7 +12,7 @@ public class SaveData
     public List<QuestGiverData> MyQuestGiverData { get; set; }
 
     public DateTime MyDateTime { get; set; }
-    public string MyScene { get; set; }
+    public string MyScene { get; set; } //to save the scene im in
     public SaveData() //constructor to instantiate everything
     {
         MyInventoryData = new InventoryData();
@@ -42,7 +42,7 @@ public class PlayerData
         this.MyXP = xp;
         this.MyMaxXP = maxXp;
         this.MyHealth = health;
-        this.MyMaxHealth =maxHealth;
+        this.MyMaxHealth = maxHealth;
         this.MyMana = mana;
         this.MyMaxMana = maxMana;
         this.MyY = position.y;
