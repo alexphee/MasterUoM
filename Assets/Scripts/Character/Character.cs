@@ -34,7 +34,7 @@ public abstract class Character : MonoBehaviour
     public Stat MyHealth { get { return health; } }
 
     [SerializeField]
-    private float initHealth; // = 100; character's initial health //moved this from player, all players would start with 100 hp but i serialize it
+    protected float initHealth; // = 100; character's initial health //moved this from player, all players would start with 100 hp but i serialize it
     public bool isMoving
     {
         get { return Direction.x != 0 || Direction.y != 0; } // returns a boolean to isMoving based on the outcome of the condition
@@ -53,8 +53,7 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        //moved this from player so everything initializes uptop
-        health.Initialize(initHealth, initHealth);
+        
 
         myRigidBody = GetComponent<Rigidbody2D>();
         MyAnimator = GetComponent<Animator>();

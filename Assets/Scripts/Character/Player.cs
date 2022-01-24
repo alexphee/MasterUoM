@@ -40,15 +40,15 @@ public class Player : Character
 
     public Stat MyXP { get => xpStat; set => xpStat = value; }
     public Stat MyMana { get => mana; set => mana = value; }
-    /////// Start is called before the first frame update///////
-    protected override void Start()
+   
+   /* protected override void Start() /////////MOVED TO FUNCTION
     {
         MyGold = 20;
         MyMana.Initialize(initMana, initMana);
         MyXP.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
         levelText.text = MyLevel.ToString();
         base.Start();
-    }
+    }*/
 
     // Update is called once per frame
     protected override void Update()
@@ -62,7 +62,14 @@ public class Player : Character
         base.Update();
     }
 
-
+    public void SetDefaultPlayerValues()
+    {
+        health.Initialize(initHealth, initHealth);
+        MyGold = 20;
+        MyMana.Initialize(initMana, initMana);
+        MyXP.Initialize(0, Mathf.Floor(100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+        levelText.text = MyLevel.ToString();
+    }
 
     private void GetInput()
     {

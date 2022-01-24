@@ -30,7 +30,7 @@ public class SavedGame : MonoBehaviour
 
     private void Awake()
     {
-        visuals.SetActive(false);
+        //visuals.SetActive(false); //this is not needed here, it creates problems with save/load visualization. Instead i set visuals inactive from start in inspector
     }
 
     public void ShowInfo(SaveData saveData)

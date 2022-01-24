@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class SaveManager : MonoBehaviour
 
     private string action;
 
+    [SerializeField]
+    private GameObject dialogue; //dialogue popup
+    [SerializeField]
+    private Text dialogueText; //the text written on the dialogue
+
+    private SavedGame current;
     private void Awake()
     {
         foreach (SavedGame saved in savedGameSlots)
@@ -22,8 +29,18 @@ public class SaveManager : MonoBehaviour
             //run through all saved games
             ShowSavedFiles(saved);
         }
-        //set default values if there is no saved game found
+        if (PlayerPrefs.HasKey("Load")) //when i save it stores this key and if it exists then load game else set up the defaults
+        {
+            Load(savedGameSlots[PlayerPrefs.GetInt("Load")]);
+            PlayerPrefs.DeleteKey("Load"); //so it doesnt load this game every time i load//i only want to load if i press load button, without this line its trying to load every time
+        }
+        else
+        {
+            //set default values if there is no saved game found
+            Player.MyInstance.SetDefaultPlayerValues();
+        }
     }
+   
 
     // Update is called once per frame
     void Update()
@@ -37,15 +54,52 @@ public class SaveManager : MonoBehaviour
         switch (action)
         {
             case "Load":
-                Load(clickBtn.GetComponentInParent<SavedGame>());
+                dialogueText.text = "Load game?";
+                //Load(clickBtn.GetComponentInParent<SavedGame>());
                 break;
             case "Save":
-                Save(clickBtn.GetComponentInParent<SavedGame>());
+                dialogueText.text = "Save game?";
+                //Save(clickBtn.GetComponentInParent<SavedGame>());
                 break;
             case "Delete":
-                Delete(clickBtn.GetComponentInParent<SavedGame>());
+                dialogueText.text = "Delete save?";
+               // Delete(clickBtn.GetComponentInParent<SavedGame>());
                 break;
         }
+        current = clickBtn.GetComponentInParent<SavedGame>(); //i do this bc the button im clicking is a child object of one of the SavedGames
+        dialogue.SetActive(true); //whenever i try to click sth from the above, this needs to pop up
+    }
+    public void ExecuteAction()
+    {
+        switch (action)
+        {
+            case "Load":
+                LoadScene(current);
+                break;
+            case "Save":
+                Save(current);
+                break;
+            case "Delete":
+                Delete(current); //
+                break;
+        }
+        CloseDialogue(); //close the pop up after executing an action
+    }
+    private void LoadScene(SavedGame savedGame) //all this proccess so i dont get duplicate items when loading :(
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat")) //here i check if a game with that name already exists //it uses the names in Hierarchy (SaveGame1, SaveGame2, SaveGame3)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/" + savedGame.gameObject.name + ".dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            PlayerPrefs.SetInt("Load", savedGame.MyIndex); //based on the index i gave to SaveGame i can load the correct one
+            SceneManager.LoadScene(data.MyScene); //load the correct scene
+        }
+    }
+    public void CloseDialogue() //this is called if i click NO on the dialogue button
+    {
+        dialogue.SetActive(false);
     }
     private void Delete(SavedGame savedGame)
     {
@@ -83,8 +137,9 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-
-            throw;
+            Delete(savedGame);
+            PlayerPrefs.DeleteKey("Load");
+            //throw;
         }
     }
 

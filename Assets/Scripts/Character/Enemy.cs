@@ -38,6 +38,7 @@ public class Enemy : Character, IInteractable
 
     protected void Awake()
     {
+        health.Initialize(initHealth, initHealth);
         MyStartPosition = transform.position; //the start position is set by the transform position in the beggining of the game so the enemy knows whereit needs to reset to
         MyAggroRange = initialAggroRange; //the starting aggro range. This is going to change based on the distance the player attacks from
         MyAttackRange = 1;
