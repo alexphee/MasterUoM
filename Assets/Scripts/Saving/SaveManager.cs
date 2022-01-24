@@ -230,7 +230,7 @@ public class SaveManager : MonoBehaviour
     {
         foreach (ItemData itemData in data.MyInventoryData.MyItems) //look thorugh all items saved in savedata
         {
-            Item item = Array.Find(items, x => x.MyTitle == itemData.MyTitle); //this will take the item
+            Item item = Instantiate(Array.Find(items, x => x.MyTitle == itemData.MyTitle)); //this will take the item
             for (int i = 0; i < itemData.MyStackCount; i++) //run thorugh all items i have
             {
                 InventoryScr.MyInstance.PlaceInCorrectPosition(item, itemData.MySlotIndex, itemData.MyBagIndex);

@@ -151,6 +151,7 @@ public class LootWindow : MonoBehaviour
 
     public void Close()
     {
+        pageIndex = 0; //BUG FIXING problem when having 2 page loot window and open another loot window with 1 page
         pages.Clear(); //make sure that the loot i removed will be removed forever, if i dont do this the loot shows up again and can transfer from enemy's lootpage to another enemy's lootpage
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;

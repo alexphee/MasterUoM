@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
+
     public Transform MyTarget { get; set; }
     
     [SerializeField]
@@ -111,12 +112,16 @@ public abstract class Character : MonoBehaviour
         {
             MyAnimator.SetLayerWeight(i, 0); //disable all layers
         }
-        MyAnimator.SetLayerWeight(MyAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
+       
+            MyAnimator.SetLayerWeight(MyAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
+        
+        
     }
 
 
     public virtual void TakeDamage(float damage, Transform source)
     {
+        
        /* if(MyTarget == null)
         {
             MyTarget = source;
@@ -131,10 +136,6 @@ public abstract class Character : MonoBehaviour
             GameManager.MyInstance.OnKillConfirmed(this);
             MyAnimator.SetTrigger("die");
 
-            if (this is Enemy)
-            {
-                Player.MyInstance.GainExperience(XPManager.CalculateXP(this as Enemy)); //if whatever died was an enemy then player needs to gain XP // this prevents gaining XP from player deaths
-            }
 
 
 

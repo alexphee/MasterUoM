@@ -80,10 +80,18 @@ public class Enemy : Character, IInteractable
     public override void TakeDamage(float damage, Transform source) //this overrides Character's TakeDamage function //source is later added, as the source of incoming damage
     {
         if (!(currentState is EvadeState))//if current state is not the evade state, then is allowed to take dmg
-        { 
-            SetTarget(source); //feed SetTarget with the source of damage.
-            base.TakeDamage(damage, source);
-            OnHealthChanged(health.MyCurrentValue); // trigger event after TakeDamage is called, because it reduces the health and updates it. If i trigger the event b4 i update it there is nothing to update. So i change health first and trigger event second, so the UnitFrame get the correct values. else it would be a step behind (at 90 health it would say 100, at 80 --> 90 etc)
+        {
+            if (IsAlive)
+            {
+                SetTarget(source); //feed SetTarget with the source of damage.
+                base.TakeDamage(damage, source);
+                OnHealthChanged(health.MyCurrentValue); // trigger event after TakeDamage is called, because it reduces the health and updates it. If i trigger the event b4 i update it there is nothing to update. So i change health first and trigger event second, so the UnitFrame get the correct values. else it would be a step behind (at 90 health it would say 100, at 80 --> 90 etc)
+
+                if (!IsAlive)
+                {
+                    Player.MyInstance.GainExperience(XPManager.CalculateXP(this as Enemy)); //if whatever died was an enemy then player needs to gain XP // this prevents gaining XP from player deaths
+                }
+            }
         }
     }
 
