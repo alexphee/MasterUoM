@@ -50,10 +50,10 @@ public class QuestLog : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+       /* if (Input.GetKeyDown(KeyCode.Q))
         {
             OpenClose();
-        }
+        }*/
     }
     public void AcceptQuest(Quest quest) //the AcceptQuest asks the questgiver what quest am i accepting and the questgiver feeds this exact quest in this function
     {

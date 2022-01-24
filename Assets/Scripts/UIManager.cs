@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
     private GameObject tooltip;
     [SerializeField]
     private Text levelTxt;
+
+    [SerializeField]
+    private CanvasGroup[] menus;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +58,14 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(action2))
         {
             ActionBtnOnClick(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenClose(menus[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            OpenClose(menus[1]);
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -138,5 +150,28 @@ public class UIManager : MonoBehaviour
     public void HideTooltip()
     {
         tooltip.SetActive(false);
+    }
+
+
+    //for main menu
+
+    public void OpenClose(CanvasGroup canvasGroup)
+    {
+        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1;
+        canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true;
+    }
+    public void OpenM(CanvasGroup canvasGroup)
+    {
+        foreach (CanvasGroup canvas in menus)
+        {
+            CloseM(canvas); //close all other menus
+        }
+        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1;
+        canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true;
+    }
+    public void CloseM(CanvasGroup canvasGroup)
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
     }
 }
