@@ -41,7 +41,10 @@ public class QuestGiver : NPC
     {
         foreach (Quest quest in quests)
         {
-            quest.MyQuestGiver = this; //each quest is going to be "assigned" to a questgiver, so when its over it notifies the questgiver
+            if (quest != null)
+            {
+                quest.MyQuestGiver = this; //each quest is going to be "assigned" to a questgiver, so when its over it notifies the questgiver
+            }
         }
     }
 

@@ -89,6 +89,7 @@ public class Enemy : Character, IInteractable
 
                 if (!IsAlive)
                 {
+                    Player.MyInstance.MyAttackers.Remove(this);
                     Player.MyInstance.GainExperience(XPManager.CalculateXP(this as Enemy)); //if whatever died was an enemy then player needs to gain XP // this prevents gaining XP from player deaths
                 }
             }

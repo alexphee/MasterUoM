@@ -108,14 +108,18 @@ public abstract class Character : MonoBehaviour
 
       public void ActivateLayer(string layerName)
     {
-        for (int i = 0; i < MyAnimator.layerCount; i++)
+        if (layerName != null)
         {
-            MyAnimator.SetLayerWeight(i, 0); //disable all layers
-        }
-       
+            for (int i = 0; i < MyAnimator.layerCount; i++)
+            {
+                MyAnimator.SetLayerWeight(i, 0); //disable all layers
+            }
+
             MyAnimator.SetLayerWeight(MyAnimator.GetLayerIndex(layerName), 1); //get an index and enable this layer
-        
-        
+
+        }
+
+
     }
 
 

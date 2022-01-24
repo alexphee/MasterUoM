@@ -29,6 +29,10 @@ public class SaveManager : MonoBehaviour
             //run through all saved games
             ShowSavedFiles(saved);
         }
+       
+    }
+    private void Start()
+    {
         if (PlayerPrefs.HasKey("Load")) //when i save it stores this key and if it exists then load game else set up the defaults
         {
             Load(savedGameSlots[PlayerPrefs.GetInt("Load")]);
@@ -40,7 +44,6 @@ public class SaveManager : MonoBehaviour
             Player.MyInstance.SetDefaultPlayerValues();
         }
     }
-   
 
     // Update is called once per frame
     void Update()

@@ -40,15 +40,17 @@ public class Player : Character
 
     public Stat MyXP { get => xpStat; set => xpStat = value; }
     public Stat MyMana { get => mana; set => mana = value; }
-   
-   /* protected override void Start() /////////MOVED TO FUNCTION
-    {
-        MyGold = 20;
-        MyMana.Initialize(initMana, initMana);
-        MyXP.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
-        levelText.text = MyLevel.ToString();
-        base.Start();
-    }*/
+
+    private List<Enemy> attackers = new List<Enemy>();
+    public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
+    /* protected override void Start() /////////MOVED TO FUNCTION
+     {
+         MyGold = 20;
+         MyMana.Initialize(initMana, initMana);
+         MyXP.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+         levelText.text = MyLevel.ToString();
+         base.Start();
+     }*/
 
     // Update is called once per frame
     protected override void Update()
@@ -209,6 +211,7 @@ public class Player : Character
         }
     }
 
+   
 
     public void Interact()
     {
@@ -248,6 +251,14 @@ public class Player : Character
         if (MyXP.MyCurrentValue >= MyXP.MyMaxValue)
         {
             StartCoroutine(LevelUP());
+        }
+    }
+
+    public void AddAttacker(Enemy enemy)
+    {
+        if (!MyAttackers.Contains(enemy)) //if it doesnt contain enemy then add it
+        {
+            MyAttackers.Add(enemy);
         }
     }
 

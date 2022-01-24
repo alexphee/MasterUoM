@@ -10,6 +10,7 @@ class FollowState : IState
     private Enemy parent; //needs ref to parent - Enemy
     public void Enter(Enemy parent)
     {
+        Player.MyInstance.AddAttacker(parent);
         this.parent = parent;
     }
 

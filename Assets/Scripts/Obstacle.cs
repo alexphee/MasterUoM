@@ -29,6 +29,7 @@ public class Obstacle : MonoBehaviour, IComparable<Obstacle>
     {
         MySpriteRenderer = GetComponent<SpriteRenderer>();
         defColor = MySpriteRenderer.color;
+        fadeColor = defColor;
         fadeColor.a = 0.5f; //50% color
     }
 
@@ -42,4 +43,18 @@ public class Obstacle : MonoBehaviour, IComparable<Obstacle>
         MySpriteRenderer.color = defColor;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "ObstacleCollider")
+        {
+            FadeOut();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "ObstacleCollider")
+        {
+            FadeIn();
+        }
+    }
 }
