@@ -1,4 +1,4 @@
-using System.Collections;
+ο»Ώusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +33,8 @@ public class Player : Character
 
     private IInteractable interactable; //a ref to what the player can interact with
 
+    [SerializeField]
+    private Crafting crafting;
     public int MyGold { get; set; }
 
     [SerializeField]
@@ -52,11 +54,13 @@ public class Player : Character
          base.Start();
      }*/
 
+    public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
+
     // Update is called once per frame
     protected override void Update()
     {
         GetInput();
-        // Debug.Log(LayerMask.GetMask("Block"));  //για να βρω το layer που έβαλα τα blocks
+        // Debug.Log(LayerMask.GetMask("Block"));  //Γ£Γ©Γ΅ Γ­Γ΅ ΓΆΓ±ΓΉ Γ΄Γ― layer Γ°Γ―Γµ ΓΓΆΓ΅Γ«Γ΅ Γ΄Γ΅ blocks
         //health.MyCurrentValue = 100; //initial health
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x), Mathf.Clamp(transform.position.y, min.y, max.y), transform.position.z);
 
@@ -95,7 +99,8 @@ public class Player : Character
             GainExperience(1000);
         }
 
-        if (Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W))
+        {
             exitIndex = 0;
             Direction += Vector2.up;
         }
@@ -117,7 +122,7 @@ public class Player : Character
 
         if (isMoving)
         {
-            StopAttack(); //if moving stop casting
+            StopAction(); //if moving stop casting
         }
     }
 
@@ -135,31 +140,46 @@ public class Player : Character
         yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
         Debug.Log("ATTACK DONE");
 
-        if (currentTarget != null && InLineOfSight()) //πρέπει να ελέγξω αν ο εχθρός έιναι πίσω από εμπόδια κλπ
+        if (currentTarget != null && InLineOfSight()) //Γ°Γ±ΓΓ°Γ¥Γ© Γ­Γ΅ Γ¥Γ«ΓΓ£Γ®ΓΉ Γ΅Γ­ Γ― Γ¥Γ·Γ¨Γ±ΓΌΓ² ΓΓ©Γ­Γ΅Γ© Γ°ΓΓ³ΓΉ Γ΅Γ°ΓΌ Γ¥Γ¬Γ°ΓΌΓ¤Γ©Γ΅ ΓªΓ«Γ°
         {
             Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
             //spell.MyTarget = currentTarget;
             spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
         }
 
-        StopAttack();
+        StopAction();
 
     }
 
-    public void CastSpell(int spellIndex) {
+    public void CastSpell(int spellIndex)
+    {
         Block();
-        if (MyTarget != null) //πριν συνεχίσω, έχω target?
+        if (MyTarget != null) //Γ°Γ±Γ©Γ­ Γ³ΓµΓ­Γ¥Γ·ΓΓ³ΓΉ, ΓΓ·ΓΉ target?
         {
-            if (!IsAttacking && !isMoving && InLineOfSight()) //μπορώ να βάλω και το lineofsight γιατί επιστρέφει bool τιμή
+            if (!IsAttacking && !isMoving && InLineOfSight()) //Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓΆΓΓ«ΓΉ ΓªΓ΅Γ© Γ΄Γ― lineofsight Γ£Γ©Γ΅Γ΄Γ Γ¥Γ°Γ©Γ³Γ΄Γ±ΓΓ¶Γ¥Γ© bool Γ΄Γ©Γ¬Γ
             {
                 if (MyTarget.GetComponentInParent<Character>().IsAlive) //this is added later, it prevents casting spells on a dead target
                 {
-                    attackRoutine = StartCoroutine(Attack(spellIndex));
+                    actionRoutine = StartCoroutine(Attack(spellIndex));
                 }
             }
         }
 
     }
+
+    public IEnumerator CraftRoutine(ICastable castable)
+    {
+        yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
+        crafting.AddItemsToInventory();
+    }
+    private IEnumerator ActionRoutine(ICastable castable)
+    {
+        IsAttacking = true;
+        MyAnimator.SetBool("attack", IsAttacking);
+        yield return new WaitForSeconds(castable.MyCastTime);
+        StopAction();
+    }
+
 
     private bool InLineOfSight()
     {
@@ -185,15 +205,14 @@ public class Player : Character
         blocks[exitIndex].Activate();
     }
 
-    public void StopAttack()
+    public void StopAction()
     {
         IsAttacking = false; //make sure i dont attack
         MyAnimator.SetBool("attack", IsAttacking); //stop attack animation
         // Debug.Log("ATTACK STOP");
-        if (attackRoutine != null)
+        if (actionRoutine != null) //checks for references to a coroutine
         {
-            StopCoroutine(attackRoutine);
-
+            StopCoroutine(actionRoutine);
         }
     }
 
@@ -211,7 +230,7 @@ public class Player : Character
         }
     }
 
-   
+
 
     public void Interact()
     {
@@ -224,7 +243,7 @@ public class Player : Character
     public void GainExperience(int xp)
     {
         MyXP.MyCurrentValue += xp; //add xp to currentvalue
-        CombatTextManager.MyInstance.CreateText(transform.position, xp.ToString(), cType.XP) ;
+        CombatTextManager.MyInstance.CreateText(transform.position, xp.ToString(), cType.XP);
 
         if (MyXP.MyCurrentValue >= MyXP.MyMaxValue)
         {
@@ -284,7 +303,7 @@ public class Player : Character
                 interactable.StopInteraction(); //if it is a chest, close it // if enemy close lootwindow
                 interactable = null;
             }
-           
+
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Recipe : MonoBehaviour
+public class Recipe : MonoBehaviour, ICastable
 {
     [SerializeField]
     private CraftingMaterial[] materials; //this contains all the materials that are required for a recipe
@@ -21,6 +21,18 @@ public class Recipe : MonoBehaviour
     public int MyOutputCount { get => outputCount; set => outputCount = value; }
     public string MyDescription { get => description; }
     public CraftingMaterial[] MyMaterials { get => materials; }
+
+
+    private float craftTime;
+    private Color barColor;
+
+    public string MyTitle { get { return output.MyTitle; } }
+
+    public Sprite MyIcon { get { return output.MyIcon; } }
+
+    public float MyCastTime { get { return craftTime; } }
+
+    public Color MyColor { get { return barColor; } }
 
     // Start is called before the first frame update
     void Start()

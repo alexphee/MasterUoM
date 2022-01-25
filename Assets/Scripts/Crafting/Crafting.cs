@@ -70,4 +70,19 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             ii.UpdateStackCount();
         }
     }
+
+    public void Craft()
+    {
+        StartCoroutine(CraftRoutine(0));
+    }
+
+    private IEnumerator CraftRoutine(int count)
+    {
+        yield return Player.MyInstance.MyInitRoutine = StartCoroutine(Player.MyInstance.CraftRoutine(selectedRecipe));
+    }
+
+    public void AddItemsToInventory() //ads the crafted item to inventory
+    {
+        InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem);
+    }
 }
