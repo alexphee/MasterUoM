@@ -95,6 +95,11 @@ public class InventoryScr : MonoBehaviour
             Element carbon = (Element)Instantiate(items[2]);
             AddItem(carbon);
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Element oxygen = (Element)Instantiate(items[3]);
+            AddItem(oxygen);
+        }
 
     }
 

@@ -140,7 +140,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowTooltip(Vector3 pos, IText description)
+    public void ShowTooltip(Vector2 pos, IText description)
     {
         tooltip.SetActive(true);
         tooltip.transform.position = pos;
