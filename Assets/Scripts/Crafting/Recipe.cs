@@ -22,8 +22,9 @@ public class Recipe : MonoBehaviour, ICastable
     public string MyDescription { get => description; }
     public CraftingMaterial[] MyMaterials { get => materials; }
 
-
+    [SerializeField]
     private float craftTime;
+    [SerializeField]
     private Color barColor;
 
     public string MyTitle { get { return output.MyTitle; } }

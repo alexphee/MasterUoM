@@ -15,8 +15,8 @@ public class Player : Character
     private Text levelText;
     private float initMana = 50;
 
-    [SerializeField]
-    private GameObject[] spellPrefab;
+    /*[SerializeField]
+    private GameObject[] spellPrefab;*/ //REMOVED DURING MAJOR SPELL REFACTORING
     [SerializeField]
     private Transform[] exitPoints;
     [SerializeField]
@@ -35,6 +35,9 @@ public class Player : Character
 
     [SerializeField]
     private Crafting crafting;
+
+    //private SpellBook spellBook;
+
     public int MyGold { get; set; }
 
     [SerializeField]
@@ -45,14 +48,16 @@ public class Player : Character
 
     private List<Enemy> attackers = new List<Enemy>();
     public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
-    /* protected override void Start() /////////MOVED TO FUNCTION
-     {
-         MyGold = 20;
-         MyMana.Initialize(initMana, initMana);
-         MyXP.Initialize(0, Mathf.Floor( 100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
-         levelText.text = MyLevel.ToString();
-         base.Start();
-     }*/
+    
+
+   /* protected override void Start() 
+    {
+        MyGold = 20; /////////EVERYTHING MOVED TO FUNCTION
+        MyMana.Initialize(initMana, initMana);
+        MyXP.Initialize(0, Mathf.Floor(100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+        levelText.text = MyLevel.ToString();
+        base.Start();
+    }*/
 
     public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
 
@@ -63,6 +68,7 @@ public class Player : Character
         // Debug.Log(LayerMask.GetMask("Block"));  //ãéá íá âñù ôï layer ðïõ Ýâáëá ôá blocks
         //health.MyCurrentValue = 100; //initial health
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x), Mathf.Clamp(transform.position.y, min.y, max.y), transform.position.z);
+        //spellBook.GetComponent<SpellBook>();
 
 
         base.Update();
@@ -99,22 +105,22 @@ public class Player : Character
             GainExperience(1000);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
         {
             exitIndex = 0;
             Direction += Vector2.up;
         }
-        if (Input.GetKey(KeyCode.A))
+        if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow)))
         {
             exitIndex = 3;
             Direction += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.S))
+        if ((Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.DownArrow)))
         {
             exitIndex = 2;
             Direction += Vector2.down;
         }
-        if (Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.RightArrow)))
         {
             exitIndex = 1;
             Direction += Vector2.right;
@@ -133,16 +139,17 @@ public class Player : Character
     }
     private IEnumerator Attack(int spellIndex)
     {
+        Spell newSpell = SpellBook.MyInstance.CastSpelll(spellIndex);
         Transform currentTarget = MyTarget;
         IsAttacking = true;
         MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
-        yield return new WaitForSeconds(1); //hardcoded cast time DEBUGGING ONLY //0.3f
+        yield return new WaitForSeconds(newSpell.MyCastTime); //hardcoded cast time DEBUGGING ONLY //0.3f
         Debug.Log("ATTACK DONE");
 
         if (currentTarget != null && InLineOfSight()) //ðñÝðåé íá åëÝãîù áí ï å÷èñüò Ýéíáé ðßóù áðü åìðüäéá êëð
         {
-            Spell spell = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
+            SpellScript spell = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
             //spell.MyTarget = currentTarget;
             spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
         }
@@ -207,6 +214,7 @@ public class Player : Character
 
     public void StopAction()
     {
+        SpellBook.MyInstance.StopCasting();//stop casting
         IsAttacking = false; //make sure i dont attack
         MyAnimator.SetBool("attack", IsAttacking); //stop attack animation
         // Debug.Log("ATTACK STOP");
@@ -214,6 +222,7 @@ public class Player : Character
         {
             StopCoroutine(actionRoutine);
         }
+        
     }
 
     ////singleton test

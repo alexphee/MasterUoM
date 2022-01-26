@@ -30,6 +30,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
     private void Start()
     {
         InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(UpdateMaterialCount);
+        ShowDescription(selectedRecipe);
     }
 
 
