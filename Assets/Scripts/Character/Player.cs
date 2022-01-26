@@ -49,7 +49,7 @@ public class Player : Character
     private List<Enemy> attackers = new List<Enemy>();
     public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
     
-
+ public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
    /* protected override void Start() 
     {
         MyGold = 20; /////////EVERYTHING MOVED TO FUNCTION
@@ -59,7 +59,7 @@ public class Player : Character
         base.Start();
     }*/
 
-    public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
+   
 
     // Update is called once per frame
     protected override void Update()
@@ -176,7 +176,9 @@ public class Player : Character
 
     public IEnumerator CraftRoutine(ICastable castable)
     {
+        
         yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
+
         crafting.AddItemsToInventory();
     }
     private IEnumerator ActionRoutine(ICastable castable)

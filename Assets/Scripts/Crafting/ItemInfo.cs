@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemInfo : MonoBehaviour
 {
     [SerializeField]
     private Item item; //so i can see hat item needs to be set
@@ -35,13 +35,5 @@ public class ItemInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         stack.text = InventoryScr.MyInstance.GetItemCount(MyItem.MyTitle) + "/" + count.ToString();
     }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        //UIManager.MyInstance.ShowTooltip(new Vector2(0, 0), transform.posititon, MyItem);
-    }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        //UIManager.MyInstance.HideTooltip();
-    }
 }

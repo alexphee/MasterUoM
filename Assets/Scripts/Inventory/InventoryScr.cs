@@ -231,6 +231,7 @@ public class InventoryScr : MonoBehaviour
         }
         return items;
     }
+
     public void OnItemCountChanged(Item item) //made it into a function so i can check if null to avoid NullRefExc
     {
         if (itemCountChangedEvent != null) //if sth is listening this
@@ -260,5 +261,21 @@ public class InventoryScr : MonoBehaviour
     public void PlaceInCorrectPosition(Item item, int slotIndex, int bagIndex)
     {
         bags[bagIndex].MyBagScr.MySlots[slotIndex].AddItem(item);//first find the right bag, then the right slot and then place the item there
+    }
+
+
+    public void RemoveItem(Item item) //removes 1 of a specific item
+    {
+        foreach (Bag bag in MyBags) 
+        {
+            foreach (SlotScr slot in bag.MyBagScr.MySlots)
+            {
+                if (!slot.IsEmpty && slot.MyItem.MyTitle == item.MyTitle) 
+                {
+                    slot.RemoveItem(item);
+                    break;
+                }
+            }
+        }
     }
 }
