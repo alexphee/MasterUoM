@@ -15,14 +15,14 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
     private Transform parent; //to put the materials to the correct parent, so they don't just appear random on the canvas
 
     private List<GameObject> materials = new List<GameObject>(); //!!!!! i need this to track all materials i have for a recipe bc i have to destroy them so when i click on different recipes materials dont stack forever
-    
+
     [SerializeField]
     private Recipe selectedRecipe;
     [SerializeField]
     private Text counttxt; //shows the amount of items i can craft based on materiasl
 
-    private int maxAmount; //max amount of products i can create
-    private int amount; //the amount of items i want to create
+    //private int maxAmount; //max amount of products i can create
+   // private int amount; //the amount of items i want to create
 
     [SerializeField]
     private ItemInfo craftItemInfo;
@@ -56,7 +56,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         title.text = recipe.MyOutput.MyTitle;
         description.text = recipe.MyDescription + " " + recipe.MyOutput.MyTitle.ToLower();
 
-        craftItemInfo.Initialize(recipe.MyOutput, 1); //craft 1
+        craftItemInfo.Initialize(recipe.MyOutput, 0); //craft 1
         foreach (CraftingMaterial material in recipe.MyMaterials)
         {
             GameObject go = Instantiate(materialPrefab, parent);
@@ -74,7 +74,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             ItemInfo ii = material.GetComponent<ItemInfo>();
             ii.UpdateStackCount();
         }
-        if (CanCraft())
+       /* if (CanCraft())
         {
             maxAmount = amounts[0];
             if (counttxt.text == "0")
@@ -92,15 +92,15 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
                 counttxt.text = "0";
                 amount = 0;
             }
-        }
+        }*/
     }
 
     public void Craft()
     {
-        
+
         if (CanCraft()) //only start the coroutine if there are enough materials for crafting
         {
-            StartCoroutine(CraftRoutine(0));
+            StartCoroutine(CraftRoutine());
         }
     }
 
@@ -113,7 +113,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             int count = InventoryScr.MyInstance.GetItemCount(material.MyItem.MyTitle);
             if (count >= material.MyCount)//run thorugh all materials and if at least 1 of the required ones is not enough then cancraft=false;
             {
-                amounts.Add(count/material.MyCount); //a list containing the count for every material
+                amounts.Add(count / material.MyCount); //a list containing the count for every material
                 continue; //go to the next loop
             }
             else
@@ -124,7 +124,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         }
         return canCraft;
     }
-    private IEnumerator CraftRoutine(int count)
+    private IEnumerator CraftRoutine()
     {
         yield return Player.MyInstance.MyInitRoutine = StartCoroutine(Player.MyInstance.CraftRoutine(selectedRecipe));
     }

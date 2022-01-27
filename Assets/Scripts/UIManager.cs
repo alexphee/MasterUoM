@@ -67,6 +67,10 @@ public class UIManager : MonoBehaviour
         {
             OpenClose(menus[1]);
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            OpenClose(menus[3]);
+        }
         if (Input.GetKeyDown(KeyCode.B))
         {
             InventoryScr.MyInstance.OpenClose();
@@ -125,18 +129,24 @@ public class UIManager : MonoBehaviour
         if (clickable.MyCount > 1)
         {
             clickable.MyStackText.text = clickable.MyCount.ToString();
-            clickable.MyStackText.color = Color.white;
-            clickable.MyIcon.color = Color.white;
+            //clickable.MyStackText.color = Color.white;
+            clickable.MyStackText.enabled = true;
+            //clickable.MyIcon.color = Color.white;
+            clickable.MyIcon.enabled = true;
         }
         else
         {
-            clickable.MyStackText.color = new Color(0, 0, 0, 0); //if count is 1 remove text (not icon, just text)
-            clickable.MyIcon.color = Color.white; //show again
+            //clickable.MyStackText.color = new Color(0, 0, 0, 0); //if count is 1 remove text (not icon, just text)
+            //clickable.MyIcon.color = Color.white; //show again
+            clickable.MyStackText.enabled = false;
+            clickable.MyIcon.enabled = true;
         }
         if (clickable.MyCount == 0)
         {
-            clickable.MyIcon.color = new Color(0, 0, 0, 0); //hide icon from it when empty
-            clickable.MyStackText.color = new Color(0, 0, 0, 0);
+            //clickable.MyIcon.color = new Color(0, 0, 0, 0); //hide icon from it when empty
+            //clickable.MyStackText.color = new Color(0, 0, 0, 0);
+            clickable.MyStackText.enabled = false;
+            clickable.MyIcon.enabled = false;
         }
     }
 

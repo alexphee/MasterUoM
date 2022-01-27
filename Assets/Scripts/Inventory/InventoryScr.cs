@@ -121,6 +121,7 @@ public class InventoryScr : MonoBehaviour
     {
         bag.SetupScript();
         MyBags.Add(bag);
+        bag.MyBagScr.MyBagIndex = bagIndex; //BUGFIX
         bag.MyBagButton = bagbuttons[bagIndex];
         bagbuttons[bagIndex].MyBag = bag;
     }

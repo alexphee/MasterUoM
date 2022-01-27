@@ -179,7 +179,8 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
     private bool PutItemBack()
     {
         if (InventoryScr.MyInstance.FromSlot == this) { //if this is true, im trying to put it back on the same slot //fromSlot==this
-            InventoryScr.MyInstance.FromSlot.MyIcon.color = Color.white; //set color back to normal
+            //InventoryScr.MyInstance.FromSlot.MyIcon.color = Color.white; //set color back to normal
+            InventoryScr.MyInstance.FromSlot.MyIcon.enabled = true;
             return true;
         } 
         return false;

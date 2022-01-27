@@ -142,7 +142,7 @@ public class SaveManager : MonoBehaviour
         {
             Delete(savedGame);
             PlayerPrefs.DeleteKey("Load");
-            //throw;
+            throw;
         }
     }
 
@@ -204,8 +204,10 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-
-            //this is for handling errors
+            Delete(savedGame);
+            PlayerPrefs.DeleteKey("Load");
+            SceneManager.LoadScene(0);
+            //throw; //this breaks the game!
         }
     }
 
