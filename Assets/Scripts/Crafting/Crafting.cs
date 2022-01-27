@@ -56,7 +56,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         title.text = recipe.MyOutput.MyTitle;
         description.text = recipe.MyDescription + " " + recipe.MyOutput.MyTitle.ToLower();
 
-        craftItemInfo.Initialize(recipe.MyOutput, 0); //craft 1
+        craftItemInfo.Initialize(recipe.MyOutput, 1); //craft 1
         foreach (CraftingMaterial material in recipe.MyMaterials)
         {
             GameObject go = Instantiate(materialPrefab, parent);
@@ -141,6 +141,6 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
                 }
             }
         }
-        InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem);
+        //InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem);
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AttackState : IState
 {
-    private Enemy parent;
-    private float atkCooldown = 3;
+    public Enemy parent;
+    private float atkCooldown = 1;
 
     private float moreRange = 0.1f;
     public void Enter(Enemy parent)
@@ -20,7 +20,7 @@ public class AttackState : IState
 
     public void Update()
     {
-        //Debug.Log("Enemy Attack");
+       
         if (parent.MyAttackTime >= atkCooldown && !parent.IsAttacking) //attack cooldown
         {
             parent.MyAttackTime = 0; //reset time
@@ -44,9 +44,11 @@ public class AttackState : IState
 
     public IEnumerator Attack()
     {
+        Debug.Log("Enemy Attack");
         parent.IsAttacking = true;
         parent.MyAnimator.SetTrigger("attack");
         //need to wait or else attack is not shown
+        parent.DoDmg();
         yield return new WaitForSeconds(parent.MyAnimator.GetCurrentAnimatorStateInfo(2).length); //get info of the current clip that is playing. (2) refers to the layer
         parent.IsAttacking = false;
     }

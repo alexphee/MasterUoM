@@ -33,7 +33,7 @@ public class Recipe : MonoBehaviour, ICastable
 
     public float MyCastTime { get { return craftTime; } }
 
-    public Color MyColor { get { return barColor; } }
+    public Color MyBarColor { get { return barColor; } }
 
     // Start is called before the first frame update
     void Start()

@@ -1,0 +1,1479 @@
+fileFormatVersion: 2
+guid: 00b56382ac8537c4ca8f4d790ede7b10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: walk_down_0
+  - first:
+      213: 21300002
+    second: walk_down_1
+  - first:
+      213: 21300004
+    second: walk_down_2
+  - first:
+      213: 21300006
+    second: walk_down_3
+  - first:
+      213: 21300008
+    second: death_0
+  - first:
+      213: 21300010
+    second: attack_0
+  - first:
+      213: 21300012
+    second: walk_up_0
+  - first:
+      213: 21300014
+    second: walk_up_1
+  - first:
+      213: 21300016
+    second: walk_up_2
+  - first:
+      213: 21300018
+    second: walk_up_3
+  - first:
+      213: 21300020
+    second: death_1
+  - first:
+      213: 21300022
+    second: attack_1
+  - first:
+      213: 21300024
+    second: walk_right_0
+  - first:
+      213: 21300026
+    second: walk_right_1
+  - first:
+      213: 21300028
+    second: walk_right_2
+  - first:
+      213: 21300030
+    second: walk_right_3
+  - first:
+      213: 21300032
+    second: death_2
+  - first:
+      213: 21300034
+    second: attack_2
+  - first:
+      213: 21300036
+    second: walk_left_0
+  - first:
+      213: 21300038
+    second: walk_left_1
+  - first:
+      213: 21300040
+    second: walk_left_2
+  - first:
+      213: 21300042
+    second: walk_left_3
+  - first:
+      213: 21300044
+    second: death_3
+  - first:
+      213: 21300046
+    second: walk_down_1
+  - first:
+      213: 21300048
+    second: walk_down_2
+  - first:
+      213: 21300050
+    second: walk_down_3
+  - first:
+      213: 21300052
+    second: death_0
+  - first:
+      213: 21300054
+    second: attack_0
+  - first:
+      213: 21300056
+    second: walk_up_0
+  - first:
+      213: 21300058
+    second: walk_up_1
+  - first:
+      213: 21300060
+    second: walk_up_2
+  - first:
+      213: 21300062
+    second: walk_up_3
+  - first:
+      213: 21300064
+    second: death_1
+  - first:
+      213: 21300066
+    second: attack_1
+  - first:
+      213: 21300068
+    second: walk_right_0
+  - first:
+      213: 21300070
+    second: walk_right_1
+  - first:
+      213: 21300072
+    second: walk_right_2
+  - first:
+      213: 21300074
+    second: walk_right_3
+  - first:
+      213: 21300076
+    second: death_2
+  - first:
+      213: 21300078
+    second: attack_2
+  - first:
+      213: 21300080
+    second: walk_left_0
+  - first:
+      213: 21300082
+    second: walk_left_1
+  - first:
+      213: 21300084
+    second: walk_left_2
+  - first:
+      213: 21300086
+    second: walk_left_3
+  - first:
+      213: 21300088
+    second: death_3
+  - first:
+      213: 21300090
+    second: idle_0
+  - first:
+      213: 21300092
+    second: idle_1
+  - first:
+      213: 21300094
+    second: idle_2
+  - first:
+      213: 21300096
+    second: idle_3
+  - first:
+      213: 21300098
+    second: idle_down_0
+  - first:
+      213: 21300100
+    second: idle_down_1
+  - first:
+      213: 21300102
+    second: idle_down_2
+  - first:
+      213: 21300104
+    second: idle_down_3
+  - first:
+      213: 21300106
+    second: idle_up_0
+  - first:
+      213: 21300108
+    second: idle_up_1
+  - first:
+      213: 21300110
+    second: idle_up_2
+  - first:
+      213: 21300112
+    second: idle_up_3
+  - first:
+      213: 21300114
+    second: idle_right_0
+  - first:
+      213: 21300116
+    second: idle_right_1
+  - first:
+      213: 21300118
+    second: idle_right_2
+  - first:
+      213: 21300120
+    second: idle_right_3
+  - first:
+      213: 21300122
+    second: idle_left_0
+  - first:
+      213: 21300124
+    second: idle_left_1
+  - first:
+      213: 21300126
+    second: idle_left_2
+  - first:
+      213: 21300128
+    second: idle_left_3
+  - first:
+      213: 3286319133204802910
+    second: sapling_0
+  - first:
+      213: -9194375037525993652
+    second: sapling_1
+  - first:
+      213: -4757363277690643326
+    second: sapling_2
+  - first:
+      213: 4114828900370864588
+    second: sapling_3
+  - first:
+      213: 1734875609209628118
+    second: sapling_4
+  - first:
+      213: -2836500717703439002
+    second: sapling_5
+  - first:
+      213: -4980982925862277585
+    second: sapling_6
+  - first:
+      213: -2442292412091881033
+    second: sapling_7
+  - first:
+      213: 2566347642882169091
+    second: sapling_8
+  - first:
+      213: -2359194921767048612
+    second: sapling_9
+  - first:
+      213: -4870779974052502171
+    second: sapling_10
+  - first:
+      213: 9204602869792504199
+    second: sapling_11
+  - first:
+      213: -3977795059401880369
+    second: sapling_12
+  - first:
+      213: 3318598230098159027
+    second: sapling_13
+  - first:
+      213: 8132767069443618433
+    second: sapling_14
+  - first:
+      213: 3097277731753303998
+    second: sapling_15
+  - first:
+      213: 6967740850873003941
+    second: sapling_16
+  - first:
+      213: -1414256880121831577
+    second: sapling_17
+  - first:
+      213: 5202670518398647226
+    second: sapling_18
+  - first:
+      213: -7574823633057186690
+    second: sapling_19
+  - first:
+      213: 6830815379124603620
+    second: sapling_20
+  - first:
+      213: -392209858683942654
+    second: sapling_21
+  - first:
+      213: -3159581787612992142
+    second: sapling_22
+  - first:
+      213: -880511075996602805
+    second: sapling_23
+  - first:
+      213: -2450128383082600814
+    second: sapling_24
+  - first:
+      213: 3568792175209055270
+    second: sapling_25
+  - first:
+      213: 4591311841253826001
+    second: sapling_26
+  - first:
+      213: -1755730781406269665
+    second: sapling_27
+  - first:
+      213: 6049967818027067951
+    second: sapling_28
+  - first:
+      213: 4094875553603548556
+    second: sapling_29
+  - first:
+      213: -96623303689770747
+    second: sapling_30
+  - first:
+      213: 8874112798501712321
+    second: sapling_31
+  - first:
+      213: 5145869686760154151
+    second: sapling_32
+  - first:
+      213: -7981643277815401503
+    second: sapling_33
+  - first:
+      213: 6750951214352214646
+    second: sapling_34
+  - first:
+      213: 9105011879948007976
+    second: sapling_35
+  - first:
+      213: -8679174475644608710
+    second: sapling_36
+  - first:
+      213: 9170791710559334175
+    second: sapling_37
+  - first:
+      213: -7631317017116400922
+    second: sapling_38
+  - first:
+      213: -2039625728700590037
+    second: sapling_39
+  - first:
+      213: -7056186518963997206
+    second: sapling 1_0
+  - first:
+      213: 6803095648479351309
+    second: sapling 1_1
+  - first:
+      213: 2270913192781946392
+    second: sapling 1_2
+  - first:
+      213: 6818299114625847276
+    second: sapling 1_3
+  - first:
+      213: -6768558122617090460
+    second: sapling 1_4
+  - first:
+      213: -8426675493957674329
+    second: sapling 1_5
+  - first:
+      213: -3040192776151751752
+    second: sapling 1_6
+  - first:
+      213: 1424134185194093429
+    second: sapling 1_7
+  - first:
+      213: 2200925430164705534
+    second: sapling 1_8
+  - first:
+      213: 170649677050227547
+    second: sapling 1_9
+  - first:
+      213: -662694486497739414
+    second: sapling 1_10
+  - first:
+      213: 8323711525417204100
+    second: sapling 1_11
+  - first:
+      213: -7327977395057110512
+    second: sapling 1_12
+  - first:
+      213: -441308683696709948
+    second: sapling 1_13
+  - first:
+      213: 123379452629212616
+    second: sapling 1_14
+  - first:
+      213: -5604239707681378975
+    second: sapling 1_15
+  - first:
+      213: -8920365134243081509
+    second: sapling 1_16
+  - first:
+      213: -269905816666760077
+    second: sapling 1_17
+  - first:
+      213: 7694369071434740833
+    second: sapling 1_18
+  - first:
+      213: -4482523733199119530
+    second: sapling 1_19
+  - first:
+      213: 7379586837902865119
+    second: sapling 1_20
+  - first:
+      213: -7871604697341926465
+    second: sapling 1_21
+  - first:
+      213: 6736136003125983805
+    second: sapling 1_22
+  - first:
+      213: -5757188214895252516
+    second: sapling 1_23
+  - first:
+      213: -367186742851095075
+    second: sapling 1_24
+  - first:
+      213: 4580343242492161968
+    second: sapling 1_25
+  - first:
+      213: -3057250848175063437
+    second: sapling 1_26
+  - first:
+      213: 3999700529217736314
+    second: sapling 1_27
+  - first:
+      213: -7575027609488316032
+    second: sapling 1_28
+  - first:
+      213: -7173876555139855479
+    second: sapling 1_29
+  - first:
+      213: 1292109809910997357
+    second: sapling 1_30
+  - first:
+      213: 3322637311093628462
+    second: sapling 1_31
+  - first:
+      213: 6871637698209747888
+    second: sapling 1_32
+  - first:
+      213: 6782228754857053372
+    second: sapling 1_33
+  - first:
+      213: 7754923218891276511
+    second: sapling 1_34
+  - first:
+      213: 5950718044605418690
+    second: sapling 1_35
+  - first:
+      213: 6196211650928735368
+    second: sapling 1_36
+  - first:
+      213: 7593966205460058839
+    second: sapling 1_37
+  - first:
+      213: -2629413099175032277
+    second: sapling 1_38
+  - first:
+      213: 6101450208059679851
+    second: sapling 1_39
+  - first:
+      213: -6482080997477765370
+    second: sapling 1_40
+  - first:
+      213: 7012908653082085677
+    second: sapling 1_41
+  - first:
+      213: -1715055571247405876
+    second: sapling 1_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sapling 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5304c0fb3631e90800000000000000
+      internalID: -7056186518963997206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d021e9ca273796e50800000000000000
+      internalID: 6803095648479351309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e148b5487e38f10800000000000000
+      internalID: 2270913192781946392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef42ab7be67f9e50800000000000000
+      internalID: 6818299114625847276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ec2d3bf304112a0800000000000000
+      internalID: -6768558122617090460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aad921e84f6e0b80800000000000000
+      internalID: -8426675493957674329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b324c817c01fc5d0800000000000000
+      internalID: -3040192776151751752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bfbfcfe7a83c310800000000000000
+      internalID: 1424134185194093429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0571a84024b8e10800000000000000
+      internalID: 2200925430164705534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b2d952af44e5200800000000000000
+      internalID: 170649677050227547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d31b920e2adc6f0800000000000000
+      internalID: -662694486497739414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489315d0883c38370800000000000000
+      internalID: 8323711525417204100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012578d626bcd4a90800000000000000
+      internalID: -7327977395057110512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce56ff171820e9f0800000000000000
+      internalID: -441308683696709948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cddb8e55f456b100800000000000000
+      internalID: 123379452629212616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d238badadb932b0800000000000000
+      internalID: -5604239707681378975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd259aa2c2f743480800000000000000
+      internalID: -8920365134243081509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c14caf61a114cf0800000000000000
+      internalID: -269905816666760077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164be9967e3e7ca60800000000000000
+      internalID: 7694369071434740833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b98610a60eac1c0800000000000000
+      internalID: -4482523733199119530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2395e512f896660800000000000000
+      internalID: 7379586837902865119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb363aabb3172c290800000000000000
+      internalID: -7871604697341926465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a3b0951009b7d50800000000000000
+      internalID: 6736136003125983805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb6a1a42db5a10b0800000000000000
+      internalID: -5757188214895252516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5b0225a9d77eaf0800000000000000
+      internalID: -367186742851095075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf2b1e49e5a09f30800000000000000
+      internalID: 4580343242492161968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e73453d867295d0800000000000000
+      internalID: -3057250848175063437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e07f3a07ac18730800000000000000
+      internalID: 3999700529217736314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0892cacf58810e690800000000000000
+      internalID: -7575027609488316032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bc26c2845417c90800000000000000
+      internalID: -7173876555139855479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61ea86b60f7ee110800000000000000
+      internalID: 1292109809910997357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ed135c7016c1e20800000000000000
+      internalID: 3322637311093628462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b399fa3416fc5f50800000000000000
+      internalID: 6871637698209747888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbcc1b66e115f1e50800000000000000
+      internalID: 6782228754857053372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0817a84950f9b60800000000000000
+      internalID: 7754923218891276511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc86378882359250800000000000000
+      internalID: 5950718044605418690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8847eb6eaad5df550800000000000000
+      internalID: 6196211650928735368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d294c08700336960800000000000000
+      internalID: 7593966205460058839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ac9efa7b2728bd0800000000000000
+      internalID: -2629413099175032277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_39
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64612a23a4bca450800000000000000
+      internalID: 6101450208059679851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f27042da50b06a0800000000000000
+      internalID: -6482080997477765370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_41
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d298835934bd25160800000000000000
+      internalID: 7012908653082085677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sapling 1_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc46eb17b06e238e0800000000000000
+      internalID: -1715055571247405876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ee82cd483e7530b42bc7baeefacc26ea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

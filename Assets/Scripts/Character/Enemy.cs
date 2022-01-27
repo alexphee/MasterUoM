@@ -36,6 +36,10 @@ public class Enemy : Character, IInteractable
     //private Transform target; //για να βλέπει το range τον παικτη, για aggro
     //public Transform Target { get => target; set => target = value; }  // those 2 lines were removed. MyTarget property is now added in Character script
 
+
+    [SerializeField]
+    public int damage;
+
     protected void Awake()
     {
         health.Initialize(initHealth, initHealth);
@@ -54,6 +58,10 @@ public class Enemy : Character, IInteractable
             }
 
             currentState.Update();
+            if (MyTarget != null && !Player.MyInstance.IsAlive)
+            {
+                ChangeState(new EvadeState());//when player dies, enemy evades back to original position
+            }
             //FollowTarget();  removed
         }            
         base.Update();
@@ -157,5 +165,13 @@ public class Enemy : Character, IInteractable
             npcRemoved();
         }
         Destroy(gameObject);
+    }
+
+
+
+    public void DoDmg()
+    {
+            Player.MyInstance.TakeDamage(damage, transform);
+        
     }
 }

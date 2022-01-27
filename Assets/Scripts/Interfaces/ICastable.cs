@@ -10,5 +10,5 @@ public interface ICastable
     string MyTitle { get; }
     Sprite MyIcon { get; }
     float MyCastTime { get; }
-    Color MyColor { get; }
+    Color MyBarColor { get; }
 }
