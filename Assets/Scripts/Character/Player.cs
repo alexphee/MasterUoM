@@ -48,8 +48,9 @@ public class Player : Character
 
     private List<Enemy> attackers = new List<Enemy>();
     public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
-    
- public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
+
+   // private Vector2 spawnPoint = new Vector2(10f, -10f);
+    public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
    /* protected override void Start() 
     {
         MyGold = 20; /////////EVERYTHING MOVED TO FUNCTION
@@ -316,5 +317,20 @@ public class Player : Character
             }
 
         }
+    }
+
+    public IEnumerator Respawn()
+    {
+        StopAction();
+        MyInstance.MyTarget = null;
+        MySpriteRenderer.enabled = false; //hide
+        yield return new WaitForSeconds(5f);
+        health.Initialize(initHealth, initHealth);
+        MyMana.Initialize(initMana, initMana);
+        //this.transform.position = GameObject.FindGameObjectWithTag("Spawn").transform.position;
+        //spawnPoint = transform.parent.position;
+        transform.position = new Vector2(10f, -10f);
+        MySpriteRenderer.enabled = true; //show after respawn
+        MyAnimator.SetTrigger("respawn");
     }
 }

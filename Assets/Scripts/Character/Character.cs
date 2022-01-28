@@ -49,13 +49,13 @@ public abstract class Character : MonoBehaviour
     private int level;
     public int MyLevel { get => level; set => level = value; }
 
-    
 
+    public SpriteRenderer MySpriteRenderer { get; set; }
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
 
+        MySpriteRenderer = GetComponent<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
         MyAnimator = GetComponent<Animator>();
     }
