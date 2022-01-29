@@ -51,17 +51,21 @@ public class Player : Character
 
    // private Vector2 spawnPoint = new Vector2(10f, -10f);
     public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
-   /* protected override void Start() 
+    /* protected override void Start() 
+     {
+         MyGold = 20; /////////EVERYTHING MOVED TO FUNCTION
+         MyMana.Initialize(initMana, initMana);
+         MyXP.Initialize(0, Mathf.Floor(100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
+         levelText.text = MyLevel.ToString();
+         base.Start();
+     }*/
+
+    private Vector2 originalPos;
+    private void Awake()
     {
-        MyGold = 20; /////////EVERYTHING MOVED TO FUNCTION
-        MyMana.Initialize(initMana, initMana);
-        MyXP.Initialize(0, Mathf.Floor(100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
-        levelText.text = MyLevel.ToString();
-        base.Start();
-    }*/
+        originalPos = gameObject.transform.position;
 
-   
-
+    }
     // Update is called once per frame
     protected override void Update()
     {
@@ -322,14 +326,14 @@ public class Player : Character
     public IEnumerator Respawn()
     {
         StopAction();
-        MyInstance.MyTarget = null;
+        //MyInstance.MyTarget = null;
         MySpriteRenderer.enabled = false; //hide
         yield return new WaitForSeconds(5f);
         health.Initialize(initHealth, initHealth);
         MyMana.Initialize(initMana, initMana);
         //this.transform.position = GameObject.FindGameObjectWithTag("Spawn").transform.position;
-        //spawnPoint = transform.parent.position;
-        transform.position = new Vector2(10f, -10f);
+        gameObject.transform.position = originalPos;
+        //transform.position = new Vector2(10f, -10f);
         MySpriteRenderer.enabled = true; //show after respawn
         MyAnimator.SetTrigger("respawn");
     }

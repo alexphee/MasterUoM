@@ -51,6 +51,9 @@ public abstract class Character : MonoBehaviour
 
 
     public SpriteRenderer MySpriteRenderer { get; set; }
+
+
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -136,9 +139,7 @@ public abstract class Character : MonoBehaviour
             myRigidBody.velocity = Direction; //change velocity to zero
             GameManager.MyInstance.OnKillConfirmed(this);
             MyAnimator.SetTrigger("die");
-
-
-
+            StartCoroutine(RespawnEnemy());
 
             ///
             ///
@@ -153,5 +154,15 @@ public abstract class Character : MonoBehaviour
     {
         MyHealth.MyCurrentValue += health;
         CombatTextManager.MyInstance.CreateText(transform.position, health.ToString(), cType.HEAL); //write out health
+    }
+
+
+    public IEnumerator RespawnEnemy()
+    {
+        //MySpriteRenderer.enabled = false; //hide
+        yield return new WaitForSeconds(60f);
+        health.Initialize(initHealth, initHealth);
+        gameObject.transform.position = new Vector2(0f,0f);
+        //MySpriteRenderer.enabled = true; //show after respawn
     }
 }

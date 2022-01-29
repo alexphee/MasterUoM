@@ -51,5 +51,6 @@ public class AttackState : IState
         parent.DoDmg();
         yield return new WaitForSeconds(parent.MyAnimator.GetCurrentAnimatorStateInfo(2).length); //get info of the current clip that is playing. (2) refers to the layer
         parent.IsAttacking = false;
+
     }
 }

@@ -18,8 +18,9 @@ public class Enemy : Character, IInteractable
     private LootTable loottable;
 
     private IState currentState;
-
-    public float MyAttackRange { get; set; }
+    [SerializeField]
+    private float attackRange;
+    //public float MyAttackRange { get; set; }
     public  float MyAttackTime { get; set; }
 
     public Vector3 MyStartPosition { get; set; }
@@ -33,19 +34,21 @@ public class Enemy : Character, IInteractable
 
     public bool Inrange { get { return Vector2.Distance(transform.position, MyTarget.position) < MyAggroRange; } }
 
+    public float MyAttackRange { get => attackRange; set => attackRange = value; }
+
     //private Transform target; //για να βλέπει το range τον παικτη, για aggro
     //public Transform Target { get => target; set => target = value; }  // those 2 lines were removed. MyTarget property is now added in Character script
 
 
     [SerializeField]
-    public int damage;
+    protected int damage;
 
     protected void Awake()
     {
         health.Initialize(initHealth, initHealth);
         MyStartPosition = transform.position; //the start position is set by the transform position in the beggining of the game so the enemy knows whereit needs to reset to
         MyAggroRange = initialAggroRange; //the starting aggro range. This is going to change based on the distance the player attacks from
-        MyAttackRange = 1;
+        //MyAttackRange = 1; //hardcoded -- serialized it
         ChangeState(new IdleState());
     }
     protected override void Update()
@@ -169,7 +172,7 @@ public class Enemy : Character, IInteractable
 
 
 
-    public void DoDmg()
+    public virtual void DoDmg()
     {
             Player.MyInstance.TakeDamage(damage, transform);
         
