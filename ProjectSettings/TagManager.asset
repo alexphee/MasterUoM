@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Interactable
   - Spawn
+  - doorLike
   layers:
   - Default
   - TransparentFX

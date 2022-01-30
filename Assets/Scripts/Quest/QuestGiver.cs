@@ -5,6 +5,8 @@ using UnityEngine;
 public class QuestGiver : NPC
 {
     [SerializeField]
+    private int distinct;
+    [SerializeField]
     private Quest[] quests; //array of all quests the NPC has
     [SerializeField]
     private Sprite question, questionTemp, exclamation;
@@ -47,7 +49,8 @@ public class QuestGiver : NPC
             }
         }
     }
-
+    [SerializeField]
+    private GameObject go;
     public void UpdateQuestStatus() //shows ! or ? based on the quest status
     {
         int count = 0;
@@ -76,6 +79,11 @@ public class QuestGiver : NPC
                 if (count == quests.Length)
                 {
                     statusRenderer.enabled = false;
+                    if (distinct == 1)
+                    {
+                        GetComponent<BoxCollider2D>().enabled = false;
+                        Destroy(go);
+                    }
                 }
             }
         }

@@ -28,7 +28,8 @@ public abstract class Character : MonoBehaviour
     protected Coroutine actionRoutine;
 
     [SerializeField]
-    protected Transform hitBox;
+    private Transform hitBox;
+    public Transform MyHitBox { get => hitBox; set => hitBox = value; }
     [SerializeField]
     protected Stat health;//////////////θέλω access σε αυτό το health από το UIManager, όμως είναι protected. ’ρα κάνω ένα getter
 
@@ -51,6 +52,7 @@ public abstract class Character : MonoBehaviour
 
 
     public SpriteRenderer MySpriteRenderer { get; set; }
+    
 
 
 

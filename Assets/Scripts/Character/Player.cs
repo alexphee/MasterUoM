@@ -201,7 +201,7 @@ public class Player : Character
         {
             Vector3 targetDirection = (MyTarget.transform.position - transform.position).normalized;
             //Debug.DrawRay(transform.position, targetDirection, Color.red);
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, MyTarget.position), 256); //from player to target 
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, MyTarget.transform.position), 256); //from player to target 
             if (hit.collider == null)
             { //if dont hit anything
                 return true;

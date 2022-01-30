@@ -73,11 +73,11 @@ public class Enemy : Character, IInteractable
 
 
 
-    public  Transform Select()
+    public Transform Select()
     {
         healthGroup.alpha = 1; //makes sure i can see the healthbar when i select the target
 
-        return hitBox;
+        return MyHitBox;
     }
 
     public void Deselect()
@@ -174,7 +174,8 @@ public class Enemy : Character, IInteractable
 
     public virtual void DoDmg()
     {
-            Player.MyInstance.TakeDamage(damage, transform);
+        //MyTarget.TakeDamage(damage, this);
+           Player.MyInstance.TakeDamage(damage, transform); //this is "hardcoded" dmg for the player. Even if the enemy attacks sth else, player will take dmg
         
     }
 }

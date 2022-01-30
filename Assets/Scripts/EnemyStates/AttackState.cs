@@ -30,7 +30,7 @@ public class AttackState : IState
         if (parent.MyTarget != null)
         {
             float distance = Vector2.Distance(parent.MyTarget.position, parent.transform.position);
-            if(distance >= parent.MyAttackRange + moreRange && !parent.IsAttacking) //if player gets out of range enemy cant attack and only follows
+            if (distance >= parent.MyAttackRange + moreRange && !parent.IsAttacking) //if player gets out of range enemy cant attack and only follows
             {
                 parent.ChangeState(new FollowState());
             }
