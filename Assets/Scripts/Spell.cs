@@ -9,6 +9,8 @@ using UnityEngine;
 public class Spell
 {
     [SerializeField]
+    private int manaCost;
+    [SerializeField]
     private string name;
     [SerializeField]
     private int damage;
@@ -30,4 +32,5 @@ public class Spell
     public float MyCastTime { get => castTime; }
     public GameObject MySpellPrefab { get => spellPrefab; }
     public Color MyBarColor { get => barColor; }
+    public int MyManaCost { get => manaCost; set => manaCost = value; }
 }

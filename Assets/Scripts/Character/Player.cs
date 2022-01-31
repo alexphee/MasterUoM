@@ -13,7 +13,7 @@ public class Player : Character
     private Stat xpStat;
     [SerializeField]
     private Text levelText;
-    private float initMana = 50;
+    private float initMana = 100;
 
     /*[SerializeField]
     private GameObject[] spellPrefab;*/ //REMOVED DURING MAJOR SPELL REFACTORING
@@ -145,27 +145,42 @@ public class Player : Character
     private IEnumerator Attack(int spellIndex)
     {
         Spell newSpell = SpellBook.MyInstance.CastSpelll(spellIndex);
-        Transform currentTarget = MyTarget;
-        IsAttacking = true;
-        MyAnimator.SetBool("attack", IsAttacking); //start attack animation
-
-        yield return new WaitForSeconds(newSpell.MyCastTime); //hardcoded cast time DEBUGGING ONLY //0.3f
-        Debug.Log("ATTACK DONE");
-
-        if (currentTarget != null && InLineOfSight()) //ðñÝðåé íá åëÝãîù áí ï å÷èñüò Ýéíáé ðßóù áðü åìðüäéá êëð
+        if (newSpell.MyManaCost <= mana.MyCurrentValue) //i need to check if i can actually have enough mana for casting a spell
         {
-            SpellScript spell = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
-            //spell.MyTarget = currentTarget;
-            spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
-        }
+            Transform currentTarget = MyTarget;
+            IsAttacking = true;
+            MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
-        StopAction();
+            yield return new WaitForSeconds(newSpell.MyCastTime); //hardcoded cast time DEBUGGING ONLY //0.3f
+            Debug.Log("ATTACK DONE");
 
+            if (currentTarget != null && InLineOfSight()) //ðñÝðåé íá åëÝãîù áí ï å÷èñüò Ýéíáé ðßóù áðü åìðüäéá êëð
+            {
+                SpellScript spell = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
+                //spell.MyTarget = currentTarget;
+                if (spellIndex == 0)
+                {
+                    spellDamage = newSpell.MyDamage;
+                    mana.MyCurrentValue -= newSpell.MyManaCost;
+                    spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
+                }
+                else if (spellIndex == 1)
+                {
+                    spellDamage = newSpell.MyDamage;
+                    mana.MyCurrentValue -= newSpell.MyManaCost;
+                    spell.Initialize(currentTarget, spellDamage, transform);
+                }
+
+            }
+}
+            StopAction();
+        
     }
 
     public void CastSpell(int spellIndex)
     {
         Block();
+
         if (MyTarget != null) //ðñéí óõíå÷ßóù, Ý÷ù target?
         {
             if (!IsAttacking && !isMoving && InLineOfSight()) //ìðïñþ íá âÜëù êáé ôï lineofsight ãéáôß åðéóôñÝöåé bool ôéìÞ
