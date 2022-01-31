@@ -15,6 +15,7 @@ public class Player : Character
     private Text levelText;
     private float initMana = 100;
 
+    public bool InCombat { get; set; } = false;
     /*[SerializeField]
     private GameObject[] spellPrefab;*/ //REMOVED DURING MAJOR SPELL REFACTORING
     [SerializeField]
@@ -46,8 +47,8 @@ public class Player : Character
     public Stat MyXP { get => xpStat; set => xpStat = value; }
     public Stat MyMana { get => mana; set => mana = value; }
 
-    private List<Enemy> attackers = new List<Enemy>();
-    public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
+    //private List<Enemy> attackers = new List<Enemy>();
+    //public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
 
    // private Vector2 spawnPoint = new Vector2(10f, -10f);
     public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
@@ -65,6 +66,11 @@ public class Player : Character
     {
         originalPos = gameObject.transform.position;
 
+    }
+    protected override void Start()
+    {
+        base.Start();
+        StartCoroutine(Regen());
     }
     // Update is called once per frame
     protected override void Update()
@@ -147,7 +153,7 @@ public class Player : Character
         Spell newSpell = SpellBook.MyInstance.CastSpelll(spellIndex);
         if (newSpell.MyManaCost <= mana.MyCurrentValue) //i need to check if i can actually have enough mana for casting a spell
         {
-            Transform currentTarget = MyTarget;
+            Transform currentTarget = MyTarget.MyHitBox; //refactored to access hitbox
             IsAttacking = true;
             MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
@@ -162,13 +168,13 @@ public class Player : Character
                 {
                     spellDamage = newSpell.MyDamage;
                     mana.MyCurrentValue -= newSpell.MyManaCost;
-                    spell.Initialize(currentTarget, spellDamage, transform); //this is hardcoded spell damage
+                    spell.Initialize(currentTarget, spellDamage, this); //this is hardcoded spell damage
                 }
                 else if (spellIndex == 1)
                 {
                     spellDamage = newSpell.MyDamage;
                     mana.MyCurrentValue -= newSpell.MyManaCost;
-                    spell.Initialize(currentTarget, spellDamage, transform);
+                    spell.Initialize(currentTarget, spellDamage, this);
                 }
 
             }
@@ -304,13 +310,13 @@ public class Player : Character
         }
     }
 
-    public void AddAttacker(Enemy enemy)
+    /*public void AddAttacker(Enemy enemy)
     {
         if (!MyAttackers.Contains(enemy)) //if it doesnt contain enemy then add it
         {
             MyAttackers.Add(enemy);
         }
-    }
+    }*/
 
     public void UpdateLevel()
     {
@@ -351,5 +357,56 @@ public class Player : Character
         //transform.position = new Vector2(10f, -10f);
         MySpriteRenderer.enabled = true; //show after respawn
         MyAnimator.SetTrigger("respawn");
+    }
+
+    public override void AddAttacker(Character attacker)
+    {
+        int count = Attackers.Count;
+        base.AddAttacker(attacker);
+        if (count == 0)
+        {
+            InCombat = true;
+            CombatTextManager.MyInstance.CreateText(transform.position, "+COMBAT", cType.TEXT);
+        }
+    }
+
+    public override void RemoveAttacker(Character attacker)
+    {
+        base.RemoveAttacker(attacker);
+        if (Attackers.Count == 0)
+        {
+            InCombat = false;
+            CombatTextManager.MyInstance.CreateText(transform.position, "-COMBAT", cType.TEXT);
+        }
+    }
+
+    private IEnumerator Regen()
+    {
+        while (true) //keep running as long as game is open
+        {
+            if (!InCombat) //if not in combat
+            {
+                if (health.MyCurrentValue < health.MyMaxValue) //if not at max health
+                {
+                    int value = Mathf.FloorToInt(health.MyMaxValue * 0.05f); //regen 5% of max value
+                    health.MyCurrentValue += value;
+
+                    CombatTextManager.MyInstance.CreateText(transform.position, value.ToString(), cType.HEAL);
+                }
+                
+                yield return new WaitForSeconds(0.5f); //adding a little phase difference so the text isn't on top of each other
+               
+                if (mana.MyCurrentValue < mana.MyMaxValue) //if not at max mana
+                {
+                    int value = Mathf.FloorToInt(mana.MyMaxValue * 0.05f); //regen 5% of max value
+                    mana.MyCurrentValue += value;
+
+                    CombatTextManager.MyInstance.CreateText(transform.position, value.ToString(), cType.MANA);
+                }
+
+            }
+            yield return new WaitForSeconds(2.5f); //rate of regen tick
+        }
+        
     }
 }

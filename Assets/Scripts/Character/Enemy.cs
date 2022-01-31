@@ -32,7 +32,7 @@ public class Enemy : Character, IInteractable
     public float initialAggroRange; //the standard aggro range
     public float MyAggroRange{ get; set; }//actual aggro range is based on the distance tha the enemy gonna attack from
 
-    public bool Inrange { get { return Vector2.Distance(transform.position, MyTarget.position) < MyAggroRange; } }
+    public bool Inrange { get { return Vector2.Distance(transform.position, MyTarget.transform.position) < MyAggroRange; } }
 
     public float MyAttackRange { get => attackRange; set => attackRange = value; }
 
@@ -73,11 +73,11 @@ public class Enemy : Character, IInteractable
 
 
 
-    public Transform Select()
+    public Character Select()
     {
         healthGroup.alpha = 1; //makes sure i can see the healthbar when i select the target
 
-        return MyHitBox;
+        return this;
     }
 
     public void Deselect()
@@ -88,7 +88,7 @@ public class Enemy : Character, IInteractable
     }
 
 
-    public override void TakeDamage(float damage, Transform source) //this overrides Character's TakeDamage function //source is later added, as the source of incoming damage
+    public override void TakeDamage(float damage, Character source) //this overrides Character's TakeDamage function //source is later added, as the source of incoming damage
     {
         if (!(currentState is EvadeState))//if current state is not the evade state, then is allowed to take dmg
         {
@@ -100,7 +100,8 @@ public class Enemy : Character, IInteractable
 
                 if (!IsAlive)
                 {
-                    Player.MyInstance.MyAttackers.Remove(this);
+                    //Player.MyInstance.MyAttackers.Remove(this);
+                    source.RemoveAttacker(this); //if not alive remove from attackers list
                     Player.MyInstance.GainExperience(XPManager.CalculateXP(this as Enemy)); //if whatever died was an enemy then player needs to gain XP // this prevents gaining XP from player deaths
                 }
             }
@@ -120,14 +121,15 @@ public class Enemy : Character, IInteractable
         currentState.Enter(this); //current state needs a ref to self --> this=Enemy
     }
 
-    public void SetTarget(Transform target) //feed SetTarget a target
+    public void SetTarget(Character target) //feed SetTarget a target
     {
         if (MyTarget == null && !(currentState is EvadeState)) //if there is no target and target is not in evade state
         {
-            float distance = Vector2.Distance(transform.position, target.position); //calculate distance between target and enemy
+            float distance = Vector2.Distance(transform.position, target.transform.position); //calculate distance between target and enemy
             MyAggroRange = initialAggroRange;
             MyAggroRange += distance;
             MyTarget = target;
+            target.AddAttacker(this);
         }
     }
 
@@ -174,8 +176,8 @@ public class Enemy : Character, IInteractable
 
     public virtual void DoDmg()
     {
-        //MyTarget.TakeDamage(damage, this);
-           Player.MyInstance.TakeDamage(damage, transform); //this is "hardcoded" dmg for the player. Even if the enemy attacks sth else, player will take dmg
+        MyTarget.TakeDamage(damage, this);
+           //Player.MyInstance.TakeDamage(damage, transform); //this is "hardcoded" dmg for the player. Even if the enemy attacks sth else, player will take dmg
         
     }
 }

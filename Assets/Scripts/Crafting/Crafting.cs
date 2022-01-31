@@ -30,6 +30,9 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
 
     private List<int> amounts = new List<int>(); //for multi crafting
 
+
+    [SerializeField]
+    private CanvasGroup canvasGroup;
     private void Start()
     {
         InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(UpdateMaterialCount);
@@ -142,5 +145,19 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             }
         }
         //InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem);
+    }
+
+    public void OpenClose()
+    {
+        if (canvasGroup.alpha == 1)
+        {
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 }

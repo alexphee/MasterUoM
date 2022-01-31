@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum cType { DAMAGE, HEAL, XP}
+public enum cType { DAMAGE, HEAL, XP, TEXT, MANA}
 public class CombatTextManager : MonoBehaviour
 {
     private static CombatTextManager instance;
@@ -42,6 +42,13 @@ public class CombatTextManager : MonoBehaviour
             case cType.XP:
                 sign = "XP +";
                     t.color = Color.yellow;
+                break; 
+            case cType.TEXT:
+                    t.color = Color.white;
+                break;
+            case cType.MANA:
+                sign = "+";
+                t.color = Color.blue;
                 break;
         }
         t.text = sign + text;

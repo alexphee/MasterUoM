@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellScript : MonoBehaviour
 {
     private Rigidbody2D myRigidBody;
-    private Transform source;
+    private Character source;
 
     [SerializeField]
     private float speed; 
@@ -20,7 +20,7 @@ public class SpellScript : MonoBehaviour
         //target = GameObject.Find("Target").transform; //DEBUGGING ONLY
     }
 
-    public void Initialize(Transform target, int damage, Transform source)
+    public void Initialize(Transform target, int damage, Character source)
     {
         this.MyTarget = target; //the target i putt in to initialize will be equal to mytarget
         this.damage = damage;

@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
 
-    public Transform MyTarget { get; set; }
+    public Character MyTarget { get; set; }
     
     [SerializeField]
     public string type;
@@ -52,8 +52,8 @@ public abstract class Character : MonoBehaviour
 
 
     public SpriteRenderer MySpriteRenderer { get; set; }
-    
 
+    public List<Character> Attackers { get; set; } = new List<Character>();
 
 
     // Start is called before the first frame update
@@ -125,7 +125,7 @@ public abstract class Character : MonoBehaviour
     }
 
 
-    public virtual void TakeDamage(float damage, Transform source)
+    public virtual void TakeDamage(float damage, Character source)
     {
         
        /* if(MyTarget == null)
@@ -166,5 +166,18 @@ public abstract class Character : MonoBehaviour
         health.Initialize(initHealth, initHealth);
         gameObject.transform.position = new Vector2(0f,0f);
         //MySpriteRenderer.enabled = true; //show after respawn
+    }
+
+    public virtual void AddAttacker(Character attacker)
+    {
+        if (!Attackers.Contains(attacker))
+        {
+            Attackers.Add(attacker);
+        }
+    }
+
+    public virtual void RemoveAttacker(Character attacker)
+    {
+        Attackers.Remove(attacker);
     }
 }
