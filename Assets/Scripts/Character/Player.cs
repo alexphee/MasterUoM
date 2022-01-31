@@ -409,4 +409,12 @@ public class Player : Character
         }
         
     }
+
+
+
+    public void GetMana(int mana)
+    {
+        MyMana.MyCurrentValue += mana;
+        CombatTextManager.MyInstance.CreateText(transform.position, mana.ToString(), cType.MANA); //write out mana
+    }
 }
