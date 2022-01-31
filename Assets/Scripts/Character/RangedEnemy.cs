@@ -27,9 +27,9 @@ public class RangedEnemy : Enemy
     {
         Debug.Log("shoot");
         SpellScript s = Instantiate(leafPrefab, exitPoint.position, Quaternion.identity).GetComponent<SpellScript>();
+
         s.Initialize(MyTarget.MyHitBox, damage, this);
         base.DoDmg();
-        //Destroy(s);
     }
 
     private void LookTarget()

@@ -77,25 +77,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             ItemInfo ii = material.GetComponent<ItemInfo>();
             ii.UpdateStackCount();
         }
-       /* if (CanCraft())
-        {
-            maxAmount = amounts[0];
-            if (counttxt.text == "0")
-            {
-                counttxt.text = "1";
-                amount = 1; //default
-            }
-            else if (int.Parse(counttxt.text) > maxAmount)
-            {
-                counttxt.text = maxAmount.ToString();
-                amount = maxAmount;
-            }
-            else
-            {
-                counttxt.text = "0";
-                amount = 0;
-            }
-        }*/
+      
     }
 
     public void Craft()
