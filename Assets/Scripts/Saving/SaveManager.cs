@@ -45,11 +45,6 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
 
     public void ShowDialogue(GameObject clickBtn) //the name of the buttons on the prefab will decide what this function will do
     {
@@ -142,7 +137,7 @@ public class SaveManager : MonoBehaviour
         {
             Delete(savedGame);
             PlayerPrefs.DeleteKey("Load");
-            throw;
+            //throw;
         }
     }
 
@@ -233,10 +228,10 @@ public class SaveManager : MonoBehaviour
 
     private void LoadInventory(SaveData data)
     {
-        foreach (ItemData itemData in data.MyInventoryData.MyItems) //look thorugh all items saved in savedata
+        foreach (ItemData itemData in data.MyInventoryData.MyItems)
         {
-            Item item = Instantiate(Array.Find(items, x => x.MyTitle == itemData.MyTitle)); //this will take the item
-            for (int i = 0; i < itemData.MyStackCount; i++) //run thorugh all items i have
+            Item item = Instantiate(Array.Find(items, x => x.MyTitle == itemData.MyTitle));
+            for (int i = 0; i < itemData.MyStackCount; i++)
             {
                 InventoryScr.MyInstance.PlaceInCorrectPosition(item, itemData.MySlotIndex, itemData.MyBagIndex);
             }

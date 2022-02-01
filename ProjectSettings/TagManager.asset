@@ -50,6 +50,9 @@ TagManager:
   - name: Tree
     uniqueID: 334847155
     locked: 0
+  - name: Paths
+    uniqueID: 2271335421
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

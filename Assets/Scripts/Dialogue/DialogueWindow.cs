@@ -20,6 +20,7 @@ public class DialogueWindow : Window
     [SerializeField]
     private float speed; //text speed
 
+    private bool flag;
     private static DialogueWindow instance;
     public static DialogueWindow MyInstance
     {
@@ -98,6 +99,7 @@ public class DialogueWindow : Window
 
     public void CloseDialogue()
     {
+        Debug.Log("closed");
         Close(); //the Window.scr method
         Clear();
     }

@@ -19,7 +19,7 @@ public abstract class Character : MonoBehaviour
     public Animator MyAnimator{ get; set; }
     private Vector2 direction;
 
-    private Rigidbody2D myRigidBody;
+    protected Rigidbody2D myRigidBody;
 
     //protected bool IsAttacking = false; //replaced with property bellow
     public bool IsAttacking { get; set; }
@@ -163,7 +163,7 @@ public abstract class Character : MonoBehaviour
     public IEnumerator RespawnEnemy()
     {
         //MySpriteRenderer.enabled = false; //hide
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(120f);
         health.Initialize(initHealth, initHealth);
         gameObject.transform.position = new Vector2(0f,0f);
         //MySpriteRenderer.enabled = true; //show after respawn

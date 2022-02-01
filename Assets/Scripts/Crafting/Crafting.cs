@@ -39,7 +39,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         ShowDescription(selectedRecipe);
     }
 
-
+    private SlotScr slot;
 
     public void ShowDescription(Recipe recipe)
     {
@@ -86,6 +86,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         if (CanCraft()) //only start the coroutine if there are enough materials for crafting
         {
             StartCoroutine(CraftRoutine());
+            StartCoroutine(Progress()); //testing
         }
     }
 
@@ -116,6 +117,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
 
     public void AddItemsToInventory() //ads the crafted item to inventory
     {
+
         if (InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem))//if the item is successfuly added then remove material
         {
             foreach (CraftingMaterial material in selectedRecipe.MyMaterials) //for each material, remove it from inv
@@ -126,6 +128,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
                 }
             }
         }
+        //InventoryScr.MyInstance.AddItem(selectedRecipe.MyOutput);
         //InventoryScr.MyInstance.AddItem(craftItemInfo.MyItem);
     }
 
@@ -141,5 +144,51 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             canvasGroup.alpha = 1;
             canvasGroup.blocksRaycasts = true;
         }
+    }
+
+    ///CONNECTED TO THE CASTING BAR
+    /// 
+    /// 
+    /// 
+    [SerializeField]
+    private Text name2;
+    [SerializeField]
+    private Image icon;
+    [SerializeField]
+    private Image castingBar;
+    [SerializeField]
+    private Text castTime;
+    [SerializeField]
+    private CanvasGroup cgFill;
+
+    private IEnumerator Progress()
+    {
+        float timePassed = Time.deltaTime; //time left for casting
+        float rate = 1.0f / selectedRecipe.MyCastTime; //the rate the bar fills, based on the cast time of the spell //divide the max with the casttime
+        float progress = 0.0f; //how far this is filled, when its 1 its casted
+
+        Color tmp = castingBar.color;
+        //tmp.a = 1;
+        tmp = selectedRecipe.MyBarColor;
+        cgFill.alpha = 1;
+        castingBar.color = tmp;
+        castingBar.fillAmount = 0;
+        name2.text = selectedRecipe.MyTitle;
+        icon.sprite = selectedRecipe.MyIcon;
+
+        while (progress <= 1.0)//as long as bar is not maxed out
+        {
+            castingBar.fillAmount = Mathf.Lerp(0, 1, progress); //move from 0 (min) to 1 (max) [the bar fill values] 
+            progress += rate * Time.deltaTime;
+            timePassed += Time.deltaTime; //increase over time passed
+            castTime.text = (selectedRecipe.MyCastTime - timePassed).ToString("f2");  //the cast time of the spell - the time pased //with 2 decimal
+            if (selectedRecipe.MyCastTime - timePassed < 0)
+            {
+                castTime.text = "0.0"; //BUGFIX so it doesnt end at -0.0
+            }
+            yield return null; //dont wait for any sec
+        }
+        cgFill.alpha = 0;
+            
     }
 }

@@ -142,7 +142,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
                 }
                 
             }
-            else if (InventoryScr.MyInstance != null)//if i hold sth to move
+            else if (InventoryScr.MyInstance.FromSlot != null)//if i hold sth to move
             {
                 if (PutItemBack() || MergeItems(InventoryScr.MyInstance.FromSlot) || SwapItems(InventoryScr.MyInstance.FromSlot) || AddItems(InventoryScr.MyInstance.FromSlot.MyItems)) //order is important
                 {
@@ -192,7 +192,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
         {
             return false; //if empty no reasson to swap anything
         }
-        if(from.MyItem.GetType() != MyItem.GetType() || from.MyCount+MyCount > MyItem.MyStackSize) //the first condition checks if the item i move is different than the item im clicking on, then swap. The second checks if fromSlots count plus the count on the slot im clicking on is larger than the total slot size of the items, swap.
+        if (from.MyItem.GetType() != MyItem.GetType() || from.MyCount + MyCount > MyItem.MyStackSize) //the first condition checks if the item i move is different than the item im clicking on, then swap. The second checks if fromSlots count plus the count on the slot im clicking on is larger than the total slot size of the items, swap.
         {
             ObservableStack<Item> tmpFrom = new ObservableStack<Item>(from.MyItems); //make a copy of all the items i need to swap from slotA
             from.MyItems.Clear(); //clear slotA so there is room there
@@ -211,7 +211,7 @@ public class SlotScr : MonoBehaviour, IPointerClickHandler, IClickable, IPointer
         }
         if (from.MyItem.GetType() == MyItem.GetType()) //checks if the type of the item im holding is of the same type as the item im trying to merge
         {
-            if (!IsFull) //check if slot is full
+            if (!IsFull && from.MyItem.MyTitle == MyItem.MyTitle) //check if slot is full
             {
                 int free = MyItem.MyStackSize - MyCount; //calculate items left on slot to be full
                 for (int i = 0; i < free; i++)

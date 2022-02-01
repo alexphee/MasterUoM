@@ -31,8 +31,12 @@ public class HandScr : MonoBehaviour    //when im carruing sth i have an IMoveab
     // Update is called once per frame
     void Update()
     {
-        icon.transform.position = Input.mousePosition+offset;
-        DeleteItem();
+        icon.transform.position = Input.mousePosition + offset;
+
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject() && MyInstance.MyMoveable != null)
+        {
+            DeleteItem();
+        }
     }
 
     public void TakeMoveable(IMoveable moveable)

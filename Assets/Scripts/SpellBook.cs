@@ -59,7 +59,7 @@ public class SpellBook : MonoBehaviour
             castingBar.fillAmount = Mathf.Lerp(0, 1, progress); //move from 0 (min) to 1 (max) [the bar fill values] 
             progress += rate * Time.deltaTime;
             timePassed += Time.deltaTime; //increase over time passed
-            castTime.text = (spells[index].MyCastTime - timePassed).ToString("f2"); ; //the cast time of the spell - the time pased //with 2 decimal
+            castTime.text = (spells[index].MyCastTime - timePassed).ToString("f2");  //the cast time of the spell - the time pased //with 2 decimal
             if (spells[index].MyCastTime - timePassed < 0)
             {
                 castTime.text = "0.0"; //BUGFIX so it doesnt end at -0.0

@@ -347,9 +347,11 @@ public class Player : Character
     public IEnumerator Respawn()
     {
         StopAction();
+        Direction = Vector2.zero; 
+        myRigidBody.velocity = Direction;
         //MyInstance.MyTarget = null;
         MySpriteRenderer.enabled = false; //hide
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         health.Initialize(initHealth, initHealth);
         MyMana.Initialize(initMana, initMana);
         //this.transform.position = GameObject.FindGameObjectWithTag("Spawn").transform.position;
