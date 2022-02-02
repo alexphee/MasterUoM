@@ -20,7 +20,7 @@ public class DialogueWindow : Window
     [SerializeField]
     private float speed; //text speed
 
-    private bool flag;
+    private Player player;
     private static DialogueWindow instance;
     public static DialogueWindow MyInstance
     {
@@ -39,6 +39,7 @@ public class DialogueWindow : Window
         text.text = string.Empty;
         this.dialogue = dialogue;
         currentNode = dialogue.Nodes[0];
+
         StartCoroutine(RunDialogue(currentNode.Text));
     }
 
@@ -113,4 +114,5 @@ public class DialogueWindow : Window
         }
         buttons.Clear();//remove any references to the destroyed objects
     }
+
 }

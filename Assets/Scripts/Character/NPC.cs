@@ -7,11 +7,16 @@ public class NPC : MonoBehaviour, IInteractable
 {
     [SerializeField]
     private Window window;
+
+    
     public bool IsInteracting { get; set; }
+
     public virtual void Interact()
     {
+
         if (!IsInteracting)
         {
+            Debug.Log("TEST");
             IsInteracting = true;
             window.Open(this); //if i interact with this NPC then open the window
         }
