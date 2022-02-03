@@ -55,10 +55,11 @@ public abstract class Character : MonoBehaviour
 
     public List<Character> Attackers { get; set; } = new List<Character>();
 
-
+    private Vector2 originalPosition;
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        originalPosition = gameObject.transform.position;
 
         MySpriteRenderer = GetComponent<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -165,7 +166,8 @@ public abstract class Character : MonoBehaviour
         //MySpriteRenderer.enabled = false; //hide
         yield return new WaitForSeconds(120f);
         health.Initialize(initHealth, initHealth);
-        gameObject.transform.position = new Vector2(0f,0f);
+        gameObject.transform.position = originalPosition;
+        //MyTarget = null;
         //MySpriteRenderer.enabled = true; //show after respawn
     }
 

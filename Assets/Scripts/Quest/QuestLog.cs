@@ -25,7 +25,7 @@ public class QuestLog : MonoBehaviour
 
     [SerializeField]
     private Text questDescription;
-   
+
     //SINGLETON 
     private static QuestLog instance;
 
@@ -50,10 +50,10 @@ public class QuestLog : MonoBehaviour
     }
     public void Update()
     {
-       /* if (Input.GetKeyDown(KeyCode.Q))
-        {
-            OpenClose();
-        }*/
+        /* if (Input.GetKeyDown(KeyCode.Q))
+         {
+             OpenClose();
+         }*/
     }
     public void AcceptQuest(Quest quest) //the AcceptQuest asks the questgiver what quest am i accepting and the questgiver feeds this exact quest in this function
     {
@@ -83,8 +83,8 @@ public class QuestLog : MonoBehaviour
             gameObject.GetComponent<Text>().text = quest.MyTitle;
             CheckCompletion();
         }
-        
-    
+
+
     }
     public void UpdateSelected()
     {
@@ -95,7 +95,7 @@ public class QuestLog : MonoBehaviour
     {
         if (quest != null) //saves me from NullRefExc
         {
-            if (selected != null && selected!=quest) //if sth is selected AND the one i have already selected is different from the new one im selecting and trying to show description from
+            if (selected != null && selected != quest) //if sth is selected AND the one i have already selected is different from the new one im selecting and trying to show description from
             {
                 selected.MyQuestScr.Deselect(); //deselect
             }

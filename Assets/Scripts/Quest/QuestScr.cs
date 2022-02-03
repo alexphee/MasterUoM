@@ -30,10 +30,10 @@ public class QuestScr : MonoBehaviour
             GetComponent<Text>().text = "(" + MyQuest.MyLevel + ")" + MyQuest.MyTitle + " <color=red><size=8>DONE</size></color>";
             MessageFeedManager.MyInstance.WriteMessage(string.Format("{0} (C)", MyQuest.MyTitle));
         }
-        else if(!MyQuest.IsComplete)
+        else if (!MyQuest.IsComplete)
         {
             markedComplete = false;
-            GetComponent<Text>().text = "(" + MyQuest.MyLevel + ")"+MyQuest.MyTitle; //reset title to normal
+            GetComponent<Text>().text = "(" + MyQuest.MyLevel + ")" + MyQuest.MyTitle; //reset title to normal
         }
     }
 }

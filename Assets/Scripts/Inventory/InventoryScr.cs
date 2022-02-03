@@ -25,7 +25,7 @@ public class InventoryScr : MonoBehaviour
 
     private SlotScr fromSlot; //need ref to whatever i carry around. This is going to be used whenever i click on sth to move it somewhere else, the fromSlot is the slot the item is coming from, when we place it somewhere else in inv
     private List<Bag> bags = new List<Bag>();
-    public bool CanAddBag { get { return MyBags.Count < 3; } }
+    public bool CanAddBag { get { return MyBags.Count < 1; } }
 
     public int MyEmptySlotCount
     { //everytime i look at a bag i look at all slots and count them together and return them
@@ -62,8 +62,8 @@ public class InventoryScr : MonoBehaviour
     public Item[] items; //DEBBUGING PURPOSES
     private void Awake()
     {
-        Bag bag = (Bag)Instantiate(items[0]); //create bag -- casting, bad practice
-        bag.Initialize(8); //initialize bag
+        Bag bag =  (Bag)Instantiate(items[0]); //create bag -- casting, bad practice
+        bag.Initialize(28); //initialize bag
         bag.Use(); //use bag
     }
 

@@ -67,12 +67,13 @@ public abstract class Objective
     public int MyCurrentAmount { get => currentAmount; set => currentAmount = value; }
     public string MyType { get => type; }
 
-        public bool IsComplete {  //checks current amount compared to the goal amount
-            get
-            {
-                return MyCurrentAmount >= MyAmount; //is the objective completed?
-            }
+    public bool IsComplete
+    {  //checks current amount compared to the goal amount
+        get
+        {
+            return MyCurrentAmount >= MyAmount; //is the objective completed?
         }
+    }
 
 
 }
@@ -81,7 +82,7 @@ public abstract class Objective
 [System.Serializable]
 public class CollectObjective : Objective
 {
-    public void UpdateItemCount(Item item) 
+    public void UpdateItemCount(Item item)
     {
         //Debug.Log("UPDATEITEM CALLED");
         if (MyType.ToLower() == item.MyTitle.ToLower()) //if the item i picked up (fed to this function) is the same as the objective's item
@@ -99,9 +100,9 @@ public class CollectObjective : Objective
 
     public void UpdateItemCount() //overload UpdateItemCount //will try to update based on the items i have so i dont have to check the item first
     {
-            MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(MyType);
-            QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
-            QuestLog.MyInstance.UpdateSelected();
+        MyCurrentAmount = InventoryScr.MyInstance.GetItemCount(MyType);
+        QuestLog.MyInstance.CheckCompletion(); //if itemcount is updated on a collection quest check completion
+        QuestLog.MyInstance.UpdateSelected();
     }
 
     public void Complete()
@@ -118,20 +119,20 @@ public class CollectObjective : Objective
 [System.Serializable]
 public class KillObjective : Objective
 {
-  public void UpdateKillCount(Character character) //self explanatory
+    public void UpdateKillCount(Character character) //self explanatory
     {
         if (MyType == character.type)
         {
-            if(MyCurrentAmount < MyAmount) // this is to stop counting kills when a kill quest is completed
+            if (MyCurrentAmount < MyAmount) // this is to stop counting kills when a kill quest is completed
             {
                 MyCurrentAmount++;
                 MessageFeedManager.MyInstance.WriteMessage(string.Format("{0}: {1}/{2}", character.MyType, MyCurrentAmount, MyAmount));
                 QuestLog.MyInstance.CheckCompletion();
                 QuestLog.MyInstance.UpdateSelected();
             }
-            
+
         }
     }
 
-    
+
 }

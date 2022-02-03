@@ -50,7 +50,7 @@ public class Player : Character
     //private List<Enemy> attackers = new List<Enemy>();
     //public List<Enemy> MyAttackers { get => attackers; set => attackers = value; }
 
-   // private Vector2 spawnPoint = new Vector2(10f, -10f);
+    // private Vector2 spawnPoint = new Vector2(10f, -10f);
     public Coroutine MyInitRoutine { get; set; } //a routine that initializes sth
     /* protected override void Start() 
      {
@@ -178,9 +178,9 @@ public class Player : Character
                 }
 
             }
-}
-            StopAction();
-        
+        }
+        StopAction();
+
     }
 
     public void CastSpell(int spellIndex)
@@ -202,7 +202,7 @@ public class Player : Character
 
     public IEnumerator CraftRoutine(ICastable castable)
     {
-        
+
         yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
 
         crafting.AddItemsToInventory();
@@ -250,7 +250,7 @@ public class Player : Character
         {
             StopCoroutine(actionRoutine);
         }
-        
+
     }
 
     ////singleton test
@@ -347,7 +347,7 @@ public class Player : Character
     public IEnumerator Respawn()
     {
         StopAction();
-        Direction = Vector2.zero; 
+        Direction = Vector2.zero;
         myRigidBody.velocity = Direction;
         //MyInstance.MyTarget = null;
         MySpriteRenderer.enabled = false; //hide
@@ -395,9 +395,9 @@ public class Player : Character
 
                     CombatTextManager.MyInstance.CreateText(transform.position, value.ToString(), cType.HEAL);
                 }
-                
+
                 yield return new WaitForSeconds(0.5f); //adding a little phase difference so the text isn't on top of each other
-               
+
                 if (mana.MyCurrentValue < mana.MyMaxValue) //if not at max mana
                 {
                     int value = Mathf.FloorToInt(mana.MyMaxValue * 0.05f); //regen 5% of max value
@@ -409,7 +409,7 @@ public class Player : Character
             }
             yield return new WaitForSeconds(2.5f); //rate of regen tick
         }
-        
+
     }
 
 
