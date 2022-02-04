@@ -13,6 +13,8 @@ public class Player : Character
     private Stat xpStat;
     [SerializeField]
     private Text levelText;
+    [SerializeField]
+    private Text goldText;
     private float initMana = 100;
 
     public bool InCombat { get; set; } = false;
@@ -81,6 +83,7 @@ public class Player : Character
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x), Mathf.Clamp(transform.position.y, min.y, max.y), transform.position.z);
         //spellBook.GetComponent<SpellBook>();
 
+        goldText.text = MyGold.ToString();
 
         base.Update();
     }
@@ -92,6 +95,7 @@ public class Player : Character
         MyMana.Initialize(initMana, initMana);
         MyXP.Initialize(0, Mathf.Floor(100 * MyLevel * Mathf.Pow(MyLevel, 0.5f))); //equation to level up //floor is needed so i get rid of decimal
         levelText.text = MyLevel.ToString();
+        goldText.text = MyGold.ToString();
     }
 
     private void GetInput()
@@ -114,6 +118,10 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.U))
         {
             GainExperience(1000);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("GOLD: " + MyGold);
         }
 
         if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
@@ -277,6 +285,11 @@ public class Player : Character
         }
     }
 
+    public void GainGold(int g)
+    {
+        MyGold += g;
+    }
+
     public void GainExperience(int xp)
     {
         MyXP.MyCurrentValue += xp; //add xp to currentvalue
@@ -323,6 +336,10 @@ public class Player : Character
         levelText.text = MyLevel.ToString();
     }
 
+    public void UpdateGold()
+    {
+        goldText.text = MyGold.ToString();
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("thyEnemy") || collision.CompareTag("Interactable")) //if collide with enemy then its interactable or with a chest

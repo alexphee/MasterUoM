@@ -210,6 +210,7 @@ public class SaveManager : MonoBehaviour
     {
         Player.MyInstance.MyLevel = data.MyPlayerData.MyLevel;
         Player.MyInstance.UpdateLevel();
+        Player.MyInstance.UpdateGold();
         Player.MyInstance.MyHealth.Initialize(data.MyPlayerData.MyHealth, data.MyPlayerData.MyMaxHealth);
         Player.MyInstance.MyMana.Initialize(data.MyPlayerData.MyMana, data.MyPlayerData.MyMaxMana);
         Player.MyInstance.MyXP.Initialize(data.MyPlayerData.MyXP, data.MyPlayerData.MyMaxXP);

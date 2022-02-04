@@ -47,9 +47,11 @@ public class Quest
     private int level;
     [SerializeField]
     private int experience;
+    [SerializeField]
+    private int goldReward;
     public int MyLevel { get => level; }
     public int MyExperience { get => experience; }
-
+    public int MyGoldReward { get => goldReward; }
 }
 
 [System.Serializable]
@@ -108,7 +110,6 @@ public class CollectObjective : Objective
     public void Complete()
     {
         Stack<Item> items = InventoryScr.MyInstance.GetItems(MyType, MyAmount);
-
         foreach (Item item in items)
         {
             item.Remove();
