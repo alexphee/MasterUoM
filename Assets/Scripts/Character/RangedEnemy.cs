@@ -26,9 +26,11 @@ public class RangedEnemy : Enemy
     public override void DoDmg()
     {
         Debug.Log("shoot");
+
         SpellScript s = Instantiate(leafPrefab, exitPoint.position, Quaternion.identity).GetComponent<SpellScript>();
         s.Initialize(MyTarget.MyHitBox, damage, this);
-        base.DoDmg();
+
+        //base.DoDmg();
     }
 
     private void LookTarget()
