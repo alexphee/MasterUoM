@@ -385,7 +385,7 @@ public class Player : Character
         if (count == 0)
         {
             InCombat = true;
-            CombatTextManager.MyInstance.CreateText(transform.position, "+COMBAT", cType.TEXT);
+            CombatTextManager.MyInstance.CreateText(transform.position, "ENTER COMBAT", cType.TEXT);
         }
     }
 
@@ -395,7 +395,7 @@ public class Player : Character
         if (Attackers.Count == 0)
         {
             InCombat = false;
-            CombatTextManager.MyInstance.CreateText(transform.position, "-COMBAT", cType.TEXT);
+            CombatTextManager.MyInstance.CreateText(transform.position, "EXIT COMBAT", cType.TEXT);
         }
     }
 

@@ -100,9 +100,10 @@ public class InventoryScr : MonoBehaviour
             Element oxygen = (Element)Instantiate(items[3]);
             AddItem(oxygen);
         }
+        
 
     }
-
+    
     public void AddBag(Bag bag) //takes the bag we are equiping
     {
         foreach (BagButton bagButton in bagbuttons)
