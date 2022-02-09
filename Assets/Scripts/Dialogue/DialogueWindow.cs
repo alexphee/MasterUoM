@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueWindow : Window
@@ -19,6 +20,7 @@ public class DialogueWindow : Window
     private Transform answerTransform; //so the answer goes under this, as child
     [SerializeField]
     private float speed; //text speed
+
     private bool flag = true;
     private int maxCheck;
     private int currentCheck;
@@ -105,25 +107,39 @@ public class DialogueWindow : Window
 
                 if (currentCheck == maxCheck)
                 {
-                    Debug.Log("CORRECT");
+                    //Debug.Log("CORRECT");
                     if (flag)
                     {
                         Item qi = Instantiate(InventoryScr.MyInstance.items[4]);
                         InventoryScr.MyInstance.AddItem(qi);
                         flag = false;
+                        answerTransform.gameObject.SetActive(true);
+                        GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                        buttons.Add(go);
+                        go.GetComponentInChildren<TextMeshProUGUI>().text = "All correct!\nCheck your bag!";
+                        go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                     }
                     
                 }
                 else if (currentCheck <= maxCheck)
                 {
-                    Debug.Log(maxCheck - currentCheck + "WRONG ANSWERS");
+                    //Debug.Log(maxCheck - currentCheck + "WRONG ANSWERS");
+                    answerTransform.gameObject.SetActive(true);
+                    GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                    buttons.Add(go);
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Correct: " + currentCheck + "/" + maxCheck + " Try again.";
+                    go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 }
-                Debug.Log(maxCheck);
+               
+            }
+            else if (dialogue.NPC_type == "scene1")
+            {
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
                 go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                LoadScene("Scene01");
             }
                 
             
@@ -160,4 +176,9 @@ public class DialogueWindow : Window
         buttons.Clear();//remove any references to the destroyed objects
     }
 
+    public void LoadScene(string sceneName)
+    {
+
+        SceneManager.LoadScene(sceneName);
+    }
 }
