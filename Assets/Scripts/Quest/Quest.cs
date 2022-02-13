@@ -52,6 +52,11 @@ public class Quest
     public int MyLevel { get => level; }
     public int MyExperience { get => experience; }
     public int MyGoldReward { get => goldReward; }
+
+    [SerializeField]
+    private int itemRewardIndex;
+    public int MyItemRewardIndex { get => itemRewardIndex; set => itemRewardIndex = value; }
+
 }
 
 [System.Serializable]

@@ -149,6 +149,14 @@ public class QuestGiverWindow : Window
             }
             Player.MyInstance.GainExperience(XPManager.CalculateXP(selectedQuest)); //calculate the xp based on the quest
             Player.MyInstance.GainGold(selectedQuest.MyGoldReward);
+
+            if (selectedQuest.MyItemRewardIndex != 0)
+            {
+                Item qi = Instantiate(InventoryScr.MyInstance.items[selectedQuest.MyItemRewardIndex]);
+                InventoryScr.MyInstance.AddItem(qi);
+            }
+            
+
             QuestLog.MyInstance.RemoveQuest(selectedQuest.MyQuestScr); //remove the completed quest from the questlog
             Back();//go back to first page
         }
