@@ -102,6 +102,16 @@ public class DialogueWindow : Window
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 
             }
+            else if (dialogue.NPC_type == "first_encounter")
+            {
+                answerTransform.gameObject.SetActive(true);
+                GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                buttons.Add(go);
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                Item qi = Instantiate(InventoryScr.MyInstance.items[5]);
+                InventoryScr.MyInstance.AddItem(qi);
+                go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+            }
             else if (dialogue.NPC_type == "teacher")
             {
 
