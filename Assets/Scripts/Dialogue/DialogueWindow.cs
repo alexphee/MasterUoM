@@ -112,7 +112,7 @@ public class DialogueWindow : Window
                 InventoryScr.MyInstance.AddItem(qi);
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
             }
-            else if (dialogue.NPC_type == "teacher")
+            else if (dialogue.NPC_type == "teacher" || dialogue.NPC_type == "teacher2")
             {
 
                 if (currentCheck == maxCheck)

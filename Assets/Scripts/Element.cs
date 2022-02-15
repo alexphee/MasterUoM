@@ -11,15 +11,18 @@ public class Element : Item
     {
     [SerializeField]
     private string symbol;
+
     [SerializeField]
-    private int atomicNo;
+    private string info;
     [SerializeField]
-    private string phase;
+    private string info2;
+    [SerializeField]
+    private string usage;
 
 
     public override string GetDescription()
     {
-        string info = string.Format("\nChemical Symbol: {0}\nAtomic Number: {1}\nPhase (in STP): {2}", symbol, atomicNo, phase);
+        string info = string.Format("\nChemical Symbol: {0}\nInfo: {1}\n{2}\nUsage: {3}", symbol, this.info, this.info2, usage);
         return base.GetDescription() + info;
     }
 }

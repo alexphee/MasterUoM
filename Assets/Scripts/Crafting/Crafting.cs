@@ -57,7 +57,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         materials.Clear();
 
         title.text = recipe.MyOutput.MyTitle;
-        description.text = recipe.MyDescription + " " + recipe.MyOutput.MyTitle.ToLower();
+        description.text = recipe.MyDescription;// + " " + recipe.MyOutput.MyTitle.ToLower();
 
         craftItemInfo.Initialize(recipe.MyOutput, 1); //craft 1
         foreach (CraftingMaterial material in recipe.MyMaterials)
