@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DialogueWindow : Window
 {
+    Dictionary<int, bool> teacherIDcheck = new Dictionary<int, bool>();
+    
     [SerializeField]
     private TextMeshProUGUI text;
 
@@ -21,7 +23,7 @@ public class DialogueWindow : Window
     [SerializeField]
     private float speed; //text speed
 
-    private bool flag = true;
+    //private bool flag = true;
     private int maxCheck;
     private int currentCheck;
     private Player player;
@@ -112,17 +114,22 @@ public class DialogueWindow : Window
                 InventoryScr.MyInstance.AddItem(qi);
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
             }
-            else if (dialogue.NPC_type == "teacher" || dialogue.NPC_type == "teacher2")
+            else if (dialogue.NPC_type == "teacher")
             {
-
+                
                 if (currentCheck == maxCheck)
                 {
+                    if (!teacherIDcheck.ContainsKey(dialogue.TeacherID))
+                    {
+                        teacherIDcheck.Add(dialogue.TeacherID, false);
+                    }
+                    
                     //Debug.Log("CORRECT");
-                    if (flag)
+                    if (teacherIDcheck[dialogue.TeacherID] == false)
                     {
                         Item qi = Instantiate(InventoryScr.MyInstance.items[4]);
                         InventoryScr.MyInstance.AddItem(qi);
-                        flag = false;
+                        teacherIDcheck[dialogue.TeacherID] = true;
                         answerTransform.gameObject.SetActive(true);
                         GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                         buttons.Add(go);
