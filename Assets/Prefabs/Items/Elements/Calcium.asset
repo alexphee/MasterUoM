@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc64f6b3f2f49647957116d8675de7d, type: 3}
+  m_Name: Calcium
+  m_EditorClassIdentifier: 
+  type: 0
+  title: Calcium
+  icon: {fileID: 21300000, guid: 52b90a161c555884285fcf1114ab973c, type: 3}
+  stackSize: 5
+  price: 2
+  symbol: Ca
+  info: From latin carbo (coal)
+  info2: 'Color: Black'
+  usage: 
