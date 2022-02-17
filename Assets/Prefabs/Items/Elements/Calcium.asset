@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 52b90a161c555884285fcf1114ab973c, type: 3}
   stackSize: 5
   price: 2
-  symbol: Ca
-  info: From latin carbo (coal)
-  info2: 'Color: Black'
-  usage: 
+  symbol: 'Ca (Z: 20)'
+  info: 'Group: Alkaline earth metals'
+  info2: 'Color: Silver'
+  phase: Solid

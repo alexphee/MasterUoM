@@ -165,7 +165,7 @@ public class DialogueWindow : Window
                 buttons.Add(go);
                 go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
-                LoadScene("Scene02");
+                LoadScene("Scene02wwww");
             }
 
 

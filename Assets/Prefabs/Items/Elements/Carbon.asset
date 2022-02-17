@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: eb5d525a1dfea314eb894295d81c01f0, type: 3}
   stackSize: 5
   price: 2
-  symbol: C
-  info: From latin carbo (coal)
+  symbol: 'C (Z: 6)'
+  info: 'Group: Carbon family (14)'
   info2: 'Color: Black'
-  usage: 
+  phase: Solid

@@ -314,7 +314,10 @@ public class Player : Character
         MyXP.MyMaxValue = Mathf.Floor(MyXP.MyMaxValue); //round this down so i dont get decimal
         MyXP.MyCurrentValue = MyXP.MyOverflow; //when reseting for the new level i need to pass to the bar the ammount of extra xp i had e.g i have 95/100 and gain 10 xp, i should be able to carry the extra 5xp to the new level and not lose it
         MyXP.Reset();
-
+        MyMana.MyMaxValue += 10;
+        MyMana.MyCurrentValue = MyMana.MyMaxValue;
+        MyHealth.MyMaxValue += 10;
+        MyHealth.MyMaxValue = MyHealth.MyMaxValue;
         //this is for bug fixxing. When you gain enough XP to go e.g. from 1 to 4
         //i only stops at the second level. Here i check every time if i need to go further
         if (MyXP.MyCurrentValue >= MyXP.MyMaxValue)

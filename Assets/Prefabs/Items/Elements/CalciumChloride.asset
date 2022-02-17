@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 1
   symbol: CaCl2
   info: 
-  info2: 
-  usage: 
+  info2: 'Color: White'
+  phase: Solid

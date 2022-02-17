@@ -17,12 +17,12 @@ public class Element : Item
     [SerializeField]
     private string info2;
     [SerializeField]
-    private string usage;
+    private string phase;
 
 
     public override string GetDescription()
     {
-        string info = string.Format("\nChemical Symbol: {0}\nInfo: {1}\n{2}\nUsage: {3}", symbol, this.info, this.info2, usage);
+        string info = string.Format("\nChemical Symbol: {0}\nInfo: {1}\n{2}\nSTP phase: {3}", symbol, this.info, this.info2, phase);
         return base.GetDescription() + info;
     }
 }

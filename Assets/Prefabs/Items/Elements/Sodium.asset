@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 1891d8253b7b3eb46bea2c93fa6d733e, type: 3}
   stackSize: 5
   price: 10
-  symbol: Na
-  atomicNo: 11
-  phase: solid
+  symbol: 'Na(Z: 11)'
+  info: 'Group: H and Alkali metals (1)'
+  info2: 'Color: silver'
+  phase: Solid

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   title: Reward Key
-  icon: {fileID: 21300000, guid: adeb4aa42c7064a8d9384d1e57741524, type: 3}
+  icon: {fileID: 21300000, guid: 238a2b72fbdbc4b92beb1d8f3100a6ac, type: 3}
   stackSize: 0
   price: 0

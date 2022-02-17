@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b745cfeed3e432c499e176d8086e78cf, type: 3}
   stackSize: 5
   price: 5
-  symbol: Cl
-  atomicNo: 17
-  phase: gas
+  symbol: 'Cl (Z: 17)'
+  info: 'Group: Halogens (17)'
+  info2: 
+  phase: Gas

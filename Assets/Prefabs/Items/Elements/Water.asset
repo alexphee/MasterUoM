@@ -18,5 +18,6 @@ MonoBehaviour:
   stackSize: 1
   price: 1
   symbol: H2O
-  atomicNo: 1
-  phase: liquid
+  info: 
+  info2: 
+  phase: 

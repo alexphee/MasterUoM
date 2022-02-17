@@ -18,5 +18,6 @@ MonoBehaviour:
   stackSize: 1
   price: 1
   symbol: CO2
-  atomicNo: 1
-  phase: gas
+  info: 
+  info2: 
+  phase: Gas
