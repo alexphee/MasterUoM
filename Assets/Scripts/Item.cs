@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Type { Element, Common}
+public enum Type { Element, Common, Legendary}
 public abstract class Item : ScriptableObject, IMoveable, IText
 {
     [SerializeField]

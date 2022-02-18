@@ -114,6 +114,17 @@ public class DialogueWindow : Window
                 InventoryScr.MyInstance.AddItem(qi);
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
             }
+            else if (dialogue.NPC_type == "second_encounter")
+            {
+                answerTransform.gameObject.SetActive(true);
+                GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                buttons.Add(go);
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                Item qi = Instantiate(InventoryScr.MyInstance.items[10]);
+                InventoryScr.MyInstance.AddItem(qi);
+                go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+            }
+            
             else if (dialogue.NPC_type == "teacher")
             {
                 
@@ -165,7 +176,7 @@ public class DialogueWindow : Window
                 buttons.Add(go);
                 go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
-                LoadScene("Scene02wwww");
+                LoadScene("Scene02");
             }
 
 
