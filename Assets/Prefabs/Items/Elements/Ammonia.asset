@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Ammonia
   m_EditorClassIdentifier: 
   type: 0
-  title: Ammonia
+  title: Hydrogen nitride
   icon: {fileID: 21300000, guid: 321020fe9e96c9541ad5f01fbff095f8, type: 3}
   stackSize: 0
   price: 0
   symbol: NH3
-  info: 
-  info2: 
-  phase: 
+  info: 'Common name: Ammonia'
+  info2: 'Color: -'
+  phase: Gas

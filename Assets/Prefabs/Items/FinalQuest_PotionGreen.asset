@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632ef04735cadb341a93cf0750ba62b2, type: 3}
   m_Name: FinalQuest_PotionGreen
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   title: Unknown Green Instance
   icon: {fileID: 21300000, guid: 91ce58474c2a140f08999006e34cd7a8, type: 3}
   stackSize: 0

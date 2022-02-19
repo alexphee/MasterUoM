@@ -18,6 +18,6 @@ MonoBehaviour:
   stackSize: 1
   price: 1
   symbol: H2O
-  info: 
-  info2: 
-  phase: 
+  info: 'Other name: Dihydrogen monoxide'
+  info2: Color:Pale blue
+  phase: Liquid

@@ -44,7 +44,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: ed49c72ded6b445fcb71e54c937972f3, type: 3}
-    totalSpriteSurfaceArea: 789696
+    totalSpriteSurfaceArea: 788540
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -618,7 +618,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7c6e63fc492754e75a8cb4d7060ff0ae, type: 3}
   - {fileID: 21300000, guid: 713334fcdab494f478862078a278ad29, type: 3}
   - {fileID: 21300000, guid: 9240bffcbfc184409a68cea607910e67, type: 3}
-  - {fileID: 21300000, guid: 2377200d2029849d3a33aab82615c4f4, type: 3}
   - {fileID: 21300000, guid: ca59a20dbfc5144d98771f2cdcf4963b, type: 3}
   - {fileID: 21300000, guid: c847d40db08614d94be6704fbcd12eee, type: 3}
   - {fileID: 21300000, guid: fc62a50da94794e5ca113a6e65bee6d0, type: 3}
@@ -1317,7 +1316,6 @@ SpriteAtlas:
   - P_Green06
   - C_Elm01
   - sapling_original
-  - I_C_Pie
   - I_C_Lemon
   - S_Bow03
   - W_Bow15

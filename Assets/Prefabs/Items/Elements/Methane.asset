@@ -18,6 +18,6 @@ MonoBehaviour:
   stackSize: 1
   price: 1
   symbol: CH4
-  info: Methane - CH4
-  info2: 
-  phase: 
+  info: 'Common name: Marsh gas'
+  info2: Color:-
+  phase: Gas

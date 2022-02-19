@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 2
   symbol: 'S (Z: 16)'
   info: 'Group: Chalcogens (16)'
-  info2: 'Color: yellow'
+  info2: 'Color: Yellow'
   phase: Solid
