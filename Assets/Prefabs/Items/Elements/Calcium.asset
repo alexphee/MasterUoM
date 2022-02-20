@@ -18,6 +18,6 @@ MonoBehaviour:
   stackSize: 5
   price: 2
   symbol: 'Ca (Z: 20)'
-  info: 'Group: Alkaline earth metals'
+  info: 'Group: Alkaline earth metals (2)'
   info2: 'Color: Silver'
   phase: Solid

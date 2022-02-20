@@ -216,14 +216,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c233414663b36c4a9064cbcf9a08cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   speed: 0
   hitBox: {fileID: 1468379584296697666}
   health: {fileID: 1468379585079162213}
-  initHealth: 25
+  initHealth: 40
+  level: 0
   portraitFace: {fileID: 21300034, guid: 95c761711a8cb474f994fc95680c9325, type: 3}
   loottable: {fileID: 0}
+  attackRange: 0
   healthGroup: {fileID: 1468379584817250904}
   initialAggroRange: 0
+  damage: 0
 --- !u!50 &1468379583906600181
 Rigidbody2D:
   serializedVersion: 4
