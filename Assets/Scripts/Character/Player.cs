@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Player : Character
 {
+    private bool canMove = true;
+    public bool CanMove { get => canMove; set => canMove = value; }
+
     //[SerializeField]
     //private Stat health; removed this cause i get "Same field nam serialized multiple times" exception. I have a health field in parent Character as well
     [SerializeField]
@@ -123,28 +126,29 @@ public class Player : Character
         {
             Debug.Log("GOLD: " + MyGold);
         }
-
-        if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
+        if (canMove)
         {
-            exitIndex = 0;
-            Direction += Vector2.up;
+            if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
+            {
+                exitIndex = 0;
+                Direction += Vector2.up;
+            }
+            if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow)))
+            {
+                exitIndex = 3;
+                Direction += Vector2.left;
+            }
+            if ((Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.DownArrow)))
+            {
+                exitIndex = 2;
+                Direction += Vector2.down;
+            }
+            if ((Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.RightArrow)))
+            {
+                exitIndex = 1;
+                Direction += Vector2.right;
+            }
         }
-        if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow)))
-        {
-            exitIndex = 3;
-            Direction += Vector2.left;
-        }
-        if ((Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.DownArrow)))
-        {
-            exitIndex = 2;
-            Direction += Vector2.down;
-        }
-        if ((Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.RightArrow)))
-        {
-            exitIndex = 1;
-            Direction += Vector2.right;
-        }
-
         if (isMoving)
         {
             StopAction(); //if moving stop casting
@@ -274,7 +278,6 @@ public class Player : Character
             return instance;
         }
     }
-
 
 
     public void Interact()
