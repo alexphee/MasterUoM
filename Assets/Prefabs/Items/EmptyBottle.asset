@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EmptyBottle
   m_EditorClassIdentifier: 
   type: 0
-  title: 
-  icon: {fileID: 0}
+  title: Empty container
+  icon: {fileID: 21300000, guid: 55dbd42a5cdf54596b1425b9edb23a87, type: 3}
   stackSize: 0
   price: 0
-  descr: 
+  descr: An empty container suitable for storing radioactive materials

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc64f6b3f2f49647957116d8675de7d, type: 3}
+  m_Name: Bleach
+  m_EditorClassIdentifier: 
+  type: 0
+  title: Sodium hypochlorite
+  icon: {fileID: 21300000, guid: bf816d4c7fc9c1845bd31b25719d1e47, type: 3}
+  stackSize: 0
+  price: 0
+  symbol: NaClO
+  info: 'Common name: Bleach'
+  info2: 'Color: -'
+  phase: Liquid

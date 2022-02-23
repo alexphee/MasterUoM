@@ -44,7 +44,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: ed49c72ded6b445fcb71e54c937972f3, type: 3}
-    totalSpriteSurfaceArea: 788540
+    totalSpriteSurfaceArea: 787384
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -477,7 +477,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8bfeeb0ae7fa045a49898161bf4ec682, type: 3}
   - {fileID: 21300000, guid: 129cea1a3ae9c47fab8cf0455210424a, type: 3}
   - {fileID: 21300000, guid: a75a522a5089a43fb846f860363f1b9b, type: 3}
-  - {fileID: 21300000, guid: 55dbd42a5cdf54596b1425b9edb23a87, type: 3}
   - {fileID: 21300000, guid: 8cf5ec2ae68cf468ba1619c6e0b0264f, type: 3}
   - {fileID: 21300000, guid: 52f2883a4688144a3b8175b2e70c6c04, type: 3}
   - {fileID: 21300000, guid: 6ad1da3aea026434c916b94e6f429eb8, type: 3}
@@ -1175,7 +1174,6 @@ SpriteAtlas:
   - S_Magic09
   - E_Metal07
   - W_Throw004
-  - I_Bottle03
   - E_Metal08
   - S_Physic02
   - I_Torch02
