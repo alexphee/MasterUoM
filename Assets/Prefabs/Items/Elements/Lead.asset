@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Lead
   icon: {fileID: 21300000, guid: 68e6c41a79760004bb49b6cf344fc253, type: 3}
   stackSize: 5
-  price: 2
+  price: 15
   symbol: 'Pb (Z: 82)'
   info: 'Group: Carbon family (14)'
   info2: 'Color: metalic'

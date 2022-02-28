@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Calcium
   icon: {fileID: 21300000, guid: 52b90a161c555884285fcf1114ab973c, type: 3}
   stackSize: 5
-  price: 2
+  price: 5
   symbol: 'Ca (Z: 20)'
   info: 'Group: Alkaline earth metals (2)'
   info2: 'Color: Silver'

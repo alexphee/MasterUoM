@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Plutonium
   icon: {fileID: 21300000, guid: d84e29bb1854fab4cab2ee73aa313b5c, type: 3}
   stackSize: 0
-  price: 0
+  price: 100
   symbol: 'U (Z: 94)'
   info: 'Group: Actinides (RADIOACTIVE)'
   info2: 'Color: Silver'

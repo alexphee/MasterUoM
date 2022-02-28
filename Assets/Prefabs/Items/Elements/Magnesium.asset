@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Magnesium
   icon: {fileID: 21300000, guid: 57889d14676c7864890db0e5ac8b2bb6, type: 3}
   stackSize: 5
-  price: 0
+  price: 10
   symbol: 'Mg (Z: 12)'
   info: 'Group: Alkaline earth metals (2)'
   info2: 'Color: Gray'

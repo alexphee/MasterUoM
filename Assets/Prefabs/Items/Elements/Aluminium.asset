@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Aluminium
   icon: {fileID: 21300000, guid: e6703ca88eddf7a4285e2cda66972548, type: 3}
   stackSize: 5
-  price: 0
+  price: 10
   symbol: 'Al (Z: 13)'
   info: 'Group: Boron family (13)'
   info2: 'Color: Silver'

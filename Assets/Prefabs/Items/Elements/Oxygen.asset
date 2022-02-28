@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Oxygen
   icon: {fileID: 21300000, guid: 08652d602c8559840b31b8250d2d0b49, type: 3}
   stackSize: 5
-  price: 5
+  price: 10
   symbol: 'O (Z: 8)'
   info: 'Group: Chalcogens (16)'
   info2: Color:-

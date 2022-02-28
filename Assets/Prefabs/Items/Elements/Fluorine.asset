@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Fluorine
   icon: {fileID: 21300000, guid: 56e0f86d82248904b81a04608d1bd81a, type: 3}
   stackSize: 5
-  price: 0
+  price: 10
   symbol: 'F (Z: 9)'
   info: 'Group: Halogens (17)'
   info2: 'Color: Pale Yellow'

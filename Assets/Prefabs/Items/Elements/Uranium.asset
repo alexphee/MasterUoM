@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Uranium
   icon: {fileID: 21300000, guid: 4420182d8fcb0a4479654ff283ef2ab3, type: 3}
   stackSize: 0
-  price: 0
+  price: 100
   symbol: 'U (Z: 92)'
   info: 'Group: Actinides (RADIOACTIVE)'
   info2: 'Color: Gray'
