@@ -18,6 +18,6 @@ MonoBehaviour:
   stackSize: 0
   price: 100
   symbol: 'U (Z: 92)'
-  info: 'Group: Actinides (RADIOACTIVE)'
+  info: 'Group: Actinides'
   info2: 'Color: Gray'
-  phase: Solid
+  phase: Solid ( ! RADIOACTIVE ! )
