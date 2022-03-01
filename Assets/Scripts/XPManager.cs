@@ -28,27 +28,27 @@ using System.Threading.Tasks;
 
     public static int CalculateXP(Quest q)
     {
-        if (Player.MyInstance.MyLevel <= q.MyLevel + 5)
+        if (Player.MyInstance.MyLevel <= q.MyArea + 5)
         {
             return q.MyExperience;
         } 
-        if (Player.MyInstance.MyLevel == q.MyLevel + 6)
+        if (Player.MyInstance.MyLevel == q.MyArea + 6)
         {
             return (int)(q.MyExperience * 0.8/5)*5;
         }
-        if (Player.MyInstance.MyLevel == q.MyLevel + 7)
+        if (Player.MyInstance.MyLevel == q.MyArea + 7)
         {
             return (int)(q.MyExperience * 0.6/5)*5;
         }
-        if (Player.MyInstance.MyLevel == q.MyLevel + 8)
+        if (Player.MyInstance.MyLevel == q.MyArea + 8)
         {
             return (int)(q.MyExperience * 0.4/5)*5;
         }
-        if (Player.MyInstance.MyLevel == q.MyLevel + 9)
+        if (Player.MyInstance.MyLevel == q.MyArea + 9)
         {
             return (int)(q.MyExperience * 0.2/5)*5;
         }
-        if (Player.MyInstance.MyLevel >= q.MyLevel + 10)
+        if (Player.MyInstance.MyLevel >= q.MyArea + 10)
         {
             return (int)(q.MyExperience * 0.1/5)*5;
         }

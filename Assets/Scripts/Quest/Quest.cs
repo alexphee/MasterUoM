@@ -44,12 +44,12 @@ public class Quest
 
 
     [SerializeField]
-    private int level;
+    private int area;
     [SerializeField]
     private int experience;
     [SerializeField]
     private int goldReward;
-    public int MyLevel { get => level; }
+    public int MyArea { get => area; }
     public int MyExperience { get => experience; }
     public int MyGoldReward { get => goldReward; }
 

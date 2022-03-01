@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 0
   symbol: H2S
   info: 'Common name: Sewer gas'
-  info2: Color:-
+  info2: 'Color: Colourless'
   phase: Gas

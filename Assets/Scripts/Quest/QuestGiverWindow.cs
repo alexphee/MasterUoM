@@ -48,7 +48,7 @@ public class QuestGiverWindow : Window
             if (quest != null) //this was added later // i need this because after i remove a quest from the list (after pressing Complete), i get a NullRefExc due to the implementation: questGiver.MyQuests[i] = null;
             {
                 GameObject go = Instantiate(questPrefab, questArea);//instantiate the quest
-                go.GetComponent<Text>().text = "[" + quest.MyLevel + "]" + quest.MyTitle; //set the title
+                go.GetComponent<Text>().text = "[" + quest.MyArea + "]" + quest.MyTitle; //set the title
 
                 go.GetComponent<QGQuestScr>().MyQuest = quest; //assign this quest to QGQScr  so i can use this quest to show sth in the Questgiver's window
 

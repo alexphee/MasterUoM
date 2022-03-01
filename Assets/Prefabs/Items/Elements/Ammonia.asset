@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 0
   symbol: NH3
   info: 'Common name: Ammonia'
-  info2: 'Color: -'
+  info2: 'Color: Colourless'
   phase: Gas

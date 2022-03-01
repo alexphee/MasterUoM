@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 0
   symbol: HCl
   info: 
-  info2: Color:-
+  info2: 'Color: Colorless'
   phase: Liquid
