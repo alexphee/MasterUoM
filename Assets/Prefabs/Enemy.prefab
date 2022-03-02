@@ -223,7 +223,7 @@ MonoBehaviour:
   initHealth: 40
   level: 0
   portraitFace: {fileID: 21300034, guid: 95c761711a8cb474f994fc95680c9325, type: 3}
-  loottable: {fileID: 0}
+  loottable: {fileID: 8685845403730589697}
   attackRange: 0
   healthGroup: {fileID: 1468379584817250904}
   initialAggroRange: 0
