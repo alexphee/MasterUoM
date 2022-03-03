@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Tungsten (Wolfram)
   icon: {fileID: 21300000, guid: d42e3a7fa48d8c546b15f746bc692c05, type: 3}
-  stackSize: 5
+  stackSize: 10
   price: 15
   symbol: 'W (Z: 74)'
   info: 'Group: Chromium family (6)'

@@ -16,5 +16,5 @@ MonoBehaviour:
   title: Diamond
   icon: {fileID: 21300000, guid: 408530fbdeea841a2ae8573fca94bb8f, type: 3}
   stackSize: 0
-  price: 100
+  price: 60
   descr: A shiny diamond !

@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Plutonium
   icon: {fileID: 21300000, guid: d84e29bb1854fab4cab2ee73aa313b5c, type: 3}
-  stackSize: 0
+  stackSize: 10
   price: 100
   symbol: 'U (Z: 94)'
   info: 'Group: Actinides'

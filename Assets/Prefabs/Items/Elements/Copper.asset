@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Copper
   icon: {fileID: 21300000, guid: 96095b9173a18e74090bb9a5d8a5cf89, type: 3}
-  stackSize: 5
+  stackSize: 10
   price: 15
   symbol: 'Cu (Z: 29)'
   info: 'Group: Copper group (11) - coinage metals'

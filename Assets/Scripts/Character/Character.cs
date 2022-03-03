@@ -164,7 +164,7 @@ public abstract class Character : MonoBehaviour
     public IEnumerator RespawnEnemy()
     {
         //MySpriteRenderer.enabled = false; //hide
-        yield return new WaitForSeconds(120f);
+        yield return new WaitForSeconds(180f);
         health.Initialize(initHealth, initHealth);
         gameObject.transform.position = originalPosition;
         //MyTarget = null;

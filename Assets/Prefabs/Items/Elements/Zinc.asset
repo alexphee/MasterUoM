@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Zinc
   icon: {fileID: 21300000, guid: 3c3e825e19bb0ff4482a5841a52305e2, type: 3}
-  stackSize: 5
+  stackSize: 10
   price: 15
   symbol: 'Zn (Z: 30)'
   info: 'Group: Zinc group (12)'

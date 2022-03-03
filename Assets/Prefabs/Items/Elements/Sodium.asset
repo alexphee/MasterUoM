@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Sodium
   icon: {fileID: 21300000, guid: 1891d8253b7b3eb46bea2c93fa6d733e, type: 3}
-  stackSize: 5
+  stackSize: 10
   price: 10
   symbol: 'Na(Z: 11)'
   info: 'Group: H and Alkali metals (1)'

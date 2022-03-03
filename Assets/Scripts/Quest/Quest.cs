@@ -9,7 +9,8 @@ public class Quest
     private string title;
     [SerializeField]
     private string description;
-
+    [SerializeField]
+    private string RewardItem;
     [SerializeField]
     private CollectObjective[] collectObjectives; //array of collection quests
     [SerializeField]
@@ -56,7 +57,7 @@ public class Quest
     [SerializeField]
     private int itemRewardIndex;
     public int MyItemRewardIndex { get => itemRewardIndex; set => itemRewardIndex = value; }
-
+    public string MyRewardItem { get => RewardItem; set => RewardItem = value; }
 }
 
 [System.Serializable]

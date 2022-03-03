@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   title: Iron
   icon: {fileID: 21300000, guid: a25e6a9ae2755204481f19838c20dd24, type: 3}
-  stackSize: 5
+  stackSize: 10
   price: 5
   symbol: 'Fe (Z: 26)'
   info: 'Group: Iron group (8)'

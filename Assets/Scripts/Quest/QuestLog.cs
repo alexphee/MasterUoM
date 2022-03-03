@@ -111,7 +111,7 @@ public class QuestLog : MonoBehaviour
             {
                 objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
             }
-            questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}\nExperience: {3} \n Gold: {4}", title, quest.MyDescription, objectives, quest.MyExperience, quest.MyGoldReward);
+            questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}\n<color=yellow>Experience: {3} \nGold: {4} \n<color=orange>Item reward: {5}</color></color>", title, quest.MyDescription, objectives, quest.MyExperience, quest.MyGoldReward, quest.MyRewardItem);
         }
     }
 

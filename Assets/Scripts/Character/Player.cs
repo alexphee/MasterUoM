@@ -430,7 +430,7 @@ public class Player : Character
                 }
 
             }
-            yield return new WaitForSeconds(2.5f); //rate of regen tick
+            yield return new WaitForSeconds(1.5f); //rate of regen tick
         }
 
     }
