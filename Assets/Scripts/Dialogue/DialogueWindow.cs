@@ -178,6 +178,15 @@ public class DialogueWindow : Window
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene02");
             }
+            else if (dialogue.NPC_type == "scene3")
+            {
+                answerTransform.gameObject.SetActive(true);
+                GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                buttons.Add(go);
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                LoadScene("Scene03");
+            }
 
 
 
