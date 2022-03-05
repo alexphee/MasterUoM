@@ -15,6 +15,6 @@ MonoBehaviour:
   type: 1
   title: Health Potion
   icon: {fileID: 21300000, guid: 1a7928361b7544ff387a406824f639b0, type: 3}
-  stackSize: 10
+  stackSize: 15
   price: 2
   health: 10

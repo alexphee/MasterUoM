@@ -15,6 +15,6 @@ MonoBehaviour:
   type: 1
   title: Mana Potion
   icon: {fileID: 21300000, guid: 0d296154ae2054055816454c2b9467bb, type: 3}
-  stackSize: 5
+  stackSize: 15
   price: 2
   mana: 20

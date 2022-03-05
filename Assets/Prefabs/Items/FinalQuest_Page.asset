@@ -16,5 +16,5 @@ MonoBehaviour:
   title: Page of the Book of Water
   icon: {fileID: 21300000, guid: fa77ac8c7050c4178a8d7515ea860680, type: 3}
   stackSize: 5
-  price: 50
-  descr: One of the five lost pages of the powerfull Book of Water
+  price: 65
+  descr: One of the six lost pages of the powerfull Book of Water
