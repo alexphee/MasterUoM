@@ -310,6 +310,7 @@ public class Player : Character
         {
             yield return null;
         }
+        GetComponent<AudioSource>().Play();
         MyLevel++; //add 1 to level
         levelUp.SetTrigger("levelUp");
         levelText.text = MyLevel.ToString();

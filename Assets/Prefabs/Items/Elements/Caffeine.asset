@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Caffeine
   m_EditorClassIdentifier: 
   type: 0
-  title: 'Caffeine '
+  title: Caffeine
   icon: {fileID: 21300000, guid: a64253c29be47544cae5c82b6537e9fb, type: 3}
   stackSize: 0
   price: 0

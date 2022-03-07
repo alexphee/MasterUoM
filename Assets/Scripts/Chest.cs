@@ -18,11 +18,13 @@ public class Chest : MonoBehaviour, IInteractable
     {
         if (IsOpen)
         {
+            
             LootWindow.MyInstance.Close();
             StopInteraction(); //if it is already open, stop interaction and close it
         }
         else
         {
+            GetComponent<AudioSource>().Play();
             IsOpen = true; //if it is not open, i set isopen to true
             spriteRenderer.sprite = openS; //and i change the sprite to open
 

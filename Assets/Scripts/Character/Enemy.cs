@@ -6,6 +6,7 @@ public delegate void HealthChanged(float health);
 public delegate void NPCRemoved();
 public class Enemy : Character, IInteractable
 {
+
     public event HealthChanged healthChanged;
     public event NPCRemoved npcRemoved;
     [SerializeField]
@@ -94,6 +95,7 @@ public class Enemy : Character, IInteractable
         {
             if (IsAlive)
             {
+                GetComponent<AudioSource>().Play();
                 SetTarget(source); //feed SetTarget with the source of damage.
                 base.TakeDamage(damage, source);
                 OnHealthChanged(health.MyCurrentValue); // trigger event after TakeDamage is called, because it reduces the health and updates it. If i trigger the event b4 i update it there is nothing to update. So i change health first and trigger event second, so the UnitFrame get the correct values. else it would be a step behind (at 90 health it would say 100, at 80 --> 90 etc)

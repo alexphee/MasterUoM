@@ -49,9 +49,9 @@ public class SpellScript : MonoBehaviour
             //coll.GetComponentInParent<Enemy>().TakeDamage(damage); //removed line
             cha.TakeDamage(damage, source); //source is the parent of the spell
             GetComponent<Animator>().SetTrigger("impact");
-            
             myRigidBody.velocity = Vector2.zero; //reset velocity when hit sth
             MyTarget = null;
+
             Debug.Log("RUN in OnTriggerEnter2D");
         }
     }
