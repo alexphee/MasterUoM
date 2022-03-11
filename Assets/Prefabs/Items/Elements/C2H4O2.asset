@@ -18,6 +18,6 @@ MonoBehaviour:
   stackSize: 0
   price: 0
   symbol: C2H4O2
-  info: 'Common name: Vinegar'
+  info: Main component in Vinegar
   info2: 'Color: Colourless'
   phase: Liquid

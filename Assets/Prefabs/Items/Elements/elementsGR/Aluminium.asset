@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc64f6b3f2f49647957116d8675de7d, type: 3}
+  m_Name: Aluminium
+  m_EditorClassIdentifier: 
+  type: 0
+  title: "\u0391\u03C1\u03B3\u03AF\u03BB\u03B9\u03BF (\u0391\u03BB\u03BF\u03C5\u03BC\u03AF\u03BD\u03B9\u03BF)"
+  icon: {fileID: 21300000, guid: e6703ca88eddf7a4285e2cda66972548, type: 3}
+  stackSize: 10
+  price: 10
+  symbol: 'Al (Z: 13)'
+  info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u039F\u03BC\u03AC\u03B4\u03B1 \u03C4\u03BF\u03C5
+    \u03B2\u03BF\u03C1\u03AF\u03BF\u03C5"
+  info2: "\u03A7\u03C1\u03CE\u03BC\u03B1: \u0391\u03C3\u03B7\u03BC\u03AF"
+  phase: "\u03A3\u03C4\u03B5\u03C1\u03B5\u03CC"

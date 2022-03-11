@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 15
   symbol: 'Cu (Z: 29)'
   info: 'Group: Copper group (11) - coinage metals'
-  info2: 'Color: Orange'
+  info2: 'Color: Red-brown'
   phase: Solid

@@ -19,5 +19,5 @@ MonoBehaviour:
   price: 10
   symbol: 'Cl (Z: 17)'
   info: 'Group: Halogens (17)'
-  info2: Color:-
+  info2: "Color: \u03A5ellow-green"
   phase: Gas

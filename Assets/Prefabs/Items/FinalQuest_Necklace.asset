@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FinalQuest_Necklace
   m_EditorClassIdentifier: 
   type: 1
-  title: Necklace
+  title: Necklace of Fire
   icon: {fileID: 21300000, guid: 0233140f644bc4a0983930c9574b0fd7, type: 3}
   stackSize: 0
   price: 0

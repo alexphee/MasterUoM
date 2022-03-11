@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632ef04735cadb341a93cf0750ba62b2, type: 3}
+  m_Name: FinalQuest_Crystal01 1
+  m_EditorClassIdentifier: 
+  type: 2
+  title: "\u039C\u03C0\u03BB\u03B5 \u039A\u03C1\u03CD\u03C3\u03C4\u03B1\u03BB\u03BB\u03BF\u03C2"
+  icon: {fileID: 21300000, guid: a094f0bfeaf3c420390a5056959b890b, type: 3}
+  stackSize: 0
+  price: 0
+  descr: "\u0388\u03BD\u03B1\u03C2 \u03C3\u03C0\u03AC\u03BD\u03B9\u03BF\u03C2 \u03BC\u03C0\u03BB\u03B5
+    \u03BA\u03C1\u03CD\u03C3\u03C4\u03B1\u03BB\u03BB\u03BF\u03C2 \u03C0\u03BF\u03C5
+    \u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03B5\u03AF\u03C4\u03B1\u03B9
+    \u03C3\u03C4\u03B7\u03BD \u03BA\u03B1\u03C4\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE
+    \u03BA\u03BF\u03C3\u03BC\u03B7\u03BC\u03AC\u03C4\u03C9\u03BD."
