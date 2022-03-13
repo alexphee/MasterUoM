@@ -187,6 +187,15 @@ public class DialogueWindow : Window
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene02");
             }
+            else if (dialogue.NPC_type == "scene2gr")
+            {
+                answerTransform.gameObject.SetActive(true);
+                GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                buttons.Add(go);
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                LoadScene("Scene02gr");
+            }
             else if (dialogue.NPC_type == "scene3")
             {
                 answerTransform.gameObject.SetActive(true);
@@ -195,6 +204,15 @@ public class DialogueWindow : Window
                 go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene03");
+            }
+            else if (dialogue.NPC_type == "scene3gr")
+            {
+                answerTransform.gameObject.SetActive(true);
+                GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                buttons.Add(go);
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                LoadScene("Scene03gr");
             }
 
 
