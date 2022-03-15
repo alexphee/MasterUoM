@@ -100,7 +100,14 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                if (dialogue.IsGreek)
+                {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
+                }
+                else {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                }
+                
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 
             }
@@ -109,7 +116,14 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                if (dialogue.IsGreek)
+                {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
+                }
+                else
+                {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                }
                 Item qi = Instantiate(InventoryScr.MyInstance.items[5]);
                 InventoryScr.MyInstance.AddItem(qi);
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
@@ -119,7 +133,14 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                if (dialogue.IsGreek)
+                {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
+                }
+                else
+                {
+                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                }
                 Item qi = Instantiate(InventoryScr.MyInstance.items[10]);
                 InventoryScr.MyInstance.AddItem(qi);
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
@@ -144,7 +165,14 @@ public class DialogueWindow : Window
                         answerTransform.gameObject.SetActive(true);
                         GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                         buttons.Add(go);
-                        go.GetComponentInChildren<TextMeshProUGUI>().text = "All correct!\nCheck your bag!";
+                        if (dialogue.IsGreek)
+                        {
+                            go.GetComponentInChildren<TextMeshProUGUI>().text = "Όλα σωστά!\nΔες στην τσάντα σου!";
+                        }
+                        else {
+                            go.GetComponentInChildren<TextMeshProUGUI>().text = "All correct!\nCheck your bag!";
+                        }
+                        
                         go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                     }
                     
@@ -155,7 +183,14 @@ public class DialogueWindow : Window
                     answerTransform.gameObject.SetActive(true);
                     GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                     buttons.Add(go);
-                    go.GetComponentInChildren<TextMeshProUGUI>().text = "Correct: " + currentCheck + "/" + maxCheck + " Try again.";
+                    if (dialogue.IsGreek)
+                    {
+                        go.GetComponentInChildren<TextMeshProUGUI>().text = "Σωστά: " + currentCheck + "/" + maxCheck + " Προσπάθησε ξανά.";
+                    }
+                    else
+                    {
+                        go.GetComponentInChildren<TextMeshProUGUI>().text = "Correct: " + currentCheck + "/" + maxCheck + " Try again.";
+                    }
                     go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 }
                
@@ -174,7 +209,7 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene01gr");
             }
@@ -192,7 +227,7 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene02gr");
             }
@@ -210,7 +245,7 @@ public class DialogueWindow : Window
                 answerTransform.gameObject.SetActive(true);
                 GameObject go = Instantiate(answerButtonPrefab, answerTransform);
                 buttons.Add(go);
-                go.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
+                go.GetComponentInChildren<TextMeshProUGUI>().text = "Τέλος";
                 go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
                 LoadScene("Scene03gr");
             }

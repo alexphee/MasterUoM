@@ -6,6 +6,8 @@ using UnityEngine;
 public class Quest
 {
     [SerializeField]
+    private bool greekQuest;
+    [SerializeField]
     private string title;
     [SerializeField]
     private string description;
@@ -58,6 +60,7 @@ public class Quest
     private int itemRewardIndex;
     public int MyItemRewardIndex { get => itemRewardIndex; set => itemRewardIndex = value; }
     public string MyRewardItem { get => RewardItem; set => RewardItem = value; }
+    public bool MyGreekQuest { get => greekQuest; set => greekQuest = value; }
 }
 
 [System.Serializable]

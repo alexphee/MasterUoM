@@ -56,7 +56,7 @@ public class QuestGiverWindow : Window
 
                 if (QuestLog.MyInstance.AlreadyHaveTheQuest(quest) && quest.IsComplete) //if i have the quest and i completed it then add OK at the end of the title
                 {
-                    go.GetComponent<Text>().text += "<size=8><color=green><i> Done</i></color></size>";
+                    go.GetComponent<Text>().text += "<size=8><color=green><i> OK</i></color></size>";
                 }
                 else if (QuestLog.MyInstance.AlreadyHaveTheQuest(quest))//if i already have the quest
                 {
@@ -95,7 +95,9 @@ public class QuestGiverWindow : Window
         questDescription.SetActive(true);
 
         //copy pasted this as is from questlog
+
         string objectives = "\n\n<i>Objectives</i>\n";
+
         string title = quest.MyTitle;
         string description = quest.MyDescription;
         foreach (Objective obj in quest.MyCollectObjectives)

@@ -27,8 +27,8 @@ public class QuestScr : MonoBehaviour
         {
             markedComplete = true;
             //GetComponent<Text>().text += " <color=red><size=8>DONE</size></color>";
-            GetComponent<Text>().text = "(" + MyQuest.MyArea + ")" + MyQuest.MyTitle + " <color=red><size=8>DONE</size></color>";
-            MessageFeedManager.MyInstance.WriteMessage(string.Format("{0} (C)", MyQuest.MyTitle));
+            GetComponent<Text>().text = "(" + MyQuest.MyArea + ")" + MyQuest.MyTitle + " <color=red><size=8>OK</size></color>";
+            MessageFeedManager.MyInstance.WriteMessage(string.Format("{0} (OK)", MyQuest.MyTitle));
         }
         else if (!MyQuest.IsComplete)
         {
