@@ -195,6 +195,58 @@ public class DialogueWindow : Window
                 }
                
             }
+
+            else if (dialogue.NPC_type == "teacherfinal")
+            {
+
+                if (currentCheck == maxCheck)
+                {
+                    if (!teacherIDcheck.ContainsKey(dialogue.TeacherID))
+                    {
+                        teacherIDcheck.Add(dialogue.TeacherID, false);
+                    }
+
+                    //Debug.Log("CORRECT");
+                    if (teacherIDcheck[dialogue.TeacherID] == false)
+                    {
+                        Item qi = Instantiate(InventoryScr.MyInstance.items[5]);
+                        InventoryScr.MyInstance.AddItem(qi);
+                        teacherIDcheck[dialogue.TeacherID] = true;
+                        answerTransform.gameObject.SetActive(true);
+                        GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                        buttons.Add(go);
+                        if (dialogue.IsGreek)
+                        {
+                            go.GetComponentInChildren<TextMeshProUGUI>().text = "Όλα σωστά!\nΔες στην τσάντα σου!";
+                        }
+                        else
+                        {
+                            go.GetComponentInChildren<TextMeshProUGUI>().text = "All correct!\nCheck your bag!";
+                        }
+
+                        go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                    }
+
+                }
+                else if (currentCheck <= maxCheck)
+                {
+                    //Debug.Log(maxCheck - currentCheck + "WRONG ANSWERS");
+                    answerTransform.gameObject.SetActive(true);
+                    GameObject go = Instantiate(answerButtonPrefab, answerTransform);
+                    buttons.Add(go);
+                    if (dialogue.IsGreek)
+                    {
+                        go.GetComponentInChildren<TextMeshProUGUI>().text = "Σωστά: " + currentCheck + "/" + maxCheck + " Προσπάθησε ξανά.";
+                    }
+                    else
+                    {
+                        go.GetComponentInChildren<TextMeshProUGUI>().text = "Correct: " + currentCheck + "/" + maxCheck + " Try again.";
+                    }
+                    go.GetComponent<Button>().onClick.AddListener(delegate { CloseDialogue(); });
+                }
+
+            }
+
             else if (dialogue.NPC_type == "scene1")
             {
                 answerTransform.gameObject.SetActive(true);

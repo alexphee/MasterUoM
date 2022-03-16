@@ -3699,8 +3699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 194.5584, y: -74.749756}
-  m_SizeDelta: {x: 299.1168, y: 89.49951}
+  m_AnchoredPosition: {x: 194.80696, y: -75.17375}
+  m_SizeDelta: {x: 299.61392, y: 90.347496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265451177
 MonoBehaviour:
@@ -4327,7 +4327,7 @@ PrefabInstance:
     - target: {fileID: 4891183893764130626, guid: 738ab383478d4d041bd5b9996ee653d2,
         type: 3}
       propertyPath: items.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4891183893764130626, guid: 738ab383478d4d041bd5b9996ee653d2,
         type: 3}
@@ -4358,6 +4358,12 @@ PrefabInstance:
       propertyPath: items.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 0f902675434adbf4d833a08f07038c9e,
+        type: 2}
+    - target: {fileID: 4891183893764130626, guid: 738ab383478d4d041bd5b9996ee653d2,
+        type: 3}
+      propertyPath: items.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ef56dcf85951bd4c8ed654a99e27fe9,
         type: 2}
     - target: {fileID: 4891183893764130626, guid: 738ab383478d4d041bd5b9996ee653d2,
         type: 3}
@@ -5581,39 +5587,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa374bf179d2d1a478b94e57c595c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc_type: teacher
+  npc_type: teacherfinal
   teacherID: 100
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
     answer: 
-    text: You can't leave like that! In order to procceed you have to answer 5 questions.
-      If your answers are correct i will give you a key to open the door. Don't worry
-      if you make mistakes, you can always try again.
+    text: Chemistry Test - please choose the correct answer to each question. Good
+      luck!
     check: 0
   - name: 01
     parent:
     - Root
-    answer: Ok.Proceed.
-    text: Which is the symbol for Iron
+    answer: Turn page
+    text: 'Q1. Car batteries contain H2SO4 which is called: '
     check: 0
   - name: 01.01
     parent:
     - 01
-    answer: C
-    text: You answered C... This is incorrect...
+    answer: 'Carbonic acid '
+    text: I don't think this is correct...
     check: 0
   - name: 01.02
     parent:
     - 01
-    answer: Fe
-    text: Nice!
+    answer: 'Sulfuric acid '
+    text: This is correct.
     check: 1
   - name: 01.03
     parent:
     - 01
-    answer: Ir
-    text: This symbol doesn't even exist...
+    answer: 'Nitric acid '
+    text: I don't think this is correct...
     check: 0
   - name: 02
     parent:
@@ -5621,102 +5627,96 @@ MonoBehaviour:
     - 01.02
     - 01.03
     answer: Next question
-    text: Which is the symbol for Sodium?
+    text: 'Q2. Aqueous acidic solutions have in general sour taste. '
     check: 0
   - name: 02.01
     parent:
     - 02
-    answer: Mn
-    text: Mn stands for Manganese...
-    check: 0
+    answer: 'TRUE '
+    text: This is correct.
+    check: 1
   - name: 02.02
     parent:
     - 02
-    answer: So
-    text: Nope.. That's not right.
+    answer: 'FALSE '
+    text: I don't think this is correct...
     check: 0
-  - name: 02.03
-    parent:
-    - 02
-    answer: Na
-    text: This is correct!
-    check: 1
   - name: 03
     parent:
     - 02.01
     - 02.02
-    - 02.03
     answer: Next question
-    text: Which is the symbol for Chlorine?
+    text: 'Q3. Which of the following does NOT belong to acids? '
     check: 0
   - name: 03.01
     parent:
     - 03
-    answer: Ch
-    text: Wrong!
+    answer: 'HCl '
+    text: I don't think this is correct...
     check: 0
   - name: 03.02
     parent:
     - 03
-    answer: Cl
-    text: This is correct!
-    check: 1
+    answer: 'H3PO4 '
+    text: I don't think this is correct...
+    check: 0
   - name: 03.03
     parent:
     - 03
-    answer: C
-    text: That's Carbon...
-    check: 0
+    answer: 'Na2SO4 '
+    text: This is correct.
+    check: 1
   - name: 04
     parent:
     - 03.01
     - 03.02
     - 03.03
     answer: Next question
-    text: Which is the chemical formula for Sodium Chloride
+    text: 'Q4. Which of the following does NOT belong to alkalis? '
     check: 0
   - name: 04.01
     parent:
     - 04
-    answer: So-Cl
-    text: No.. Wrong..
-    check: 0
+    answer: 'HNO3 '
+    text: This is correct.
+    check: 1
   - name: 04.02
     parent:
     - 04
-    answer: Cl-Na
-    text: No.. Wrong..
+    answer: 'NH3 '
+    text: I don't think this is correct...
     check: 0
   - name: 04.03
     parent:
     - 04
-    answer: Na-Cl
-    text: Correct!
-    check: 1
+    answer: 'Mg(OH)2 '
+    text: I don't think this is correct...
+    check: 0
   - name: 05
     parent:
     - 04.01
     - 04.02
     - 04.03
     answer: Next question
-    text: What is the common name for Sodium Chloride
+    text: 'Q5. In order to treat stomach pain due to discharge of gastric acid we
+      can use: '
     check: 0
   - name: 05.01
     parent:
     - 05
-    answer: Soda
-    text: This is wrong.
+    answer: 'aspirin '
+    text: I don't think this is correct...
     check: 0
   - name: 05.02
     parent:
     - 05
-    answer: Pepper
-    text: This is wrong.
+    answer: 'vinegar '
+    text: I don't think this is correct...
     check: 0
   - name: 05.03
     parent:
     - 05
-    answer: Salt
+    answer: 'Al(OH)3 '
     text: This is correct.
     check: 1
   - name: 06
@@ -7565,6 +7565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
@@ -33211,6 +33212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
@@ -33602,7 +33604,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17.261677, y: -7.1177907}
-  m_SizeDelta: {x: 389.1168, y: 149.49951}
+  m_SizeDelta: {x: 389.61392, y: 150.3475}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &966134726
 MonoBehaviour:
@@ -35507,6 +35509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
@@ -37264,6 +37267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
@@ -38046,7 +38050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1398805101
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44423,6 +44427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
@@ -46080,6 +46085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_type: simple
   teacherID: 0
+  isGreek: 0
   nodes:
   - name: Root
     parent: []
