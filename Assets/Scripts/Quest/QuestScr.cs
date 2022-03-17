@@ -13,7 +13,7 @@ public class QuestScr : MonoBehaviour
     {
         GetComponent<Text>().color = Color.green;
         QuestLog.MyInstance.ShowDescription(MyQuest);
-        Debug.Log("SELECT in QuestScr is OK");
+        //Debug.Log("SELECT in QuestScr is OK");
     }
 
     public void Deselect()

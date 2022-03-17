@@ -124,7 +124,7 @@ public class Player : Character
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("GOLD: " + MyGold);
+            //Debug.Log("GOLD: " + MyGold);
         }
         if (canMove)
         {
@@ -170,7 +170,7 @@ public class Player : Character
             MyAnimator.SetBool("attack", IsAttacking); //start attack animation
 
             yield return new WaitForSeconds(newSpell.MyCastTime); //hardcoded cast time DEBUGGING ONLY //0.3f
-            Debug.Log("ATTACK DONE");
+            
 
             if (currentTarget != null && InLineOfSight()) //ðñÝðåé íá åëÝãîù áí ï å÷èñüò Ýéíáé ðßóù áðü åìðüäéá êëð
             {
@@ -214,10 +214,14 @@ public class Player : Character
 
     public IEnumerator CraftRoutine(ICastable castable)
     {
+        if (isMoving)
+        {
+            StopAction();
+        }
+            yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
 
-        yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
-
-        crafting.AddItemsToInventory();
+            crafting.AddItemsToInventory();
+        
     }
     private IEnumerator ActionRoutine(ICastable castable)
     {
@@ -257,7 +261,7 @@ public class Player : Character
         SpellBook.MyInstance.StopCasting();//stop casting
         IsAttacking = false; //make sure i dont attack
         MyAnimator.SetBool("attack", IsAttacking); //stop attack animation
-        // Debug.Log("ATTACK STOP");
+        
         if (actionRoutine != null) //checks for references to a coroutine
         {
             StopCoroutine(actionRoutine);

@@ -241,8 +241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.7361, y: -355.54535}
-  m_SizeDelta: {x: 990.666, y: 495.6465}
+  m_AnchoredPosition: {x: 0.000014484, y: -466.1609}
+  m_SizeDelta: {x: 990.666, y: 791.5941}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &856104837
 Animator:
@@ -296,16 +296,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Thank you for playing!\t\t\t\t\t\t\t\u0395\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03CE
-    \u03C0\u03BF\u03C5 \u03C0\u03B1\u03AF\u03BE\u03B1\u03C4\u03B5!\n\n\n\n\n\u0391\u03BD\u03AC\u03C0\u03C4\u03C5\u03BE\u03B7:
-    \u0391\u03BB\u03AD\u03BE\u03B1\u03BD\u03B4\u03C1\u03BF\u03C2 \u03A6\u03AF\u03BB\u03B9\u03C0\u03C0\u03B1\u03C2\n\n\nDeveloper:
-    Alex Filippas\n\n\n\n\u0391\u03BD\u03B1\u03C0\u03C4\u03CD\u03C7\u03B8\u03B7\u03BA\u03B5
+  m_Text: "Congratulations!\t\t\t\t\t\t\t\t\t\t\u03A3\u03C5\u03B3\u03C7\u03B1\u03C1\u03B7\u03C4\u03AE\u03C1\u03B9\u03B1!\n\n\nThank
+    you for playing!\t\t\t\t\t\t\t\u0395\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03CE
+    \u03C0\u03BF\u03C5 \u03C0\u03B1\u03AF\u03BE\u03B1\u03C4\u03B5!\n\n\n\n\n\u0391\u03BD\u03AC\u03C0\u03C4\u03C5\u03BE\u03B7
+    / \u03A3\u03B5\u03BD\u03AC\u03C1\u03B9\u03BF: \u0391\u03BB\u03AD\u03BE\u03B1\u03BD\u03B4\u03C1\u03BF\u03C2
+    \u03A6\u03AF\u03BB\u03B9\u03C0\u03C0\u03B1\u03C2\n\n\nDevelopment / Scenario:
+    Alexandros Filippas\n \n\n\u0393\u03C1\u03B1\u03C6\u03B9\u03BA\u03AC - Sprites:
+    itch.io / craftpix.net / opengameart.org / Unity asset store\n\n\u039C\u03BF\u03C5\u03C3\u03B9\u03BA\u03AE-\u0395\u03C6\u03AD
+    / Music - Effects: freesound.org\n\n\n\u0391\u03BD\u03B1\u03C0\u03C4\u03CD\u03C7\u03B8\u03B7\u03BA\u03B5
     \u03C3\u03C4\u03B1 \u03C0\u03BB\u03B1\u03AF\u03C3\u03B9\u03B1 \u03C4\u03B7\u03C2
     \u0394\u03B9\u03C0\u03BB\u03C9\u03BC\u03B1\u03C4\u03B9\u03BA\u03AE\u03C2 \u03B5\u03C1\u03B3\u03B1\u03C3\u03AF\u03B1\u03C2
-    \u03B3\u03B9\u03B1 \u03C4\u03BF \u03A0\u039C\u03A3 \u0395\u03C0\u03B9\u03C3\u03C4\u03AE\u03BC\u03B7
-    \u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03CE\u03BD (\u03A0\u03B1\u03BD\u03B5\u03C0\u03B9\u03C3\u03C4\u03AE\u03BC\u03B9\u03BF
-    \u039C\u03B1\u03BA\u03B5\u03B4\u03BF\u03BD\u03AF\u03B1\u03C2 - 2022)\n\n\nDeveloped
-    as the Thesis for the MSc in Computer Science (University of Macedonia - 2022)\n"
+    \u03B3\u03B9\u03B1 \u03C4\u03BF \u03A0\u039C\u03A3 \u0395\u03C0\u03B9\u03C3\u03C4\u03AE\u03BC\u03B7\u03C2
+    \u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03CE\u03BD (\u03C4\u03BC\u03AE\u03BC\u03B1
+    \u0395\u03C6\u03B1\u03C1\u03BC\u03BF\u03C3\u03BC\u03AD\u03BD\u03B7\u03C2 \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2
+    - \u03A0\u03B1\u03BD\u03B5\u03C0\u03B9\u03C3\u03C4\u03AE\u03BC\u03B9\u03BF \u039C\u03B1\u03BA\u03B5\u03B4\u03BF\u03BD\u03AF\u03B1\u03C2
+    - 2022)\n\n\nDeveloped as the Thesis for the MSc in Computer Science (dept. of
+    Applied Informatics - University of Macedonia - 2022)\n"
 --- !u!222 &856104839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -370,6 +376,133 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1095952341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095952343}
+  - component: {fileID: 1095952342}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1095952342
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095952341}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0061f1f4db1ec124f815ff7e64a87be0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.207
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1095952343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095952341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1386920186
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +515,7 @@ GameObject:
   - component: {fileID: 1386920189}
   - component: {fileID: 1386920188}
   - component: {fileID: 1386920187}
+  - component: {fileID: 1386920191}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -471,6 +605,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1386920191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386920186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f66afe843a3ec40872a76cc187ed95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 25
+  NewLevel: MainMenu
 --- !u!1 &1654121088
 GameObject:
   m_ObjectHideFlags: 0

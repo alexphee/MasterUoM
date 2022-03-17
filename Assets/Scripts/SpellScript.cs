@@ -52,7 +52,7 @@ public class SpellScript : MonoBehaviour
             myRigidBody.velocity = Vector2.zero; //reset velocity when hit sth
             MyTarget = null;
 
-            Debug.Log("RUN in OnTriggerEnter2D");
+            //Debug.Log("RUN in OnTriggerEnter2D");
         }
     }
 }

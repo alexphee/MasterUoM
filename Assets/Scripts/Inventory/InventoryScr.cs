@@ -159,7 +159,7 @@ public class InventoryScr : MonoBehaviour
         {
             if (bag.MyBagScr.AddItem(item))
             {
-                Debug.Log("Item added !");
+                //Debug.Log("Item added !");
                 OnItemCountChanged(item); //TEST TEST
                 return true;
             }

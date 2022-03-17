@@ -83,7 +83,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
     public void Craft()
     {
 
-        if (CanCraft()) //only start the coroutine if there are enough materials for crafting
+        if (CanCraft() && !Player.MyInstance.IsAttacking) //only start the coroutine if there are enough materials for crafting
         {
             StartCoroutine(CraftRoutine());
             StartCoroutine(Progress()); //testing

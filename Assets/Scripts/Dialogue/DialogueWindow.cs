@@ -321,7 +321,7 @@ public class DialogueWindow : Window
 
     public void CloseDialogue()
     {
-        Debug.Log("closed");
+        //Debug.Log("closed");
         Close(); //the Window.scr method
         Clear();
     }

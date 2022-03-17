@@ -44,7 +44,7 @@ public class AttackState : IState
 
     public IEnumerator Attack()
     {
-        Debug.Log("Enemy Attack");
+        //Debug.Log("Enemy Attack");
         parent.IsAttacking = true;
         parent.MyAnimator.SetTrigger("attack");
         //need to wait or else attack is not shown

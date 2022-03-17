@@ -192,7 +192,7 @@ public class QuestLog : MonoBehaviour
     }
     public bool AlreadyHaveTheQuest(Quest quest) //returns true if i already have a quest
     {
-        Debug.Log("ALREADY HAVE QUEST");
+        //Debug.Log("ALREADY HAVE QUEST");
         return MyQuests.Exists(q => q.MyTitle == quest.MyTitle);
     }
 }

@@ -16,7 +16,6 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (!IsInteracting)
         {
-            Debug.Log("TEST");
             IsInteracting = true;
             window.Open(this); //if i interact with this NPC then open the window
         }
