@@ -30,16 +30,17 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
 
     private List<int> amounts = new List<int>(); //for multi crafting
 
-
     [SerializeField]
     private CanvasGroup canvasGroup;
+
+
     private void Start()
     {
         InventoryScr.MyInstance.itemCountChangedEvent += new ItemCountChanged(UpdateMaterialCount);
         ShowDescription(selectedRecipe);
+
     }
 
-    private SlotScr slot;
 
     public void ShowDescription(Recipe recipe)
     {
@@ -47,6 +48,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         {
             selectedRecipe.Deselect(); //first deselect if sth is selected
         }
+
         this.selectedRecipe = recipe;
         this.selectedRecipe.Select();
 
@@ -83,9 +85,9 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
     public void Craft()
     {
 
-        if (CanCraft() && !Player.MyInstance.IsAttacking) //only start the coroutine if there are enough materials for crafting
+        if (CanCraft() && !Player.MyInstance.IsAttacking && !Player.MyInstance.isMoving) //only start the coroutine if there are enough materials for crafting
         {
-            StartCoroutine(CraftRoutine());
+            StartCoroutine(CraftRoutine(selectedRecipe));
             StartCoroutine(Progress()); //testing
         }
     }
@@ -110,7 +112,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         }
         return canCraft;
     }
-    private IEnumerator CraftRoutine()
+    private IEnumerator CraftRoutine(Recipe rec)
     {
         yield return Player.MyInstance.MyInitRoutine = StartCoroutine(Player.MyInstance.CraftRoutine(selectedRecipe));
     }
@@ -166,7 +168,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         float timePassed = Time.deltaTime; //time left for casting
         float rate = 1.0f / selectedRecipe.MyCastTime; //the rate the bar fills, based on the cast time of the spell //divide the max with the casttime
         float progress = 0.0f; //how far this is filled, when its 1 its casted
-
+;
         Color tmp = castingBar.color;
         //tmp.a = 1;
         tmp = selectedRecipe.MyBarColor;
@@ -175,7 +177,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         castingBar.fillAmount = 0;
         name2.text = selectedRecipe.MyTitle;
         icon.sprite = selectedRecipe.MyIcon;
-
+        this.GetComponent<CanvasGroup>().blocksRaycasts = false;//fixes a bug where the player can craft anything if changes recipe mid-crafting
         while (progress <= 1.0)//as long as bar is not maxed out
         {
             castingBar.fillAmount = Mathf.Lerp(0, 1, progress); //move from 0 (min) to 1 (max) [the bar fill values] 
@@ -185,6 +187,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             if (selectedRecipe.MyCastTime - timePassed < 0)
             {
                 castTime.text = "0.0"; //BUGFIX so it doesnt end at -0.0
+                this.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
             yield return null; //dont wait for any sec
         }

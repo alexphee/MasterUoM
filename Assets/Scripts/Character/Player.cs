@@ -122,10 +122,7 @@ public class Player : Character
         {
             GainExperience(1000);
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            //Debug.Log("GOLD: " + MyGold);
-        }
+        
         if (canMove)
         {
             if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
@@ -217,7 +214,9 @@ public class Player : Character
         if (isMoving)
         {
             StopAction();
+            
         }
+        
             yield return actionRoutine = StartCoroutine(ActionRoutine(castable));
 
             crafting.AddItemsToInventory();
