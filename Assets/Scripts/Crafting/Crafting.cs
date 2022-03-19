@@ -168,7 +168,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         float timePassed = Time.deltaTime; //time left for casting
         float rate = 1.0f / selectedRecipe.MyCastTime; //the rate the bar fills, based on the cast time of the spell //divide the max with the casttime
         float progress = 0.0f; //how far this is filled, when its 1 its casted
-;
+
         Color tmp = castingBar.color;
         //tmp.a = 1;
         tmp = selectedRecipe.MyBarColor;
@@ -180,6 +180,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
         this.GetComponent<CanvasGroup>().blocksRaycasts = false;//fixes a bug where the player can craft anything if changes recipe mid-crafting
         while (progress <= 1.0)//as long as bar is not maxed out
         {
+
             castingBar.fillAmount = Mathf.Lerp(0, 1, progress); //move from 0 (min) to 1 (max) [the bar fill values] 
             progress += rate * Time.deltaTime;
             timePassed += Time.deltaTime; //increase over time passed
@@ -187,6 +188,7 @@ public class Crafting : MonoBehaviour //this is attached to recipe and will be r
             if (selectedRecipe.MyCastTime - timePassed < 0)
             {
                 castTime.text = "0.0"; //BUGFIX so it doesnt end at -0.0
+                this.GetComponent<CanvasGroup>().alpha = 1; //fixes a bug where raycast remains false if you close crafting window during a craft
                 this.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
             yield return null; //dont wait for any sec

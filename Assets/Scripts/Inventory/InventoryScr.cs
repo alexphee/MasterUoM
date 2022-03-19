@@ -69,21 +69,21 @@ public class InventoryScr : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        /*if (Input.GetKeyDown(KeyCode.J))
         {
             Bag bag = (Bag)Instantiate(items[0]);
             bag.Initialize(8);
             bag.Use();
-        }
+        }*/
 
 
         //////DEBUG
-        if (Input.GetKeyDown(KeyCode.K))
+       /* if (Input.GetKeyDown(KeyCode.K))
         {
             Bag bag = (Bag)Instantiate(items[0]);
             bag.Initialize(8);
             AddItem(bag);
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.L))
         {

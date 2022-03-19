@@ -7,9 +7,9 @@ public class Key : Item
 {
    
 
-    public override string GetDescription()
+    /*public override string GetDescription()
     {
 
         return base.GetDescription() + string.Format("\nUse: Opens doors"); 
-    }
+    }*/
 }
