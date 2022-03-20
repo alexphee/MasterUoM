@@ -105,7 +105,7 @@ public class Player : Character
     {
         Direction = Vector2.zero; //after every loop reset direction
         ///debugging
-        if (Input.GetKeyDown(KeyCode.I))
+       /* if (Input.GetKeyDown(KeyCode.I))
         {
             //Debug.Log("RUN I");
             health.MyCurrentValue -= 10;
@@ -121,7 +121,7 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.U))
         {
             GainExperience(1000);
-        }
+        }*/
         
         if (canMove)
         {

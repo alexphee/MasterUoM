@@ -85,7 +85,7 @@ public class InventoryScr : MonoBehaviour
             AddItem(bag);
         }*/
 
-        if (Input.GetKeyDown(KeyCode.L))
+       /* if (Input.GetKeyDown(KeyCode.L))
         {
             HealthPotion potion = (HealthPotion)Instantiate(items[1]);
             AddItem(potion);
@@ -99,7 +99,7 @@ public class InventoryScr : MonoBehaviour
         {
             Element oxygen = (Element)Instantiate(items[3]);
             AddItem(oxygen);
-        }
+        }*/
         
 
     }
