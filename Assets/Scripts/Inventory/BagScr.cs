@@ -38,23 +38,24 @@ public class BagScr : MonoBehaviour
 
     public void AddSlots(int slotCount) //the amount of slots the bag script is going to create
     {
-        for (int i = 0; i < slotCount; i++) 
+        for (int i = slotCount-1; i >= 0; i--) 
         {
             SlotScr slot = Instantiate(slotPrefab, transform).GetComponent<SlotScr>(); //here i instantiate the slot prefab and with transform im putting it as child object of bagscript so the slots will be childs of the bag
             slot.MyIndex = i; //TEST TEST 
+            //Debug.Log(slot.MyIndex);
             slot.MyBag = this; //the slot has to "know" what bag it belongs to
             MySlots.Add(slot);
         }
     }
-
     public bool AddItem(Item item)
     {
         foreach (SlotScr slot in MySlots)
         {
             if (slot.IsEmpty)
             {
-                slot.AddItem(item);
-                // TEST TEST if(item.name == "elCarbon") { Debug.Log("THIS GONNA BE GREAT FOR OPENING DOORS"); }
+                slot.AddItem(item); 
+                //Debug.Log(slot.MyIndex);
+
                 return true;
             }
         }return false;
