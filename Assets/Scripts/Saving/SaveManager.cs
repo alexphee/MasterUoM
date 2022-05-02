@@ -177,7 +177,9 @@ public class SaveManager : MonoBehaviour
         QuestGiver[] questGivers = FindObjectsOfType<QuestGiver>();
         foreach (QuestGiver questGiver in questGivers)
         {
-            data.MyQuestGiverData.Add(new QuestGiverData(questGiver.MyQuestGiverID, questGiver.MyCompletedQuests));
+
+                data.MyQuestGiverData.Add(new QuestGiverData(questGiver.MyQuestGiverID, questGiver.MyCompletedQuests));
+
         }
     }
 
@@ -259,6 +261,7 @@ public class SaveManager : MonoBehaviour
             QuestGiver questGiver = Array.Find(questGivers, x => x.MyQuestGiverID == questGiverData.MyquestGiverID);
             questGiver.MyCompletedQuests = questGiverData.MyCompletedQuests; //check for completed quests
             questGiver.UpdateQuestStatus();
+
         }
     }
 }

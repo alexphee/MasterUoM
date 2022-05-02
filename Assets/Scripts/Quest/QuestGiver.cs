@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestGiver : NPC
 {
     [SerializeField]
-    private int distinct;
+    public int distinct;
     [SerializeField]
     private Quest[] quests; //array of all quests the NPC has
     [SerializeField]
@@ -82,7 +82,8 @@ public class QuestGiver : NPC
                     if (distinct == 1)
                     {
                         GetComponent<BoxCollider2D>().enabled = false;
-                        Destroy(go);
+                        GetComponent<SpriteRenderer>().enabled = false;
+                       // Destroy(go);
                     }
                 }
             }

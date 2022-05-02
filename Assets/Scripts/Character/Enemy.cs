@@ -54,6 +54,7 @@ public class Enemy : Character, IInteractable
     }
     protected override void Update()
     {
+
         if (IsAlive)
         {
             if (!IsAttacking) //as long as im not attacking, im counting how long since last attack
@@ -182,4 +183,6 @@ public class Enemy : Character, IInteractable
            //Player.MyInstance.TakeDamage(damage, transform); //this is "hardcoded" dmg for the player. Even if the enemy attacks sth else, player will take dmg
         
     }
+
+
 }
