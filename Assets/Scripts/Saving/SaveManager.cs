@@ -143,7 +143,7 @@ public class SaveManager : MonoBehaviour
 
     private void SavePlayer(SaveData data)
     {
-        data.MyPlayerData = new PlayerData(Player.MyInstance.MyLevel, Player.MyInstance.MyXP.MyCurrentValue, Player.MyInstance.MyXP.MyMaxValue,
+        data.MyPlayerData = new PlayerData(Player.MyInstance.MyGold, Player.MyInstance.MyLevel, Player.MyInstance.MyXP.MyCurrentValue, Player.MyInstance.MyXP.MyMaxValue,
                                             Player.MyInstance.MyHealth.MyCurrentValue, Player.MyInstance.MyHealth.MyMaxValue, Player.MyInstance.MyMana.MyCurrentValue,
                                             Player.MyInstance.MyMana.MyMaxValue, Player.MyInstance.transform.position);
     }
@@ -212,6 +212,7 @@ public class SaveManager : MonoBehaviour
     {
         Player.MyInstance.MyLevel = data.MyPlayerData.MyLevel;
         Player.MyInstance.UpdateLevel();
+        Player.MyInstance.MyGold = data.MyPlayerData.MyGold;
         Player.MyInstance.UpdateGold();
         Player.MyInstance.MyHealth.Initialize(data.MyPlayerData.MyHealth, data.MyPlayerData.MyMaxHealth);
         Player.MyInstance.MyMana.Initialize(data.MyPlayerData.MyMana, data.MyPlayerData.MyMaxMana);

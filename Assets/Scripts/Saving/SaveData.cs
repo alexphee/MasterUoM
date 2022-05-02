@@ -32,12 +32,15 @@ public class PlayerData
     public float MyMaxHealth { get; set; }
     public float MyMana { get; set; }
     public float MyMaxMana { get; set; }
+
+    public int MyGold { get; set; }
     //i cant save a vector2 like these others, i have to break it into X and Y
     public float MyX { get; set; }
     public float MyY { get; set; }
 
-    public PlayerData(int level, float xp, float maxXp, float health, float maxHealth, float mana, float maxMana, Vector2 position) //takes in the data i want to save
+    public PlayerData(int gold, int level, float xp, float maxXp, float health, float maxHealth, float mana, float maxMana, Vector2 position) //takes in the data i want to save
     {
+        this.MyGold = gold;
         this.MyLevel = level;
         this.MyXP = xp;
         this.MyMaxXP = maxXp;
