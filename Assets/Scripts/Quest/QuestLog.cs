@@ -116,7 +116,7 @@ public class QuestLog : MonoBehaviour
                 questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}\n<color=yellow>Εμπειρία: {3} \nΧρυσός: {4} \n<color=orange>Ανταμοιβή: {5}</color></color>", title, quest.MyDescription, objectives, quest.MyExperience, quest.MyGoldReward, quest.MyRewardItem);
             } else
             {
-                string objectives = "\n\nΣτόχοι\n";
+                string objectives = "\n\nObjectives\n";
                 selected = quest; //assign quest
 
                 string title = quest.MyTitle;
@@ -128,7 +128,7 @@ public class QuestLog : MonoBehaviour
                 {
                     objectives += obj.MyType + ": " + obj.MyCurrentAmount + "/" + obj.MyAmount + "\n";
                 }
-                questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}\n<color=yellow>Εμπειρία: {3} \nΧρυσός: {4} \n<color=orange>Ανταμοιβή: {5}</color></color>", title, quest.MyDescription, objectives, quest.MyExperience, quest.MyGoldReward, quest.MyRewardItem);
+                questDescription.text = string.Format("<i>{0}</i>\n<size=8>{1}</size>{2}\n<color=yellow>Experience: {3} \nGold: {4} \n<color=orange>Reward: {5}</color></color>", title, quest.MyDescription, objectives, quest.MyExperience, quest.MyGoldReward, quest.MyRewardItem);
             }
             
             
