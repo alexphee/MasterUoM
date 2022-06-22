@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3deb1e3a1357aa740a0584962f4f8886, type: 3}
   stackSize: 1
   price: 1
+  isGreek: 1
   symbol: CO2
   info: "\u0395\u03BD\u03B1\u03BB\u03BB\u03B1\u03BA\u03C4\u03B9\u03BA\u03AE \u03BF\u03BD\u03BF\u03BC\u03B1\u03C3\u03AF\u03B1:
     \u03A4\u03C1\u03B9\u03BF\u03BE\u03C5\u03B3\u03CC\u03BD\u03BF "

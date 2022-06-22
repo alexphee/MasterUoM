@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4420182d8fcb0a4479654ff283ef2ab3, type: 3}
   stackSize: 10
   price: 100
+  isGreek: 1
   symbol: 'U (Z: 92)'
   info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u0391\u03BA\u03C4\u03B9\u03BD\u03AF\u03B4\u03B5\u03C2"
   info2: "\u03A7\u03C1\u03CE\u03BC\u03B1: \u0393\u03BA\u03C1\u03B9"

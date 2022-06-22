@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a64253c29be47544cae5c82b6537e9fb, type: 3}
   stackSize: 0
   price: 0
+  isGreek: 1
   symbol: C8H10N4O2
   info: 
   info2: 

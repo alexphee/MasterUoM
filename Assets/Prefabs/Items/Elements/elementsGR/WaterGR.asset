@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3c58c7bbbd190484d8f67e6ef26bb083, type: 3}
   stackSize: 1
   price: 1
+  isGreek: 1
   symbol: H2O
   info: "\u0395\u03BD\u03B1\u03BB\u03BB\u03B1\u03BA\u03C4\u03B9\u03BA\u03AE \u03BF\u03BD\u03BF\u03BC\u03B1\u03C3\u03AF\u03B1:
     \u039C\u03BF\u03BD\u03BF\u03BE\u03B5\u03AF\u03B4\u03B9\u03BF \u03C4\u03BF\u03C5

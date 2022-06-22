@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 08652d602c8559840b31b8250d2d0b49, type: 3}
   stackSize: 10
   price: 10
+  isGreek: 1
   symbol: 'O (Z: 8)'
   info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u03A7\u03B1\u03BB\u03BA\u03BF\u03B3\u03CC\u03BD\u03B1
     (16)"

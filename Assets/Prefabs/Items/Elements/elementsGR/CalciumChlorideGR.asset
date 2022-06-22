@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 7bde740e192751b489aec219a1be6308, type: 3}
   stackSize: 1
   price: 1
+  isGreek: 1
   symbol: CaCl2
   info: 
   info2: "\u03A7\u03C1\u03CE\u03BC\u03B1: \u039B\u03B5\u03C5\u03BA\u03CC"

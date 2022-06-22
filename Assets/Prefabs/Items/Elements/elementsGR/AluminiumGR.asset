@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e6703ca88eddf7a4285e2cda66972548, type: 3}
   stackSize: 10
   price: 10
+  isGreek: 1
   symbol: 'Al (Z: 13)'
   info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u039F\u03BC\u03AC\u03B4\u03B1 \u03C4\u03BF\u03C5
     \u03B2\u03BF\u03C1\u03AF\u03BF\u03C5"

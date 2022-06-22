@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 09426fac22c8292478b3b58e59c7345d, type: 3}
   stackSize: 0
   price: 0
+  isGreek: 1
   symbol: C12H22O11
   info: "\u0397 \u03BB\u03B5\u03C5\u03BA\u03AE \u03B6\u03AC\u03C7\u03B1\u03C1\u03B7
     \u03B1\u03C0\u03BF\u03C4\u03B5\u03BB\u03B5\u03AF \u03C7\u03B7\u03BC\u03B9\u03BA\u03AE

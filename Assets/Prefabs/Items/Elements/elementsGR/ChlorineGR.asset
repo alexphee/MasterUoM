@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b745cfeed3e432c499e176d8086e78cf, type: 3}
   stackSize: 10
   price: 10
+  isGreek: 1
   symbol: 'Cl (Z: 17)'
   info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u0391\u03BB\u03BF\u03B3\u03CC\u03BD\u03B1
     (17)"

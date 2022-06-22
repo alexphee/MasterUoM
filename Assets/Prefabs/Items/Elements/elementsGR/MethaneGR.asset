@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 0c4d1b989a766694fbe5b047c87e9ed9, type: 3}
   stackSize: 1
   price: 1
+  isGreek: 1
   symbol: CH4
   info: "\u039A\u03BF\u03B9\u03BD\u03AE \u03BF\u03BD\u03BF\u03BC\u03B1\u03C3\u03AF\u03B1:
     \u0391\u03AD\u03C1\u03B9\u03BF \u03C4\u03C9\u03BD \u03B5\u03BB\u03CE\u03BD"

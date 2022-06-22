@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: eb5d525a1dfea314eb894295d81c01f0, type: 3}
   stackSize: 10
   price: 5
+  isGreek: 1
   symbol: 'C (Z: 6)'
   info: "\u039F\u03BC\u03AC\u03B4\u03B1: \u039F\u03BC\u03AC\u03B4\u03B1 \u03C4\u03BF\u03C5
     \u03AC\u03BD\u03B8\u03C1\u03B1\u03BA\u03B1 (14)"

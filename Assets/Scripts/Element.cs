@@ -10,6 +10,8 @@ using UnityEngine;
 public class Element : Item
     {
     [SerializeField]
+    private bool isGreek;
+    [SerializeField]
     private string symbol;
 
     [SerializeField]
@@ -22,8 +24,15 @@ public class Element : Item
 
     public override string GetDescription()
     {
-        string info = string.Format("\nChemical Symbol: {0}\n {1}\n {2}\n {3}", symbol, this.info, this.info2, phase);
-        return base.GetDescription() + info;
+        if (isGreek)
+        {
+            string info = string.Format("\nΧημικό σύμβολο: {0}\n {1}\n {2}\n {3}", symbol, this.info, this.info2, phase);
+            return base.GetDescription() + info;
+        }
+        else {
+            string info = string.Format("\nChemical Symbol: {0}\n {1}\n {2}\n {3}", symbol, this.info, this.info2, phase);
+            return base.GetDescription() + info;
+        }
     }
 }
 
